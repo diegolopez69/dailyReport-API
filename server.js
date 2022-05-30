@@ -10,6 +10,7 @@ app.use(cors());
 
 // api routes
 app.use('/users', require('./users/users.controller'));
+app.use('/herramienta', require('./herramienta/herramienta.controller'));
 
 // global error handler
 app.use(errorHandler);

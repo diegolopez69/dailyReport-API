@@ -6,7 +6,7 @@ const Role = require('_helpers/role');
 const herramientaService = require('./herramienta.service');
 
 // routes
-router.get('/herramienta', getAll);
+router.get('/', getAll);
 router.get('/herramienta/:id', getById);
 router.post('/herramienta', createSchema, create);
 router.put('/herramienta/:id', updateSchema, update);
