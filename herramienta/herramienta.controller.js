@@ -7,12 +7,12 @@ const herramientaService = require('./herramienta.service');
 
 // routes
 router.get('/', getAll);
-router.get('/herramienta/:id', getById);
-router.post('/herramienta', createSchema, create);
-router.put('/herramienta/:id', updateSchema, update);
-router.delete('/herramienta/:id', _delete);
+router.get('/:id', getById);
+router.post('/', createSchema, create);
+router.put('/:id', updateSchema, update);
+router.delete('/:id', _delete);
 
-module.exports = router;
+
 
 // route functions
 
@@ -66,3 +66,5 @@ function updateSchema(req, res, next) {
     });
     validateRequest(req, next, schema);
 }
+
+module.exports = router;

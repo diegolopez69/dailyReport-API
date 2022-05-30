@@ -19,14 +19,14 @@ async function getById(id) {
 
 async function create(params) {
     // validate
-    if (await db.Herramienta.findOne({ where: { email: params.email } })) {
-        throw 'Email "' + params.email + '" is already registered';
-    }
+    // if (await db.Herramienta.findOne({ where: { email: params.email } })) {
+    //     throw 'Email "' + params.email + '" is already registered';
+    // }
 
     const herramienta = new db.Herramienta(params);
     
     // hash password
-    herramienta.passwordHash = await bcrypt.hash(params.password, 10);
+    //herramienta.passwordHash = await bcrypt.hash(params.password, 10);
 
     // save herramienta
     await herramienta.save();
@@ -36,15 +36,15 @@ async function update(id, params) {
     const herramienta = await getHerramienta(id);
 
     // validate
-    const emailChanged = params.email && herramienta.email !== params.email;
-    if (emailChanged && await db.Herramienta.findOne({ where: { email: params.email } })) {
-        throw 'Email "' + params.email + '" is already registered';
-    }
+    // const emailChanged = params.email && herramienta.email !== params.email;
+    // if (emailChanged && await db.Herramienta.findOne({ where: { email: params.email } })) {
+    //     throw 'Email "' + params.email + '" is already registered';
+    // }
 
     // hash password if it was entered
-    if (params.password) {
-        params.passwordHash = await bcrypt.hash(params.password, 10);
-    }
+    // if (params.password) {
+    //     params.passwordHash = await bcrypt.hash(params.password, 10);
+    // }
 
     // copy params to herramienta and save
     Object.assign(herramienta, params);

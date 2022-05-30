@@ -13,7 +13,7 @@ router.post('/', createSchema, create);
 router.put('/:id', updateSchema, update);
 router.delete('/:id', _delete);
 
-module.exports = router;
+
 
 // route functions
 
@@ -74,3 +74,6 @@ function updateSchema(req, res, next) {
     }).with('password', 'confirmPassword');
     validateRequest(req, next, schema);
 }
+
+
+module.exports = router;
