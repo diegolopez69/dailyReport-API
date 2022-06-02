@@ -1,9 +1,0 @@
-﻿{
-    "database": {
-        "host": "localhost",
-        "port": 3306,
-        "user": "db_inventario",
-        "password": "12345678",
-        "database": "inventario"
-    }
-}

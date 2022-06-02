@@ -1,20 +1,39 @@
-﻿require('rootpath')();
-const express = require('express');
+const express = require("express");
+// const bodyParser = require("body-parser"); /* deprecated */
+const cors = require("cors");
+
 const app = express();
-const cors = require('cors');
-const errorHandler = require('_middleware/error-handler');
 
-app.use(express.json());
-app.use(express.urlencoded({ extended: true }));
-app.use(cors());
+var corsOptions = {
+  origin: "http://localhost:3000"
+};
 
-// api routes
-app.use('/users', require('./users/users.controller'));
-app.use('/herramienta', require('./herramienta/herramienta.controller'));
+app.use(cors(corsOptions));
 
-// global error handler
-app.use(errorHandler);
+// parse requests of content-type - application/json
+app.use(express.json());  /* bodyParser.json() is deprecated */
 
-// start server
-const port = process.env.NODE_ENV === 'production' ? (process.env.PORT || 80) : 3000;
-app.listen(port, () => console.log('Server listening on port ' + port));
+// parse requests of content-type - application/x-www-form-urlencoded
+app.use(express.urlencoded({ extended: true }));   /* bodyParser.urlencoded() is deprecated */
+
+const db = require("./app/models");
+
+db.sequelize.sync();
+// // drop the table if it already exists
+// db.sequelize.sync({ force: true }).then(() => {
+//   console.log("Drop and re-sync db.");
+// });
+
+// simple route
+app.get("/", (req, res) => {
+  res.json({ message: "Welcome to bezkoder application." });
+});
+
+require("./app/routes/turorial.routes")(app);
+require("./app/routes/ordenador.routes")(app);
+
+// set port, listen for requests
+const PORT = process.env.PORT || 3000;
+app.listen(PORT, () => {
+  console.log(`Server is running on port ${PORT}.`);
+});
