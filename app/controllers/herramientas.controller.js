@@ -32,7 +32,7 @@ exports.create = (req, res) => {
     });
 };
 
-// Retrieve all Tutorials from the database.
+// Retrieve all herramientas from the database.
 exports.findAll = (req, res) => {
   const Id = req.query.Id;
   var condition = Id ? { Id: { [Op.like]: `%${Id}%` } } : null;
@@ -44,7 +44,7 @@ exports.findAll = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving tutorials."
+          err.message || "Some error occurred while retrieving herramientas."
       });
     });
 };

@@ -35,7 +35,7 @@ exports.create = (req, res) => {
     });
 };
 
-// Retrieve all Tutorials from the database.
+// Retrieve all ordenador from the database.
 exports.findAll = (req, res) => {
   const Nombre = req.query.Nombre;
   var condition = Nombre ? { Nombre: { [Op.like]: `%${Nombre}%` } } : null;
@@ -47,7 +47,7 @@ exports.findAll = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving tutorials."
+          err.message || "Some error occurred while retrieving ordenador."
       });
     });
 };
@@ -119,23 +119,6 @@ exports.delete = (req, res) => {
     .catch(err => {
       res.status(500).send({
         message: "Could not delete Ordenador with id=" + id
-      });
-    });
-};
-
-// Delete all Tutorials from the database.
-exports.deleteAll = (req, res) => {
-  Ordenador.destroy({
-    where: {},
-    truncate: false
-  })
-    .then(nums => {
-      res.send({ message: `${nums} Tutorials were deleted successfully!` });
-    })
-    .catch(err => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while removing all tutorials."
       });
     });
 };

@@ -30,7 +30,6 @@ app.get("/", (req, res) => {
 });
 
 require("./app/routes/herra.routes")(app);
-require("./app/routes/turorial.routes")(app);
 require("./app/routes/ordenador.routes")(app);
 require("./app/routes/aulas.routes")(app);
 
