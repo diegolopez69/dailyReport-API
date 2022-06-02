@@ -22,5 +22,6 @@ db.sequelize = sequelize;
 db.tutorials = require("./tutorial.model.js")(sequelize, Sequelize);
 db.tb_ordenadors = require("./ordenador.model.js")(sequelize, Sequelize);
 db.tb_aulas2 = require("./aula.model.js")(sequelize, Sequelize);
+db.tb_herramientas3 = require("./herramientas.model.js")(sequelize, Sequelize);
 
 module.exports = db;
