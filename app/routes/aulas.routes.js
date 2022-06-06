@@ -16,7 +16,7 @@ module.exports = app => {
   router.put("/:id", Aula.update);
 
   // Delete a Aula with id
-  router.delete("/:id", Aula.delete);
+  // router.delete("/:id", Aula.delete);
 
   app.use('/api/aula', router);
 };
