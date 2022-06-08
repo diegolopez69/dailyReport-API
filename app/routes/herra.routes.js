@@ -16,7 +16,7 @@ module.exports = app => {
   router.put("/:id", herras.update);
 
   // Delete a Herra with id
-  // router.delete("/:id", herras.delete);
+  router.delete("/:id", herras.delete);
   
   app.use('/api/herras', router);
 };

@@ -12,7 +12,7 @@ exports.create = (req, res) => {
     });
     return;
   }
-  console.log("Pasa la validación------------------------------------>");
+  
   // Create a Ordenador
   const ordenador = {
     Nombre: req.body.Nombre
@@ -101,7 +101,7 @@ exports.update = (req, res) => {
 // Delete a Ordenador with the specified id in the request
 exports.delete = (req, res) => {
   const id = req.params.id;
-
+  console.log("Este es el log para ver si entra", id);
   Ordenador.destroy({
     where: { id: id }
   })

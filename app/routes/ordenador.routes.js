@@ -16,10 +16,7 @@ module.exports = app => {
   router.put("/:id", Ordenador.update);
 
   // Delete a Ordenador with id
-  // router.delete("/:id", Ordenador.delete);
-
-  // Delete all Ordenadores
-  // router.delete("/", Ordenador.deleteAll);
+  router.delete("/:id", Ordenador.delete);
 
   app.use('/api/ordenador', router);
 };

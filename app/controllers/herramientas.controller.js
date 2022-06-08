@@ -98,6 +98,7 @@ exports.update = (req, res) => {
 // Delete a Herramienta with the specified id in the request
 exports.delete = (req, res) => {
   const id = req.params.id;
+  console.log("Entra en el método de eliminar---------------------------------------", id);
 
   Herramienta.destroy({
     where: { id: id }
