@@ -118,10 +118,6 @@ paths:
 
       - "application/json"
       parameters:
-      - name: "api_key"
-        in: "header"
-        required: false
-        type: "string"
       - name: "herramientaId"
         in: "path"
         description: "Herramienta id to delete"
@@ -144,16 +140,19 @@ paths:
 
       - "application/json"
       parameters:
-      - name: "api_key"
-        in: "header"
-        required: false
-        type: "string"
       - name: "herramientaId"
         in: "path"
         description: "Update Herramienta id"
         required: true
         type: "integer"
         format: "int64"
+      - in: "body"
+        name: "body"
+        description: "Updated user object"
+        required: true
+        schema:
+          $ref: "#/definitions/Herramienta"
+      
       responses:
         "400":
           description: "Invalid ID supplied"
