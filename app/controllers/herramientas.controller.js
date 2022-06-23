@@ -74,10 +74,11 @@ exports.findOne = (req, res) => {
 exports.update = (req, res) => {
   const id = req.params.id;
   console.log("Acá imprime el params ------------- ", req.params);
+  
   console.log("Acá imprime el body ------------- ", req.body);
   Herramienta.update(req.body, {
     
-    where: { id: id }
+    where: { Herramienta_id: id }
   })
     .then(num => {
       if (num == 1) {
@@ -92,7 +93,9 @@ exports.update = (req, res) => {
     })
     .catch(err => {
       res.status(500).send({
-        message: "Error updating Herramienta with id=" + id
+//        message: "Error updating Herramienta with id=" + id
+        message: err
+        
       });
     });
 };
@@ -102,7 +105,7 @@ exports.delete = (req, res) => {
   const id = req.params.id;
 
   Herramienta.destroy({
-    where: { id: id }
+    where: { Herramienta_id: id }
   })
     .then(num => {
       if (num == 1) {
