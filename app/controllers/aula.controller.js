@@ -11,13 +11,12 @@ exports.create = (req, res) => {
     });
     return;
   }
-  console.log("Pasa la validación------------");
+  
   // Create a Aula
   const aula = {
     Planta: req.body.Planta,
     Numero: req.body.Numero
   };
-  console.log("Llena aula------------");
 
   // Save Aula in the database
   Aula.create(aula)
