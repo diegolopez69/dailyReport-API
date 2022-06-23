@@ -159,11 +159,11 @@ paths:
         "404":
           description: "Herramienta not found"        
   
-  /store/inventory:
+  /aula:
     get:
       tags:
-      - "store"
-      summary: "Returns pet inventories by status"
+      - "aula"
+      summary: "Returns the aulas"
       description: "Returns a map of status codes to quantities"
       operationId: "getInventory"
       produces:
@@ -179,20 +179,20 @@ paths:
               format: "int32"
       security:
       - api_key: []
-  /store/order:
+
     post:
       tags:
-      - "store"
-      summary: "Place an order for a pet"
+      - "aula"
+      summary: "Create an aula"
       description: ""
-      operationId: "placeOrder"
+      operationId: "placeAula"
       produces:
-      - "application/xml"
+
       - "application/json"
       parameters:
       - in: "body"
         name: "body"
-        description: "order placed for purchasing the pet"
+        description: "You created an aula"
         required: true
         schema:
           $ref: "#/definitions/Order"
@@ -203,20 +203,20 @@ paths:
             $ref: "#/definitions/Order"
         "400":
           description: "Invalid Order"
-  /store/order/{orderId}:
+
+  /aula{aulaId}:
     get:
       tags:
-      - "store"
-      summary: "Find purchase order by ID"
-      description: "For valid response try integer IDs with value >= 1 and <= 10.         Other values will generated exceptions"
-      operationId: "getOrderById"
+      - "aula"
+      summary: "Find an aula by ID"
+      description: "Find one aula by its Id"
+      operationId: "getAulaById"
       produces:
-      - "application/xml"
       - "application/json"
       parameters:
-      - name: "orderId"
+      - name: "aulaId"
         in: "path"
-        description: "ID of pet that needs to be fetched"
+        description: "ID of aula that needs to be fetched"
         required: true
         type: "integer"
         maximum: 10.0
@@ -226,33 +226,62 @@ paths:
         "200":
           description: "successful operation"
           schema:
-            $ref: "#/definitions/Order"
+            $ref: "#/definitions/Aula"
         "400":
           description: "Invalid ID supplied"
         "404":
           description: "Order not found"
+  
     delete:
       tags:
-      - "store"
-      summary: "Delete purchase order by ID"
-      description: "For valid response try integer IDs with positive integer value.         Negative or non-integer values will generate API errors"
-      operationId: "deleteOrder"
+      - "aula"
+      summary: "Deletes an aula"
+      description: "Deletes one aula by its Id"
+      operationId: "deleteAula"
       produces:
-      - "application/xml"
+
       - "application/json"
       parameters:
-      - name: "orderId"
+      - name: "aulaId"
         in: "path"
-        description: "ID of the order that needs to be deleted"
+        description: "aula id to delete"
         required: true
         type: "integer"
-        minimum: 1.0
         format: "int64"
       responses:
         "400":
           description: "Invalid ID supplied"
         "404":
-          description: "Order not found"
+          description: "Aula not found"
+    put:
+      tags:
+      - "aula"
+      summary: "Updates aula by Id"
+      description: ""
+      operationId: "putAula"
+      produces:
+
+      - "application/json"
+      parameters:
+      - name: "aulaId"
+        in: "path"
+        description: "Update Aula id"
+        required: true
+        type: "integer"
+        format: "int64"
+      - in: "body"
+        name: "body"
+        description: "Updated user object"
+        required: true
+        schema:
+          $ref: "#/definitions/Herramienta"
+      
+      responses:
+        "400":
+          description: "Invalid ID supplied"
+        "404":
+          description: "Herramienta not found"        
+            
   /user:
     post:
       tags:
@@ -546,7 +575,7 @@ definitions:
     xml:
       name: "Herramienta"
       
-  Pet:
+  Aula:
     type: "object"
     required:
     - "name"
@@ -559,7 +588,7 @@ definitions:
         $ref: "#/definitions/Category"
       name:
         type: "string"
-        example: "doggie"
+        example: "Holis"
       photoUrls:
         type: "array"
         xml:
@@ -582,7 +611,7 @@ definitions:
         - "pending"
         - "sold"
     xml:
-      name: "Pet"
+      name: "Aula"
       
       
       
