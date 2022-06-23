@@ -4,7 +4,8 @@ const Sequelize = require("sequelize");
 const sequelize = new Sequelize(dbConfig.DB, dbConfig.USER, dbConfig.PASSWORD, {
   host: dbConfig.HOST,
   dialect: dbConfig.dialect,
-  operatorsAliases: false,
+  operatorsAliases: 0,
+  logging: 0,
 
   pool: {
     max: dbConfig.pool.max,
@@ -29,6 +30,6 @@ db.tb_aula_herramienta_ordenador1.associate(db)
 
 
 
-db.tb_ordenador_aulas = require("./ordenador_aulas.model.js")(sequelize, Sequelize);
+//db.tb_ordenador_aulas = require("./ordenador_aulas.model.js")(sequelize, Sequelize);
 
 module.exports = db;

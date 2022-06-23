@@ -4,7 +4,6 @@ const Op = db.Sequelize.Op;
 
 // Create and Save a new Ordenador
 exports.create = (req, res) => {
-  console.log("body", req.body.Nombre);
   // Validate request
   if (!req.body) {
     res.status(400).send({
@@ -17,8 +16,6 @@ exports.create = (req, res) => {
   const ordenador = {
     Nombre: req.body.Nombre
   };
-
-  console.log("Ordenador", ordenador);
 
 
   
