@@ -17,10 +17,10 @@ tags:
   externalDocs:
 
     url: "http://swagger.io"
-- name: "store"
-  description: "Access to Petstore orders"
-- name: "user"
-  description: "Operations about user"
+- name: "aula"
+  description: "Access to the information about the aulas"
+- name: "ordenador"
+  description: "Operations about Information about the ordenadores"
   externalDocs:
     description: "Find out more about our store"
     url: "http://swagger.io"
@@ -282,111 +282,29 @@ paths:
         "404":
           description: "Herramienta not found"        
             
-  /user:
+  /ordenador:
     post:
       tags:
-      - "user"
-      summary: "Create user"
+      - "ordenador"
+      summary: "Create an ordenador"
       description: "This can only be done by the logged in user."
-      operationId: "createUser"
+      operationId: "createOrdenador"
       produces:
-      - "application/xml"
       - "application/json"
       parameters:
       - in: "body"
         name: "body"
-        description: "Created user object"
+        description: "Created ordenador object"
         required: true
         schema:
-          $ref: "#/definitions/User"
+          $ref: "#/definitions/Ordenador"
       responses:
         default:
           description: "successful operation"
-  /user/createWithArray:
-    post:
-      tags:
-      - "user"
-      summary: "Creates list of users with given input array"
-      description: ""
-      operationId: "createUsersWithArrayInput"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        description: "List of user object"
-        required: true
-        schema:
-          type: "array"
-          items:
-            $ref: "#/definitions/User"
-      responses:
-        default:
-          description: "successful operation"
-  /user/createWithList:
-    post:
-      tags:
-      - "user"
-      summary: "Creates list of users with given input array"
-      description: ""
-      operationId: "createUsersWithListInput"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        description: "List of user object"
-        required: true
-        schema:
-          type: "array"
-          items:
-            $ref: "#/definitions/User"
-      responses:
-        default:
-          description: "successful operation"
-  /user/login:
+
     get:
       tags:
-      - "user"
-      summary: "Logs user into the system"
-      description: ""
-      operationId: "loginUser"
-      produces:
-      - "application/xml"
-      - "application/json"
-      parameters:
-      - name: "username"
-        in: "query"
-        description: "The user name for login"
-        required: true
-        type: "string"
-      - name: "password"
-        in: "query"
-        description: "The password for login in clear text"
-        required: true
-        type: "string"
-      responses:
-        "200":
-          description: "successful operation"
-          schema:
-            type: "string"
-          headers:
-            X-Rate-Limit:
-              type: "integer"
-              format: "int32"
-              description: "calls per hour allowed by the user"
-            X-Expires-After:
-              type: "string"
-              format: "date-time"
-              description: "date in UTC when token expires"
-        "400":
-          description: "Invalid username/password supplied"
-  /user/logout:
-    get:
-      tags:
-      - "user"
+      - "ordenador"
       summary: "Logs out current logged in user session"
       description: ""
       operationId: "logoutUser"
@@ -397,44 +315,44 @@ paths:
       responses:
         default:
           description: "successful operation"
-  /user/{username}:
+
+  /ordenador{ordenadorId}:
     get:
       tags:
-      - "user"
-      summary: "Get user by user name"
+      - "ordenador"
+      summary: "Get ordenador by Id"
       description: ""
-      operationId: "getUserByName"
+      operationId: "getOrdenadorById"
       produces:
-      - "application/xml"
       - "application/json"
       parameters:
-      - name: "username"
+      - name: "ordenadorId"
         in: "path"
-        description: "The name that needs to be fetched. Use user1 for testing. "
+        description: "The Id for the ordenador that needs to be fetched"
         required: true
         type: "string"
       responses:
         "200":
           description: "successful operation"
           schema:
-            $ref: "#/definitions/User"
+            $ref: "#/definitions/Ordenador"
         "400":
-          description: "Invalid username supplied"
+          description: "Invalid Id supplied"
         "404":
-          description: "User not found"
+          description: "Ordenador not found"
+
     put:
       tags:
-      - "user"
-      summary: "Updated user"
-      description: "This can only be done by the logged in user."
-      operationId: "updateUser"
+      - "ordenador"
+      summary: "Updated ordenador"
+      description: "Update one ordenador by Id"
+      operationId: "updateOrdenador"
       produces:
-      - "application/xml"
       - "application/json"
       parameters:
-      - name: "username"
+      - name: "ordenadorId"
         in: "path"
-        description: "name that need to be updated"
+        description: "ordenador that needs to be updated"
         required: true
         type: "string"
       - in: "body"
@@ -442,7 +360,7 @@ paths:
         description: "Updated user object"
         required: true
         schema:
-          $ref: "#/definitions/User"
+          $ref: "#/definitions/Ordenador"
       responses:
         "400":
           description: "Invalid user supplied"
@@ -450,24 +368,23 @@ paths:
           description: "User not found"
     delete:
       tags:
-      - "user"
-      summary: "Delete user"
-      description: "This can only be done by the logged in user."
-      operationId: "deleteUser"
+      - "ordenador"
+      summary: "Delete ordenador"
+      description: "Delete one ordenador by its Id"
+      operationId: "deleteOrdenador"
       produces:
-      - "application/xml"
       - "application/json"
       parameters:
-      - name: "username"
+      - name: "ordenadorId"
         in: "path"
-        description: "The name that needs to be deleted"
+        description: "The ordenador that needs to be deleted"
         required: true
         type: "string"
       responses:
         "400":
-          description: "Invalid username supplied"
+          description: "Invalid id supplied"
         "404":
-          description: "User not found"
+          description: "Ordenador not found"
 securityDefinitions:
   petstore_auth:
     type: "oauth2"
@@ -542,6 +459,32 @@ definitions:
         description: "User Status"
     xml:
       name: "User"
+      
+  Ordenador:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        format: "int64"
+      username:
+        type: "string"
+      firstName:
+        type: "string"
+      lastName:
+        type: "string"
+      email:
+        type: "string"
+      password:
+        type: "string"
+      phone:
+        type: "string"
+      userStatus:
+        type: "integer"
+        format: "int32"
+        description: "Ordenador Status"
+    xml:
+      name: "Ordenador"
+      
   Tag:
     type: "object"
     properties:
