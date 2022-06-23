@@ -29,5 +29,6 @@ db.tb_aula_herramienta_ordenador1.associate(db)
 
 
 
+db.tb_ordenador_aulas = require("./ordenador_aulas.model.js")(sequelize, Sequelize);
 
 module.exports = db;

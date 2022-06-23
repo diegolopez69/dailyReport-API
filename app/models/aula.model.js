@@ -15,3 +15,4 @@ module.exports = (sequelize, Sequelize) => {
 
   return tb_aulas2;
 };
+ 
