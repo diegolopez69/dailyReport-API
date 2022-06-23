@@ -73,8 +73,10 @@ exports.findOne = (req, res) => {
 // Update a Herramienta by the id in the request
 exports.update = (req, res) => {
   const id = req.params.id;
-
+  console.log("Acá imprime el params ------------- ", req.params);
+  console.log("Acá imprime el body ------------- ", req.body);
   Herramienta.update(req.body, {
+    
     where: { id: id }
   })
     .then(num => {
