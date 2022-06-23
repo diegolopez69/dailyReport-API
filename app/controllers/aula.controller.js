@@ -74,7 +74,7 @@ exports.update = (req, res) => {
   const id = req.params.id;
 
   Aula.update(req.body, {
-    where: { id: id }
+    where: { Aula_id: id }
   })
     .then(num => {
       if (num == 1) {
@@ -99,7 +99,7 @@ exports.delete = (req, res) => {
   const id = req.params.id;
 
   Aula.destroy({
-    where: { id: id }
+    where: { Aula_id: id }
   })
     .then(num => {
       if (num == 1) {

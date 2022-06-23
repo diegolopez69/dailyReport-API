@@ -75,7 +75,7 @@ exports.update = (req, res) => {
   const id = req.params.id;
 
   Ordenador.update(req.body, {
-    where: { id: id }
+    where: { Ordenador_id: id }
   })
     .then(num => {
       if (num == 1) {
@@ -100,7 +100,7 @@ exports.delete = (req, res) => {
   const id = req.params.id;
   
   Ordenador.destroy({
-    where: { id: id }
+    where: { Ordenador_id: id }
   })
     .then(num => {
       if (num == 1) {
