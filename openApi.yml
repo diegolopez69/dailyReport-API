@@ -24,6 +24,8 @@ tags:
   externalDocs:
     description: "Find out more about our store"
     url: "http://swagger.io"
+- name: "ordenadorAulas"
+  description: "Access to the information about the relation ordenador y aulas"
 schemes:
 
 - "http"
@@ -287,7 +289,7 @@ paths:
       tags:
       - "ordenador"
       summary: "Create an ordenador"
-      description: "This can only be done by the logged in user."
+      description: "This creates another ordenador"
       operationId: "createOrdenador"
       produces:
       - "application/json"
@@ -305,11 +307,10 @@ paths:
     get:
       tags:
       - "ordenador"
-      summary: "Logs out current logged in user session"
+      summary: "gets the info about an ordenador"
       description: ""
-      operationId: "logoutUser"
+      operationId: "getOrdenador"
       produces:
-      - "application/xml"
       - "application/json"
       parameters: []
       responses:
@@ -357,7 +358,7 @@ paths:
         type: "string"
       - in: "body"
         name: "body"
-        description: "Updated user object"
+        description: "Updated ordenador object"
         required: true
         schema:
           $ref: "#/definitions/Ordenador"
@@ -365,7 +366,7 @@ paths:
         "400":
           description: "Invalid user supplied"
         "404":
-          description: "User not found"
+          description: "Ordenador not found"
     delete:
       tags:
       - "ordenador"
@@ -385,6 +386,107 @@ paths:
           description: "Invalid id supplied"
         "404":
           description: "Ordenador not found"
+  /ordenadorAulas:
+    post:
+      tags:
+      - "ordenadorAulas"
+      summary: "Create an ordenador/aula relation"
+      description: "Create the relations betweehn the aulas and the ordenadores"
+      operationId: "createOrdenadorAulas"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Created ordenador/Aulas object"
+        required: true
+        schema:
+          $ref: "#/definitions/OrdenadorAulas"
+      responses:
+        default:
+          description: "successful operation"
+    get:
+      tags:
+      - "ordenadorAulas"
+      summary: "Logs out current logged in user session"
+      description: ""
+      operationId: "getOrdenadorAulas"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        default:
+          description: "successful operation"
+
+  /ordenadorAulas{ordenadorAulasId}:
+    get:
+      tags:
+      - "ordenadorAulas"
+      summary: "Get ordenador/Aulas by Id"
+      description: ""
+      operationId: "getOrdenadorAulasById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "ordenadorAulasId"
+        in: "path"
+        description: "The Id for the ordenador/aulas that needs to be fetched"
+        required: true
+        type: "string"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/OrdenadorAulas"
+        "400":
+          description: "Invalid Id supplied"
+        "404":
+          description: "Ordenador not found"
+
+    put:
+      tags:
+      - "ordenadorAulas"
+      summary: "Updated ordenador"
+      description: "Update one ordenador by Id"
+      operationId: "updateOrdenadorAulas"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "ordenadorAulasId"
+        in: "path"
+        description: "ordenador that needs to be updated"
+        required: true
+        type: "string"
+      - in: "body"
+        name: "body"
+        description: "Updated user object"
+        required: true
+        schema:
+          $ref: "#/definitions/Ordenador"
+      responses:
+        "400":
+          description: "Invalid user supplied"
+        "404":
+          description: "User not found"
+    delete:
+      tags:
+      - "ordenadorAulas"
+      summary: "Delete ordenador"
+      description: "Delete one ordenador by its Id"
+      operationId: "deleteOrdenadorAulas"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "ordenadorAulasId"
+        in: "path"
+        description: "The ordenador that needs to be deleted"
+        required: true
+        type: "string"
+      responses:
+        "400":
+          description: "Invalid id supplied"
+        "404":
+          description: "Ordenador not found"          
 securityDefinitions:
   petstore_auth:
     type: "oauth2"
@@ -435,7 +537,7 @@ definitions:
         type: "string"
     xml:
       name: "Category"
-  User:
+  OrdenadorAulas:
     type: "object"
     properties:
       id:
@@ -456,9 +558,9 @@ definitions:
       userStatus:
         type: "integer"
         format: "int32"
-        description: "User Status"
+        description: "OrdenadorAulas Status"
     xml:
-      name: "User"
+      name: "Ordenador/Aulas"
       
   Ordenador:
     type: "object"
