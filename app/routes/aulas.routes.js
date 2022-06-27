@@ -1,22 +1,22 @@
 module.exports = app => {
-  const Aula = require("../controllers/aula.controller.js");
+  const Room = require("../controllers/aula.controller.js");
 
   var router = require("express").Router();
 
-  // Create a new Aula
-  router.post("/", Aula.create);
+  // Create a new Room
+  router.post("/", Room.create);
 
   // Retrieve all Aulas
-  router.get("/", Aula.findAll);
+  router.get("/", Room.findAll);
 
-  // Retrieve a single Aula with id
-  router.get("/:id", Aula.findOne);
+  // Retrieve a single Room with id
+  router.get("/:id", Room.findOne);
 
-  // Update a Aula with id
-  router.put("/:id", Aula.update);
+  // Update a Room with id
+  router.put("/:id", Room.update);
 
-  // Delete a Aula with id
-  router.delete("/:id", Aula.delete);
+  // Delete a Room with id
+  router.delete("/:id", Room.delete);
 
-  app.use('/api/aula', router);
+  app.use('/api/room', router);
 };

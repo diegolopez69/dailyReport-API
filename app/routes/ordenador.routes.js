@@ -1,22 +1,22 @@
 module.exports = app => {
-  const Ordenador = require("../controllers/ordenador.controller.js");
+  const Computer = require("../controllers/ordenador.controller.js");
 
   var router = require("express").Router();
 
-  // Create a new Ordenador
-  router.post("/", Ordenador.create);
+  // Create a new Computer
+  router.post("/", Computer.create);
 
   // Retrieve all Ordenadores
-  router.get("/", Ordenador.findAll);
+  router.get("/", Computer.findAll);
 
-  // Retrieve a single Ordenador with id
-  router.get("/:id", Ordenador.findOne);
+  // Retrieve a single Computer with id
+  router.get("/:id", Computer.findOne);
 
-  // Update a Ordenador with id
-  router.put("/:id", Ordenador.update);
+  // Update a Computer with id
+  router.put("/:id", Computer.update);
 
-  // Delete a Ordenador with id
-  router.delete("/:id", Ordenador.delete);
+  // Delete a Computer with id
+  router.delete("/:id", Computer.delete);
 
-  app.use('/api/ordenador', router);
+  app.use('/api/computer', router);
 };

@@ -1,22 +1,22 @@
 module.exports = app => {
-  const herras = require("../controllers/herramientas.controller.js");
+  const Tool = require("../controllers/herramientas.controller.js");
 
   var router = require("express").Router();
 
   // Create a new Herra
-  router.post("/", herras.create);
+  router.post("/", Tool.create);
 
   // Retrieve all Herras
-  router.get("/", herras.findAll);
+  router.get("/", Tool.findAll);
 
   // Retrieve a single Herra with id
-  router.get("/:id", herras.findOne);
+  router.get("/:id", Tool.findOne);
 
   // Update a Herra with id
-  router.put("/:id", herras.update);
+  router.put("/:id", Tool.update);
 
   // Delete a Herra with id
-  router.delete("/:id", herras.delete);
+  router.delete("/:id", Tool.delete);
   
-  app.use('/api/herras', router);
+  app.use('/api/tool', router);
 };
