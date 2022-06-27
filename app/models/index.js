@@ -22,7 +22,7 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 db.tb_ordenadors = require("./ordenador.model.js")(sequelize, Sequelize);
-db.tb_aulas2 = require("./aula.model.js")(sequelize, Sequelize);
+db.tb_aulas = require("./aula.model.js")(sequelize, Sequelize);
 db.tb_herramientas3 = require("./herramientas.model.js")(sequelize, Sequelize);
 db.tb_aula_herramienta_ordenador1 = require("./aho.model.js")(sequelize, Sequelize);
 db.tb_aula_herramienta_ordenador1.associate(db)

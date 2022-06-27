@@ -1,5 +1,5 @@
 const db = require("../models");
-const Aula = db.tb_aulas2;
+const Aula = db.tb_aulas;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Aula

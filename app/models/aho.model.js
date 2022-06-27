@@ -11,7 +11,7 @@ module.exports = (sequelize, Sequelize) => {
         }
       });
       tb_aula_herramienta_ordenador.associate = function (models) {
-        tb_aula_herramienta_ordenador.belongsTo(models.tb_aulas2, {
+        tb_aula_herramienta_ordenador.belongsTo(models.tb_aulas, {
             foreignKey: 'Aula_id'
         }),
         tb_aula_herramienta_ordenador.belongsTo(models.tb_herramientas3, {
