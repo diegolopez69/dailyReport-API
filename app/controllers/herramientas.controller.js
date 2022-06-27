@@ -1,5 +1,5 @@
 const db = require("../models");
-const Herramienta = db.tb_herramientas3;
+const Herramienta = db.tb_tools3;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Herramienta

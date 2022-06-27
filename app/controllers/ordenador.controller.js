@@ -1,5 +1,5 @@
 const db = require("../models");
-const Ordenador = db.tb_ordenadors;
+const Ordenador = db.tb_computers;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Ordenador

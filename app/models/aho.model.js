@@ -11,13 +11,13 @@ module.exports = (sequelize, Sequelize) => {
         }
       });
       tb_aula_herramienta_ordenador.associate = function (models) {
-        tb_aula_herramienta_ordenador.belongsTo(models.tb_aulas, {
+        tb_aula_herramienta_ordenador.belongsTo(models.tb_classrooms, {
             foreignKey: 'Aula_id'
         }),
-        tb_aula_herramienta_ordenador.belongsTo(models.tb_herramientas3, {
+        tb_aula_herramienta_ordenador.belongsTo(models.tb_tools3, {
           foreignKey: 'Herramienta_id'
         }),
-        tb_aula_herramienta_ordenador.belongsTo(models.tb_ordenadors, {
+        tb_aula_herramienta_ordenador.belongsTo(models.tb_computers, {
           foreignKey: 'Ordenador_id',
           as: "ordenador"
         })
@@ -26,4 +26,6 @@ module.exports = (sequelize, Sequelize) => {
 
     return tb_aula_herramienta_ordenador;
   };
+  
+
   

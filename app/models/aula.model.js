@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-  const tb_aulas = sequelize.define("tb_aulas", {
+  const tb_classrooms = sequelize.define("tb_classrooms", {
     Aula_id: {
       type:Sequelize.INTEGER,
       primaryKey: true,
@@ -13,6 +13,6 @@ module.exports = (sequelize, Sequelize) => {
     }
   });
 
-  return tb_aulas;
+  return tb_classrooms;
 };
  
