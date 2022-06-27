@@ -1,5 +1,5 @@
 module.exports = (sequelize, Sequelize) => {
-  const tb_herramientas3 = sequelize.define("tb_herramientas3", {
+  const tb_herramientas = sequelize.define("tb_herramientas", {
     Herramienta_id: {
       type:Sequelize.INTEGER,
       primaryKey: true,
@@ -13,5 +13,5 @@ module.exports = (sequelize, Sequelize) => {
     }
   });
 
-  return tb_herramientas3;
+  return tb_herramientas;
 };
