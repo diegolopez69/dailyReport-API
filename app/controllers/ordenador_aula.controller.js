@@ -14,8 +14,9 @@ exports.create = (req, res) => {
   
   // Create a Ordenador_aula
   const ordenador_aula = {
-    Tipo: req.body.Tipo,
-    Nombre: req.body.Nombre
+    Aula_id: req.body.Aula_id,
+    Ordenador_id: req.body.Ordenador_id,
+    Herramienta_id: req.body.Herramienta_id,
   };
   
 

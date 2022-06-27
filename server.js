@@ -29,6 +29,7 @@ app.get("/", (req, res) => {
 require("./app/routes/herra.routes")(app);
 require("./app/routes/ordenador.routes")(app);
 require("./app/routes/aulas.routes")(app);
+require("./app/routes/ordenador_aulas.routes")(app);
 
 
 
