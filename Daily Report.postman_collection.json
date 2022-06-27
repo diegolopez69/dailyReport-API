@@ -10,35 +10,6 @@
 			"name": "Ordenador",
 			"item": [
 				{
-					"name": "Get all ordenadores",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{local}}api/ordenador",
-							"host": [
-								"{{local}}api"
-							],
-							"path": [
-								"ordenador"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Create a new ordenador",
 					"request": {
 						"method": "POST",
@@ -65,18 +36,29 @@
 					"response": []
 				},
 				{
-					"name": "Delete by Id",
+					"name": "Get all ordenadores",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
 					"request": {
-						"method": "DELETE",
+						"method": "GET",
 						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
 						"url": {
-							"raw": "{{local}}api/ordenador/1",
+							"raw": "{{local}}api/ordenador",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"ordenador",
-								"1"
+								"ordenador"
 							]
 						}
 					},
@@ -108,12 +90,221 @@
 						}
 					},
 					"response": []
+				},
+				{
+					"name": "Get ordenadores by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/ordenador/2",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"ordenador",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}api/ordenador/1",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"ordenador",
+								"1"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OrdenadorAulas",
+			"item": [
+				{
+					"name": "Create a new ordenador",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"Aula_id\": 1,\n        \"Ordenador_id\": 1,\n        \"Herramienta_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/ordenador_aula",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"ordenador_aula"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all ordenadores",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/ordenador_aula",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"ordenador_aula"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update an ordenador",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"Aula_id\": 2,\n        \"Ordenador_id\": 2,\n        \"Herramienta_id\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/ordenador_aula/8",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"ordenador_aula",
+								"8"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ordenadores-aula by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/ordenador_aula/2",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"ordenador_aula",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}api/ordenador_aula/2",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"ordenador_aula",
+								"2"
+							]
+						}
+					},
+					"response": []
 				}
 			]
 		},
 		{
 			"name": "Aulas",
 			"item": [
+				{
+					"name": "Create a new aulas",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"Planta\": 2,\n        \"Numero\": 2\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/aula",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"aula"
+							]
+						}
+					},
+					"response": []
+				},
 				{
 					"name": "Get all aulas",
 					"protocolProfileBehavior": {
@@ -144,13 +335,43 @@
 					"response": []
 				},
 				{
-					"name": "Create a new aulas",
+					"name": "Update an aula",
 					"request": {
-						"method": "POST",
+						"method": "PUT",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Planta\": 2,\n        \"Numero\": 2\n}",
+							"raw": "{\n        \"Planta\": 3,\n        \"Numero\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/aula/2",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"aula",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get aula by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -186,15 +407,20 @@
 						}
 					},
 					"response": []
-				},
+				}
+			]
+		},
+		{
+			"name": "Herramientas",
+			"item": [
 				{
-					"name": "Update an aula",
+					"name": "Create a new herramientas",
 					"request": {
-						"method": "PUT",
+						"method": "POST",
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Planta\": 2,\n        \"Numero\": 1\n}",
+							"raw": "{\n        \"Tipo\": \"Hardware\",\n        \"Nombre\": \"HDMI\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -202,23 +428,17 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/aula/1",
+							"raw": "{{local}}api/herras",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"aula",
-								"1"
+								"herras"
 							]
 						}
 					},
 					"response": []
-				}
-			]
-		},
-		{
-			"name": "Herramientas",
-			"item": [
+				},
 				{
 					"name": "Get all herramientas",
 					"protocolProfileBehavior": {
@@ -249,50 +469,6 @@
 					"response": []
 				},
 				{
-					"name": "Create a new herramientas",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n        \"Tipo\": \"Hardware\",\n        \"Nombre\": \"HDMI\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{local}}api/herras",
-							"host": [
-								"{{local}}api"
-							],
-							"path": [
-								"herras"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete by Id a herramienta",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{local}}api/herras/1",
-							"host": [
-								"{{local}}api"
-							],
-							"path": [
-								"herras",
-								"1"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Update a herramienta",
 					"request": {
 						"method": "PUT",
@@ -307,13 +483,61 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/herras/1",
+							"raw": "{{local}}api/herras/3",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"herras",
-								"1"
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get herramienta by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/herras/3",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"herras",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by Id a herramienta",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "{{local}}api/herras/2",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"herras",
+								"2"
 							]
 						}
 					},
