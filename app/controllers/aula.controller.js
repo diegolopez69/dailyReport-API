@@ -1,8 +1,8 @@
 const db = require("../models");
-const Aula = db.tb_classrooms;
+const Classroom = db.tb_classrooms;
 const Op = db.Sequelize.Op;
 
-// Create and Save a new Aula
+// Create and Save a new Classroom
 exports.create = (req, res) => {
   // Validate request
   if (!req.body) {
@@ -12,109 +12,109 @@ exports.create = (req, res) => {
     return;
   }
   
-  // Create a Aula
-  const aula = {
+  // Create a Classroom
+  const classroom = {
     Planta: req.body.Planta,
     Numero: req.body.Numero
   };
 
-  // Save Aula in the database
-  Aula.create(aula)
+  // Save Classroom in the database
+  Classroom.create(classroom)
     .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Aula."
+          err.message || "Some error occurred while creating the Classroom."
       });
     });
 };
 
-// Retrieve all aulas from the database.
+// Retrieve all classrooms from the database.
 exports.findAll = (req, res) => {
   const Id = req.query.Id;
   var condition = Id ? { Id: { [Op.like]: `%${Id}%` } } : null;
 
-  Aula.findAll({ where: condition })
+  Classroom.findAll({ where: condition })
     .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving aulas."
+          err.message || "Some error occurred while retrieving classrooms."
       });
     });
 };
 
-// Find a single Aula with an id
+// Find a single Classroom with an id
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  Aula.findByPk(id)
+  Classroom.findByPk(id)
     .then(data => {
       if (data) {
         res.send(data);
       } else {
         res.status(404).send({
-          message: `Cannot find Aula with id=${id}.`
+          message: `Cannot find Classroom with id=${id}.`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Error retrieving Aula with id=" + id
+        message: "Error retrieving Classroom with id=" + id
       });
     });
 };
 
-// Update a Aula by the id in the request
+// Update a Classroom by the id in the request
 exports.update = (req, res) => {
   const id = req.params.id;
 
-  Aula.update(req.body, {
+  Classroom.update(req.body, {
     where: { Aula_id: id }
   })
     .then(num => {
       if (num == 1) {
         res.send({
-          message: "Aula was updated successfully."
+          message: "Classroom was updated successfully."
         });
       } else {
         res.send({
-          message: `Cannot update Aula with id=${id}. Maybe Aula was not found or req.body is empty!`
+          message: `Cannot update Classroom with id=${id}. Maybe Classroom was not found or req.body is empty!`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Error updating Aula with id=" + id
+        message: "Error updating Classroom with id=" + id
       });
     });
 };
 
-// Delete a Aula with the specified id in the request
+// Delete a Classroom with the specified id in the request
 exports.delete = (req, res) => {
   const id = req.params.id;
 
-  Aula.destroy({
+  Classroom.destroy({
     where: { Aula_id: id }
   })
     .then(num => {
       if (num == 1) {
         res.send({
-          message: "Aula was deleted successfully!"
+          message: "Classroom was deleted successfully!"
         });
       } else {
         res.send({
-          message: `Cannot delete Aula with id=${id}. Maybe Aula was not found!`
+          message: `Cannot delete Classroom with id=${id}. Maybe Classroom was not found!`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Could not delete Aula with id=" + id
+        message: "Could not delete Classroom with id=" + id
       });
     });
 };

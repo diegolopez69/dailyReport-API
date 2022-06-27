@@ -1,8 +1,8 @@
 const db = require("../models");
-const Ordenador = db.tb_computers;
+const Computer = db.tb_computers;
 const Op = db.Sequelize.Op;
 
-// Create and Save a new Ordenador
+// Create and Save a new Computer
 exports.create = (req, res) => {
   // Validate request
   if (!req.body) {
@@ -12,110 +12,110 @@ exports.create = (req, res) => {
     return;
   }
   
-  // Create a Ordenador
-  const ordenador = {
+  // Create a Computer
+  const computer = {
     Nombre: req.body.Nombre
   };
 
 
   
-  // Save Ordenador in the database
-  Ordenador.create(ordenador)
+  // Save Computer in the database
+  Computer.create(computer)
     .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Ordenador."
+          err.message || "Some error occurred while creating the Computer."
       });
     });
 };
 
-// Retrieve all ordenador from the database.
+// Retrieve all computer from the database.
 exports.findAll = (req, res) => {
   const Nombre = req.query.Nombre;
   var condition = Nombre ? { Nombre: { [Op.like]: `%${Nombre}%` } } : null;
 
-  Ordenador.findAll({ where: condition })
+  Computer.findAll({ where: condition })
     .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving ordenador."
+          err.message || "Some error occurred while retrieving computer."
       });
     });
 };
 
-// Find a single Ordenador with an id
+// Find a single Computer with an id
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  Ordenador.findByPk(id)
+  Computer.findByPk(id)
     .then(data => {
       if (data) {
         res.send(data);
       } else {
         res.status(404).send({
-          message: `Cannot find Ordenador with id=${id}.`
+          message: `Cannot find Computer with id=${id}.`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Error retrieving Ordenador with id=" + id
+        message: "Error retrieving Computer with id=" + id
       });
     });
 };
 
-// Update a Ordenador by the id in the request
+// Update a Computer by the id in the request
 exports.update = (req, res) => {
   const id = req.params.id;
 
-  Ordenador.update(req.body, {
+  Computer.update(req.body, {
     where: { Ordenador_id: id }
   })
     .then(num => {
       if (num == 1) {
         res.send({
-          message: "Ordenador was updated successfully."
+          message: "Computer was updated successfully."
         });
       } else {
         res.send({
-          message: `Cannot update Ordenador with id=${id}. Maybe Ordenador was not found or req.body is empty!`
+          message: `Cannot update Computer with id=${id}. Maybe Computer was not found or req.body is empty!`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Error updating Ordenador with id=" + id
+        message: "Error updating Computer with id=" + id
       });
     });
 };
 
-// Delete a Ordenador with the specified id in the request
+// Delete a Computer with the specified id in the request
 exports.delete = (req, res) => {
   const id = req.params.id;
   
-  Ordenador.destroy({
+  Computer.destroy({
     where: { Ordenador_id: id }
   })
     .then(num => {
       if (num == 1) {
         res.send({
-          message: "Ordenador was deleted successfully!"
+          message: "Computer was deleted successfully!"
         });
       } else {
         res.send({
-          message: `Cannot delete Ordenador with id=${id}. Maybe Ordenador was not found!`
+          message: `Cannot delete Computer with id=${id}. Maybe Computer was not found!`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Could not delete Ordenador with id=" + id
+        message: "Could not delete Computer with id=" + id
       });
     });
 };

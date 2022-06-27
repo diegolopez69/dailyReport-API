@@ -1,8 +1,8 @@
 const db = require("../models");
-const Herramienta = db.tb_tools3;
+const Tool = db.tb_tools3;
 const Op = db.Sequelize.Op;
 
-// Create and Save a new Herramienta
+// Create and Save a new Tool
 exports.create = (req, res) => {
   // Validate request
   if (!req.body) {
@@ -12,113 +12,113 @@ exports.create = (req, res) => {
     return;
   }
   
-  // Create a Herramienta
-  const herramienta = {
+  // Create a Tool
+  const tool = {
     Tipo: req.body.Tipo,
     Nombre: req.body.Nombre
   };
   
 
-  // Save Herramienta in the database
-  Herramienta.create(herramienta)
+  // Save Tool in the database
+  Tool.create(tool)
     .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while creating the Herramienta."
+          err.message || "Some error occurred while creating the Tool."
       });
     });
 };
 
-// Retrieve all herramientas from the database.
+// Retrieve all tools from the database.
 exports.findAll = (req, res) => {
   const Id = req.query.Id;
   var condition = Id ? { Id: { [Op.like]: `%${Id}%` } } : null;
 
-  Herramienta.findAll({ where: condition })
+  Tool.findAll({ where: condition })
     .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).send({
         message:
-          err.message || "Some error occurred while retrieving herramientas."
+          err.message || "Some error occurred while retrieving tools."
       });
     });
 };
 
-// Find a single Herramienta with an id
+// Find a single Tool with an id
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  Herramienta.findByPk(id)
+  Tool.findByPk(id)
     .then(data => {
       if (data) {
         res.send(data);
       } else {
         res.status(404).send({
-          message: `Cannot find Herramienta with id=${id}.`
+          message: `Cannot find Tool with id=${id}.`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Error retrieving Herramienta with id=" + id
+        message: "Error retrieving Tool with id=" + id
       });
     });
 };
 
-// Update a Herramienta by the id in the request
+// Update a Tool by the id in the request
 exports.update = (req, res) => {
   const id = req.params.id;
 
-  Herramienta.update(req.body, {
+  Tool.update(req.body, {
     
     where: { Herramienta_id: id }
   })
     .then(num => {
       if (num == 1) {
         res.send({
-          message: "Herramienta was updated successfully."
+          message: "Tool was updated successfully."
         });
       } else {
         res.send({
-          message: `Cannot update Herramienta with id=${id}. Maybe Herramienta was not found or req.body is empty!`
+          message: `Cannot update Tool with id=${id}. Maybe Tool was not found or req.body is empty!`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-//        message: "Error updating Herramienta with id=" + id
+//        message: "Error updating Tool with id=" + id
         message: err
         
       });
     });
 };
 
-// Delete a Herramienta with the specified id in the request
+// Delete a Tool with the specified id in the request
 exports.delete = (req, res) => {
   const id = req.params.id;
 
-  Herramienta.destroy({
+  Tool.destroy({
     where: { Herramienta_id: id }
   })
     .then(num => {
       if (num == 1) {
         res.send({
-          message: "Herramienta was deleted successfully!"
+          message: "Tool was deleted successfully!"
         });
       } else {
         res.send({
-          message: `Cannot delete Herramienta with id=${id}. Maybe Herramienta was not found!`
+          message: `Cannot delete Tool with id=${id}. Maybe Tool was not found!`
         });
       }
     })
     .catch(err => {
       res.status(500).send({
-        message: "Could not delete Herramienta with id=" + id
+        message: "Could not delete Tool with id=" + id
       });
     });
 };
