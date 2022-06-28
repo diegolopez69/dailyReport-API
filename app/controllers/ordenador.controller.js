@@ -6,8 +6,9 @@ const Op = db.Sequelize.Op;
 exports.create = (req, res) => {
   // Validate request
   if (!req.body) {
-    res.status(400).send({
-      message: "Content can not be empty!"
+    res.status(400).json({ 
+      status: 400,
+      message: 'Content can not be empty!' 
     });
     return;
   }
@@ -22,12 +23,15 @@ exports.create = (req, res) => {
   // Save Computer in the database
   Computer.create(computer)
     .then(data => {
-      res.send(data);
+      res.status(201).json({ 
+        status: 201,
+        message: 'Computer was created successfully!' 
+      });
     })
     .catch(err => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while creating the Computer."
+      res.status(500).json({ 
+        status: 500,
+        Err: err.message || 'Some error occurred while creating the Computer.' 
       });
     });
 };
@@ -42,9 +46,9 @@ exports.findAll = (req, res) => {
       res.send(data);
     })
     .catch(err => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving computer."
+      res.status(500).json({ 
+        status: 500,
+        Err: err.message || 'Some error occurred while retrieving Computers.' 
       });
     });
 };
@@ -58,13 +62,15 @@ exports.findOne = (req, res) => {
       if (data) {
         res.send(data);
       } else {
-        res.status(404).send({
+        res.status(404).json({ 
+          status: 404,
           message: `Cannot find Computer with id=${id}.`
         });
       }
     })
     .catch(err => {
-      res.status(500).send({
+      res.status(500).json({ 
+        status: 500,
         message: "Error retrieving Computer with id=" + id
       });
     });
@@ -79,17 +85,20 @@ exports.update = (req, res) => {
   })
     .then(num => {
       if (num == 1) {
-        res.send({
+        res.status(200).json({ 
+          status: 200,
           message: "Computer was updated successfully."
         });
       } else {
-        res.send({
+        res.status(400).json({ 
+          status: 400,
           message: `Cannot update Computer with id=${id}. Maybe Computer was not found or req.body is empty!`
         });
       }
     })
     .catch(err => {
-      res.status(500).send({
+      res.status(500).json({ 
+        status: 500,
         message: "Error updating Computer with id=" + id
       });
     });
@@ -104,17 +113,20 @@ exports.delete = (req, res) => {
   })
     .then(num => {
       if (num == 1) {
-        res.send({
+        res.status(200).json({ 
+          status: 200,
           message: "Computer was deleted successfully!"
         });
       } else {
-        res.send({
+        res.status(400).json({ 
+          status: 400,
           message: `Cannot delete Computer with id=${id}. Maybe Computer was not found!`
         });
       }
     })
     .catch(err => {
-      res.status(500).send({
+      res.status(500).json({ 
+        status: 500,
         message: "Could not delete Computer with id=" + id
       });
     });
