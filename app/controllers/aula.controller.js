@@ -6,8 +6,9 @@ const Op = db.Sequelize.Op;
 exports.create = (req, res) => {
   // Validate request
   if (!req.body) {
-    res.status(400).send({
-      message: "Content can not be empty!"
+    res.status(400).json({ 
+      status: 400,
+      message: 'Content can not be empty!' 
     });
     return;
   }
@@ -23,13 +24,13 @@ exports.create = (req, res) => {
     .then(data => {
       res.status(201).json({ 
         status: 201,
-        Message: 'Classroom was created successfully!' 
+        message: 'Classroom was created successfully!' 
       });
     })
     .catch(err => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while creating the Classroom."
+      res.status(500).json({ 
+        status: 500,
+        Err: err.message || 'Some error occurred while creating the Classroom.' 
       });
     });
 };
@@ -44,9 +45,9 @@ exports.findAll = (req, res) => {
       res.send(data);
     })
     .catch(err => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving classrooms."
+      res.status(500).json({ 
+        status: 500,
+        Err: err.message || 'Some error occurred while retrieving classrooms.' 
       });
     });
 };
@@ -60,13 +61,15 @@ exports.findOne = (req, res) => {
       if (data) {
         res.send(data);
       } else {
-        res.status(404).send({
+        res.status(404).json({ 
+          status: 404,
           message: `Cannot find Classroom with id=${id}.`
         });
       }
     })
     .catch(err => {
-      res.status(500).send({
+      res.status(500).json({ 
+        status: 500,
         message: "Error retrieving Classroom with id=" + id
       });
     });
@@ -81,17 +84,20 @@ exports.update = (req, res) => {
   })
     .then(num => {
       if (num == 1) {
-        res.send({
+        res.status(200).json({ 
+          status: 200,
           message: "Classroom was updated successfully."
         });
       } else {
-        res.send({
+        res.status(400).json({ 
+          status: 400,
           message: `Cannot update Classroom with id=${id}. Maybe Classroom was not found or req.body is empty!`
         });
       }
     })
     .catch(err => {
-      res.status(500).send({
+      res.status(500).json({ 
+        status: 500,
         message: "Error updating Classroom with id=" + id
       });
     });
@@ -106,17 +112,20 @@ exports.delete = (req, res) => {
   })
     .then(num => {
       if (num == 1) {
-        res.send({
+        res.status(200).json({ 
+          status: 200,
           message: "Classroom was deleted successfully!"
         });
       } else {
-        res.send({
+        res.status(400).json({ 
+          status: 400,
           message: `Cannot delete Classroom with id=${id}. Maybe Classroom was not found!`
         });
       }
     })
     .catch(err => {
-      res.status(500).send({
+      res.status(500).json({ 
+        status: 500,
         message: "Could not delete Classroom with id=" + id
       });
     });
