@@ -2,12 +2,6 @@ const db = require("../models");
 const Tool = db.tb_tools3;
 const Op = db.Sequelize.Op;
 
-
-//TODO Change where said Tool to Tool
-
-
-
-
 // Create and Save a new Tool
 exports.create = (req, res) => {
   // Validate request

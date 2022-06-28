@@ -1,7 +1,7 @@
 const db = require("../models");
 const Ordenador_aula = db.tb_aula_herramienta_ordenador1;
 const Tool = db.tb_tools3;
-const Classroom = db.tb_classrooms;
+const computer_classroom = db.tb_computer_classrooms;
 const Computer = db.tb_computers;
 const Op = db.Sequelize.Op;
 
@@ -9,8 +9,9 @@ const Op = db.Sequelize.Op;
 exports.create = (req, res) => {
   // Validate request
   if (!req.body) {
-    res.status(400).send({
-      message: "Content can not be empty!"
+    res.status(400).json({ 
+      status: 400,
+      message: 'Content can not be empty!' 
     });
     return;
   }
@@ -26,12 +27,15 @@ exports.create = (req, res) => {
   // Save Ordenador_aula in the database
   Ordenador_aula.create(ordenador_aula)
     .then(data => {
-      res.send(data);
+      res.status(201).json({ 
+        status: 201,
+        message: 'computer_classroom was created successfully!' 
+      });
     })
     .catch(err => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while creating the Ordenador_aula."
+      res.status(500).json({ 
+        status: 500,
+        Err: err.message || 'Some error occurred while creating the computer_classroom.' 
       });
     });
 };
@@ -51,9 +55,9 @@ exports.findAll = (req, res) => {
       res.send(data);
     })
     .catch(err => {
-      res.status(500).send({
-        message:
-          err.message || "Some error occurred while retrieving ordenador_aulas."
+      res.status(500).json({ 
+        status: 500,
+        Err: err.message || 'Some error occurred while retrieving computer_classrooms.' 
       });
     });
 };
@@ -67,14 +71,16 @@ exports.findOne = (req, res) => {
       if (data) {
         res.send(data);
       } else {
-        res.status(404).send({
-          message: `Cannot find Ordenador_aula with id=${id}.`
+        res.status(404).json({ 
+          status: 404,
+          message: `Cannot find computer_classroom with id=${id}.`
         });
       }
     })
     .catch(err => {
-      res.status(500).send({
-        message: "Error retrieving Ordenador_aula with id=" + id
+      res.status(500).json({ 
+        status: 500,
+        message: "Error retrieving computer_classroom with id=" + id
       });
     });
 };
@@ -88,18 +94,21 @@ exports.update = (req, res) => {
   })
     .then(num => {
       if (num == 1) {
-        res.send({
-          message: "Ordenador_aula was updated successfully."
+        res.status(200).json({ 
+          status: 200,
+          message: "computer_classroom was updated successfully."
         });
       } else {
-        res.send({
-          message: `Cannot update Ordenador_aula with id=${id}. Maybe Ordenador_aula was not found or req.body is empty!`
+        res.status(400).json({ 
+          status: 400,
+          message: `Cannot update computer_classroom with id=${id}. Maybe computer_classroom was not found or req.body is empty!`
         });
       }
     })
     .catch(err => {
-      res.status(500).send({
-        message: "Error updating Ordenador_aula with id=" + id
+      res.status(500).json({ 
+        status: 500,
+        message: "Error updating computer_classroom with id=" + id
       });
     });
 };
@@ -113,18 +122,21 @@ exports.delete = (req, res) => {
   })
     .then(num => {
       if (num == 1) {
-        res.send({
-          message: "Ordenador_aula was deleted successfully!"
+        res.status(200).json({ 
+          status: 200,
+          message: "computer_classroom was deleted successfully!"
         });
       } else {
-        res.send({
-          message: `Cannot delete Ordenador_aula with id=${id}. Maybe Ordenador_aula was not found!`
-        });
+        res.status(400).json({ 
+          status: 400,
+          message: `Cannot delete computer_classroom with id=${id}. Maybe computer_classroom was not found!`
+        })
       }
     })
     .catch(err => {
-      res.status(500).send({
-        message: "Could not delete Ordenador_aula with id=" + id
+      res.status(500).json({ 
+        status: 500,
+        message: "Could not delete computer_classroom with id=" + id
       });
     });
 };
