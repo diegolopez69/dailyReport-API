@@ -1,5 +1,8 @@
 const db = require("../models");
 const Ordenador_aula = db.tb_aula_herramienta_ordenador1;
+const Tool = db.tb_tools3;
+const Classroom = db.tb_classrooms;
+const Computer = db.tb_computers;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Ordenador_aula
@@ -11,14 +14,14 @@ exports.create = (req, res) => {
     });
     return;
   }
-  
+
   // Create a Ordenador_aula
   const ordenador_aula = {
     Aula_id: req.body.Aula_id,
     Ordenador_id: req.body.Ordenador_id,
     Herramienta_id: req.body.Herramienta_id,
   };
-  
+
 
   // Save Ordenador_aula in the database
   Ordenador_aula.create(ordenador_aula)
@@ -38,7 +41,15 @@ exports.findAll = (req, res) => {
   const Id = req.query.Id;
   var condition = Id ? { Id: { [Op.like]: `%${Id}%` } } : null;
 
-  Ordenador_aula.findAll({ where: condition })
+
+
+  Ordenador_aula.findAll({
+    where: condition,
+    include: {
+      model: Tool,
+      attributes: ['Herramienta_id', 'Tipo', 'Nombre']
+    }
+  })
     .then(data => {
       res.send(data);
     })
