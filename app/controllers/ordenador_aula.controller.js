@@ -40,9 +40,6 @@ exports.create = (req, res) => {
 exports.findAll = (req, res) => {
   const Id = req.query.Id;
   var condition = Id ? { Id: { [Op.like]: `%${Id}%` } } : null;
-
-
-
   Ordenador_aula.findAll({
     where: condition,
     include: {
