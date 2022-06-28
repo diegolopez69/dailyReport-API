@@ -21,7 +21,10 @@ exports.create = (req, res) => {
   // Save Classroom in the database
   Classroom.create(classroom)
     .then(data => {
-      res.send(data);
+      res.status(201).json({ 
+        status: 201,
+        Message: 'Classroom was created successfully!' 
+      });
     })
     .catch(err => {
       res.status(500).send({
