@@ -1,5 +1,5 @@
 const db = require("../models");
-const Ordenador_aula = db.tb_classroom_tool_computer1;
+const Ordenador_aula = db.tb_aula_herramienta_ordenador1;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Ordenador_aula

@@ -26,6 +26,3 @@ module.exports = (sequelize, Sequelize) => {
 
     return tb_aula_herramienta_ordenador;
   };
-  
-
-  
