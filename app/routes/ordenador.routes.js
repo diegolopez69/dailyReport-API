@@ -1,5 +1,6 @@
 module.exports = app => {
   const Computer = require("../controllers/ordenador.controller.js");
+  const { authJwt } = require("../middleware");
 
   var router = require("express").Router();
 
@@ -7,7 +8,7 @@ module.exports = app => {
   router.post("/", Computer.create);
 
   // Retrieve all Ordenadores
-  router.get("/", Computer.findAll);
+  router.get("/", [authJwt.verifyToken, authJwt.isModerator], Computer.findAll);
 
   // Retrieve a single Computer with id
   router.get("/:id", Computer.findOne);
