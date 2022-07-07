@@ -1,7 +1,5 @@
 const express = require("express");
-// const bodyParser = require("body-parser"); /* deprecated */
 const cors = require("cors");
-
 const app = express();
 
 var corsOptions = {
@@ -11,19 +9,39 @@ var corsOptions = {
 app.use(cors(corsOptions));
  
 // parse requests of content-type - application/json
-app.use(express.json());  /* bodyParser.json() is deprecated */
+app.use(express.json()); 
 
 // parse requests of content-type - application/x-www-form-urlencoded
-app.use(express.urlencoded({ extended: true }));   /* bodyParser.urlencoded() is deprecated */
+app.use(express.urlencoded({ extended: true }));
 
 const db = require("./app/models");
-
-db.sequelize.sync();
+const Role = db.role;
+//db.sequelize.sync();
+db.sequelize.sync({force: true}).then(() => { //This line drop the db
+  console.log('Drop and Resync Db');
+  initial();
+});
+function initial() {
+  Role.create({
+    id: 1,
+    name: "user"
+  });
+ 
+  Role.create({
+    id: 2,
+    name: "moderator"
+  });
+ 
+  Role.create({
+    id: 3,
+    name: "admin"
+  });
+}
 
 
 // simple route
 app.get("/", (req, res) => {
-  res.json({ message: "Welcome to application." });
+  res.json({ message: "Welcome to api of Daily reports." });
 });
 
 require("./app/routes/herra.routes")(app);

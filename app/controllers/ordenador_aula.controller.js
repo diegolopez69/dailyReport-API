@@ -46,10 +46,13 @@ exports.findAll = (req, res) => {
   var condition = Id ? { Id: { [Op.like]: `%${Id}%` } } : null;
   Ordenador_aula.findAll({
     where: condition,
-    include: {
-      model: Tool,
-      attributes: ['Herramienta_id', 'Tipo', 'Nombre']
-    }
+    include: [
+      {
+        model: Tool,
+        attributes: ['Herramienta_id', 'Tipo', 'Nombre']
+      },
+      
+    ] 
   })
     .then(data => {
       res.send(data);
