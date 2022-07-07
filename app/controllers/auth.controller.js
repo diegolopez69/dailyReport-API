@@ -39,6 +39,22 @@ exports.signup = (req, res) => {
     });
 };
 
+// Retrieve all Users from the database.
+exports.findAll = (req, res) => {
+  const Id = req.query.Id;
+  var condition = Id ? { Id: { [Op.like]: `%${Id}%` } } : null;
+
+  User.findAll({ where: condition })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).json({
+        status: 500,
+        Err: err.message || 'Some error occurred while retrieving Tools.'
+      });
+    });
+};
 
 exports.signin = (req, res) => {
   User.findOne({
