@@ -7,6 +7,267 @@
 	},
 	"item": [
 		{
+			"name": "Auth",
+			"item": [
+				{
+					"name": "test",
+					"item": [
+						{
+							"name": "Get all",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU3MTk2MTE3LCJleHAiOjE2NTcyODI1MTd9.gbQ_FaoU2AnwqLTBKRn9_VREdj_J2eflPlU3JhDLkys",
+										"type": "text",
+										"disabled": true
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}api/test/all",
+									"host": [
+										"{{local}}api"
+									],
+									"path": [
+										"test",
+										"all"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get user access",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"auth": {
+									"type": "bearer",
+									"bearer": [
+										{
+											"key": "token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU3MTk2MTE3LCJleHAiOjE2NTcyODI1MTd9.gbQ_FaoU2AnwqLTBKRn9_VREdj_J2eflPlU3JhDLkys",
+											"type": "string"
+										}
+									]
+								},
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU3MTk2MTE3LCJleHAiOjE2NTcyODI1MTd9.gbQ_FaoU2AnwqLTBKRn9_VREdj_J2eflPlU3JhDLkys",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}api/test/user",
+									"host": [
+										"{{local}}api"
+									],
+									"path": [
+										"test",
+										"user"
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get mod access",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}api/test/mod?x-access-token",
+									"host": [
+										"{{local}}api"
+									],
+									"path": [
+										"test",
+										"mod"
+									],
+									"query": [
+										{
+											"key": "x-access-token",
+											"value": null
+										}
+									]
+								}
+							},
+							"response": []
+						},
+						{
+							"name": "Get admin access",
+							"protocolProfileBehavior": {
+								"disableBodyPruning": true
+							},
+							"request": {
+								"method": "GET",
+								"header": [
+									{
+										"key": "x-access-token",
+										"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU3MTk3MDIzLCJleHAiOjE2NTcyODM0MjN9.1lFDgVfl7PfKynVpWoy3JkW5gt-lDbLrB9xNEgvSwxY",
+										"type": "text"
+									}
+								],
+								"body": {
+									"mode": "raw",
+									"raw": "",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{local}}api/test/admin?x-access-token=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjU3MTk2MTk2LCJleHAiOjE2NTcyODI1OTZ9.uLg91mERQ6WXwRWndeh-jBOElIDDKW1f_BHWe-H98SA",
+									"host": [
+										"{{local}}api"
+									],
+									"path": [
+										"test",
+										"admin"
+									],
+									"query": [
+										{
+											"key": "x-access-token",
+											"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MiwiaWF0IjoxNjU3MTk2MTk2LCJleHAiOjE2NTcyODI1OTZ9.uLg91mERQ6WXwRWndeh-jBOElIDDKW1f_BHWe-H98SA"
+										}
+									]
+								}
+							},
+							"response": []
+						}
+					]
+				},
+				{
+					"name": "Sign up",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"esc\",\n    \"email\": \"esc@gmail.com\",\n    \"password\": \"12345678\",\n    \"roles\": [\"user\"]\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/auth/signup",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "",
+								"value": "",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/auth/signup",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"auth",
+								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"die\",    \n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/auth/signin",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"auth",
+								"signin"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
 			"name": "Ordenador",
 			"item": [
 				{
@@ -24,12 +285,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/ordenador",
+							"raw": "{{local}}api/computer",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"ordenador"
+								"computer"
 							]
 						}
 					},
@@ -42,7 +303,13 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU3MTk2NzU1LCJleHAiOjE2NTcyODMxNTV9.I16044lMByk4slVnYvMrv6kEFsKGxykkOpzfsa7CLrg",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -53,12 +320,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/ordenador",
+							"raw": "{{local}}api/computer",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"ordenador"
+								"computer"
 							]
 						}
 					},
@@ -79,12 +346,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/ordenador/2",
+							"raw": "{{local}}api/computer/2",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"ordenador",
+								"computer",
 								"2"
 							]
 						}
@@ -109,12 +376,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/ordenador/2",
+							"raw": "{{local}}api/computer/2",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"ordenador",
+								"computer",
 								"2"
 							]
 						}
@@ -127,12 +394,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{local}}api/ordenador/1",
+							"raw": "{{local}}api/computer/1",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"ordenador",
+								"computer",
 								"1"
 							]
 						}
@@ -151,7 +418,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Aula_id\": 1,\n        \"Ordenador_id\": 1,\n        \"Herramienta_id\": 1\n}",
+							"raw": "{\n        \"Aula_id\": 4,\n        \"Ordenador_id\": 4,\n        \"Herramienta_id\": 4\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -206,7 +473,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Aula_id\": 2,\n        \"Ordenador_id\": 2,\n        \"Herramienta_id\": 2\n}",
+							"raw": "{\n        \"Aula_id\": 1,\n        \"Ordenador_id\": 2,\n        \"Herramienta_id\": 3\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -214,13 +481,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/ordenador_aula/8",
+							"raw": "{{local}}api/ordenador_aula/3",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"ordenador_aula",
-								"8"
+								"3"
 							]
 						}
 					},
@@ -244,13 +511,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/ordenador_aula/2",
+							"raw": "{{local}}api/ordenador_aula/3",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"ordenador_aula",
-								"2"
+								"3"
 							]
 						}
 					},
@@ -294,12 +561,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/aula",
+							"raw": "{{local}}api/room",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"aula"
+								"room"
 							]
 						}
 					},
@@ -323,12 +590,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/aula",
+							"raw": "{{local}}api/room",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"aula"
+								"room"
 							]
 						}
 					},
@@ -349,12 +616,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/aula/2",
+							"raw": "{{local}}api/room/2",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"aula",
+								"room",
 								"2"
 							]
 						}
@@ -379,12 +646,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/aula",
+							"raw": "{{local}}api/room",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"aula"
+								"room"
 							]
 						}
 					},
@@ -428,12 +695,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/herras",
+							"raw": "{{local}}api/tool",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"herras"
+								"tool"
 							]
 						}
 					},
@@ -457,12 +724,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/herras",
+							"raw": "{{local}}api/tool",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"herras"
+								"tool"
 							]
 						}
 					},
@@ -483,12 +750,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/herras/3",
+							"raw": "{{local}}api/tool/3",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"herras",
+								"tool",
 								"3"
 							]
 						}
@@ -513,12 +780,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/herras/3",
+							"raw": "{{local}}api/tool/3",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"herras",
+								"tool",
 								"3"
 							]
 						}
@@ -531,12 +798,12 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{local}}api/herras/2",
+							"raw": "{{local}}api/tool/2",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"herras",
+								"tool",
 								"2"
 							]
 						}

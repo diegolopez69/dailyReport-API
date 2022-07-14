@@ -14,7 +14,7 @@ module.exports = (sequelize, Sequelize) => {
         tb_aula_herramienta_ordenador.belongsTo(models.tb_classrooms, {
             foreignKey: 'Aula_id'
         }),
-        tb_aula_herramienta_ordenador.belongsTo(models.tb_tools3, {
+        tb_aula_herramienta_ordenador.belongsTo(models.tb_tools, {
           foreignKey: 'Herramienta_id'
         }),
         tb_aula_herramienta_ordenador.belongsTo(models.tb_computers, {

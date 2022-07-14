@@ -23,9 +23,23 @@ db.sequelize = sequelize;
 
 db.tb_computers = require("./ordenador.model.js")(sequelize, Sequelize);
 db.tb_classrooms = require("./aula.model.js")(sequelize, Sequelize);
-db.tb_tools3 = require("./herramientas.model.js")(sequelize, Sequelize);
-db.tb_aula_herramienta_ordenador1 = require("./aho.model.js")(sequelize, Sequelize);
-db.tb_aula_herramienta_ordenador1.associate(db)
+db.tb_tools = require("./herramientas.model.js")(sequelize, Sequelize);
+db.tb_aula_herramienta_ordenador = require("./aho.model.js")(sequelize, Sequelize);
+db.user = require("./user.model.js")(sequelize, Sequelize);
+db.role = require("./role.model.js")(sequelize, Sequelize);
+
+db.role.belongsToMany(db.user, {
+  through: "user_roles",
+  foreignKey: "roleId",
+  otherKey: "userId"
+});
+db.user.belongsToMany(db.role, {
+  through: "user_roles",
+  foreignKey: "userId",
+  otherKey: "roleId"
+});
+db.ROLES = ["user", "admin", "moderator"];
+db.tb_aula_herramienta_ordenador.associate(db)
 
 
 module.exports = db;

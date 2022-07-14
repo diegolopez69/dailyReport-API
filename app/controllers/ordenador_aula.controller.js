@@ -1,6 +1,6 @@
 const db = require("../models");
-const Ordenador_aula = db.tb_aula_herramienta_ordenador1;
-const Tool = db.tb_tools3;
+const Ordenador_aula = db.tb_aula_herramienta_ordenador;
+const Tool = db.tb_tools;
 const computer_classroom = db.tb_computer_classrooms;
 const Computer = db.tb_computers;
 const Op = db.Sequelize.Op;
@@ -46,10 +46,13 @@ exports.findAll = (req, res) => {
   var condition = Id ? { Id: { [Op.like]: `%${Id}%` } } : null;
   Ordenador_aula.findAll({
     where: condition,
-    include: {
-      model: Tool,
-      attributes: ['Herramienta_id', 'Tipo', 'Nombre']
-    }
+    include: [
+      {
+        model: Tool,
+        attributes: ['Herramienta_id', 'Tipo', 'Nombre']
+      },
+      
+    ] 
   })
     .then(data => {
       res.send(data);

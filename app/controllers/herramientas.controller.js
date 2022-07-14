@@ -1,5 +1,5 @@
 const db = require("../models");
-const Tool = db.tb_tools3;
+const Tool = db.tb_tools;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Tool
