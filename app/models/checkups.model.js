@@ -1,6 +1,6 @@
 module.exports = (sequelize, Sequelize) => {
   const tb_checkups = sequelize.define("tb_checkups", {
-    Checkups_id: {
+    Checkup_id: {
       type:Sequelize.INTEGER,
       primaryKey: true,
       autoIncrement: true
@@ -26,7 +26,7 @@ module.exports = (sequelize, Sequelize) => {
     Theoretical_amount: {
       type: Sequelize.INTEGER,
     },
-    actual_amount: {
+    Actual_amount: {
       type: Sequelize.INTEGER,
     },
   });
