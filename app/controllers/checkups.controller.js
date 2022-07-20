@@ -15,7 +15,7 @@ exports.create = (req, res) => {
 
   // Create a Checkup
   const checkup = {
-    Review: req.body.Review,
+    Review: req.body.Review, 
     Comments: req.body.Comments,
     there_is: req.body.there_is,
     Works: req.body.Works,
@@ -86,7 +86,7 @@ exports.update = (req, res) => {
 
   Checkup.update(req.body, {
 
-    where: { Herramienta_id: id }
+    where: { Checkup_id: id }
   })
     .then(num => {
       if (num == 1) {
@@ -114,7 +114,7 @@ exports.delete = (req, res) => {
   const id = req.params.id;
 
   Checkup.destroy({
-    where: { Herramienta_id: id }
+    where: { Checkup_id: id }
   })
     .then(num => {
       if (num == 1) {

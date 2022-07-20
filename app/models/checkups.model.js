@@ -1,3 +1,5 @@
+const aho = require("./aho.model.js");
+
 module.exports = (sequelize, Sequelize) => {
   const tb_checkups = sequelize.define("tb_checkups", {
     Checkup_id: {
@@ -30,6 +32,14 @@ module.exports = (sequelize, Sequelize) => {
       type: Sequelize.INTEGER,
     },
   });
+
+
+  tb_checkups.associate = function (models) {
+    tb_checkups.belongsTo(models.tb_aula_herramienta_ordenador, {
+        foreignKey: 'Aho_id'
+    })
+ };     
+
 
   return tb_checkups;
 };
