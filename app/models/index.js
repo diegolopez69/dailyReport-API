@@ -42,6 +42,8 @@ db.user.belongsToMany(db.role, {
 });
 db.ROLES = ["user", "admin", "moderator"];
 db.tb_aula_herramienta_ordenador.associate(db)
+db.tb_checkups.associate(db)
+
 
 
 module.exports = db;
