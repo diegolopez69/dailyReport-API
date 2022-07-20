@@ -16,28 +16,30 @@ app.use(express.urlencoded({ extended: true }));
 
 const db = require("./app/models");
 const Role = db.role;
-db.sequelize.sync();
+//db.sequelize.sync();
 
-// db.sequelize.sync({force: true}).then(() => { //This line drop the db
-//   console.log('Drop and Resync Db');
-//   initial();
-// });
-// function initial() {
-//   Role.create({
-//     id: 1,
-//     name: "user"
-//   });
+
+/*This is to create the roles on the db */
+db.sequelize.sync({force: true}).then(() => { //This line drop the db
+  console.log('Drop and Resync Db');
+  initial();
+});
+function initial() {
+  Role.create({
+    id: 1,
+    name: "user"
+  });
  
-//   Role.create({
-//     id: 2,
-//     name: "moderator"
-//   });
+  Role.create({
+    id: 2,
+    name: "moderator"
+  });
  
-//   Role.create({
-//     id: 3,
-//     name: "admin"
-//   });
-// }
+  Role.create({
+    id: 3,
+    name: "admin"
+  });
+}
 
 
 // simple route
@@ -51,6 +53,7 @@ require("./app/routes/aulas.routes")(app);
 require("./app/routes/ordenador_aulas.routes")(app);
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
+require('./app/routes/checkups.routes')(app);
 
 
 

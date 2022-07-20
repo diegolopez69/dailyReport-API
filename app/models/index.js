@@ -27,6 +27,8 @@ db.tb_tools = require("./herramientas.model.js")(sequelize, Sequelize);
 db.tb_aula_herramienta_ordenador = require("./aho.model.js")(sequelize, Sequelize);
 db.user = require("./user.model.js")(sequelize, Sequelize);
 db.role = require("./role.model.js")(sequelize, Sequelize);
+db.tb_checkups = require("./checkups.model.js")(sequelize, Sequelize);
+
 
 db.role.belongsToMany(db.user, {
   through: "user_roles",
@@ -40,6 +42,8 @@ db.user.belongsToMany(db.role, {
 });
 db.ROLES = ["user", "admin", "moderator"];
 db.tb_aula_herramienta_ordenador.associate(db)
+db.tb_checkups.associate(db)
+
 
 
 module.exports = db;
