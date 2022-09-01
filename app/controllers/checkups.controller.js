@@ -1,8 +1,8 @@
 const db = require("../models");
-const Tool = db.tb_tools;
+const Checkup = db.tb_checkups;
 const Op = db.Sequelize.Op;
 
-// Create and Save a new Tool
+// Create and Save a new Checkup
 exports.create = (req, res) => {
   // Validate request
   if (!req.body) {
@@ -13,122 +13,126 @@ exports.create = (req, res) => {
     return;
   }
 
-  // Create a Tool
-  const tool = {
-    Tipo: req.body.Tipo,
-    Nombre: req.body.Nombre
+  // Create a Checkup
+  const checkup = {
+    Review: req.body.Review, 
+    Comments: req.body.Comments,
+    there_is: req.body.there_is,
+    Works: req.body.Works,
+    Theoretical_amount: req.body.Theoretical_amount,
+    Actual_amount: req.body.Actual_amount
   };
 
 
-  // Save Tool in the database
-  Tool.create(tool)
+  // Save Checkup in the database
+  Checkup.create(checkup)
     .then(data => {
       res.status(201).json({
         status: 201,
-        message: 'Tool was created successfully!'
+        message: 'Checkup was created successfully!'
       });
     })
     .catch(err => {
       res.status(500).json({
         status: 500,
-        Err: err.message || 'Some error occurred while creating the Tool.'
+        Err: err.message || 'Some error occurred while creating the Checkup.'
       });
     });
 };
 
-// Retrieve all tools from the database.
+// Retrieve all checkups from the database.
 exports.findAll = (req, res) => {
   const Id = req.query.Id;
   var condition = Id ? { Id: { [Op.like]: `%${Id}%` } } : null;
 
-  Tool.findAll({ where: condition })
+  Checkup.findAll({ where: condition })
     .then(data => {
       res.send(data);
     })
     .catch(err => {
       res.status(500).json({
         status: 500,
-        Err: err.message || 'Some error occurred while retrieving Tools.'
+        Err: err.message || 'Some error occurred while retrieving Checkups.'
       });
     });
 };
 
-// Find a single Tool with an id
+// Find a single Checkup with an id
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  Tool.findByPk(id)
+  Checkup.findByPk(id)
     .then(data => {
       if (data) {
         res.send(data);
       } else {
         res.status(404).json({
           status: 404,
-          message: `Cannot find Tool with id=${id}.`
+          message: `Cannot find Checkup with id=${id}.`
         });
       }
     })
     .catch(err => {
       res.status(500).json({
         status: 500,
-        message: "Error retrieving Tool with id=" + id
+        message: "Error retrieving Checkup with id=" + id
       });
     });
 };
 
-// Update a Tool by the id in the request
+// Update a Checkup by the id in the request
 exports.update = (req, res) => {
   const id = req.params.id;
 
-  Tool.update(req.body, {
+  Checkup.update(req.body, {
 
-    where: { Herramienta_id: id }
+    where: { Checkup_id: id }
   })
     .then(num => {
       if (num == 1) {
         res.status(200).json({
           status: 200,
-          message: "Tool was updated successfully."
+          message: "Checkup was updated successfully."
         });
       } else {
         res.status(400).json({
           status: 400,
-          message: `Cannot update Tool with id=${id}. Maybe Tool was not found or req.body is empty!`
+          message: `Cannot update Checkup with id=${id}. Maybe Checkup was not found or req.body is empty!`
         });
       }
     })
     .catch(err => {
       res.status(500).json({
         status: 500,
-        message: "Error updating Tool with id=" + id
+        message: "Error updating Checkup with id=" + id
       });
     });
 };
 
-// Delete a Tool with the specified id in the request
+// Delete a Checkup with the specified id in the request
 exports.delete = (req, res) => {
   const id = req.params.id;
 
-  Tool.destroy({
-    where: { Herramienta_id: id }
+  Checkup.destroy({
+    where: { Checkup_id: id }
   })
     .then(num => {
       if (num == 1) {
         res.status(200).json({ 
           status: 200,
-          message: "Tool was deleted successfully!"
+          message: "Checkup was deleted successfully!"
         });
       } else {
         res.status(400).json({ 
           status: 400,
-          message: `Cannot delete Tool with id=${id}. Maybe Tool was not found!`
+          message: `Cannot delete Checkup with id=${id}. Maybe Checkup was not found!`
         });
       }
     })
     .catch(err => {
       res.status(500).json({ 
         status: 500,
-        message: "Could not delete Tool with id=" + id
+        message: "Could not delete Checkup with id=" + id
       });
     });
 };
