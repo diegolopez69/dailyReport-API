@@ -1,6 +1,7 @@
 const db = require("../models");
 const Ordenador_aula = db.tb_aula_herramienta_ordenador;
 const Tool = db.tb_tools;
+const Room = db.tb_classrooms;
 const computer_classroom = db.tb_computer_classrooms;
 const Computer = db.tb_computers;
 const Op = db.Sequelize.Op;
@@ -50,8 +51,15 @@ exports.findAll = (req, res) => {
       {
         model: Tool,
         attributes: ['Herramienta_id', 'Tipo', 'Nombre']
+      },{
+        model: Room,
+        attributes: ['Aula_id', 'Planta', 'Numero']
       },
-      
+      {
+        model: Computer,
+        as: "ordenador",
+        attributes: ['Ordenador_id', 'Nombre']
+      }      
     ] 
   })
     .then(data => {
