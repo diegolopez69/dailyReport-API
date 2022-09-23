@@ -1,6 +1,6 @@
 const db = require("../models");
-const Ordenador_aula = db.tb_aula_herramienta_ordenador1;
-const Tool = db.tb_tools3;
+const Ordenador_aula = db.tb_aula_herramienta_ordenador; //Si falla acá hay que eliminar el #1
+const Tool = db.tb_tools; //Si falla acá hay que eliminar el #3
 const Classroom = db.tb_classrooms;
 const Computer = db.tb_computers;
 const Op = db.Sequelize.Op;
@@ -45,7 +45,7 @@ exports.findAll = (req, res) => {
   const Id = req.query.Id;
   var condition = Id ? { Id: { [Op.like]: `%${Id}%` } } : null;
   Ordenador_aula.findAll({
-    where: condition,
+    where: condition,  
     include: [{
       model: Tool,
       attributes: ['Herramienta_id', 'Tipo', 'Nombre']
@@ -57,8 +57,7 @@ exports.findAll = (req, res) => {
       model: Classroom,
       attributes: ['Aula_id', 'Planta', 'Numero']
     }
-  ], 
-    limit: 3
+  ],
   })
     .then(data => {
       res.send(data);
@@ -68,6 +67,7 @@ exports.findAll = (req, res) => {
         status: 500,
         Err: err.message || 'Some error occurred while retrieving computer_classrooms.' 
       });
+      console.log(err)
     });
 };
 
@@ -97,9 +97,8 @@ exports.findOne = (req, res) => {
 // Update a Ordenador_aula by the id in the request
 exports.update = (req, res) => {
   const id = req.params.id;
-
   Ordenador_aula.update(req.body, {
-    where: { id: id }
+    where: { Aho_id: id }
   })
     .then(num => {
       if (num == 1) {
@@ -115,6 +114,7 @@ exports.update = (req, res) => {
       }
     })
     .catch(err => {
+      console.log("Error", err)
       res.status(500).json({ 
         status: 500,
         message: "Error updating computer_classroom with id=" + id
@@ -127,7 +127,7 @@ exports.delete = (req, res) => {
   const id = req.params.id;
 
   Ordenador_aula.destroy({
-    where: { id: id }
+    where: { Aho_id: id }
   })
     .then(num => {
       if (num == 1) {

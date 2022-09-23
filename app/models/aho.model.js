@@ -26,7 +26,7 @@ module.exports = (sequelize, Sequelize) => {
           foreignKey: 'Ordenador_id',
           as: "ordenador"
         })
-     };     
+     };
 
     return tb_aula_herramienta_ordenador;
   };

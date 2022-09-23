@@ -46,6 +46,7 @@ exports.findAll = (req, res) => {
 
   User.findAll({ where: condition })
     .then(data => {
+      console.log("data", data);
       res.send(data);
     })
     .catch(err => {
