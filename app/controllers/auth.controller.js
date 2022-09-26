@@ -51,7 +51,7 @@ exports.findAll = (req, res) => {
     .catch(err => {
       res.status(500).json({
         status: 500,
-        Err: err.message || 'Some error occurred while retrieving Tools.'
+        Err: err.message || 'Some error occurred while retrieving Users.'
       });
     });
 };
@@ -95,5 +95,87 @@ exports.signin = (req, res) => {
     })
     .catch(err => {
       res.status(500).send({ message: err.message });
+    });
+};
+
+// Find a single User with an id
+exports.findOne = (req, res) => {
+  const id = req.params.id;
+
+  User.findByPk(id)
+    .then(data => {
+      if (data) {
+        res.send(data);
+      } else {
+        res.status(404).json({
+          status: 404,
+          message: `Cannot find User with id=${id}.`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).json({
+        status: 500,
+        message: "Error retrieving User with id=" + id
+      });
+    });
+};
+
+// Update a User by the id in the request
+exports.update = (req, res) => {
+  const id = req.params.id;
+
+  User.update(req.body, {
+
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.status(200).json({
+          status: 200,
+          message: "User was updated successfully."
+        });
+      } else {
+        res.status(400).json({
+          status: 400,
+          message: `Cannot update User with id=${id}. Maybe User was not found or req.body is empty!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).json({
+        status: 500,
+        message: "Error updating User with id=" + id
+      });
+    });
+};
+
+
+// Delete a User with the specified id in the request
+exports.delete = (req, res) => {
+  const id = req.params.id;
+  console.log("id", id)
+  User.destroy({
+    where: { id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.status(200).json({ 
+          status: 200,
+          message: "User was deleted successfully!"
+        });
+        console.log("Se elimina")
+      } else {
+        res.status(400).json({ 
+          status: 400,
+          message: `Cannot delete User with id=${id}. Maybe User was not found!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).json({ 
+        status: 500,
+        message: "Could not delete User with id=" + id
+      });
     });
 };
