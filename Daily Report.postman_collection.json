@@ -1,13 +1,13 @@
 {
 	"info": {
-		"_postman_id": "2da32f30-cea4-4c57-8294-770f17d579f6",
+		"_postman_id": "c71956ec-f740-439d-b4b5-85bc84540140",
 		"name": "Daily Report",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
 		"_exporter_id": "16435978"
 	},
 	"item": [
 		{
-			"name": "Auth",
+			"name": "Users",
 			"item": [
 				{
 					"name": "test",
@@ -124,7 +124,7 @@
 									"query": [
 										{
 											"key": "x-access-token",
-											"value": null
+											"value": ""
 										}
 									]
 								}
@@ -182,7 +182,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"esc\",\n    \"email\": \"esc@gmail.com\",\n    \"password\": \"12345678\",\n    \"roles\": [\"user\"]\n}",
+							"raw": "{\n    \"username\": \"die\",\n    \"email\": \"die@gmail.com\",\n    \"password\": \"12345678\",\n    \"roles\": [\"user\", \"moderator\", \"admin\"]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -197,6 +197,33 @@
 							"path": [
 								"auth",
 								"signup"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Sign in",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n    \"username\": \"esc\",    \n    \"password\": \"12345678\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/auth/signin",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"auth",
+								"signin"
 							]
 						}
 					},
@@ -239,13 +266,19 @@
 					"response": []
 				},
 				{
-					"name": "Sign in",
+					"name": "Update an user",
 					"request": {
-						"method": "POST",
-						"header": [],
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"die\",    \n    \"password\": \"12345678\"\n}",
+							"raw": "{\n    \"username\": \"die\",\n    \"email\": \"die@gmail.com\",\n    \"password\": \"123456789\",\n    \"roles\": [\"user\", \"admin\"]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -253,13 +286,73 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/auth/signin",
+							"raw": "{{local}}api/user/3",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"auth",
-								"signin"
+								"user",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get user by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/user/3",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"user",
+								"3"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete user by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}api/user/3",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"user",
+								"3"
 							]
 						}
 					},
@@ -274,10 +367,16 @@
 					"name": "Create a new ordenador",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Nombre\": \"Prueba2\"\n}",
+							"raw": "{\n        \"Nombre\": \"Prueba3\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -306,7 +405,7 @@
 						"header": [
 							{
 								"key": "x-access-token",
-								"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjU3MTk2NzU1LCJleHAiOjE2NTcyODMxNTV9.I16044lMByk4slVnYvMrv6kEFsKGxykkOpzfsa7CLrg",
+								"value": "{{x-access-token}}",
 								"type": "text"
 							}
 						],
@@ -335,7 +434,13 @@
 					"name": "Update an ordenador",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n        \"Nombre\": \"Prueba222\"\n}",
@@ -346,13 +451,19 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/computer/2",
+							"raw": "{{local}}api/computer/2?=",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"computer",
 								"2"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -365,7 +476,13 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -392,7 +509,13 @@
 					"name": "Delete by Id",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{local}}api/computer/1",
 							"host": [
@@ -409,148 +532,19 @@
 			]
 		},
 		{
-			"name": "OrdenadorAulas",
-			"item": [
-				{
-					"name": "Create a new ordenador",
-					"request": {
-						"method": "POST",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n        \"Aula_id\": 4,\n        \"Ordenador_id\": 4,\n        \"Herramienta_id\": 4\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{local}}api/ordenador_aula",
-							"host": [
-								"{{local}}api"
-							],
-							"path": [
-								"ordenador_aula"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get all ordenadores",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{local}}api/ordenador_aula",
-							"host": [
-								"{{local}}api"
-							],
-							"path": [
-								"ordenador_aula"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update an ordenador",
-					"request": {
-						"method": "PUT",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n        \"Aula_id\": 1,\n        \"Ordenador_id\": 2,\n        \"Herramienta_id\": 3\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{local}}api/ordenador_aula/3",
-							"host": [
-								"{{local}}api"
-							],
-							"path": [
-								"ordenador_aula",
-								"3"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get ordenadores-aula by id",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{local}}api/ordenador_aula/3",
-							"host": [
-								"{{local}}api"
-							],
-							"path": [
-								"ordenador_aula",
-								"3"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete by Id",
-					"request": {
-						"method": "DELETE",
-						"header": [],
-						"url": {
-							"raw": "{{local}}api/ordenador_aula/2",
-							"host": [
-								"{{local}}api"
-							],
-							"path": [
-								"ordenador_aula",
-								"2"
-							]
-						}
-					},
-					"response": []
-				}
-			]
-		},
-		{
 			"name": "Aulas",
 			"item": [
 				{
 					"name": "Create a new aulas",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n        \"Planta\": 2,\n        \"Numero\": 2\n}",
@@ -561,12 +555,18 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/room",
+							"raw": "{{local}}api/room?=",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"room"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -579,7 +579,13 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -590,12 +596,18 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/room",
+							"raw": "{{local}}api/room?x-access-token={{x-access-token}}",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"room"
+							],
+							"query": [
+								{
+									"key": "x-access-token",
+									"value": "{{x-access-token}}"
+								}
 							]
 						}
 					},
@@ -605,7 +617,13 @@
 					"name": "Update an aula",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n        \"Planta\": 3,\n        \"Numero\": 1\n}",
@@ -635,7 +653,13 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -646,12 +670,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/room",
+							"raw": "{{local}}api/room/5",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"room"
+								"room",
+								"5"
 							]
 						}
 					},
@@ -663,13 +688,19 @@
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{local}}api/aula/2",
+							"raw": "{{local}}api/aula/2?x-access-token={{x-access-token}}",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"aula",
 								"2"
+							],
+							"query": [
+								{
+									"key": "x-access-token",
+									"value": "{{x-access-token}}"
+								}
 							]
 						}
 					},
@@ -684,7 +715,13 @@
 					"name": "Create a new herramientas",
 					"request": {
 						"method": "POST",
-						"header": [],
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n        \"Tipo\": \"Hardware\",\n        \"Nombre\": \"HDMI\"\n}",
@@ -713,7 +750,13 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -739,7 +782,13 @@
 					"name": "Update a herramienta",
 					"request": {
 						"method": "PUT",
-						"header": [],
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "{\n        \"Tipo\": \"Hardware\",\n        \"Nombre\": \"Cable de poder\"\n}",
@@ -769,7 +818,13 @@
 					},
 					"request": {
 						"method": "GET",
-						"header": [],
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
 						"body": {
 							"mode": "raw",
 							"raw": "",
@@ -796,7 +851,13 @@
 					"name": "Delete by Id a herramienta",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
 						"url": {
 							"raw": "{{local}}api/tool/2",
 							"host": [
@@ -804,6 +865,171 @@
 							],
 							"path": [
 								"tool",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "OrdenadorAulas",
+			"item": [
+				{
+					"name": "Create a new ordenador",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"Aula_id\": 1,\n        \"Ordenador_id\": 1,\n        \"Herramienta_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/ordenador_aula",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"ordenador_aula"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all ordenadores",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/ordenador_aula",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"ordenador_aula"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update an ordenador",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"Aula_id\": 1,\n        \"Ordenador_id\": 2,\n        \"Herramienta_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/ordenador_aula/7",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"ordenador_aula",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ordenadores-aula by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/ordenador_aula/2",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"ordenador_aula",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}api/ordenador_aula/2",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"ordenador_aula",
 								"2"
 							]
 						}
