@@ -23,6 +23,15 @@ module.exports = function(app) {
     "/api/auth/signup",
     Auth.findAll
   );
+
+  // Retrieve a single User with id
+  app.get("/api/user/:id", Auth.findOne);
   
   app.post("/api/auth/signin", Auth.signin);
-};
+
+  // Update a User with id
+  app.put("/api/user/:id", Auth.update);
+
+  // Delete a User with id
+  app.delete("/api/user/:id", Auth.delete);
+};  
