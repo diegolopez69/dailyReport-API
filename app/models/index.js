@@ -28,6 +28,7 @@ db.tb_aula_herramienta_ordenador = require("./aho.model.js")(sequelize, Sequeliz
 db.user = require("./user.model.js")(sequelize, Sequelize);
 db.role = require("./role.model.js")(sequelize, Sequelize);
 db.tb_checkups = require("./checkups.model.js")(sequelize, Sequelize);
+db.tb_chromebook = require("./chromebook.model.js")(sequelize, Sequelize);
 
 
 db.role.belongsToMany(db.user, {
