@@ -46,7 +46,6 @@ exports.findAll = (req, res) => {
 
   User.findAll({ where: condition })
     .then(data => {
-      console.log("data", data);
       res.send(data);
     })
     .catch(err => {
@@ -155,7 +154,6 @@ exports.update = (req, res) => {
 // Delete a User with the specified id in the request
 exports.delete = (req, res) => {
   const id = req.params.id;
-  console.log("id", id)
   User.destroy({
     where: { id: id }
   })
@@ -165,7 +163,6 @@ exports.delete = (req, res) => {
           status: 200,
           message: "User was deleted successfully!"
         });
-        console.log("Se elimina")
       } else {
         res.status(400).json({ 
           status: 400,

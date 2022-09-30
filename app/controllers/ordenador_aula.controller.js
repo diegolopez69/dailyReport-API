@@ -67,7 +67,6 @@ exports.findAll = (req, res) => {
         status: 500,
         Err: err.message || 'Some error occurred while retrieving computer_classrooms.' 
       });
-      console.log(err)
     });
 };
 
@@ -114,7 +113,6 @@ exports.update = (req, res) => {
       }
     })
     .catch(err => {
-      console.log("Error", err)
       res.status(500).json({ 
         status: 500,
         message: "Error updating computer_classroom with id=" + id
