@@ -81,7 +81,6 @@ exports.update = (req, res) => {
   const id = req.params.id;
 
   Tool.update(req.body, {
-
     where: { Herramienta_id: id }
   })
     .then(num => {
@@ -98,6 +97,7 @@ exports.update = (req, res) => {
       }
     })
     .catch(err => {
+      console.log();
       res.status(500).json({
         status: 500,
         message: "Error updating Tool with id=" + id

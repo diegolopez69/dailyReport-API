@@ -1,5 +1,5 @@
 const db = require("../models");
-const Chromebook = db.tb_chromebooks;
+const Chromebook = db.tb_chromebook;
 const Op = db.Sequelize.Op;
 
 // Create and Save a new Chromebook
@@ -85,9 +85,8 @@ exports.findOne = (req, res) => {
 // Update a Chromebook by the id in the request
 exports.update = (req, res) => {
   const id = req.params.id;
-
+  
   Chromebook.update(req.body, {
-
     where: { Chromebook_id: id }
   })
     .then(num => {
