@@ -16,7 +16,7 @@ module.exports = (sequelize, Sequelize) => {
       type:Sequelize.INTEGER
     },
     No_sn: {
-      type:Sequelize.INTEGER
+      type:Sequelize.STRING
     },
     No_armario: {
       type:Sequelize.INTEGER
