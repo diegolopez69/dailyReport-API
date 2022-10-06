@@ -182,7 +182,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"die\",\n    \"email\": \"die@gmail.com\",\n    \"password\": \"12345678\",\n    \"roles\": [\"user\", \"moderator\", \"admin\"]\n}",
+							"raw": "{\n    \"username\": \"esc\",\n    \"email\": \"esc@gmail.com\",\n    \"password\": \"12345678\",\n    \"roles\": [\"user\", \"moderator\", \"admin\"]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -346,13 +346,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{local}}api/user/3",
+							"raw": "{{local}}api/user/10",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"user",
-								"3"
+								"10"
 							]
 						}
 					},
@@ -517,13 +517,19 @@
 							}
 						],
 						"url": {
-							"raw": "{{local}}api/computer/1",
+							"raw": "{{local}}api/computer/1?=",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"computer",
 								"1"
+							],
+							"query": [
+								{
+									"key": "",
+									"value": ""
+								}
 							]
 						}
 					},
@@ -555,18 +561,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/room?=",
+							"raw": "{{local}}api/room",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"room"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": ""
-								}
 							]
 						}
 					},
@@ -724,7 +724,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Tipo\": \"Hardware\",\n        \"Nombre\": \"HDMI\"\n}",
+							"raw": "\n   {\n       \"Tipo\": \"Hardware\",\n       \"Nombre\": \"Cable de poder\"\n   }\n   {\n       \"Tipo\": \"Hardware\",\n       \"Nombre\": \"Cable ethernet\"\n   }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -874,7 +874,172 @@
 			]
 		},
 		{
-			"name": "OrdenadorAulas",
+			"name": "Chromebooks",
+			"item": [
+				{
+					"name": "Create a new chromebook",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"Estado\": 1,\n        \"Descripcion\": \"Funciona la prueba\",\n        \"No_chromebook\": 1,\n        \"No_sn\": \"6FD9GF98GH\",\n        \"No_armario\": 1,\n        \"No_chr_funcionales\": 1,\n        \"No_chr_no_funcionales\": 1,\n        \"No_chr_totales\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/chromebook",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"chromebook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all chromebook's",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/chromebook",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"chromebook"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update a chromebook",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"Estado\": 1,\n        \"Descripcion\": \"fnskdjf n\",\n        \"No_chromebook\": 70,\n        \"No_sn\": 156,\n        \"No_armario\": 2,\n        \"No_chr_funcionales\": 10,\n        \"No_chr_no_funcionales\": 0,\n        \"No_chr_totales\": 10\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/chromebook/4",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"chromebook",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get chromebook by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/chromebook/2",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"chromebook",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete chromebook by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}api/tool/2",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"tool",
+								"2"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Inventario",
 			"item": [
 				{
 					"name": "Create a new ordenador",
@@ -889,7 +1054,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Aula_id\": 1,\n        \"Ordenador_id\": 1,\n        \"Herramienta_id\": 1\n}",
+							"raw": "{\n        \"Aula_id\": 1,\n        \"Ordenador_id\": 3,\n        \"Herramienta_id\": 11\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -903,6 +1068,171 @@
 							],
 							"path": [
 								"ordenador_aula"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all ordenadores",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/ordenador_aula",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"ordenador_aula"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update an ordenador",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"Aula_id\": 1,\n        \"Ordenador_id\": 2,\n        \"Herramienta_id\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/ordenador_aula/7",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"ordenador_aula",
+								"7"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get ordenadores-aula by id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/ordenador_aula/2",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"ordenador_aula",
+								"2"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete by Id",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}api/ordenador_aula/12",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"ordenador_aula",
+								"12"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "User rol",
+			"item": [
+				{
+					"name": "Create a new user rol",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"userId\": 1,\n        \"roleId\": 1\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/user_rol",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"user_rol"
 							]
 						}
 					},
