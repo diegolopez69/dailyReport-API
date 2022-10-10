@@ -40,19 +40,7 @@ module.exports = {
       },
       {
         Tipo: "Software",
-        Nombre: "Word",
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        Tipo: "Software",
-        Nombre: "Powerpoint",
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        Tipo: "Software",
-        Nombre: "Excel",
+        Nombre: "Paquete Office",
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -79,13 +67,7 @@ module.exports = {
         Nombre: "Google Chrome",
         createdAt: new Date(),
         updatedAt: new Date()
-      },
-      {
-        Tipo: "Software",
-        Nombre: "Firefox",
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
+      }
     ], {});
   },
 
