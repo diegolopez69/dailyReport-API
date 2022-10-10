@@ -10,11 +10,11 @@ module.exports = {
      */
     await queryInterface.bulkInsert('tb_chromebooks', [
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 1,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -23,11 +23,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 2,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -36,11 +36,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 3,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -49,11 +49,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 4,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -62,11 +62,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 5,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -75,11 +75,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 6,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -88,11 +88,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 7,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -101,11 +101,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 8,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -114,11 +114,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 9,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -127,11 +127,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 10,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -140,11 +140,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 11,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -153,11 +153,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 12,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -166,11 +166,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 13,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -179,11 +179,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 14,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -192,11 +192,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 15,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -205,11 +205,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 16,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -218,11 +218,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 17,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -231,11 +231,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 18,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -244,11 +244,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 19,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -257,11 +257,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 20,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -270,11 +270,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 21,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -283,11 +283,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 22,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -296,11 +296,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 23,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -309,11 +309,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 1,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -322,11 +322,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 2,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -335,11 +335,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 3,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -348,11 +348,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 4,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -361,11 +361,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 5,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -374,11 +374,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 6,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -387,11 +387,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 7,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -400,11 +400,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 8,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -413,11 +413,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 9,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -426,11 +426,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 10,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -439,11 +439,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 11,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -452,11 +452,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 12,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -465,11 +465,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 13,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -478,11 +478,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 14,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -491,11 +491,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 15,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -504,11 +504,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 16,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -517,11 +517,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 17,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -530,11 +530,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 18,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -543,11 +543,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 19,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -556,11 +556,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 20,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -569,11 +569,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 21,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -582,11 +582,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 22,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -595,11 +595,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 23,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -608,11 +608,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 24,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -621,11 +621,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 1,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -634,11 +634,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 2,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -647,11 +647,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 3,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -660,11 +660,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 4,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -673,11 +673,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 5,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -686,11 +686,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 6,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -699,11 +699,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 7,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -712,11 +712,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 8,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -725,11 +725,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 9,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -738,11 +738,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 10,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -751,11 +751,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 11,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -764,11 +764,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 12,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -777,11 +777,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 13,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -790,11 +790,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 14,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -803,11 +803,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 15,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -816,11 +816,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 16,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -829,11 +829,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 17,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -842,11 +842,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 18,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -855,11 +855,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 19,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -868,11 +868,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 20,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -881,11 +881,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 21,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -894,11 +894,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 22,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -907,11 +907,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 23,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -920,11 +920,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 24,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -933,11 +933,11 @@ module.exports = {
         updatedAt: new Date()
       },
       {
-        Estado: 0,
+        Estado: 1,
         Descripcion: "",
         No_chromebook: 25,
         No_sn: "DSF87GH890D",
-        Estado: 0,
+        Estado: 1,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
