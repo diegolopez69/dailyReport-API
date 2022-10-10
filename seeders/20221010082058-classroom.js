@@ -89,12 +89,6 @@ module.exports = {
       },
       {
         Planta: -2,
-        Numero: 1,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        Planta: -2,
         Numero: 14,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -180,12 +174,6 @@ module.exports = {
       {
         Planta: -1,
         Numero: 13,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        Planta: -1,
-        Numero: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -281,12 +269,6 @@ module.exports = {
       },
       {
         Planta: 0,
-        Numero: 1,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        Planta: 0,
         Numero: 14,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -353,7 +335,7 @@ module.exports = {
       },
       {
         Planta: 1,
-        Numero: 11,
+        Numero: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -372,12 +354,6 @@ module.exports = {
       {
         Planta: 1,
         Numero: 13,
-        createdAt: new Date(),
-        updatedAt: new Date()
-      },
-      {
-        Planta: 1,
-        Numero: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
