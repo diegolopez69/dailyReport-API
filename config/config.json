@@ -4,7 +4,8 @@
     "password": "Uneatlantico22",
     "database": "db_daily_report",
     "host": "127.0.0.1",
-    "dialect": "mysql"
+    "dialect": "mysql",
+    "logging": false
   },
   "test": {
     "username": "root",
