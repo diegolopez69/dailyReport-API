@@ -14,21 +14,160 @@ basePath: "/v2"
 
 
 tags:
+- name: "Users"
+  description: "CRUD for the users and control of the login"
+- name: "Computer"
+  description: "CRUD for the computers table"  
 - name: "Tools"
   description: "CRUD complete for tools."
-- name: "Computer"
-  description: "CRUD for the computers table"
+
 - name: "Classroom"
   description: "CRUD for the Classroom table"
 - name: "Ordenador_Aula"
   description: "CRUD for the relationship tables computer, classrooms and tools"
 
 
+
 schemes:
 - "http"
 
 paths:
+  /api/auth/signup:
+    post:
+      tags:
+      - "Users"
+      summary: "Path to create a new user on the application."
+      operationId: "postSignUp"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Format to create a new user."
+        required: true
+        schema:
+          $ref: "#/definitions/SignUpRequest"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/SignUpResponse"
+        "400":
+          description: "Content con not be empty!"
+        "500":
+          description: "Some error ocurred whilw creating the Tool"
+  /api/auth/signin:
+    post:
+      tags:
+      - "Users"
+      summary: "Path to singin a user on the application."
+      operationId: "postSignIn"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Format to singin a user on the application."
+        required: true
+        schema:
+          $ref: "#/definitions/SignInRequest"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/SignInResponse"
+        "400":
+          description: "Content con not be empty!"
+        "500":
+          description: "Some error ocurred whilw creating the Tool"
+  /api/user:
+    get:
+      tags:
+        - "Users"
+      summary: "Path to get all the users of the application."
+      description: "Format to get all users of the application."
+      operationId: "getAllUsers"
+      responses:
+        "201":
+          description: "User was sing in successfully"
+        "400":
+          description: "Content con not be empty!"
+        "500":
+          description: "Some error ocurred whilw creating the user"
+          
+          
+  /api/user{userId}:
+    get:
+      tags:
+      - "Users"
+      summary: "Search for a user by specific ID."
+      responses:
+        "201":
+          description: "User was sing in successfully"
+        "400":
+          description: "Content con not be empty!"
+        "500":
+          description: "Some error ocurred whilw creating the user"
+    
+    
+    put:
+      tags:
+      - "Users"
+      summary: "Update a user by Id."
+      operationId: "putUsersById"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Format to update the data of user on the application."
+        required: true
+        schema:
+          $ref: "#/definitions/UpdateUsersRequest"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/UpdateUsersResponse"
+        "400":
+          description: "Cannot update Tool with id=${id}. Maybe Tool was not found or req.body is empty!"
+        "500":
+          description: "Error updating Tool with id= + id"      
+          
+          
+    delete:
+      tags:
+      - "Tools"
+      summary: "Delete tools"
+      operationId: "deleteTools"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "toolsId"
+        in: "path"
+        description: "ID of the tools that needs to be deleted"
+        required: true
+        type: "integer"
+        minimum: 1.0
+        format: "int64"
+      responses:
+        "201": 
+          description: "Tool was deleted successfully"
+        "400":
+          description: "Cannot delete Tool with id=${id}. Maybe Tool was not found!"
+        "500":
+          description: "Could not delete Tool with id= + id"
+          
+          
+          
+          
+          
+          
+          
+          
 
+          
+          
   /api/tool:
     get:
       tags:
@@ -525,6 +664,111 @@ paths:
           
 definitions:
   
+  SuccessfullResponse:
+    type: "object"
+    properties:
+      status:
+        type: "integer"
+        description: "200"
+      message:
+        type: "string"
+        description: Successfull.
+  
+  SignUpRequest:
+    type: "object"
+    properties:
+      username:
+        type: "string"
+      email:
+          type: "string"
+      password:
+        type: "string"
+      roles:
+        type: "string"
+        enum:
+        - "user"
+        - "moderator"
+        - "admin"
+  
+  SignUpResponse:
+    type: "object"
+    properties:
+      message:
+        type: "string"
+        example: User was registered successfully
+        
+  SignInRequest:
+    type: "object"
+    properties:
+      username:
+        type: "string"
+      password:
+          type: "string"
+          
+  SignInResponse: 
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        example: 1
+      username:
+          type: "string"
+          example: esc
+      email: 
+        type: "string"
+        example: esc@gmail.com
+      roles:
+        type: "array"
+        items: 
+          type: "string"
+          example: User was registered successfully
+        items:
+          type: string
+          
+  GetUsersResponse: 
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+      username:
+          type: "string"
+      email: 
+        type: "string"
+      password: 
+        type: "string"
+      createdAt:
+        type: "string"
+        format: "date-time"
+      updateAt:
+         type: "string"
+         format: "date-time"
+         
+  UpdateUsersRequest:
+    type: "object"
+    properties:
+      username:
+        type: "string"
+      email:
+          type: "string"
+      password:
+        type: "string"
+      roles:
+        type: "string"
+        enum:
+        - "user"
+        - "moderator"
+        - "admin"
+        
+  UpdateUsersResponse:
+    type: "object"
+    properties:
+      status:
+        type: "integer"
+        example: 200
+      message:
+          type: "string"
+          example: User was updated successfully
+  
   tool:
     type: "object"
     properties:
@@ -556,7 +800,6 @@ definitions:
     properties:
       Ordenador_id:
         type: "integer"
-        format: "int64"
       Nombre:
         type: "string"
       createdAt:
