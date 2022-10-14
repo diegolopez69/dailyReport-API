@@ -18,13 +18,14 @@ tags:
   description: "CRUD for the users and control of the login"
 - name: "Computer"
   description: "CRUD for the computers table"  
+- name: "Classroom"
+  description: "CRUD for the Classroom table"  
 - name: "Tools"
   description: "CRUD complete for tools."
-
-- name: "Classroom"
-  description: "CRUD for the Classroom table"
-- name: "Ordenador_Aula"
-  description: "CRUD for the relationship tables computer, classrooms and tools"
+- name: "Chromebooks"
+  description: "CRUD complete for tools."
+- name: "Inventory"
+  description: "CRUD complete for the inventory."
 
 
 
@@ -178,32 +179,7 @@ paths:
           description: "Cannot delete User with id=${id}. Maybe User was not found!"
         "500":
           description: "Could not delete User with id= + id"
-          
-          
-          
-          
-
-          
-          
   /api/tool:
-    get:
-      tags:
-      - "Tools"
-      summary: "Return all tools."
-      operationId: "gettool"
-      produces:
-      - "application/json"
-      parameters: []
-      responses:
-        "200":
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/tool"
-        "400": 
-          description: "Content can not be empty!"
-        "500":
-          description: "Some error occurred while retrieving Tools."
-
     post:
       tags:
       - "Tools"
@@ -217,45 +193,34 @@ paths:
         description: "Format to create a new tool."
         required: true
         schema:
-          $ref: "#/definitions/tool"
+          $ref: "#/definitions/PostToolsRequest"
       responses:
-        "201":
-          description: "Tool was created successfully"
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/PostToolsResponse"
         "400":
           description: "Content con not be empty!"
         "500":
           description: "Some error ocurred whilw creating the Tool"
-          
-  /api/tool{toolsId}:
     get:
       tags:
       - "Tools"
-      summary: "Search for a tool by specific ID."
-      operationId: "gettoolsById"
+      summary: "Return all tools."
+      operationId: "gettool"
       produces:
       - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        description: "Format to create a new tool."
-        required: true
-        schema:
-          $ref: "#/definitions/tool"
-      - name: "toolsId"
-        in: "path"
-        description: "It is used to search for a specific tool"
-        required: true
-        type: "integer"
-        maximum: 100.0
-        minimum: 1.0
-        format: "int64"
+      parameters: []
       responses:
-        "404":
-          description: "Cannot find Tool with id=${id}."
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ArrayGetToolsResponse"
+        "400": 
+          description: "Content can not be empty!"
         "500":
-          description: "Error retrieving Tool with id= + id"
-    
-    
+          description: "Some error occurred while retrieving Tools."
+  /api/tool{toolsId}:
     put:
       tags:
       - "Tools"
@@ -277,16 +242,41 @@ paths:
         description: "Scheme to update a tool."
         required: true
         schema:
-          $ref: "#/definitions/tools2"
+          $ref: "#/definitions/PostToolsRequest"
       responses:
-        "201":
-          description: "Tool was created successfully!"
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/PutToolsResponse"
         "400":
           description: "Cannot update Tool with id=${id}. Maybe Tool was not found or req.body is empty!"
         "500":
-          description: "Error updating Tool with id= + id"      
-          
-          
+          description: "Error updating Tool with id= + id"  
+    get:
+      tags:
+      - "Tools"
+      summary: "Search for a tool by specific ID."
+      operationId: "gettoolsById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "toolsId"
+        in: "path"
+        description: "It is used to search for a specific tool"
+        required: true
+        type: "integer"
+        maximum: 100.0
+        minimum: 1.0
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/GetToolsRequest"
+        "404":
+          description: "Cannot find Tool with id=${id}."
+        "500":
+          description: "Error retrieving Tool with id= + id"  
     delete:
       tags:
       - "Tools"
@@ -309,16 +299,7 @@ paths:
           description: "Cannot delete Tool with id=${id}. Maybe Tool was not found!"
         "500":
           description: "Could not delete Tool with id= + id"
- 
- 
- 
- 
- 
- 
- 
- 
- 
- 
+  
   /api/computer:
     get:
       tags:
@@ -337,8 +318,6 @@ paths:
           description: "Cannot delete computer with id=${id}. Maybe computer was not found!"
         "500":
            description: "Some error occurred while retrieving Computers."
-
-      
     post:
       tags:
       - "Computer"
@@ -362,8 +341,6 @@ paths:
             description: "Content can not be empty!"
         "500":
             description: "Some error occurred while creating the Computer."
-
-          
   /api/computer{computerId}:
     put:
       tags:
@@ -395,9 +372,7 @@ paths:
         "400":
           description: "Cannot update Computer with id=${id}. Maybe Computer was not found or req.body is empty!"
         "500":
-          description: "Error updating Computer with id= + id"   
-          
-          
+          description: "Error updating Computer with id= + id"
     get:
       tags:
       - "Computer"
@@ -423,11 +398,6 @@ paths:
           description: "Cannot find Computer with id=${id}."
         "500":
           description: "Error retrieving Computer with id= + id"
-    
-    
-       
-          
-          
     delete:
       tags:
       - "Computer"
@@ -450,22 +420,9 @@ paths:
           description: "Cannot delete Computer with id=${id}. Maybe Computer was not found!"
         "500":
            description: "Could not delete Computer with id= + id"
+           
  
   /api/room:
-    get:
-      tags:
-       - "Classroom"
-      summary: "Returns all the classrooms of the application"
-      operationId: "getClassroom"
-      produces:
-      - "application/json"
-      parameters: []
-      responses:
-         "200":
-           description: "succesful operation"
-           schema:
-             $ref: "#/definitions/Classroom"
-              
     post: 
       tags:
        - "Classroom"
@@ -479,46 +436,31 @@ paths:
         description: "Format to create a new Classroom"
         required: true
         schema:
-          $ref: "#/definitions/Classroom"
+          $ref: "#/definitions/PostClassroomRequest"
       responses:
-        "201":
-          description: "Classroom was created successfully!"
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/PostClassroomResponse"
         "400":
           description: "Content can not be empty!"
         "500":
           description: "Some error occurred while creating the Classroom."
-          
-         
-  /api/room{roomId}:
     get:
       tags:
-      - "Classroom"
-      summary: "Find a Classroom by ID."
-      operationId: "getroomById"
+       - "Classroom"
+      summary: "Returns all the classrooms of the application"
+      operationId: "getClassroom"
       produces:
       - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        description: "Format to get a  Classroom"
-        required: true
-        schema:
-          $ref: "#/definitions/Classroom"
-      - name: "roomId"
-        in: "path"
-        description: "It is used to search for a specific Classroom."
-        required: true
-        type: "integer"
-        maximum: 100.0
-        minimum: 1.0
-        format: "int64"
+      parameters: []
       responses:
-        "404":
-          description: "Cannot find Classroom with id=${id}."
-        "500":
-          description: "Error retrieving Classroom with id= + id"
-    
-    
+         "200":
+           description: "succesful operation"
+           schema:
+             $ref: "#/definitions/ArrayGetClassroomResponse"
+         
+  /api/room{roomId}:
     put:
       tags:
       - "Classroom"
@@ -540,16 +482,41 @@ paths:
         description: "Updated classroom scheme."
         required: true
         schema:
-          $ref: "#/definitions/Classroom"
+          $ref: "#/definitions/PostClassroomRequest"
       responses:
         "200":
-          description: "Classroom was updated successfully."
+           description: "succesful operation"
+           schema:
+             $ref: "#/definitions/PutClassroomResponse"
         "400":
           description: "Cannot update Classroom with id=${id}. Maybe Classroom was not found or req.body is empty!"
         "500":
-          description: "Error updating Classroom with id= + id"      
-          
-          
+          description: "Error updating Classroom with id= + id"
+    get:
+      tags:
+      - "Classroom"
+      summary: "Find a Classroom by ID."
+      operationId: "getroomById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "roomId"
+        in: "path"
+        description: "Search for a specific classroom."
+        required: true
+        type: "integer"
+        maximum: 100.0
+        minimum: 1.0
+        format: "int64"
+      responses:
+        "200":
+           description: "succesful operation"
+           schema:
+             $ref: "#/definitions/GetClassroomResponse"
+        "404":
+          description: "Cannot find Classroom with id=${id}."
+        "500":
+          description: "Error retrieving Classroom with id= + id"
     delete:
       tags:
       - "Classroom"
@@ -573,81 +540,183 @@ paths:
         "500":
           description: "Could not delete Classroom with id= + id"
   
-  /api/ordenadorAula:
-    get:
+  
+  
+  /api/chromebook:
+    
+    post:
       tags:
-       - "Ordenador_Aula"
-      summary: "Returns all the relationship made in the application"
-      operationId: "getordenadorAula"
+      - "Chromebook"
+      summary: "Path to create a new chromebook within the application."
+      operationId: "postChromebook"
       produces:
       - "application/json"
       parameters:
       - in: "body"
         name: "body"
-        description: "Scheme to get the whole relationship"
+        description: "Create new Chromebook."
         required: true
         schema:
-          $ref: "#/definitions/Ordenador_Aula"
-      responses:
-         "500":
-           description: "Some error occurred while retrieving computer_classrooms."
-                
-    post: 
-      tags:
-       - "Ordenador_Aula"
-      summary: "Create a new relation"
-      operationId: "postordenadorAula"
-      produces:
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        description: "Format for creating a new relationship"
-        required: true
-        schema:
-          $ref: "#/definitions/Ordenador_Aula"
+          $ref: "#/definitions/PostChromebookRequest"
       responses:
         "201":
-          description: "computer_classroom was created successfully!"
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/PostChromebookResponse"
         "400":
-          description: "Content can not be empty!"
+            description: "Content can not be empty!"
         "500":
-           description: "Some error occurred while creating the computer_classroom."
-          
-         
-  /api/ordenadorAula{OrdenadorAulaId}:
+            description: "Some error occurred while creating the Chromebook."
+            
     get:
       tags:
-      - "Ordenador_Aula"
-      summary: "Find a relationship by ID."
-      operationId: "getordenadorAulaById"
+      - "Chromebook"
+      summary: "Returns all chromebooks in the application"
+      operationId: "getChromebook"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/GetArrayChromebook"
+        "400":
+          description: "Cannot delete chromebook with id=${id}. Maybe chromebook was not found!"
+        "500":
+           description: "Some error occurred while retrieving chromebooks."
+  /api/chromebook{chromebookId}:
+    put:
+      tags:
+      - "Chromebook"
+      summary: "Update a Chromebook by specific ID."
+      operationId: "putChromebookById"
       produces:
       - "application/json"
       parameters:
-      - in: "body"
-        name: "body"
-        description: "Format to search for a new relationship"
-        required: true
-        schema:
-          $ref: "#/definitions/Ordenador_Aula"
-      - name: "OrdenadorAulaId"
+      - name: "chromebookId"
         in: "path"
-        description: "Used to find a relationship."
+        description: "It is used to search for a specific Chromebook."
         required: true
         type: "integer"
         maximum: 100.0
         minimum: 1.0
         format: "int64"
       responses:
-        "404":
-          description: "Cannot find computer_classroom with id=${id}."
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/PutChromebookResponse"
+        "400":
+          description: "Cannot update Chromebook with id=${id}. Maybe Chromebook was not found or req.body is empty!"
         "500":
-          description: "Error retrieving computer_classroom with id= + id"
+          description: "Error updating Chromebook with id= + id"
+    get:
+      tags:
+      - "Chromebook"
+      summary: "Search for a chromebook by specific ID."
+      operationId: "getChromebookrById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "chromebookId"
+        in: "path"
+        description: "It is used to search for a specific Chromebook."
+        required: true
+        type: "integer"
+        maximum: 100.0
+        minimum: 1.0
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/GetAllChromebooks"
+        "404":
+          description: "Cannot find Chromebook with id=${id}."
+        "500":
+          description: "Error retrieving Chromebook with id= + id"
+    delete:
+      tags:
+      - "Chromebook"
+      summary: "Remove a Chromebook from the app."
+      operationId: "deletechromebook"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "chromebookId"
+        in: "path"
+        description: "Id of the order that needs to be deleted"
+        required: true
+        type: "integer"
+        minimum: 1.0
+        format: "int64"
+      responses:
+        "200":
+          description: "Chromebook was deleted successfully!"
+        "400":
+          description: "Cannot delete Chromebook with id=${id}. Maybe Chromebook was not found!"
+        "500":
+           description: "Could not delete Chromebook with id= + id"
+  
+  
+  /api/ordenadorAula:
+      post: 
+        tags:
+         - "Inventory"
+        summary: "Create a new relation between classroom, computer and tool"
+        operationId: "postInventory"
+        produces:
+        - "application/json"
+        parameters:
+        - in: "body"
+          name: "body"
+          description: "Format for creating a new relationship"
+          required: true
+          schema:
+            $ref: "#/definitions/PostInventoryRequest"
+        responses:
+          "201":
+            description: "successful operation"
+            schema:
+              $ref: "#/definitions/PostInventoryResponse"
+          "400":
+            description: "Content can not be empty!"
+          "500":
+             description: "Some error occurred while creating the the relation."
+  
+      get:
+        tags:
+         - "Inventory"
+        summary: "Returns all the relationship made in the application"
+        operationId: "getInventory"
+        produces:
+        - "application/json"
+        parameters:
+        - in: "body"
+          name: "body"
+          description: "Scheme to get the whole relationship"
+          required: true
+          schema:
+            $ref: "#/definitions/ArrayGetAllInventory"
+        responses:
+           "200":
+              description: "successful operation"
+              schema:
+                $ref: "#/definitions/PostChromebookResponse"
+           "500":
+             description: "Some error occurred while retrieving the relations."
     
     
+    
+    
+    
+    
+  /api/ordenadorAula{OrdenadorAulaId}:
+  
     put:
       tags:
-      - "Ordenador_Aula"
+      - "Inventory"
       summary: "Update a relationship by id."
       operationId: "putOrdenadorAulaById"
       produces:
@@ -666,19 +735,52 @@ paths:
         description: "Updated schema of relations."
         required: true
         schema:
-          $ref: "#/definitions/Ordenador_Aula"   
+          $ref: "#/definitions/PostInventoryRequest"   
       responses:
         "200":
-          description: "computer_classroom was updated successfully."
+              description: "successful operation"
+              schema:
+                $ref: "#/definitions/PutInventoryResponse"
         "400":
-          description: "Cannot update computer_classroom with id=${id}. Maybe computer_classroom was not found or req.body is empty!"
+          description: "Cannot update the relation with id=${id}. Maybe the relation was not found or req.body is empty!"
         "500":
-          description: "Error updating computer_classroom with id= + id"      
+          description: "Error updating the relation with id= + id"  
+    
+         
+    
+    get:
+      tags:
+      - "Inventory"
+      summary: "Find a relationship by ID."
+      operationId: "getInventoryById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "OrdenadorAulaId"
+        in: "path"
+        description: "Used to find a relationship."
+        required: true
+        type: "integer"
+        maximum: 100.0
+        minimum: 1.0
+        format: "int64"
+      responses:
+        "200":
+              description: "successful operation"
+              schema:
+                $ref: "#/definitions/GetInventoryById"
+        "404":
+          description: "Cannot find the relation with id=${id}."
+        "500":
+          description: "Error retrieving the relation with id= + id"
+    
+    
+        
           
           
     delete:
       tags:
-      - "Ordenador_Aula"
+      - "Inventory"
       summary: "Delete a relationship from the application."
       operationId: "deleteOrdenadorAula"
       produces:
@@ -693,22 +795,22 @@ paths:
         format: "int64"
       responses:
         "400":
-          description: "Cannot delete computer_classroom with id=${id}. Maybe computer_classroom was not found!"
+          description: "Cannot delete the relation with id=${id}. Maybe the relation was not found!"
         "500":
-          description: "Could not delete computer_classroom with id= + id"
-          
+          description: "Could not delete the relation with id= + id"
+    
+    
+    
+    
+  
+  
+  
+  
+  
+       
+       
           
 definitions:
-  
-  SuccessfullResponse:
-    type: "object"
-    properties:
-      status:
-        type: "integer"
-        description: "200"
-      message:
-        type: "string"
-        description: Successfull.
   
   SignUpRequest:
     type: "object"
@@ -860,25 +962,7 @@ definitions:
           
           
   
-  tool:
-    type: "object"
-    properties:
-      Herramienta_id:
-        type: "integer"
-        format: "int64"
-      tipo:
-        type: "string"
-        enum:
-        - "Software"
-        - "Hardware"
-      Nombre:
-        type: "string"
-      createdAt:
-        type: "string"
-        format: "date-time"
-      updateAt:
-         type: "string"
-         format: "date-time"   
+  
 
   tools2:
     type: "object"
@@ -935,55 +1019,340 @@ definitions:
       Nombre:
         type: "string"
         example: Computer was updated successfully
-    
-  Computer2:
-    type: "object"
-    properties:
-      message:
-        type: "string"
-        
 
-  Classroom:
+  PostClassroomRequest:
     type: "object"
     properties:
-      Aula_id:
-        type: "integer"
-        format: "int64"
       Planta:
         type: "integer"
       Numero:
         type: "integer"
+        
+  PostClassroomResponse:
+    type: "object"
+    properties:
+      Status:
+        type: "integer"
+        example: 201
+      Nombre:
+        type: "string"
+        example: Classroom was created successfully
+        
+  GetClassroomResponse:
+    type: "object"
+    properties:
+      Aula_id:
+        type: "integer"
+        example: 1
+      Planta:
+        type: "integer"
+        example: -2
+      Numero:
+        type: "integer"
+        example: 2
       createdAt:
         type: "string"
         format: "date-time"
       updateAt:
          type: "string"
          format: "date-time"
+         
+    
+  ArrayGetClassroomResponse:
+    type: "array"
+    items:
+      $ref: "#/definitions/GetClassroomResponse"
       
-        
-  Ordenador_Aula:
+  PutClassroomResponse:
     type: "object"
     properties:
-      id:
+      Status:
+        type: "integer"
+        example: 200
+      Nombre:
+        type: "string"
+        example: Classroom was updated successfully
+        
+        
+  PostToolsRequest:
+    type: "object"
+    properties:
+      Tipo:
+        type: "string"
+        example: Hardware
+      Nombre:
+        type: "string"
+        example: HDMI
+      
+  PostToolsResponse:
+    type: "object"
+    properties:
+      Status:
+        type: "integer"
+        example: 201
+      Nombre:
+        type: "string"
+        example: Tool was created successfully
+        
+        
+  GetToolsRequest:
+    type: "object"
+    properties:
+      Herramienta_id:
         type: "integer"
         format: "int64"
-      id_ordenador:
-        type: "integer"
-      id_aula:
-        type: "integer"
-      id_herramienta:
-        type: "integer"
-  
-
-  
-  ApiResponse:
+        example: 2
+      tipo:
+        type: "string"
+        enum:
+        - "Hardware"
+      Nombre:
+        type: "string"
+        example: Cable ethernet
+      createdAt:
+        type: "string"
+        format: "date-time"
+      updateAt:
+         type: "string"
+         format: "date-time"
+        
+  ArrayGetToolsResponse:
+    type: "array"
+    items:
+      $ref: "#/definitions/GetToolsRequest"
+        
+        
+  PutToolsResponse:
     type: "object"
     properties:
-      code:
+      Status:
         type: "integer"
-        format: "int32"
-      type:
+        example: 200
+      Nombre:
         type: "string"
-      message:
-        type: "string"
+        example: Tool was updated successfully
         
+        
+  PostChromebookRequest:
+    type: "object"
+    properties:
+      Estado:
+        type: "integer"
+        example: 1
+      Description:
+        type: "string"
+        example: No se puede revisar el aula porque tienen clases
+      No_chromebook:
+        type: "integer"
+        example: 1
+      No_sn:
+        type: "string"
+        example: 6FDS7FDS8
+      No_armario:
+        type: "integer"
+        example: 1
+      No_chr_funcionales:
+        type: "integer"
+        example: 9
+      No_chr_no_funcionales:
+        type: "integer"
+        example: 1
+      No_chr_totales:
+        type: "integer"
+        example: 10
+        
+  PostChromebookResponse:
+    type: "object"
+    properties:
+      Status:
+        type: "integer"
+        example: 201
+      Nombre:
+        type: "string"
+        example: Chromebook was created successfully
+        
+        
+  GetAllChromebooks:
+    type: "object"
+    properties:
+      Estado:
+        type: "integer"
+        example: 1
+      Description:
+        type: "string"
+        example: No se puede revisar el aula porque tienen clases
+      No_chromebook:
+        type: "integer"
+        example: 1
+      No_sn:
+        type: "string"
+        example: 6FDS7FDS8
+      No_armario:
+        type: "integer"
+        example: 1
+      No_chr_funcionales:
+        type: "integer"
+        example: 9
+      No_chr_no_funcionales:
+        type: "integer"
+        example: 1
+      No_chr_totales:
+        type: "integer"
+        example: 10
+      createdAt:
+        type: "string"
+        format: "date-time"
+      updateAt:
+         type: "string"
+         format: "date-time"
+        
+        
+  GetArrayChromebook:
+    type: "array"
+    items:
+      $ref: "#/definitions/GetAllChromebooks"
+        
+  PutChromebookResponse:
+    type: "object"
+    properties:
+      Status:
+        type: "integer"
+        example: 200
+      Nombre:
+        type: "string"
+        example: Chromebook was updated successfully
+      
+        
+  PostInventoryRequest:
+    type: "object"
+    properties:
+      id_ordenador:
+        type: "integer"
+        example: 1
+      id_aula:
+        type: "integer"
+        example: 1
+      id_herramienta:
+        type: "integer"
+        example: 1
+        
+        
+  PostInventoryResponse:
+    type: "object"
+    properties:
+      Status:
+        type: "integer"
+        example: 201
+      Nombre:
+        type: "string"
+        example: Relation was created successfully
+        
+        
+        
+        
+  GetAllInventory:
+    type: "object"
+    properties:
+      Aho_id:
+        type: "integer"
+        example: 1
+      Aula_id:
+        type: "integer"
+        example: 3
+      Ordenador_id:
+        type: "integer"
+        example: 5
+      Herramienta_id:
+        type: "integer"
+        example: 2
+      createdAt:
+        type: "string"
+        format: "date-time"
+      updateAt:
+         type: "string"
+         format: "date-time"
+      tb_tool: 
+         items:
+          $ref: "#/definitions/GetAllInventoryTool"
+      ordenador:
+        items:
+          $ref: "#/definitions/GetAllInventoryComputer"
+      tb_classroom:
+        items:
+          $ref: "#/definitions/GetAllInventoryClassroom"
+
+  GetAllInventoryTool:
+    type: "object"
+    properties:
+      Herramienta_id:
+        type: "integer"
+        example: 1
+      Tipo:
+        type: "string"
+        example: Hardware
+      Nombre:
+        type: "string"
+        example: Cable ethernet
+
+
+  GetAllInventoryComputer:
+    type: "object"
+    properties:
+      Ordenador_id:
+        type: "integer"
+        example: 1
+      Nombre:
+        type: "string"
+        example: 78FSDHF8DS7F
+         
+  GetAllInventoryClassroom:
+    type: "object"
+    properties:
+      Aula_id:
+        type: "integer"
+        example: 1
+      Planta:
+        type: "integer"
+        example: 1
+      Numero:
+        type: "integer"
+        example: 1
+        
+  ArrayGetAllInventory:
+    type: "array"
+    items:
+      $ref: "#/definitions/GetAllInventory"
+      
+      
+  PutInventoryResponse:
+    type: "object"
+    properties:
+      Status:
+        type: "integer"
+        example: 200
+      Nombre:
+        type: "string"
+        example: Relation was updated successfully
+        
+        
+  GetInventoryById:
+    type: "object"
+    properties:
+      Aho_id:
+        type: "integer"
+        example: 1
+      Aula_id:
+        type: "integer"
+        example: 3
+      Ordenador_id:
+        type: "integer"
+        example: 5
+      Herramienta_id:
+        type: "integer"
+        example: 2
+      createdAt:
+        type: "string"
+        format: "date-time"
+      updateAt:
+         type: "string"
+         format: "date-time"
