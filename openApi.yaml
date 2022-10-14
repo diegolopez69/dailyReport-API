@@ -88,79 +88,14 @@ paths:
       description: "Format to get all users of the application."
       operationId: "getAllUsers"
       responses:
-        "201":
-          description: "User was sing in successfully"
-        "400":
-          description: "Content con not be empty!"
-        "500":
-          description: "Some error ocurred whilw creating the user"
-          
-          
-  /api/user{userId}:
-    get:
-      tags:
-      - "Users"
-      summary: "Search for a user by specific ID."
-      responses:
-        "201":
-          description: "User was sing in successfully"
-        "400":
-          description: "Content con not be empty!"
-        "500":
-          description: "Some error ocurred whilw creating the user"
-    
-    
-    put:
-      tags:
-      - "Users"
-      summary: "Update a user by Id."
-      operationId: "putUsersById"
-      produces:
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        description: "Format to update the data of user on the application."
-        required: true
-        schema:
-          $ref: "#/definitions/UpdateUsersRequest"
-      responses:
         "200":
           description: "successful operation"
           schema:
-            $ref: "#/definitions/UpdateUsersResponse"
+            $ref: "#/definitions/GetAllUsersResponse"
         "400":
-          description: "Cannot update Tool with id=${id}. Maybe Tool was not found or req.body is empty!"
+          description: "Content con not be empty!"
         "500":
-          description: "Error updating Tool with id= + id"      
-          
-          
-    delete:
-      tags:
-      - "Tools"
-      summary: "Delete tools"
-      operationId: "deleteTools"
-      produces:
-      - "application/json"
-      parameters:
-      - name: "toolsId"
-        in: "path"
-        description: "ID of the tools that needs to be deleted"
-        required: true
-        type: "integer"
-        minimum: 1.0
-        format: "int64"
-      responses:
-        "201": 
-          description: "Tool was deleted successfully"
-        "400":
-          description: "Cannot delete Tool with id=${id}. Maybe Tool was not found!"
-        "500":
-          description: "Could not delete Tool with id= + id"
-          
-          
-          
-          
+          description: "Some error ocurred whilw creating the user"
           
           
           
@@ -721,9 +656,29 @@ definitions:
         type: "array"
         items: 
           type: "string"
-          example: User was registered successfully
-        items:
-          type: string
+          example: ROLE_USER
+          
+          
+  GetAllUsersResponse:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        example: 1
+      username:
+          type: "string"
+          example: esc
+      email: 
+        type: "string"
+        example: esc@gmail.com
+      password: 
+        type: "string"
+      createdAt:
+        type: "string"
+        format: "date-time"
+      updateAt:
+         type: "string"
+         format: "date-time"
           
   GetUsersResponse: 
     type: "object"
@@ -748,17 +703,20 @@ definitions:
     properties:
       username:
         type: "string"
+        example: esc
       email:
           type: "string"
+          example: esc@gmail.com
       password:
         type: "string"
       roles:
-        type: "string"
-        enum:
-        - "user"
-        - "moderator"
-        - "admin"
-        
+        type: array
+        items:
+          type: string
+          example: admin
+          
+
+          
   UpdateUsersResponse:
     type: "object"
     properties:
