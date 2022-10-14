@@ -310,6 +310,15 @@ paths:
         "500":
           description: "Could not delete Tool with id= + id"
  
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
   /api/computer:
     get:
       tags:
@@ -323,7 +332,9 @@ paths:
         "200":
           description: "successful operation"
           schema:
-            $ref: "#/definitions/Computer"
+            $ref: "#/definitions/GetArrayComputer"
+        "400":
+          description: "Cannot delete computer with id=${id}. Maybe computer was not found!"
         "500":
            description: "Some error occurred while retrieving Computers."
 
@@ -341,44 +352,19 @@ paths:
         description: "Create new Computer."
         required: true
         schema:
-          $ref: "#/definitions/Computer"
+          $ref: "#/definitions/PostComputerRequest"
       responses:
         "201":
-           description: "Computer was created successfully!"
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/PostComputerResponse"
         "400":
             description: "Content can not be empty!"
         "500":
             description: "Some error occurred while creating the Computer."
 
           
-  /api/computer{ordId}:
-    get:
-      tags:
-      - "Computer"
-      summary: "Search for a computer by specific ID."
-      operationId: "getComputerrById"
-      produces:
-      - "application/json"
-      parameters:
-      - name: "ordId"
-        in: "path"
-        description: "It is used to search for a specific Computer."
-        required: true
-        type: "integer"
-        maximum: 100.0
-        minimum: 1.0
-        format: "int64"
-      responses:
-        "200":
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/Computer"
-        "404":
-          description: "Cannot find Computer with id=${id}."
-        "500":
-          description: "Error retrieving Computer with id= + id"
-    
-    
+  /api/computer{computerId}:
     put:
       tags:
       - "Computer"
@@ -387,7 +373,7 @@ paths:
       produces:
       - "application/json"
       parameters:
-      - name: "ordId"
+      - name: "computerId"
         in: "path"
         description: "It is used to search for a specific Computer."
         required: true
@@ -400,13 +386,46 @@ paths:
         description: "Scheme for updating an application Computer."
         required: true
         schema:
-          $ref: "#/definitions/Computer2"
-
+          $ref: "#/definitions/PostComputerRequest"
       responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/PutComputerResponse"
         "400":
           description: "Cannot update Computer with id=${id}. Maybe Computer was not found or req.body is empty!"
         "500":
-          description: "Error updating Computer with id= + id"      
+          description: "Error updating Computer with id= + id"   
+          
+          
+    get:
+      tags:
+      - "Computer"
+      summary: "Search for a computer by specific ID."
+      operationId: "getComputerrById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "computerId"
+        in: "path"
+        description: "It is used to search for a specific Computer."
+        required: true
+        type: "integer"
+        maximum: 100.0
+        minimum: 1.0
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/GetComputerRequest"
+        "404":
+          description: "Cannot find Computer with id=${id}."
+        "500":
+          description: "Error retrieving Computer with id= + id"
+    
+    
+       
           
           
     delete:
@@ -417,9 +436,9 @@ paths:
       produces:
       - "application/json"
       parameters:
-      - name: "ordId"
+      - name: "computerId"
         in: "path"
-        description: "ID of the order that needs to be deleted"
+        description: "Id of the order that needs to be deleted"
         required: true
         type: "integer"
         minimum: 1.0
@@ -867,19 +886,55 @@ definitions:
       message:
         type: "string" 
       
-  Computer:
+  GetComputerRequest:
     type: "object"
     properties:
       Ordenador_id:
         type: "integer"
+        example: 1
       Nombre:
         type: "string"
+        example: esc
       createdAt:
         type: "string"
         format: "date-time"
       updateAt:
          type: "string"
          format: "date-time"
+         
+  GetArrayComputer:
+    type: "array"
+    items:
+      $ref: "#/definitions/GetComputerRequest"
+      
+      
+      
+  PostComputerRequest:
+    type: "object"
+    properties:
+      Nombre:
+        type: "string"
+        example: esc
+        
+  PostComputerResponse:
+    type: "object"
+    properties:
+      Status:
+        type: "integer"
+        example: 201
+      Nombre:
+        type: "string"
+        example: Computer was created successfully
+        
+  PutComputerResponse:
+    type: "object"
+    properties:
+      Status:
+        type: "integer"
+        example: 200
+      Nombre:
+        type: "string"
+        example: Computer was updated successfully
     
   Computer2:
     type: "object"
