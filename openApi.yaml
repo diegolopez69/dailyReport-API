@@ -91,11 +91,93 @@ paths:
         "200":
           description: "successful operation"
           schema:
-            $ref: "#/definitions/GetAllUsersResponse"
+            $ref: "#/definitions/ArrayGetAllUsers"
         "400":
           description: "Content con not be empty!"
         "500":
           description: "Some error ocurred whilw creating the user"
+  /api/user{usersId}:
+    put:
+      tags:
+      - "Users"
+      summary: "Update users with Id."
+      operationId: "putUserById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "usersId"
+        in: "path"
+        description: "It is used to search for a specific user."
+        required: true
+        type: "integer"
+        maximum: 100.0
+        minimum: 1.0
+        format: "int64"
+      - in: "body"
+        name: "body"
+        description: "Scheme to update a user."
+        required: true
+        schema:
+          $ref: "#/definitions/UpdateUsersRequest"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/UpdateUsersResponse"
+        "400":
+          description: "Cannot update User with id=${id}. Maybe User was not found or req.body is empty!"
+        "500":
+          description: "Error updating User with id= + id"   
+    get:
+      tags:
+      - "Users"
+      summary: "Search for a user by specific ID."
+      operationId: "getUserById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "usersId"
+        in: "path"
+        description: "It is used to search for a specific user"
+        required: true
+        type: "integer"
+        maximum: 100.0
+        minimum: 1.0
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/GetAllUsersResponse"
+        "404":
+          description: "Cannot find User with id=${id}."
+        "500":
+          description: "Error retrieving User with id= + id"
+    delete:
+      tags:
+      - "Users"
+      summary: "Delete a user by specific ID."
+      operationId: "deleteUserById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "usersId"
+        in: "path"
+        description: "It is used to delete for a specific user"
+        required: true
+        type: "integer"
+        maximum: 100.0
+        minimum: 1.0
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/DeleteUsersResponse"
+        "400":
+          description: "Cannot delete User with id=${id}. Maybe User was not found!"
+        "500":
+          description: "Could not delete User with id= + id"
           
           
           
@@ -715,8 +797,6 @@ definitions:
           type: string
           example: admin
           
-
-          
   UpdateUsersResponse:
     type: "object"
     properties:
@@ -726,6 +806,40 @@ definitions:
       message:
           type: "string"
           example: User was updated successfully
+          
+          
+  DeleteUsersResponse:
+    type: "object"
+    properties:
+      status:
+        type: "integer"
+        example: 200
+      message:
+          type: "string"
+          example: User was deleted successfully
+          
+          
+          
+          
+  ArrayGetAllUsers:        
+    type: "array"
+    items:
+      $ref: "#/definitions/GetAllUsersResponse"
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
+          
   
   tool:
     type: "object"
