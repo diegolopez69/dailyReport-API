@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  description: "Este será un contrato del backend para la herramienta de Daily Reports"
+  description: "Este es un contrato del backend para la herramienta de Daily Reports"
   version: "1.0.0"
   title: "Daily Reports API"
   termsOfService: "http://swagger.io/terms/"
@@ -9,8 +9,8 @@ info:
   license:
     name: "Apache 2.0"
     url: "http://www.apache.org/licenses/LICENSE-2.0.html"
-host: "petstore.swagger.io"
-basePath: "/v2"
+host: "localhost:3000"
+basePath: "/api"
 
 
 tags:
@@ -22,7 +22,7 @@ tags:
   description: "CRUD for the Classroom table"  
 - name: "Tools"
   description: "CRUD complete for tools."
-- name: "Chromebooks"
+- name: "Chromebook"
   description: "CRUD complete for tools."
 - name: "Inventory"
   description: "CRUD complete for the inventory."
@@ -179,127 +179,7 @@ paths:
           description: "Cannot delete User with id=${id}. Maybe User was not found!"
         "500":
           description: "Could not delete User with id= + id"
-  /api/tool:
-    post:
-      tags:
-      - "Tools"
-      summary: "Path to create a new tool with in the application."
-      operationId: "postTools"
-      produces:
-      - "application/json"
-      parameters:
-      - in: "body"
-        name: "body"
-        description: "Format to create a new tool."
-        required: true
-        schema:
-          $ref: "#/definitions/PostToolsRequest"
-      responses:
-        "200":
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/PostToolsResponse"
-        "400":
-          description: "Content con not be empty!"
-        "500":
-          description: "Some error ocurred whilw creating the Tool"
-    get:
-      tags:
-      - "Tools"
-      summary: "Return all tools."
-      operationId: "gettool"
-      produces:
-      - "application/json"
-      parameters: []
-      responses:
-        "200":
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/ArrayGetToolsResponse"
-        "400": 
-          description: "Content can not be empty!"
-        "500":
-          description: "Some error occurred while retrieving Tools."
-  /api/tool{toolsId}:
-    put:
-      tags:
-      - "Tools"
-      summary: "Update tools with Id."
-      operationId: "putToolsById"
-      produces:
-      - "application/json"
-      parameters:
-      - name: "toolsId"
-        in: "path"
-        description: "It is used to search for a specific tool."
-        required: true
-        type: "integer"
-        maximum: 100.0
-        minimum: 1.0
-        format: "int64"
-      - in: "body"
-        name: "body"
-        description: "Scheme to update a tool."
-        required: true
-        schema:
-          $ref: "#/definitions/PostToolsRequest"
-      responses:
-        "200":
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/PutToolsResponse"
-        "400":
-          description: "Cannot update Tool with id=${id}. Maybe Tool was not found or req.body is empty!"
-        "500":
-          description: "Error updating Tool with id= + id"  
-    get:
-      tags:
-      - "Tools"
-      summary: "Search for a tool by specific ID."
-      operationId: "gettoolsById"
-      produces:
-      - "application/json"
-      parameters:
-      - name: "toolsId"
-        in: "path"
-        description: "It is used to search for a specific tool"
-        required: true
-        type: "integer"
-        maximum: 100.0
-        minimum: 1.0
-        format: "int64"
-      responses:
-        "200":
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/GetToolsRequest"
-        "404":
-          description: "Cannot find Tool with id=${id}."
-        "500":
-          description: "Error retrieving Tool with id= + id"  
-    delete:
-      tags:
-      - "Tools"
-      summary: "Delete tools"
-      operationId: "deleteTools"
-      produces:
-      - "application/json"
-      parameters:
-      - name: "toolsId"
-        in: "path"
-        description: "ID of the tools that needs to be deleted"
-        required: true
-        type: "integer"
-        minimum: 1.0
-        format: "int64"
-      responses:
-        "201": 
-          description: "Tool was deleted successfully"
-        "400":
-          description: "Cannot delete Tool with id=${id}. Maybe Tool was not found!"
-        "500":
-          description: "Could not delete Tool with id= + id"
-  
+          
   /api/computer:
     get:
       tags:
@@ -415,13 +295,14 @@ paths:
         format: "int64"
       responses:
         "200":
-          description: "Computer was deleted successfully!"
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/DeleteComputerResponse"
         "400":
           description: "Cannot delete Computer with id=${id}. Maybe Computer was not found!"
         "500":
-           description: "Could not delete Computer with id= + id"
-           
- 
+           description: "Could not delete Computer with id= + id"          
+          
   /api/room:
     post: 
       tags:
@@ -534,13 +415,136 @@ paths:
         format: "int64"
       responses:
         "200":
-          description: "Classroom was deleted successfully!"
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/DeleteClassroomResponse"
         "400":
           description: "Cannot delete Classroom with id=${id}. Maybe Classroom was not found!"
         "500":
-          description: "Could not delete Classroom with id= + id"
-  
-  
+          description: "Could not delete Classroom with id= + id"          
+          
+  /api/tool:
+    post:
+      tags:
+      - "Tools"
+      summary: "Path to create a new tool with in the application."
+      operationId: "postTools"
+      produces:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Format to create a new tool."
+        required: true
+        schema:
+          $ref: "#/definitions/PostToolsRequest"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/PostToolsResponse"
+        "400":
+          description: "Content con not be empty!"
+        "500":
+          description: "Some error ocurred whilw creating the Tool"
+    get:
+      tags:
+      - "Tools"
+      summary: "Return all tools."
+      operationId: "gettool"
+      produces:
+      - "application/json"
+      parameters: []
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ArrayGetToolsResponse"
+        "400": 
+          description: "Content can not be empty!"
+        "500":
+          description: "Some error occurred while retrieving Tools."
+  /api/tool{toolsId}:
+    put:
+      tags:
+      - "Tools"
+      summary: "Update tools with Id."
+      operationId: "putToolsById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "toolsId"
+        in: "path"
+        description: "It is used to search for a specific tool."
+        required: true
+        type: "integer"
+        maximum: 100.0
+        minimum: 1.0
+        format: "int64"
+      - in: "body"
+        name: "body"
+        description: "Scheme to update a tool."
+        required: true
+        schema:
+          $ref: "#/definitions/PostToolsRequest"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/PutToolsResponse"
+        "400":
+          description: "Cannot update Tool with id=${id}. Maybe Tool was not found or req.body is empty!"
+        "500":
+          description: "Error updating Tool with id= + id"  
+    get:
+      tags:
+      - "Tools"
+      summary: "Search for a tool by specific ID."
+      operationId: "gettoolsById"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "toolsId"
+        in: "path"
+        description: "It is used to search for a specific tool"
+        required: true
+        type: "integer"
+        maximum: 100.0
+        minimum: 1.0
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/GetToolsRequest"
+        "404":
+          description: "Cannot find Tool with id=${id}."
+        "500":
+          description: "Error retrieving Tool with id= + id"  
+    delete:
+      tags:
+      - "Tools"
+      summary: "Delete tools"
+      operationId: "deleteTools"
+      produces:
+      - "application/json"
+      parameters:
+      - name: "toolsId"
+        in: "path"
+        description: "ID of the tools that needs to be deleted"
+        required: true
+        type: "integer"
+        minimum: 1.0
+        format: "int64"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/DeleteToolResponse"
+        "400":
+          description: "Cannot delete Tool with id=${id}. Maybe Tool was not found!"
+        "500":
+          description: "Could not delete Tool with id= + id"
   
   /api/chromebook:
     
@@ -653,12 +657,13 @@ paths:
         format: "int64"
       responses:
         "200":
-          description: "Chromebook was deleted successfully!"
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/DeleteChromebookResponse"
         "400":
           description: "Cannot delete Chromebook with id=${id}. Maybe Chromebook was not found!"
         "500":
            description: "Could not delete Chromebook with id= + id"
-  
   
   /api/ordenadorAula:
       post: 
@@ -684,7 +689,6 @@ paths:
             description: "Content can not be empty!"
           "500":
              description: "Some error occurred while creating the the relation."
-  
       get:
         tags:
          - "Inventory"
@@ -706,12 +710,6 @@ paths:
                 $ref: "#/definitions/PostChromebookResponse"
            "500":
              description: "Some error occurred while retrieving the relations."
-    
-    
-    
-    
-    
-    
   /api/ordenadorAula{OrdenadorAulaId}:
   
     put:
@@ -745,9 +743,6 @@ paths:
           description: "Cannot update the relation with id=${id}. Maybe the relation was not found or req.body is empty!"
         "500":
           description: "Error updating the relation with id= + id"  
-    
-         
-    
     get:
       tags:
       - "Inventory"
@@ -773,11 +768,6 @@ paths:
           description: "Cannot find the relation with id=${id}."
         "500":
           description: "Error retrieving the relation with id= + id"
-    
-    
-        
-          
-          
     delete:
       tags:
       - "Inventory"
@@ -794,6 +784,10 @@ paths:
         minimum: 1.0
         format: "int64"
       responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/DeleteInventoryResponse"
         "400":
           description: "Cannot delete the relation with id=${id}. Maybe the relation was not found!"
         "500":
@@ -861,7 +855,6 @@ definitions:
           type: "string"
           example: ROLE_USER
           
-          
   GetAllUsersResponse:
     type: "object"
     properties:
@@ -883,24 +876,6 @@ definitions:
          type: "string"
          format: "date-time"
           
-  GetUsersResponse: 
-    type: "object"
-    properties:
-      id:
-        type: "integer"
-      username:
-          type: "string"
-      email: 
-        type: "string"
-      password: 
-        type: "string"
-      createdAt:
-        type: "string"
-        format: "date-time"
-      updateAt:
-         type: "string"
-         format: "date-time"
-         
   UpdateUsersRequest:
     type: "object"
     properties:
@@ -928,7 +903,6 @@ definitions:
           type: "string"
           example: User was updated successfully
           
-          
   DeleteUsersResponse:
     type: "object"
     properties:
@@ -939,37 +913,61 @@ definitions:
           type: "string"
           example: User was deleted successfully
           
-          
-          
-          
   ArrayGetAllUsers:        
     type: "array"
     items:
       $ref: "#/definitions/GetAllUsersResponse"
           
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-          
-  
-  
-
-  tools2:
+  DeleteComputerResponse:
     type: "object"
     properties:
+      status:
+        type: "integer"
+        example: 200
       message:
-        type: "string" 
-      
+          type: "string"
+          example: Computer was deleted successfully
+          
+  DeleteClassroomResponse:
+    type: "object"
+    properties:
+      status:
+        type: "integer"
+        example: 200
+      message:
+          type: "string"
+          example: Classroom was deleted successfully
+          
+  DeleteToolResponse:
+    type: "object"
+    properties:
+      status:
+        type: "integer"
+        example: 200
+      message:
+          type: "string"
+          example: Tool was deleted successfully
+          
+  DeleteChromebookResponse:
+    type: "object"
+    properties:
+      status:
+        type: "integer"
+        example: 200
+      message:
+          type: "string"
+          example: Chromebook was deleted successfully
+          
+  DeleteInventoryResponse:
+    type: "object"
+    properties:
+      status:
+        type: "integer"
+        example: 200
+      message:
+          type: "string"
+          example: Relation was deleted successfully
+
   GetComputerRequest:
     type: "object"
     properties:
@@ -990,8 +988,6 @@ definitions:
     type: "array"
     items:
       $ref: "#/definitions/GetComputerRequest"
-      
-      
       
   PostComputerRequest:
     type: "object"
@@ -1073,7 +1069,6 @@ definitions:
         type: "string"
         example: Classroom was updated successfully
         
-        
   PostToolsRequest:
     type: "object"
     properties:
@@ -1093,7 +1088,6 @@ definitions:
       Nombre:
         type: "string"
         example: Tool was created successfully
-        
         
   GetToolsRequest:
     type: "object"
@@ -1121,7 +1115,6 @@ definitions:
     items:
       $ref: "#/definitions/GetToolsRequest"
         
-        
   PutToolsResponse:
     type: "object"
     properties:
@@ -1131,7 +1124,6 @@ definitions:
       Nombre:
         type: "string"
         example: Tool was updated successfully
-        
         
   PostChromebookRequest:
     type: "object"
@@ -1170,7 +1162,6 @@ definitions:
       Nombre:
         type: "string"
         example: Chromebook was created successfully
-        
         
   GetAllChromebooks:
     type: "object"
@@ -1222,7 +1213,6 @@ definitions:
         type: "string"
         example: Chromebook was updated successfully
       
-        
   PostInventoryRequest:
     type: "object"
     properties:
@@ -1236,7 +1226,6 @@ definitions:
         type: "integer"
         example: 1
         
-        
   PostInventoryResponse:
     type: "object"
     properties:
@@ -1246,9 +1235,6 @@ definitions:
       Nombre:
         type: "string"
         example: Relation was created successfully
-        
-        
-        
         
   GetAllInventory:
     type: "object"
@@ -1293,8 +1279,7 @@ definitions:
       Nombre:
         type: "string"
         example: Cable ethernet
-
-
+        
   GetAllInventoryComputer:
     type: "object"
     properties:
@@ -1323,7 +1308,6 @@ definitions:
     items:
       $ref: "#/definitions/GetAllInventory"
       
-      
   PutInventoryResponse:
     type: "object"
     properties:
@@ -1333,7 +1317,6 @@ definitions:
       Nombre:
         type: "string"
         example: Relation was updated successfully
-        
         
   GetInventoryById:
     type: "object"
