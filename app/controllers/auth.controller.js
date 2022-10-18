@@ -1,5 +1,6 @@
 const db = require("../models");
 const config = require("../config/auth.config");
+const User_roles = db.user;
 const User = db.user;
 const Role = db.role;
 const Op = db.Sequelize.Op;
@@ -39,16 +40,44 @@ exports.signup = (req, res) => {
     });
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 // Retrieve all Users from the database.
 exports.findAll = (req, res) => {
   const Id = req.query.Id;
   var condition = Id ? { Id: { [Op.like]: `%${Id}%` } } : null;
 
-  User.findAll({ where: condition })
+  User.findAll({ 
+    where: condition,
+    include: [{
+      model: User_roles,
+      attributes: ['userId', 'roleId']
+    }
+  ],
+  })
     .then(data => {
       res.send(data);
     })
     .catch(err => {
+      console.log("------------------",err);
       res.status(500).json({
         status: 500,
         Err: err.message || 'Some error occurred while retrieving Users.'
@@ -56,6 +85,32 @@ exports.findAll = (req, res) => {
     });
 };
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// Do the login on the application
 exports.signin = (req, res) => {
   User.findOne({
     where: {
