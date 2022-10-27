@@ -1,6 +1,6 @@
 const db = require("../models");
 const config = require("../config/auth.config");
-const User_roles = db.user;
+const tb_user_roles = db.tb_user_roles;
 const User = db.user;
 const Role = db.role;
 const Op = db.Sequelize.Op;
@@ -65,19 +65,25 @@ exports.findAll = (req, res) => {
   const Id = req.query.Id;
   var condition = Id ? { Id: { [Op.like]: `%${Id}%` } } : null;
 
-  User.findAll({ 
-    where: condition,
-    include: [{
-      model: User_roles,
-      attributes: ['userId', 'roleId']
-    }
-  ],
-  })
+  // User.findAll({ 
+  //   where: condition,
+  //   include: [{
+  //     model: tb_user_roles,
+  //     attributes: ['userId', 'roleId']
+  //   }
+  // ],
+  // })
+
+
+
+  User.findAll({ where: condition })
+
+
     .then(data => {
       res.send(data);
     })
     .catch(err => {
-      console.log("------------------",err);
+      console.log("------------------------------------------------------", err);
       res.status(500).json({
         status: 500,
         Err: err.message || 'Some error occurred while retrieving Users.'
@@ -214,19 +220,19 @@ exports.delete = (req, res) => {
   })
     .then(num => {
       if (num == 1) {
-        res.status(200).json({ 
+        res.status(200).json({
           status: 200,
           message: "User was deleted successfully!"
         });
       } else {
-        res.status(400).json({ 
+        res.status(400).json({
           status: 400,
           message: `Cannot delete User with id=${id}. Maybe User was not found!`
         });
       }
     })
     .catch(err => {
-      res.status(500).json({ 
+      res.status(500).json({
         status: 500,
         message: "Could not delete User with id=" + id
       });

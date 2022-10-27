@@ -1,5 +1,6 @@
 const { verifySignUp } = require("../middleware");
 const Auth = require("../controllers/auth.controller");
+const UserRol = require("../controllers/user_roles.controller");
 
 module.exports = function (app) {
   app.use(function (req, res, next) {
@@ -21,6 +22,9 @@ module.exports = function (app) {
 
   // Retrieve all users
   app.get("/api/user",Auth.findAll);
+
+  // Retrieve all users with roles
+  app.get("/api/user-roles",UserRol.findAll);
 
   // Retrieve a single User with id
   app.get("/api/user/:id", Auth.findOne);

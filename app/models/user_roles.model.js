@@ -1,3 +1,9 @@
+// user = require("./user.model.js");
+// role = require("./role.model.js");
+
+// db.role = require("./role.model.js")(sequelize, Sequelize);
+// db.user = require("./user.model.js")(sequelize, Sequelize);
+
 module.exports = (sequelize, Sequelize) => {
 
   const tb_user_roles = sequelize.define("tb_user_roles", {
@@ -7,12 +13,6 @@ module.exports = (sequelize, Sequelize) => {
       autoIncrement: true
     }
   });
-
-  // role.belongsToMany(db.user, {
-  //   through: "tb_user_roles",
-  //   foreignKey: "roleId",
-  //   otherKey: "userId"
-  // }),
 
   // user.belongsToMany(db.role, {
   //   through: "tb_user_roles",
@@ -25,7 +25,7 @@ module.exports = (sequelize, Sequelize) => {
 //     role.belongsToMany(models.user, {
 //       through: "tb_user_roles",
 //       foreignKey: "roleId",
-//       otherKey: "userId"
+//       otherKey: "userId"   
 //     }),
 
 //       user.belongsToMany(models.role, {
@@ -45,5 +45,17 @@ module.exports = (sequelize, Sequelize) => {
 // users.hasMany(tb_user_roles);
 // tb_user_roles.belongsTo(users);
 
+
+  // role.belongsToMany(user, {
+  //   through: "tb_user_roles",
+  //   foreignKey: "roleId"
+  // });
+
   return tb_user_roles;
+
+  
+
+
 };
+
+

@@ -43,6 +43,7 @@ db.user = require("./user.model.js")(sequelize, Sequelize);
 db.role = require("./role.model.js")(sequelize, Sequelize);
 db.tb_checkups = require("./checkups.model.js")(sequelize, Sequelize);
 db.tb_chromebook = require("./chromebook.model.js")(sequelize, Sequelize);
+db.tb_user_roles = require("./user_roles.model.js")(sequelize, Sequelize);
 
 
 db.role.belongsToMany(db.user, {
@@ -50,11 +51,27 @@ db.role.belongsToMany(db.user, {
   foreignKey: "roleId",
   otherKey: "userId"
 });
+
 db.user.belongsToMany(db.role, {
   through: "tb_user_roles",
   foreignKey: "userId",
   otherKey: "roleId"
 });
+
+//------------------------------------------------------------
+
+// db.role.belongsToMany(db.user, {
+//   through: "user_roles",
+//   foreignKey: "roleId",
+//   otherKey: "userId"
+// });
+
+// db.user.belongsToMany(db.role, {
+//   through: "user_roles",
+//   foreignKey: "userId",
+//   otherKey: "roleId"
+// });
+
 db.ROLES = ["user", "admin", "moderator"];
 db.tb_aula_herramienta_ordenador.associate(db)
 db.tb_checkups.associate(db)
