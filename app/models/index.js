@@ -58,20 +58,6 @@ db.user.belongsToMany(db.role, {
   otherKey: "roleId"
 });
 
-//------------------------------------------------------------
-
-// db.role.belongsToMany(db.user, {
-//   through: "user_roles",
-//   foreignKey: "roleId",
-//   otherKey: "userId"
-// });
-
-// db.user.belongsToMany(db.role, {
-//   through: "user_roles",
-//   foreignKey: "userId",
-//   otherKey: "roleId"
-// });
-
 db.ROLES = ["user", "admin", "moderator"];
 db.tb_aula_herramienta_ordenador.associate(db)
 db.tb_checkups.associate(db)

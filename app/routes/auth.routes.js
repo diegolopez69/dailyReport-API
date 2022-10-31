@@ -21,14 +21,15 @@ module.exports = function (app) {
   );
 
   // Retrieve all users
-  app.get("/api/user",Auth.findAll);
+  app.get("/api/user", Auth.findAll);
 
   // Retrieve all users with roles
-  app.get("/api/user-roles",UserRol.findAll);
+  app.get("/api/user-roles", UserRol.findAll);
 
   // Retrieve a single User with id
   app.get("/api/user/:id", Auth.findOne);
 
+  // Login on the application
   app.post("/api/auth/signin", Auth.signin);
 
   // Update a User with id
