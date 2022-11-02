@@ -19,7 +19,7 @@ module.exports = function (app) {
     ],
     Auth.signup
   );
-
+ 
   // Retrieve all users
   app.get("/api/user", Auth.findAll);
 
