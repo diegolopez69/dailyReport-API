@@ -4,16 +4,16 @@ module.exports = app => {
 
   var router = require("express").Router();
 
-  // Create a new Room
+  // Cuantos chromebook's se tienen a lo largo del tiempo (gráfica)ß
   router.post("/", [authJwt.verifyToken, authJwt.isModerator], Room.create);
 
-  // Retrieve all Aulas
+  // Mostrar cuantos chromebook's son funcionales
   router.get("/", [authJwt.verifyToken, authJwt.isModerator], Room.findAll);
 
-  // Retrieve a single Room with id
+  // Mostrar la cantidad de teclados, ratones y ordenadores que se tienen
   router.get("/:id", [authJwt.verifyToken, authJwt.isModerator], Room.findOne);
 
-  // Update a Room with id
+  // Mostrar cuantos ordenadores se tienen en cada aula
   router.put("/:id", [authJwt.verifyToken, authJwt.isModerator], Room.update);
 
   // Delete a Room with id
@@ -21,3 +21,4 @@ module.exports = app => {
 
   app.use('/api/room', router);
 };
+ 
