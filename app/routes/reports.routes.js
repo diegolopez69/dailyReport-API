@@ -17,7 +17,7 @@ module.exports = app => {
   router.put("/:id", [authJwt.verifyToken, authJwt.isModerator], Room.update);
 
   // Delete a Room with id
-  router.delete("/:id", [authJwt.verifyToken, authJwt.isModerator], Room.delete);
+  router.delete("/:id", [authJwt.verifyToken, authJwt.isModerator], Room.delete); 
 
   app.use('/api/room', router);
 };
