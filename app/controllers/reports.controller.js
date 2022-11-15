@@ -24,3 +24,20 @@ exports.chromebook = (req, res) => {
     });
 };
 
+// Retrieve all funtionals and not funcionals chromebooks
+exports.chromebookFuncionales = (req, res) => {
+  const Nombre = req.query.Nombre;
+  var condition = Nombre ? { Nombre: { [Op.like]: `%${Nombre}%` } } : null;
+  Chromebook.findAll({ where: condition, 
+    attributes: ['No_chr_funcionales', 'No_chr_no_funcionales']
+  })
+    .then(data => {
+      res.send(data);
+    })
+    .catch(err => {
+      res.status(500).json({ 
+        status: 500,
+        Err: err.message || 'Some error occurred while retrieving Computers.' 
+      });
+    });
+};

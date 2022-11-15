@@ -12,12 +12,12 @@ module.exports = (app) => {
   );
 
 
-  // Retrieve all funtional chromebooks through time
-  // router.get(
-  //   "/funtional-chromebook",
-  //   [authJwt.verifyToken, authJwt.isModerator],
-  //   Reports.chromebookFuncionales
-  // );
+  //Retrieve all funtional chromebooks through time
+  router.get(
+    "/funtional-chromebook",
+    [authJwt.verifyToken, authJwt.isModerator],
+    Reports.chromebookFuncionales
+  );
 
   //Retrieve all keybords through time
   // router.get(
