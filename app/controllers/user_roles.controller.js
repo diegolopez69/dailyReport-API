@@ -5,7 +5,7 @@ const User_roles = db.tb_user_roles;
 const Roles = db.role;
 const User = db.user;
 
-// Retrieve all chromebooks from the database.
+// Retrieve all users with the roles
 exports.findAll = (req, res) => {
   const Id = req.query.Id;
   var condition = Id ? { Id: { [Op.like]: `%${Id}%` } } : null;
@@ -23,13 +23,9 @@ exports.findAll = (req, res) => {
       res.send(users);
     })
     .catch((err) => {
-      console.log(
-        "--------------------------------------------------------------------",
-        err
-      );
       res.status(500).json({
         status: 500,
-        Err: err.message || "Some error occurred while retrieving Chromebooks.",
+        Err: err.message || "Some error occurred while retrieving the users with roles.",
       });
     });
 };
