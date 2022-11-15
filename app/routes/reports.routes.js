@@ -4,12 +4,42 @@ module.exports = (app) => {
 
   var router = require("express").Router();
 
-  // Retrieve all Aulas
+  // Retrieve all Chromebooks through time
   router.get(
     "/chromebook",
     [authJwt.verifyToken, authJwt.isModerator],
-    Reports.findAll
+    Reports.chromebook
   );
+
+
+  // Retrieve all funtional chromebooks through time
+  // router.get(
+  //   "/funtional-chromebook",
+  //   [authJwt.verifyToken, authJwt.isModerator],
+  //   Reports.chromebookFuncionales
+  // );
+
+  //Retrieve all keybords through time
+  // router.get(
+  //   "/keybords",
+  //   [authJwt.verifyToken, authJwt.isModerator],
+  //   Reports.keybord
+  // );
+
+  //Retrieve all mouses through time
+  // router.get(
+  //   "/mouse",
+  //   [authJwt.verifyToken, authJwt.isModerator],
+  //   Reports.mouse
+  // );
+
+
+  //Retrieve all computers through time
+  // router.get(
+  //   "/computers",
+  //   [authJwt.verifyToken, authJwt.isModerator],
+  //   Reports.computers
+  // );
 
   app.use("/api/report", router);
 };

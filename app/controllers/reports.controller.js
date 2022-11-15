@@ -3,11 +3,10 @@ const Classroom = db.tb_classrooms;
 const Chromebook = db.tb_chromebook;
 const Op = db.Sequelize.Op;
 
-// Retrieve all Classroom from the database.
-exports.findAll = (req, res) => {
+// Retrieve all classroom with the chromebook's
+exports.chromebook = (req, res) => {
   const Nombre = req.query.Nombre;
   var condition = Nombre ? { Nombre: { [Op.like]: `%${Nombre}%` } } : null;
-
   Classroom.findAll({ where: condition, 
   include: [{
     model: Chromebook,
@@ -24,3 +23,4 @@ exports.findAll = (req, res) => {
       });
     });
 };
+
