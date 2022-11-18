@@ -895,10 +895,10 @@ module.exports = {
       },
       {
         Estado: 1,
-        Descripcion: "",
+        Descripcion: "Está perdida",
         No_chromebook: 22,
         No_sn: "DSF87GH890D",
-        Estado: 1,
+        Estado: 0,
         No_armario: 3,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,

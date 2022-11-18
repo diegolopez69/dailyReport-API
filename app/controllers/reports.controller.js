@@ -31,10 +31,14 @@ exports.chromebook = (req, res) => {
 exports.funtionalChromebooks = async (req, res) => {
   const numberChromebookWorking = await db.sequelize.query("SELECT COUNT(*) AS Total FROM `tb_chromebooks` WHERE Estado = 1", { type: db.sequelize.QueryTypes.SELECT });
   const resOfChromebooks = numberChromebookWorking[0].Total;
+  const NoFuntionalChromebooks = 72 - resOfChromebooks
+
+
 
   if (resOfChromebooks != null) {
     res.status(200).json({
-      Total: resOfChromebooks
+      Funcional: resOfChromebooks,
+      No_funtional: NoFuntionalChromebooks
     });
     return resOfChromebooks
   } else {
