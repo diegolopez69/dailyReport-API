@@ -11,10 +11,10 @@ module.exports = {
     await queryInterface.bulkInsert('tb_chromebooks', [
       {
         Estado: 1,
-        Descripcion: "",
+        Descripcion: "Lo tiene Manuel Masias",
         No_chromebook: 1,
         No_sn: "DSF87GH890D",
-        Estado: 1,
+        Estado: 0,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -128,10 +128,10 @@ module.exports = {
       },
       {
         Estado: 1,
-        Descripcion: "",
+        Descripcion: "Lo tiene Erika Ordoñez",
         No_chromebook: 10,
         No_sn: "DSF87GH890D",
-        Estado: 1,
+        Estado: 0,
         No_armario: 1,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -505,10 +505,10 @@ module.exports = {
       },
       {
         Estado: 1,
-        Descripcion: "",
+        Descripcion: "Está físicamente pero está arruinada",
         No_chromebook: 16,
         No_sn: "DSF87GH890D",
-        Estado: 1,
+        Estado: 0,
         No_armario: 2,
         No_chr_funcionales: 72,
         No_chr_no_funcionales: 0,
@@ -895,7 +895,7 @@ module.exports = {
       },
       {
         Estado: 1,
-        Descripcion: "Está perdida",
+        Descripcion: "Está pérdida",
         No_chromebook: 22,
         No_sn: "DSF87GH890D",
         Estado: 0,
