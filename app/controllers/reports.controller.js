@@ -8,74 +8,39 @@ const { QueryTypes } = require('sequelize');
 exports.chromebook = (req, res) => {
   const Nombre = req.query.Nombre;
   var condition = Nombre ? { Nombre: { [Op.like]: `%${Nombre}%` } } : null;
-  Classroom.findAll({ where: condition, 
-  include: [{
-    model: Chromebook,
-    attributes: ['Chromebook_id', 'Estado', 'No_sn', 'No_armario']
-  }],
+  Classroom.findAll({
+    where: condition,
+    include: [{
+      model: Chromebook,
+      attributes: ['Chromebook_id', 'Estado', 'No_sn', 'No_armario']
+    }],
   })
     .then(data => {
       res.send(data);
     })
     .catch(err => {
-      res.status(500).json({ 
+      res.status(500).json({
         status: 500,
-        Err: err.message || 'Some error occurred while retrieving Computers.' 
+        Err: err.message || 'Some error occurred while retrieving Computers.'
       });
     });
 };
 
-// Retrieve all funtionals and not funcionals chromebooks
-// exports.chromebookFuncionales = (req, res) => {
-//   const Nombre = req.query.Nombre;
-//   var condition = Nombre ? { Nombre: { [Op.like]: `%${Nombre}%` } } : null;
-//   Chromebook.findAll({ where: condition, 
-//     attributes: ['No_chr_funcionales', 'No_chr_no_funcionales']
-//   })
-//     .then(data => {
-//       res.send(data);
-//     })
-//     .catch(err => {
-//       res.status(500).json({ 
-//         status: 500,
-//         Err: err.message || 'Some error occurred while retrieving Computers.' 
-//       });
-//     });
-// };
-
-
-
-
-
-
-
-
-
 
 // Retrieve all funtionals and not funcionals chromebooks
-exports.chromebookFuncionales = async(req, res) => {
-  // const dataaa = sequelize.query("SELECT COUNT(*) FROM `tb_chromebooks` WHERE Estado = 1;", { type: QueryTypes.SELECT });
-  // console.log("data", dataaa)
+exports.funtionalChromebooks = async (req, res) => {
+  const numberChromebookWorking = await db.sequelize.query("SELECT COUNT(*) AS Total FROM `tb_chromebooks` WHERE Estado = 1", { type: db.sequelize.QueryTypes.SELECT });
+  const resOfChromebooks = numberChromebookWorking[0].Total;
 
-
-  const cars = await db.sequelize.query("SELECT COUNT(*) FROM `tb_chromebooks` WHERE Estado = 1", {type: db.sequelize.QueryTypes.SELECT});
-  //console.log("data", cars)
-  console.log("------------------------------------------------");
-  console.log(cars);
-  console.log("------------------------------------------------");
-
-  const Nombre = req.query.Nombre;
-  var condition = Nombre ? { Nombre: { [Op.like]: `%${Nombre}%` } } : null;
-  Chromebook.findAll({ where: condition, 
-    attributes: ['No_chr_funcionales', 'No_chr_no_funcionales']
-  })
-    .then(data => {
-      res.send(data);
-    })
-    .catch(err => {
-      res.status(500).json({ 
-        status: 500,
-        Err: err.message || 'Some error occurred while retrieving Computers.' 
-      });
+  if (resOfChromebooks != null) {
+    res.status(200).json({
+      Total: resOfChromebooks
     });
+    return resOfChromebooks
+  } else {
+    res.status(500).json({
+      status: 500,
+      Err: err.message || 'Some error occurred while retrieving Computers.'
+    });
+  }
 };

@@ -16,7 +16,7 @@ module.exports = (app) => {
   router.get(
     "/funtional-chromebook",
     [authJwt.verifyToken, authJwt.isModerator],
-    Reports.chromebookFuncionales
+    Reports.funtionalChromebooks
   );
 
   //Retrieve all keybords through time
