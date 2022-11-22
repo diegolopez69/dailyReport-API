@@ -32,9 +32,6 @@ exports.funtionalChromebooks = async (req, res) => {
   const numberChromebookWorking = await db.sequelize.query("SELECT COUNT(*) AS Total FROM `tb_chromebooks` WHERE Estado = 1", { type: db.sequelize.QueryTypes.SELECT });
   const resOfChromebooks = numberChromebookWorking[0].Total;
   const NoFuntionalChromebooks = 72 - resOfChromebooks
-
-
-
   if (resOfChromebooks != null) {
     res.status(200).json({
       Funcional: resOfChromebooks,
@@ -47,4 +44,17 @@ exports.funtionalChromebooks = async (req, res) => {
       Err: err.message || 'Some error occurred while retrieving Computers.'
     });
   }
+};
+
+
+
+
+
+
+
+// Retrieve the count of how many keyboards has through the time
+exports.keyboards = async (req, res) => {
+  let keyboards = [];
+  const getKeyboards = await db.sequelize.query("SELECT COUNT(*) AS TotalKeyboards FROM `tb_tools` WHERE Nombre = `Teclado`", { type: db.sequelize.QueryTypes.SELECT });
+  console.log("getKeyboards", getKeyboards)
 };

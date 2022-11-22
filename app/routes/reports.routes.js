@@ -20,11 +20,11 @@ module.exports = (app) => {
   );
 
   //Retrieve all keybords through time
-  // router.get(
-  //   "/keybords",
-  //   [authJwt.verifyToken, authJwt.isModerator],
-  //   Reports.keybord
-  // );
+  router.get(
+    "/keyboards",
+    [authJwt.verifyToken, authJwt.isModerator],
+    Reports.keyboards
+  );
 
   //Retrieve all mouses through time
   // router.get(

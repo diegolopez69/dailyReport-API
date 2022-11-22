@@ -10,9 +10,7 @@ nodemon server.js
 ```
 
 
-### Reports 
--> Cuantos chromebooks se tienen a lo largo del tiempo.
--> Cuantos chromebooks son funcionales y cuantos no.
+### Reports
 -> Mostrar gráficas de cuantos teclados se tienen a lo largo del tiempo.
 -> Mostrar gráficas de cuantos ratones se tienen a lo largo del tiempo.
 -> Mostrar gráficas de cuantos ordenadores se tienen a lo largo del tiempo.
