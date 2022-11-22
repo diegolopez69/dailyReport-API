@@ -41,20 +41,32 @@ exports.funtionalChromebooks = async (req, res) => {
   } else {
     res.status(500).json({
       status: 500,
-      Err: err.message || 'Some error occurred while retrieving Computers.'
+      Err: err.message || 'Some error occurred while retrieving funtionals and non funtionals chromebooks.'
     });
   }
 };
 
-
-
-
-
-
-
 // Retrieve the count of how many keyboards has through the time
 exports.keyboards = async (req, res) => {
   let keyboards = [];
-  const getKeyboards = await db.sequelize.query("SELECT COUNT(*) AS TotalKeyboards FROM `tb_tools` WHERE Nombre = `Teclado`", { type: db.sequelize.QueryTypes.SELECT });
-  console.log("getKeyboards", getKeyboards)
+  let arroz = 5;
+  let arro = 15;
+  let arr = 25;
+  const getKeyboards = await db.sequelize.query("SELECT COUNT(*) AS TotalKeyboards FROM `tb_tools` WHERE Nombre = 'Teclado'", { type: db.sequelize.QueryTypes.SELECT });
+  getKeyboardsModify = getKeyboards[0].TotalKeyboards;
+  keyboards.push(arroz);
+  keyboards.push(arro);
+  keyboards.push(arr);
+
+  if (keyboards != null) {
+    res.status(200).json({
+      ArrOfKeyboardsThroughTime: keyboards
+    });
+    return keyboards
+  } else {
+    res.status(500).json({
+      status: 500,
+      Err: err.message || 'Some error occurred while retrieving keyboards through time.'
+    });
+  }
 };
