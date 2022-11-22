@@ -27,11 +27,11 @@ module.exports = (app) => {
   );
 
   //Retrieve all mouses through time
-  // router.get(
-  //   "/mouse",
-  //   [authJwt.verifyToken, authJwt.isModerator],
-  //   Reports.mouse
-  // );
+  router.get(
+    "/mouses",
+    [authJwt.verifyToken, authJwt.isModerator],
+    Reports.mouses
+  );
 
 
   //Retrieve all computers through time
