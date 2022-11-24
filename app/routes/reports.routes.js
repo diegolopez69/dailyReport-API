@@ -35,11 +35,11 @@ module.exports = (app) => {
 
 
   //Retrieve all computers through time
-  // router.get(
-  //   "/computers",
-  //   [authJwt.verifyToken, authJwt.isModerator],
-  //   Reports.computers
-  // );
+  router.get(
+    "/computers",
+    [authJwt.verifyToken, authJwt.isModerator],
+    Reports.computers
+  );
 
   app.use("/api/report", router);
 };
