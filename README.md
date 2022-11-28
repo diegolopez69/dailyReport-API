@@ -11,9 +11,7 @@ nodemon server.js
 
 
 ### Reports
--> Mostrar gráficas de cuantos teclados se tienen a lo largo del tiempo.
--> Mostrar gráficas de cuantos ratones se tienen a lo largo del tiempo.
--> Mostrar gráficas de cuantos ordenadores se tienen a lo largo del tiempo.
+-> Lo que hace falta es que se hagan las peticiones cada cierto tiempo
 
 
 ### TODO'S
