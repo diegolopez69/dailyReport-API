@@ -108,19 +108,6 @@ exports.mouses = async (req, res) => {
 };
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Retrieve the count of how many computers has through the time
 exports.computers = async (req, res) => {
   let computers = [];
@@ -129,15 +116,13 @@ exports.computers = async (req, res) => {
     { type: db.sequelize.QueryTypes.SELECT }
   );
   getComputersModify = getComputers[0].TotalComputers;
- console.log("getComputers", getComputers)
-
-
+ console.log("Number", getComputers[0].TotalComputers)
 
   if (computers != null) {
     res.status(200).json({
-      ArrOfComputersThroughTime: computers,
+      ArrOfComputersThroughTime: getComputersModify,
     });
-    return computers;
+    return getComputersModify;
   } else {
     res.status(500).json({
       status: 500,
