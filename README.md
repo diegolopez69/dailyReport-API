@@ -17,14 +17,14 @@ nodemon server.js
 ### TODO'S
 - Cuando se hace el report de chromebook's, tengo que hacer alguna manera de asociar los chromebook's a las clases porque sino cuando en el endpoint de reports-chromebooks no tengo manera de saber cuales son los chromebooks que están en que clase a que momento.
 
--Delete de Aulas no funciona
+- Delete de Aulas no funciona
 
--La manera en que se hace el conteo de los chromebooks funcionales y no funcionales esta mal porque no tiene en cuenta que pasa si se crea un nuevo chromebook, asi que tiene que poderse hacer de otra manera.
+- La manera en que se hace el conteo de los chromebooks funcionales y no funcionales esta mal porque no tiene en cuenta que pasa si se crea un nuevo chromebook, asi que tiene que poderse hacer de otra manera.
 
--En la respuesta de chromebooks tengo que eliminar los campos extras que ya no se utilizan que son: No_chr_funcionales, No_chr_no_funcionales, No_chr_totales.
+- En la respuesta de chromebooks tengo que eliminar los campos extras que ya no se utilizan que son:       No_chr_funcionales, No_chr_no_funcionales, No_chr_totales.
 
--Delete de Chromebooks no funciona
+- Delete de Chromebooks no funciona
 
--Cambiar las rutas del inventario de ordenador_aula a aho
+- Cambiar las rutas del inventario de ordenador_aula a aho
 
--Update, get y delete de inventario no funcionan, pero seguro que es porque la funcion no es async await
+- Update, get y delete de inventario no funcionan, pero seguro que es porque la funcion no es async await
