@@ -54,7 +54,7 @@ exports.funtionalChromebooks = async (req, res) => {
 
 // Retrieve the count of how many keyboards has through the time
 exports.keyboards = async (req, res) => {
-  let keyboards = [];
+  let keyboards = [20, 22, 17, 20];
   const getKeyboards = await db.sequelize.query(
     "SELECT COUNT(*) AS TotalKeyboards FROM `tb_tools` WHERE Nombre = 'Teclado'",
     { type: db.sequelize.QueryTypes.SELECT }
@@ -77,15 +77,9 @@ exports.keyboards = async (req, res) => {
   }
 };
 
-
-
-
-
-
-
 // Retrieve the count of how many mouses has through the time
 exports.mouses = async (req, res) => {
-  let mouses = [];
+  let mouses = [20, 21, 26, 18, 15];
   const getMouses = await db.sequelize.query(
     "SELECT COUNT(*) AS TotalMouses FROM `tb_tools` WHERE Nombre = 'Raton'",
     { type: db.sequelize.QueryTypes.SELECT }
@@ -106,7 +100,6 @@ exports.mouses = async (req, res) => {
     });
   }
 };
-
 
 //Acá debe de utilizarse un cron Job
 // Retrieve the count of how many computers has through the time
