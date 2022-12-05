@@ -24,7 +24,3 @@ nodemon server.js
 - En la respuesta de chromebooks tengo que eliminar los campos extras que ya no se utilizan que son:       No_chr_funcionales, No_chr_no_funcionales, No_chr_totales.
 
 - Delete de Chromebooks no funciona
-
-- Cambiar las rutas del inventario de ordenador_aula a aho
-
-- Update, get y delete de inventario no funcionan, pero seguro que es porque la funcion no es async await
