@@ -108,21 +108,22 @@ exports.mouses = async (req, res) => {
 };
 
 
+//Acá debe de utilizarse un cron Job
 // Retrieve the count of how many computers has through the time
 exports.computers = async (req, res) => {
-  let computers = [];
+  let computers = [123, 200, 350];
   const getComputers = await db.sequelize.query(
     "SELECT COUNT(*) AS TotalComputers FROM `tb_computers`",
     { type: db.sequelize.QueryTypes.SELECT }
   );
   getComputersModify = getComputers[0].TotalComputers;
- console.log("Number", getComputers[0].TotalComputers)
-
+  computers.push(getComputersModify);
+ console.log("computers", computers)
   if (computers != null) {
     res.status(200).json({
-      ArrOfComputersThroughTime: getComputersModify,
+      ArrOfComputersThroughTime: computers,
     });
-    return getComputersModify;
+    return computers;
   } else {
     res.status(500).json({
       status: 500,
