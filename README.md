@@ -21,6 +21,4 @@ nodemon server.js
 
 - La manera en que se hace el conteo de los chromebooks funcionales y no funcionales esta mal porque no tiene en cuenta que pasa si se crea un nuevo chromebook, asi que tiene que poderse hacer de otra manera.
 
-- En la respuesta de chromebooks tengo que eliminar los campos extras que ya no se utilizan que son:       No_chr_funcionales, No_chr_no_funcionales, No_chr_totales.
-
 - Delete de Chromebooks no funciona
