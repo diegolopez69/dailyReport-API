@@ -1,23 +1,23 @@
 module.exports = app => {
-  const Ordenador_aula = require("../controllers/ordenador_aula.controller.js");
+  const Relation_with_inventory = require("../controllers/ordenador_aula.controller.js");
   const { authJwt } = require("../middleware");
 
   var router = require("express").Router();
 
-  // Create a new Ordenador_aula
-  router.post("/", [authJwt.verifyToken, authJwt.isModerator], Ordenador_aula.create);
+  // Create a new Relation_with_inventory
+  router.post("/", [authJwt.verifyToken, authJwt.isModerator], Relation_with_inventory.create);
 
   // Retrieve all Ordenador_aulas
-  router.get("/", [authJwt.verifyToken, authJwt.isModerator], Ordenador_aula.findAll);
+  router.get("/", [authJwt.verifyToken, authJwt.isModerator], Relation_with_inventory.findAll);
 
-  // Retrieve a single Ordenador_aula with id
-  router.get("/:id", [authJwt.verifyToken, authJwt.isModerator], Ordenador_aula.findOne);
+  // Retrieve a single Relation_with_inventory with id
+  router.get("/:id", [authJwt.verifyToken, authJwt.isModerator], Relation_with_inventory.findOne);
 
-  // Update a Ordenador_aula with id
-  router.put("/:id", [authJwt.verifyToken, authJwt.isModerator], Ordenador_aula.update);
+  // Update a Relation_with_inventory with id
+  router.put("/:id", [authJwt.verifyToken, authJwt.isModerator], Relation_with_inventory.update);
 
-  // Delete a Ordenador_aula with id
-  router.delete("/:id", [authJwt.verifyToken, authJwt.isModerator], Ordenador_aula.delete);
+  // Delete a Relation_with_inventory with id
+  router.delete("/:id", [authJwt.verifyToken, authJwt.isModerator], Relation_with_inventory.delete);
 
-  app.use('/api/ordenador_aula', router);
+  app.use('/api/aho', router);
 };

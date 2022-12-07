@@ -20,16 +20,7 @@ module.exports = (sequelize, Sequelize) => {
     },
     No_armario: {
       type:Sequelize.INTEGER
-    },
-    No_chr_funcionales: {
-      type:Sequelize.INTEGER
-    },
-    No_chr_no_funcionales: {
-      type:Sequelize.INTEGER
-    },
-    No_chr_totales: {
-      type:Sequelize.INTEGER
-    },
+    }
   });
 
   return tb_chromebooks;

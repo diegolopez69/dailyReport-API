@@ -113,7 +113,6 @@ exports.update = (req, res) => {
 // Delete a Chromebook with the specified id in the request
 exports.delete = (req, res) => {
   const id = req.params.id;
-
   Chromebook.destroy({
     where: { Chromebook_id: id }
   })

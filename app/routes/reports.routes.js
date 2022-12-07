@@ -1,24 +1,45 @@
-module.exports = app => {
-  const Room = require("../controllers/aula.controller.js");
+module.exports = (app) => {
+  const Reports = require("../controllers/reports.controller");
   const { authJwt } = require("../middleware");
 
   var router = require("express").Router();
 
-  // Cuantos chromebook's se tienen a lo largo del tiempo (gráfica)ß
-  router.post("/", [authJwt.verifyToken, authJwt.isModerator], Room.create);
+  // Retrieve all Chromebooks through time
+  router.get(
+    "/chromebook",
+    [authJwt.verifyToken, authJwt.isModerator],
+    Reports.chromebook
+  );
 
-  // Mostrar cuantos chromebook's son funcionales
-  router.get("/", [authJwt.verifyToken, authJwt.isModerator], Room.findAll);
 
-  // Mostrar la cantidad de teclados, ratones y ordenadores que se tienen
-  router.get("/:id", [authJwt.verifyToken, authJwt.isModerator], Room.findOne);
+  //Retrieve all funtional chromebooks through time
+  router.get(
+    "/funtional-chromebook",
+    [authJwt.verifyToken, authJwt.isModerator],
+    Reports.funtionalChromebooks
+  );
 
-  // Mostrar cuantos ordenadores se tienen en cada aula
-  router.put("/:id", [authJwt.verifyToken, authJwt.isModerator], Room.update);
+  //Retrieve all keybords through time
+  router.get(
+    "/keyboards",
+    [authJwt.verifyToken, authJwt.isModerator],
+    Reports.keyboards
+  );
 
-  // Delete a Room with id
-  router.delete("/:id", [authJwt.verifyToken, authJwt.isModerator], Room.delete); 
+  //Retrieve all mouses through time
+  router.get(
+    "/mouses",
+    [authJwt.verifyToken, authJwt.isModerator],
+    Reports.mouses
+  );
 
-  app.use('/api/room', router);
+
+  //Retrieve all computers through time
+  router.get(
+    "/computers",
+    [authJwt.verifyToken, authJwt.isModerator],
+    Reports.computers
+  );
+
+  app.use("/api/report", router);
 };
- 
