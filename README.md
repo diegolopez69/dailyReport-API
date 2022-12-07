@@ -17,8 +17,6 @@ nodemon server.js
 ### TODO'S
 - Cuando se hace el report de chromebook's, tengo que hacer alguna manera de asociar los chromebook's a las clases porque sino cuando en el endpoint de reports-chromebooks no tengo manera de saber cuales son los chromebooks que están en que clase a que momento.
 
-- Delete de Aulas no funciona
-
 - La manera en que se hace el conteo de los chromebooks funcionales y no funcionales esta mal porque no tiene en cuenta que pasa si se crea un nuevo chromebook, asi que tiene que poderse hacer de otra manera.
 
 
