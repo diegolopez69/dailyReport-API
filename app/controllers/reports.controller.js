@@ -30,18 +30,27 @@ exports.chromebook = (req, res) => {
 
 // Retrieve all funtionals and not funcionals chromebooks
 exports.funtionalChromebooks = async (req, res) => {
+  const numberOfTotalChromebooks = await db.sequelize.query(
+    "SELECT COUNT(*) AS TotalChromebooks FROM `tb_chromebooks`",
+    { type: db.sequelize.QueryTypes.SELECT }
+  );
+
   const numberChromebookWorking = await db.sequelize.query(
     "SELECT COUNT(*) AS Total FROM `tb_chromebooks` WHERE Estado = 1",
     { type: db.sequelize.QueryTypes.SELECT }
   );
-  const resOfChromebooks = numberChromebookWorking[0].Total;
-  const NoFuntionalChromebooks = 72 - resOfChromebooks;
-  if (resOfChromebooks != null) {
+
+  const TotalChromebooks = numberOfTotalChromebooks[0].TotalChromebooks;
+  const ChromebooksWorking = numberChromebookWorking[0].Total;
+  const NoFuntionalChromebooks = TotalChromebooks - ChromebooksWorking;
+  // console.table([TotalChromebooks, ChromebooksWorking, NoFuntionalChromebooks])
+  
+  if (ChromebooksWorking != null) {
     res.status(200).json({
-      Funcional: resOfChromebooks,
+      Funcional: ChromebooksWorking,
       No_funtional: NoFuntionalChromebooks,
     });
-    return resOfChromebooks;
+    return ChromebooksWorking;
   } else {
     res.status(500).json({
       status: 500,
@@ -60,7 +69,7 @@ exports.keyboards = async (req, res) => {
     { type: db.sequelize.QueryTypes.SELECT }
   );
   getKeyboardsModify = getKeyboards[0].TotalKeyboards;
-  keyboards.push(getKeyboardsModify)
+  keyboards.push(getKeyboardsModify);
 
   if (keyboards != null) {
     res.status(200).json({
@@ -111,7 +120,7 @@ exports.computers = async (req, res) => {
   );
   getComputersModify = getComputers[0].TotalComputers;
   computers.push(getComputersModify);
- console.log("computers", computers)
+  console.log("computers", computers);
   if (computers != null) {
     res.status(200).json({
       ArrOfComputersThroughTime: computers,
