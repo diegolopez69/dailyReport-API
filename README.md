@@ -16,3 +16,5 @@ nodemon server.js
 
 ### TODO'S
 - Cuando se hace el report de chromebook's, tengo que hacer alguna manera de asociar los chromebook's a las clases porque sino cuando en el endpoint de reports-chromebooks no tengo manera de saber cuales son los chromebooks que están en que clase a que momento.
+
+- Crear el dockerfile y el docker-compose para que esto funcione con docker
