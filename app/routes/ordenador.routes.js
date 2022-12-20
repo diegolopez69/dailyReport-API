@@ -7,7 +7,7 @@ module.exports = app => {
   // Create a new Computer
   router.post("/", [authJwt.verifyToken, authJwt.isModerator], Computer.create);
 
-  // Retrieve all Ordenadores
+  // Retrieve all computers
   router.get("/", [authJwt.verifyToken, authJwt.isModerator], Computer.findAll);
 
   // Retrieve a single Computer with id

@@ -14,6 +14,7 @@ module.exports = function (app) {
     next();
   });
 
+  // Sing up on the application
   app.post(
     "/api/auth/signup",
     [

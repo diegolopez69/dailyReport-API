@@ -15,6 +15,7 @@ module.exports = (sequelize, Sequelize) => {
           type: Sequelize.INTEGER
         }
       });
+
      tb_aula_herramienta_ordenador.associate = function (models) {
         tb_aula_herramienta_ordenador.belongsTo(models.tb_classrooms, {
             foreignKey: 'Aula_id'
