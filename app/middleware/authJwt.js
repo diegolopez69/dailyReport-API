@@ -60,39 +60,48 @@ isAdmin = (req, res, next) => {
 
 
 isModerator = (req, res, next) => {
+  // Find the user by their primary key (req.userId)
   User.findByPk(req.userId).then(user => {
+    // Get the roles associated with the user
     user.getRoles().then(roles => {
+      // Iterate through the list of roles
       for (let i = 0; i < roles.length; i++) {
+        // If the current role is "moderator", allow the request to proceed
         if (roles[i].name === "moderator") {
           next();
           return;
         }
       }
+      // If the loop completes without finding a "moderator" role, send a 403 Forbidden response
       res.status(403).send({
         message: "Require Moderator Role!"
       });
     });
   });
 };
+
+
 isModeratorOrAdmin = (req, res, next) => {
+  // Find the user by their primary key (req.userId)
   User.findByPk(req.userId).then(user => {
+    // Get the roles associated with the user
     user.getRoles().then(roles => {
+      // Iterate through the list of roles
       for (let i = 0; i < roles.length; i++) {
-        if (roles[i].name === "moderator") {
-          next();
-          return;
-        }
-        if (roles[i].name === "admin") {
+        // If the current role is "moderator" or "admin", allow the request to proceed
+        if (roles[i].name === "moderator" || roles[i].name === "admin") {
           next();
           return;
         }
       }
+      // If the loop completes without finding a "moderator" or "admin" role, send a 403 Forbidden response
       res.status(403).send({
         message: "Require Moderator or Admin Role!"
       });
     });
   });
 };
+
 const authJwt = {
   verifyToken: verifyToken,
   isAdmin: isAdmin,
