@@ -11,7 +11,7 @@ verifyToken = (req, res, next) => {
   // If no token is provided, return a 403 status code
   if (!token) {
     return res.status(403).send({
-      message: "No token provided!"
+      message: "No token provided!",
     });
   }
 
@@ -20,7 +20,7 @@ verifyToken = (req, res, next) => {
     // If the token is invalid, return a 401 status code
     if (err) {
       return res.status(401).send({
-        message: "Unauthorized!"
+        message: "Unauthorized!",
       });
     }
 
@@ -31,14 +31,12 @@ verifyToken = (req, res, next) => {
   });
 };
 
-
-
 // Define a middleware function to check if a user has the "admin" role
 isAdmin = (req, res, next) => {
   // Find the user by their ID in the request object
-  User.findByPk(req.userId).then(user => {
+  User.findByPk(req.userId).then((user) => {
     // Get the user's roles from the database
-    user.getRoles().then(roles => {
+    user.getRoles().then((roles) => {
       // Check if the user has the "admin" role
       for (let i = 0; i < roles.length; i++) {
         if (roles[i].name === "admin") {
@@ -50,20 +48,18 @@ isAdmin = (req, res, next) => {
 
       // If the user does not have the "admin" role, return a 403 status code
       res.status(403).send({
-        message: "Require Admin Role!"
+        message: "Require Admin Role!",
       });
       return;
     });
   });
 };
 
-
-
 isModerator = (req, res, next) => {
   // Find the user by their primary key (req.userId)
-  User.findByPk(req.userId).then(user => {
+  User.findByPk(req.userId).then((user) => {
     // Get the roles associated with the user
-    user.getRoles().then(roles => {
+    user.getRoles().then((roles) => {
       // Iterate through the list of roles
       for (let i = 0; i < roles.length; i++) {
         // If the current role is "moderator", allow the request to proceed
@@ -74,18 +70,17 @@ isModerator = (req, res, next) => {
       }
       // If the loop completes without finding a "moderator" role, send a 403 Forbidden response
       res.status(403).send({
-        message: "Require Moderator Role!"
+        message: "Require Moderator Role!",
       });
     });
   });
 };
 
-
 isModeratorOrAdmin = (req, res, next) => {
   // Find the user by their primary key (req.userId)
-  User.findByPk(req.userId).then(user => {
+  User.findByPk(req.userId).then((user) => {
     // Get the roles associated with the user
-    user.getRoles().then(roles => {
+    user.getRoles().then((roles) => {
       // Iterate through the list of roles
       for (let i = 0; i < roles.length; i++) {
         // If the current role is "moderator" or "admin", allow the request to proceed
@@ -96,7 +91,7 @@ isModeratorOrAdmin = (req, res, next) => {
       }
       // If the loop completes without finding a "moderator" or "admin" role, send a 403 Forbidden response
       res.status(403).send({
-        message: "Require Moderator or Admin Role!"
+        message: "Require Moderator or Admin Role!",
       });
     });
   });
@@ -106,6 +101,6 @@ const authJwt = {
   verifyToken: verifyToken,
   isAdmin: isAdmin,
   isModerator: isModerator,
-  isModeratorOrAdmin: isModeratorOrAdmin
+  isModeratorOrAdmin: isModeratorOrAdmin,
 };
 module.exports = authJwt;
