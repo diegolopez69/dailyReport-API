@@ -24,56 +24,68 @@ if (config.use_env_variable) {
   );
 }
 
+// Read all the files in the current directory
+const files = fs.readdirSync(__dirname);
 
-fs.readdirSync(__dirname)
-  .filter((file) => {
-    return (
-      file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
-    );
-  })
-  .forEach((file) => {
-    const model = require(path.join(__dirname, file))(
-      sequelize,
-      Sequelize.DataTypes
-    );
-    db[model.name] = model;
-  });
+// Filter the list of files to only include .js files that are not the current file and do not start with a dot
+const models = files.filter((file) => {
+  return (
+    file.indexOf(".") !== 0 && file !== basename && file.slice(-3) === ".js"
+  );
+});
 
+// For each model file, import the model module and store it in the db object, using the model name as the key
+models.forEach((file) => {
+  const model = require(path.join(__dirname, file))(
+    sequelize,
+    Sequelize.DataTypes
+  );
+  db[model.name] = model;
+});
+
+// For each model in the db object, if the model has an associate function, call it with the db object as an argument
 Object.keys(db).forEach((modelName) => {
   if (db[modelName].associate) {
     db[modelName].associate(db);
   }
 });
 
+// Add the Sequelize library and the sequelize instance to the db object
 db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
+// Import and add the model to the db object
 db.tb_computers = require("./ordenador.model.js")(sequelize, Sequelize);
 db.tb_classrooms = require("./aula.model.js")(sequelize, Sequelize);
 db.tb_tools = require("./herramientas.model.js")(sequelize, Sequelize);
-db.tb_aula_herramienta_ordenador = require("./aho.model.js")(sequelize,Sequelize);
+db.tb_aula_herramienta_ordenador = require("./aho.model.js")(
+  sequelize,
+  Sequelize
+);
 db.user = require("./user.model.js")(sequelize, Sequelize);
 db.role = require("./role.model.js")(sequelize, Sequelize);
 db.tb_checkups = require("./checkups.model.js")(sequelize, Sequelize);
 db.tb_chromebook = require("./chromebook.model.js")(sequelize, Sequelize);
 db.tb_user_roles = require("./user_roles.model.js")(sequelize, Sequelize);
 
+// Set up a many-to-many relationship between the role and user models using the tb_user_roles model as the through model
 db.role.belongsToMany(db.user, {
+  // Specify the name of the through model
   through: "tb_user_roles",
   foreignKey: "roleId",
   otherKey: "userId",
 });
 
+// Set up the inverse of the many-to-many relationship between the user and role models
 db.user.belongsToMany(db.role, {
+  // Use the same through model and foreign key names as the previous association
   through: "tb_user_roles",
   foreignKey: "userId",
   otherKey: "roleId",
 });
 
- db.tb_classrooms.hasMany(db.tb_chromebook);
-// db.tb_chromebook.belongsTo(db.tb_classrooms, {
-//   foreignKey: "Aula_id",
-// });
+// Set up a one-to-many relationship between the tb_classrooms and tb_chromebook models
+db.tb_classrooms.hasMany(db.tb_chromebook);
 
 db.ROLES = ["user", "admin", "moderator"];
 db.tb_aula_herramienta_ordenador.associate(db);
