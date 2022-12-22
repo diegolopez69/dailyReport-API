@@ -1,5 +1,4 @@
 "use strict";
-
 const fs = require("fs");
 const path = require("path");
 const Sequelize = require("sequelize");
@@ -10,9 +9,13 @@ const config = require("../../config/config.json")[env];
 const db = {};
 
 let sequelize;
+
+// Check if a connection URL is provided in the configuration
 if (config.use_env_variable) {
+  // If a connection URL is provided, use it to create a new Sequelize instance
   sequelize = new Sequelize(process.env[config.use_env_variable], config);
 } else {
+  // If no connection URL is provided, use the database, username, and password from the configuration to create a new Sequelize instance
   sequelize = new Sequelize(
     config.database,
     config.username,
@@ -20,6 +23,7 @@ if (config.use_env_variable) {
     config
   );
 }
+
 
 fs.readdirSync(__dirname)
   .filter((file) => {
