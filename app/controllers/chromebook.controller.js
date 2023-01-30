@@ -19,12 +19,8 @@ exports.create = (req, res) => {
     Descripcion: req.body.Descripcion,
     No_chromebook: req.body.No_chromebook,
     No_sn: req.body.No_sn,
-    No_armario: req.body.No_armario,
-    No_chr_funcionales: req.body.No_chr_funcionales,
-    No_chr_no_funcionales: req.body.No_chr_no_funcionales,
-    No_chr_totales: req.body.No_chr_totales,
+    No_armario: req.body.No_armario
   };
-
 
   // Save Chromebook in the database
   Chromebook.create(chromebook)
