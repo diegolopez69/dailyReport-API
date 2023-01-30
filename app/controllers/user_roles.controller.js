@@ -1,7 +1,5 @@
 const db = require("../models");
-const Chromebook = db.tb_chromebook;
 const Op = db.Sequelize.Op;
-const User_roles = db.tb_user_roles;
 const Roles = db.role;
 const User = db.user;
 
