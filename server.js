@@ -47,7 +47,6 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to api of Daily reports." });
 });
 
-// Rest of the routes of the app
 require("./app/routes/herra.routes")(app);
 require("./app/routes/ordenador.routes")(app);
 require("./app/routes/aulas.routes")(app);

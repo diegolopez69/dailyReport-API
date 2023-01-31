@@ -110,6 +110,7 @@ exports.mouses = async (req, res) => {
   }
 };
 
+
 //Acá debe de utilizarse un cron Job
 // Retrieve the count of how many computers has through the time
 exports.computers = async (req, res) => {
