@@ -117,22 +117,19 @@ exports.delete = async (req, res) => {
   );
 
   const NumberOfVerifyClassroom = verifyClassroom[0].number;
-  console.log("NumberOfVerifyClassroom", NumberOfVerifyClassroom)
-
 
   if (NumberOfVerifyClassroom >= 1) {
-    console.log("Entro acá porque encontro alguno y no se puede borrar")
     res.status(500).json({
       status: 500,
       message:
         "Classroom " + id + " cannot be deleted because it is related to other elements.",
     });
-  }else{
+  } else {
     Classroom.destroy({
       where: { Aula_id: id },
     })
       .then((num) => {
-        console.log("num", num)
+        console.log("num", num);
         if (num == 1) {
           res.status(200).json({
             status: 200,
@@ -149,7 +146,9 @@ exports.delete = async (req, res) => {
         res.status(500).json({
           status: 500,
           message:
-            "Classroom " + id + " cannot be deleted because it is related to other elements.",
+            "Classroom " +
+            id +
+            " cannot be deleted because it is related to other elements.",
         });
       });
   }

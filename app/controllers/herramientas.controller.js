@@ -121,7 +121,12 @@ exports.delete = async (req, res) => {
   const NumberOfVerifyTools = verifyTools[0].number;
 
   if (NumberOfVerifyTools >= 1) {
-    console.log("1");
+    res.status(500).json({
+      status: 500,
+      message:
+        "Tool " + id + " cannot be deleted because it is related to other elements.",
+    });
+  }else{
     Tool.destroy({
       where: { Herramienta_id: id },
     })
