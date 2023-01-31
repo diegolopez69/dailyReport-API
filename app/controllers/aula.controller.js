@@ -122,7 +122,9 @@ exports.delete = async (req, res) => {
     res.status(500).json({
       status: 500,
       message:
-        "Classroom " + id + " cannot be deleted because it is related to other elements.",
+        "Classroom " +
+        id +
+        " cannot be deleted because it is related to other elements.",
     });
   } else {
     Classroom.destroy({
