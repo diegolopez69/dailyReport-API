@@ -40,26 +40,6 @@ exports.signup = (req, res) => {
     });
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 // Retrieve all Users from the database.
 exports.findAll = (req, res) => {
   const Id = req.query.Id;
@@ -74,11 +54,7 @@ exports.findAll = (req, res) => {
   // ],
   // })
 
-
-
   User.findAll({ where: condition })
-
-
     .then(data => {
       res.send(data);
     })
@@ -91,29 +67,15 @@ exports.findAll = (req, res) => {
     });
 };
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+// Logout of the application.
+exports.logout = (req, res) => {
+  console.log("Entra acá 1")
+  res.cookie('jwt', '', {maxAge: 1});
+  res.status(200).json({
+    status: 200,
+    message: "Prueba"
+  });
+}
 
 
 // Do the login on the application
@@ -140,6 +102,7 @@ exports.signin = (req, res) => {
       var token = jwt.sign({ id: user.id }, config.secret, {
         expiresIn: 86400 // 24 hours
       });
+
       var authorities = [];
       user.getRoles().then(roles => {
         for (let i = 0; i < roles.length; i++) {
@@ -152,6 +115,7 @@ exports.signin = (req, res) => {
           roles: authorities,
           accessToken: token
         });
+
       });
     })
     .catch(err => {
