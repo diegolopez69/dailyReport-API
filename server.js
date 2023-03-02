@@ -19,10 +19,8 @@ app.use(express.urlencoded({ extended: true }));
 const db = require("./app/models");
 const Role = db.role;
 db.sequelize.sync();
-// db.sequelize.sync({force: true});
 
-
-/*This is to create the roles on the db */
+/*This is to drop the data on the db */
 // db.sequelize.sync({force: true}).then(() => { //This line drop the db
 //   console.log('Drop and Resync Db');
 // });
