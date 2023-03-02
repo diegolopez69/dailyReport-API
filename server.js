@@ -1,5 +1,7 @@
+require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
+
 const app = express();
 
 var corsOptions = {
@@ -18,28 +20,11 @@ const db = require("./app/models");
 const Role = db.role;
 db.sequelize.sync();
 
-
-/*This is to create the roles on the db */
+/*This is to drop the data on the db */
 // db.sequelize.sync({force: true}).then(() => { //This line drop the db
 //   console.log('Drop and Resync Db');
-//   initial();
 // });
-// function initial() {
-//   Role.create({
-//     id: 1,
-//     name: "user"
-//   });
- 
-//   Role.create({
-//     id: 2,
-//     name: "moderator"
-//   });
- 
-//   Role.create({
-//     id: 3,
-//     name: "admin"
-//   });
-// }
+
 
 
 // simple route
