@@ -15,8 +15,8 @@ exports.create = (req, res) => {
 
   // Create a Tool
   const tool = {
-    Tipo: req.body.Tipo,
-    Nombre: req.body.Nombre,
+    Type: req.body.Type,
+    Name: req.body.Name,
   };
 
   // Save Tool in the database
@@ -80,7 +80,7 @@ exports.update = (req, res) => {
   const id = req.params.id;
 
   Tool.update(req.body, {
-    where: { Herramienta_id: id },
+    where: { Tool_id: id },
   })
     .then((num) => {
       if (num == 1) {
@@ -110,8 +110,8 @@ exports.delete = async (req, res) => {
   const id = req.params.id;
 
   const verifyTools = await db.sequelize.query(
-    "SELECT COUNT(*) AS number FROM tb_aula_herramienta_ordenadors WHERE `Herramienta_id` = ?",
-    //"SELECT * FROM tb_aula_herramienta_ordenadors WHERE `Herramienta_id` = ?",
+    "SELECT COUNT(*) AS number FROM tb_inventories WHERE `Tool_id` = ?",
+    //"SELECT * FROM tb_inventories WHERE `Tool_id` = ?",
     {
       replacements: [id],
       type: db.sequelize.QueryTypes.SELECT,
@@ -128,7 +128,7 @@ exports.delete = async (req, res) => {
     });
   }else{
     Tool.destroy({
-      where: { Herramienta_id: id },
+      where: { Tool_id: id },
     })
       .then((num) => {
         if (num == 1) {

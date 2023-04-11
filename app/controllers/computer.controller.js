@@ -15,7 +15,7 @@ exports.create = (req, res) => {
 
   // Create a Computer
   const computer = {
-    Nombre: req.body.Nombre,
+    Name: req.body.Name,
   };
 
   // Save Computer in the database
@@ -36,8 +36,8 @@ exports.create = (req, res) => {
 
 // Retrieve all computer from the database.
 exports.findAll = (req, res) => {
-  const Nombre = req.query.Nombre;
-  var condition = Nombre ? { Nombre: { [Op.like]: `%${Nombre}%` } } : null;
+  const Name = req.query.Name;
+  var condition = Name ? { Name: { [Op.like]: `%${Name}%` } } : null;
 
   Computer.findAll({ where: condition })
     .then((data) => {
@@ -79,7 +79,7 @@ exports.update = (req, res) => {
   const id = req.params.id;
 
   Computer.update(req.body, {
-    where: { Ordenador_id: id },
+    where: { Computer_id: id },
   })
     .then((num) => {
       if (num == 1) {
@@ -108,8 +108,8 @@ exports.delete = async (req, res) => {
   const id = req.params.id;
 
   const verifyComputer = await db.sequelize.query(
-    "SELECT COUNT(*) AS number FROM tb_aula_herramienta_ordenadors WHERE `Ordenador_id` = ?",
-    //"SELECT * FROM tb_aula_herramienta_ordenadors WHERE `Ordenador_id` = ?",
+    "SELECT COUNT(*) AS number FROM tb_inventories WHERE `Computer_id` = ?",
+    //"SELECT * FROM tb_inventories WHERE `Computer_id` = ?",
     {
       replacements: [id],
       type: db.sequelize.QueryTypes.SELECT,
@@ -128,7 +128,7 @@ exports.delete = async (req, res) => {
     });
   } else {
     Computer.destroy({
-      where: { Ordenador_id: id },
+      where: { Computer_id: id },
     })
       .then((num) => {
         if (num == 1) {

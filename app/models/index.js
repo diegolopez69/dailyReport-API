@@ -55,10 +55,10 @@ db.Sequelize = Sequelize;
 db.sequelize = sequelize;
 
 // Import and add the model to the db object
-db.tb_computers = require("./ordenador.model.js")(sequelize, Sequelize);
-db.tb_classrooms = require("./aula.model.js")(sequelize, Sequelize);
-db.tb_tools = require("./herramientas.model.js")(sequelize, Sequelize);
-db.tb_aula_herramienta_ordenador = require("./aho.model.js")(
+db.tb_computers = require("./computer.model.js")(sequelize, Sequelize);
+db.tb_classrooms = require("./classroom.model.js")(sequelize, Sequelize);
+db.tb_tools = require("./tools.model.js")(sequelize, Sequelize);
+db.tb_inventories = require("./inventory.model.js")(
   sequelize,
   Sequelize
 );
@@ -88,7 +88,7 @@ db.user.belongsToMany(db.role, {
 db.tb_classrooms.hasMany(db.tb_chromebook);
 
 db.ROLES = ["user", "admin", "moderator"];
-db.tb_aula_herramienta_ordenador.associate(db);
+db.tb_inventories.associate(db);
 db.tb_checkups.associate(db);
 
 module.exports = db;

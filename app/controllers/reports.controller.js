@@ -6,8 +6,8 @@ const { QueryTypes } = require("sequelize");
 
 // Retrieve all classroom with the chromebook's
 exports.chromebook = (req, res) => {
-  const Nombre = req.query.Nombre;
-  var condition = Nombre ? { Nombre: { [Op.like]: `%${Nombre}%` } } : null;
+  const Name = req.query.Name;
+  var condition = Name ? { Name: { [Op.like]: `%${Name}%` } } : null;
   Classroom.findAll({
     where: condition,
     include: [
@@ -65,7 +65,7 @@ exports.funtionalChromebooks = async (req, res) => {
 exports.keyboards = async (req, res) => {
   let keyboards = [20, 22, 17, 20];
   const getKeyboards = await db.sequelize.query(
-    "SELECT COUNT(*) AS TotalKeyboards FROM `tb_tools` WHERE Nombre = 'Teclado'",
+    "SELECT COUNT(*) AS TotalKeyboards FROM `tb_tools` WHERE Name = 'Teclado'",
     { type: db.sequelize.QueryTypes.SELECT }
   );
   getKeyboardsModify = getKeyboards[0].TotalKeyboards;
@@ -90,7 +90,7 @@ exports.keyboards = async (req, res) => {
 exports.mouses = async (req, res) => {
   let mouses = [20, 21, 26, 18, 15];
   const getMouses = await db.sequelize.query(
-    "SELECT COUNT(*) AS TotalMouses FROM `tb_tools` WHERE Nombre = 'Raton'",
+    "SELECT COUNT(*) AS TotalMouses FROM `tb_tools` WHERE Name = 'Raton'",
     { type: db.sequelize.QueryTypes.SELECT }
   );
   getMousesModify = getMouses[0].TotalMouses;

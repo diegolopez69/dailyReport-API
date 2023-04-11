@@ -1,4 +1,4 @@
-const aho = require("./aho.model.js");
+const inventory = require("./inventory.model.js");
 
 module.exports = (sequelize, Sequelize) => {
   // Define the "tb_checkups" model
@@ -40,9 +40,9 @@ module.exports = (sequelize, Sequelize) => {
 
   // Define association for the "tb_checkups" model
   tb_checkups.associate = function (models) {
-    // "tb_checkups" belongs to the "tb_aula_herramienta_ordenador" model (1-to-1 relationship)
-    tb_checkups.belongsTo(models.tb_aula_herramienta_ordenador, {
-      foreignKey: "Aho_id",
+    // "tb_checkups" belongs to the "tb_inventories" model (1-to-1 relationship)
+    tb_checkups.belongsTo(models.tb_inventories, {
+      foreignKey: "Inventory_id",
     });
   };
 

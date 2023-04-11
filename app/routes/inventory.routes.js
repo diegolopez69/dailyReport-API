@@ -1,5 +1,5 @@
 module.exports = app => {
-  const Relation_with_inventory = require("../controllers/ordenador_aula.controller.js");
+  const Relation_with_inventory = require("../controllers/inventory.controller.js");
   const { authJwt } = require("../middleware");
 
   var router = require("express").Router();
@@ -7,7 +7,7 @@ module.exports = app => {
   // Create a new Relation_with_inventory
   router.post("/", [authJwt.verifyToken, authJwt.isModerator], Relation_with_inventory.create);
 
-  // Retrieve all Ordenador_aulas
+  // Retrieve all Inventory
   router.get("/", [authJwt.verifyToken, authJwt.isModerator], Relation_with_inventory.findAll);
 
   // Retrieve a single Relation_with_inventory with id
@@ -19,5 +19,5 @@ module.exports = app => {
   // Delete a Relation_with_inventory with id
   router.delete("/:id", [authJwt.verifyToken, authJwt.isModerator], Relation_with_inventory.delete);
 
-  app.use('/api/aho', router);
+  app.use('/api/inventory', router);
 };

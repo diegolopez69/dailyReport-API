@@ -69,11 +69,11 @@ exports.findAll = (req, res) => {
 
 // Logout of the application.
 exports.logout = (req, res) => {
-  console.log("Entra acá 1")
+  console.log("Im here 1")
   res.cookie('jwt', '', {maxAge: 1});
   res.status(200).json({
     status: 200,
-    message: "Prueba"
+    message: "Test"
   });
 }
 

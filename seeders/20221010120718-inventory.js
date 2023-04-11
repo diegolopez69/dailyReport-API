@@ -8,74 +8,74 @@ module.exports = {
      *
      * Example:
      */
-    await queryInterface.bulkInsert('tb_aula_herramienta_ordenadors', [
+    await queryInterface.bulkInsert('tb_inventories', [
       {
-        Aula_id: 1,
-        Ordenador_id: 1,
-        Herramienta_id: 1,
+        Classroom_id: 1,
+        Computer_id: 1,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 1,
-        Ordenador_id: 1,
-        Herramienta_id: 2,
+        Classroom_id: 1,
+        Computer_id: 1,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 1,
-        Ordenador_id: 1,
-        Herramienta_id: 3,
+        Classroom_id: 1,
+        Computer_id: 1,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 1,
-        Ordenador_id: 1,
-        Herramienta_id: 4,
+        Classroom_id: 1,
+        Computer_id: 1,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 1,
-        Ordenador_id: 1,
-        Herramienta_id: 5,
+        Classroom_id: 1,
+        Computer_id: 1,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 1,
-        Ordenador_id: 1,
-        Herramienta_id: 6,
+        Classroom_id: 1,
+        Computer_id: 1,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 1,
-        Ordenador_id: 1,
-        Herramienta_id: 7,
+        Classroom_id: 1,
+        Computer_id: 1,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 1,
-        Ordenador_id: 1,
-        Herramienta_id: 8,
+        Classroom_id: 1,
+        Computer_id: 1,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 1,
-        Ordenador_id: 1,
-        Herramienta_id: 9,
+        Classroom_id: 1,
+        Computer_id: 1,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 1,
-        Ordenador_id: 1,
-        Herramienta_id: 10,
+        Classroom_id: 1,
+        Computer_id: 1,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -84,422 +84,422 @@ module.exports = {
       /*---------------------Classroom -2,2--------------------- */
 
       {
-        Aula_id: 2,
-        Ordenador_id: 2,
-        Herramienta_id: 1,
+        Classroom_id: 2,
+        Computer_id: 2,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 2,
-        Herramienta_id: 2,
+        Classroom_id: 2,
+        Computer_id: 2,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 2,
-        Herramienta_id: 3,
+        Classroom_id: 2,
+        Computer_id: 2,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 2,
-        Herramienta_id: 4,
+        Classroom_id: 2,
+        Computer_id: 2,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 2,
-        Herramienta_id: 5,
+        Classroom_id: 2,
+        Computer_id: 2,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 2,
-        Herramienta_id: 6,
+        Classroom_id: 2,
+        Computer_id: 2,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 2,
-        Herramienta_id: 7,
+        Classroom_id: 2,
+        Computer_id: 2,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 2,
-        Herramienta_id: 8,
+        Classroom_id: 2,
+        Computer_id: 2,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 2,
-        Herramienta_id: 9,
+        Classroom_id: 2,
+        Computer_id: 2,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 2,
-        Herramienta_id: 10,
+        Classroom_id: 2,
+        Computer_id: 2,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 3,
-        Herramienta_id: 1,
+        Classroom_id: 2,
+        Computer_id: 3,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 3,
-        Herramienta_id: 2,
+        Classroom_id: 2,
+        Computer_id: 3,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 3,
-        Herramienta_id: 3,
+        Classroom_id: 2,
+        Computer_id: 3,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 3,
-        Herramienta_id: 4,
+        Classroom_id: 2,
+        Computer_id: 3,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 3,
-        Herramienta_id: 5,
+        Classroom_id: 2,
+        Computer_id: 3,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 3,
-        Herramienta_id: 6,
+        Classroom_id: 2,
+        Computer_id: 3,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 3,
-        Herramienta_id: 7,
+        Classroom_id: 2,
+        Computer_id: 3,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 3,
-        Herramienta_id: 8,
+        Classroom_id: 2,
+        Computer_id: 3,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 3,
-        Herramienta_id: 9,
+        Classroom_id: 2,
+        Computer_id: 3,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 3,
-        Herramienta_id: 10,
+        Classroom_id: 2,
+        Computer_id: 3,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 4,
-        Herramienta_id: 1,
+        Classroom_id: 2,
+        Computer_id: 4,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 4,
-        Herramienta_id: 2,
+        Classroom_id: 2,
+        Computer_id: 4,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 4,
-        Herramienta_id: 3,
+        Classroom_id: 2,
+        Computer_id: 4,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 4,
-        Herramienta_id: 4,
+        Classroom_id: 2,
+        Computer_id: 4,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 4,
-        Herramienta_id: 5,
+        Classroom_id: 2,
+        Computer_id: 4,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 4,
-        Herramienta_id: 6,
+        Classroom_id: 2,
+        Computer_id: 4,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 4,
-        Herramienta_id: 7,
+        Classroom_id: 2,
+        Computer_id: 4,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 4,
-        Herramienta_id: 8,
+        Classroom_id: 2,
+        Computer_id: 4,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 4,
-        Herramienta_id: 9,
+        Classroom_id: 2,
+        Computer_id: 4,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 4,
-        Herramienta_id: 10,
+        Classroom_id: 2,
+        Computer_id: 4,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 5,
-        Herramienta_id: 1,
+        Classroom_id: 2,
+        Computer_id: 5,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 5,
-        Herramienta_id: 2,
+        Classroom_id: 2,
+        Computer_id: 5,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 5,
-        Herramienta_id: 3,
+        Classroom_id: 2,
+        Computer_id: 5,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 5,
-        Herramienta_id: 4,
+        Classroom_id: 2,
+        Computer_id: 5,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 5,
-        Herramienta_id: 5,
+        Classroom_id: 2,
+        Computer_id: 5,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 5,
-        Herramienta_id: 6,
+        Classroom_id: 2,
+        Computer_id: 5,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 5,
-        Herramienta_id: 7,
+        Classroom_id: 2,
+        Computer_id: 5,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 5,
-        Herramienta_id: 8,
+        Classroom_id: 2,
+        Computer_id: 5,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 5,
-        Herramienta_id: 9,
+        Classroom_id: 2,
+        Computer_id: 5,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 5,
-        Herramienta_id: 10,
+        Classroom_id: 2,
+        Computer_id: 5,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 6,
-        Herramienta_id: 1,
+        Classroom_id: 2,
+        Computer_id: 6,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 6,
-        Herramienta_id: 2,
+        Classroom_id: 2,
+        Computer_id: 6,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 6,
-        Herramienta_id: 3,
+        Classroom_id: 2,
+        Computer_id: 6,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 6,
-        Herramienta_id: 4,
+        Classroom_id: 2,
+        Computer_id: 6,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 6,
-        Herramienta_id: 5,
+        Classroom_id: 2,
+        Computer_id: 6,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 6,
-        Herramienta_id: 6,
+        Classroom_id: 2,
+        Computer_id: 6,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 6,
-        Herramienta_id: 7,
+        Classroom_id: 2,
+        Computer_id: 6,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 6,
-        Herramienta_id: 8,
+        Classroom_id: 2,
+        Computer_id: 6,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 6,
-        Herramienta_id: 9,
+        Classroom_id: 2,
+        Computer_id: 6,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 6,
-        Herramienta_id: 10,
+        Classroom_id: 2,
+        Computer_id: 6,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 7,
-        Herramienta_id: 1,
+        Classroom_id: 2,
+        Computer_id: 7,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 7,
-        Herramienta_id: 2,
+        Classroom_id: 2,
+        Computer_id: 7,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 7,
-        Herramienta_id: 3,
+        Classroom_id: 2,
+        Computer_id: 7,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 7,
-        Herramienta_id: 4,
+        Classroom_id: 2,
+        Computer_id: 7,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 7,
-        Herramienta_id: 5,
+        Classroom_id: 2,
+        Computer_id: 7,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 7,
-        Herramienta_id: 6,
+        Classroom_id: 2,
+        Computer_id: 7,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 7,
-        Herramienta_id: 7,
+        Classroom_id: 2,
+        Computer_id: 7,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 7,
-        Herramienta_id: 8,
+        Classroom_id: 2,
+        Computer_id: 7,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 7,
-        Herramienta_id: 9,
+        Classroom_id: 2,
+        Computer_id: 7,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 2,
-        Ordenador_id: 7,
-        Herramienta_id: 10,
+        Classroom_id: 2,
+        Computer_id: 7,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -507,72 +507,72 @@ module.exports = {
       /*------------------------------------------------------------------------------------ */
 
       {
-        Aula_id: 3,
-        Ordenador_id: 8,
-        Herramienta_id: 1,
+        Classroom_id: 3,
+        Computer_id: 8,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 3,
-        Ordenador_id: 8,
-        Herramienta_id: 2,
+        Classroom_id: 3,
+        Computer_id: 8,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 3,
-        Ordenador_id: 8,
-        Herramienta_id: 3,
+        Classroom_id: 3,
+        Computer_id: 8,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 3,
-        Ordenador_id: 8,
-        Herramienta_id: 4,
+        Classroom_id: 3,
+        Computer_id: 8,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 3,
-        Ordenador_id: 8,
-        Herramienta_id: 5,
+        Classroom_id: 3,
+        Computer_id: 8,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 3,
-        Ordenador_id: 8,
-        Herramienta_id: 6,
+        Classroom_id: 3,
+        Computer_id: 8,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 3,
-        Ordenador_id: 8,
-        Herramienta_id: 7,
+        Classroom_id: 3,
+        Computer_id: 8,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 3,
-        Ordenador_id: 8,
-        Herramienta_id: 8,
+        Classroom_id: 3,
+        Computer_id: 8,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 3,
-        Ordenador_id: 8,
-        Herramienta_id: 9,
+        Classroom_id: 3,
+        Computer_id: 8,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 3,
-        Ordenador_id: 8,
-        Herramienta_id: 10,
+        Classroom_id: 3,
+        Computer_id: 8,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -581,422 +581,422 @@ module.exports = {
       /*---------------------Classroom -2,4--------------------- */
 
       {
-        Aula_id: 4,
-        Ordenador_id: 9,
-        Herramienta_id: 1,
+        Classroom_id: 4,
+        Computer_id: 9,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 9,
-        Herramienta_id: 2,
+        Classroom_id: 4,
+        Computer_id: 9,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 9,
-        Herramienta_id: 3,
+        Classroom_id: 4,
+        Computer_id: 9,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 9,
-        Herramienta_id: 4,
+        Classroom_id: 4,
+        Computer_id: 9,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 9,
-        Herramienta_id: 5,
+        Classroom_id: 4,
+        Computer_id: 9,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 9,
-        Herramienta_id: 6,
+        Classroom_id: 4,
+        Computer_id: 9,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 9,
-        Herramienta_id: 7,
+        Classroom_id: 4,
+        Computer_id: 9,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 9,
-        Herramienta_id: 8,
+        Classroom_id: 4,
+        Computer_id: 9,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 9,
-        Herramienta_id: 9,
+        Classroom_id: 4,
+        Computer_id: 9,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 9,
-        Herramienta_id: 10,
+        Classroom_id: 4,
+        Computer_id: 9,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 10,
-        Herramienta_id: 1,
+        Classroom_id: 4,
+        Computer_id: 10,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 10,
-        Herramienta_id: 2,
+        Classroom_id: 4,
+        Computer_id: 10,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 10,
-        Herramienta_id: 3,
+        Classroom_id: 4,
+        Computer_id: 10,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 10,
-        Herramienta_id: 4,
+        Classroom_id: 4,
+        Computer_id: 10,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 10,
-        Herramienta_id: 5,
+        Classroom_id: 4,
+        Computer_id: 10,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 10,
-        Herramienta_id: 6,
+        Classroom_id: 4,
+        Computer_id: 10,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 10,
-        Herramienta_id: 7,
+        Classroom_id: 4,
+        Computer_id: 10,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 10,
-        Herramienta_id: 8,
+        Classroom_id: 4,
+        Computer_id: 10,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 10,
-        Herramienta_id: 9,
+        Classroom_id: 4,
+        Computer_id: 10,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 10,
-        Herramienta_id: 10,
+        Classroom_id: 4,
+        Computer_id: 10,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 11,
-        Herramienta_id: 1,
+        Classroom_id: 4,
+        Computer_id: 11,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 11,
-        Herramienta_id: 2,
+        Classroom_id: 4,
+        Computer_id: 11,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 11,
-        Herramienta_id: 3,
+        Classroom_id: 4,
+        Computer_id: 11,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 11,
-        Herramienta_id: 4,
+        Classroom_id: 4,
+        Computer_id: 11,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 11,
-        Herramienta_id: 5,
+        Classroom_id: 4,
+        Computer_id: 11,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 11,
-        Herramienta_id: 6,
+        Classroom_id: 4,
+        Computer_id: 11,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 11,
-        Herramienta_id: 7,
+        Classroom_id: 4,
+        Computer_id: 11,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 11,
-        Herramienta_id: 8,
+        Classroom_id: 4,
+        Computer_id: 11,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 11,
-        Herramienta_id: 9,
+        Classroom_id: 4,
+        Computer_id: 11,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 11,
-        Herramienta_id: 10,
+        Classroom_id: 4,
+        Computer_id: 11,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 12,
-        Herramienta_id: 1,
+        Classroom_id: 4,
+        Computer_id: 12,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 12,
-        Herramienta_id: 2,
+        Classroom_id: 4,
+        Computer_id: 12,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 12,
-        Herramienta_id: 3,
+        Classroom_id: 4,
+        Computer_id: 12,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 12,
-        Herramienta_id: 4,
+        Classroom_id: 4,
+        Computer_id: 12,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 12,
-        Herramienta_id: 5,
+        Classroom_id: 4,
+        Computer_id: 12,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 12,
-        Herramienta_id: 6,
+        Classroom_id: 4,
+        Computer_id: 12,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 12,
-        Herramienta_id: 7,
+        Classroom_id: 4,
+        Computer_id: 12,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 12,
-        Herramienta_id: 8,
+        Classroom_id: 4,
+        Computer_id: 12,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 12,
-        Herramienta_id: 9,
+        Classroom_id: 4,
+        Computer_id: 12,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 12,
-        Herramienta_id: 10,
+        Classroom_id: 4,
+        Computer_id: 12,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 13,
-        Herramienta_id: 1,
+        Classroom_id: 4,
+        Computer_id: 13,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 13,
-        Herramienta_id: 2,
+        Classroom_id: 4,
+        Computer_id: 13,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 13,
-        Herramienta_id: 3,
+        Classroom_id: 4,
+        Computer_id: 13,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 13,
-        Herramienta_id: 4,
+        Classroom_id: 4,
+        Computer_id: 13,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 13,
-        Herramienta_id: 5,
+        Classroom_id: 4,
+        Computer_id: 13,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 13,
-        Herramienta_id: 6,
+        Classroom_id: 4,
+        Computer_id: 13,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 13,
-        Herramienta_id: 7,
+        Classroom_id: 4,
+        Computer_id: 13,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 13,
-        Herramienta_id: 8,
+        Classroom_id: 4,
+        Computer_id: 13,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 13,
-        Herramienta_id: 9,
+        Classroom_id: 4,
+        Computer_id: 13,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 13,
-        Herramienta_id: 10,
+        Classroom_id: 4,
+        Computer_id: 13,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 14,
-        Herramienta_id: 1,
+        Classroom_id: 4,
+        Computer_id: 14,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 14,
-        Herramienta_id: 2,
+        Classroom_id: 4,
+        Computer_id: 14,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 14,
-        Herramienta_id: 3,
+        Classroom_id: 4,
+        Computer_id: 14,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 14,
-        Herramienta_id: 4,
+        Classroom_id: 4,
+        Computer_id: 14,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 14,
-        Herramienta_id: 5,
+        Classroom_id: 4,
+        Computer_id: 14,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 14,
-        Herramienta_id: 6,
+        Classroom_id: 4,
+        Computer_id: 14,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 14,
-        Herramienta_id: 7,
+        Classroom_id: 4,
+        Computer_id: 14,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 14,
-        Herramienta_id: 8,
+        Classroom_id: 4,
+        Computer_id: 14,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 14,
-        Herramienta_id: 9,
+        Classroom_id: 4,
+        Computer_id: 14,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 4,
-        Ordenador_id: 14,
-        Herramienta_id: 10,
+        Classroom_id: 4,
+        Computer_id: 14,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -1004,72 +1004,72 @@ module.exports = {
       /*------------------------------------------------------------------------------------ */
 
       {
-        Aula_id: 5,
-        Ordenador_id: 15,
-        Herramienta_id: 1,
+        Classroom_id: 5,
+        Computer_id: 15,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 5,
-        Ordenador_id: 15,
-        Herramienta_id: 2,
+        Classroom_id: 5,
+        Computer_id: 15,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 5,
-        Ordenador_id: 15,
-        Herramienta_id: 3,
+        Classroom_id: 5,
+        Computer_id: 15,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 5,
-        Ordenador_id: 15,
-        Herramienta_id: 4,
+        Classroom_id: 5,
+        Computer_id: 15,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 5,
-        Ordenador_id: 15,
-        Herramienta_id: 5,
+        Classroom_id: 5,
+        Computer_id: 15,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 5,
-        Ordenador_id: 15,
-        Herramienta_id: 6,
+        Classroom_id: 5,
+        Computer_id: 15,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 5,
-        Ordenador_id: 15,
-        Herramienta_id: 7,
+        Classroom_id: 5,
+        Computer_id: 15,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 5,
-        Ordenador_id: 15,
-        Herramienta_id: 8,
+        Classroom_id: 5,
+        Computer_id: 15,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 5,
-        Ordenador_id: 15,
-        Herramienta_id: 9,
+        Classroom_id: 5,
+        Computer_id: 15,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 5,
-        Ordenador_id: 15,
-        Herramienta_id: 10,
+        Classroom_id: 5,
+        Computer_id: 15,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -1077,422 +1077,422 @@ module.exports = {
 
       /*---------------------Classroom -2,6--------------------- */
       {
-        Aula_id: 6,
-        Ordenador_id: 16,
-        Herramienta_id: 1,
+        Classroom_id: 6,
+        Computer_id: 16,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 16,
-        Herramienta_id: 2,
+        Classroom_id: 6,
+        Computer_id: 16,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 16,
-        Herramienta_id: 3,
+        Classroom_id: 6,
+        Computer_id: 16,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 16,
-        Herramienta_id: 4,
+        Classroom_id: 6,
+        Computer_id: 16,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 16,
-        Herramienta_id: 5,
+        Classroom_id: 6,
+        Computer_id: 16,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 16,
-        Herramienta_id: 6,
+        Classroom_id: 6,
+        Computer_id: 16,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 16,
-        Herramienta_id: 7,
+        Classroom_id: 6,
+        Computer_id: 16,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 16,
-        Herramienta_id: 8,
+        Classroom_id: 6,
+        Computer_id: 16,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 16,
-        Herramienta_id: 9,
+        Classroom_id: 6,
+        Computer_id: 16,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 16,
-        Herramienta_id: 10,
+        Classroom_id: 6,
+        Computer_id: 16,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 17,
-        Herramienta_id: 1,
+        Classroom_id: 6,
+        Computer_id: 17,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 17,
-        Herramienta_id: 2,
+        Classroom_id: 6,
+        Computer_id: 17,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 17,
-        Herramienta_id: 3,
+        Classroom_id: 6,
+        Computer_id: 17,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 17,
-        Herramienta_id: 4,
+        Classroom_id: 6,
+        Computer_id: 17,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 17,
-        Herramienta_id: 5,
+        Classroom_id: 6,
+        Computer_id: 17,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 17,
-        Herramienta_id: 6,
+        Classroom_id: 6,
+        Computer_id: 17,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 17,
-        Herramienta_id: 7,
+        Classroom_id: 6,
+        Computer_id: 17,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 17,
-        Herramienta_id: 8,
+        Classroom_id: 6,
+        Computer_id: 17,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 17,
-        Herramienta_id: 9,
+        Classroom_id: 6,
+        Computer_id: 17,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 17,
-        Herramienta_id: 10,
+        Classroom_id: 6,
+        Computer_id: 17,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 18,
-        Herramienta_id: 1,
+        Classroom_id: 6,
+        Computer_id: 18,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 18,
-        Herramienta_id: 2,
+        Classroom_id: 6,
+        Computer_id: 18,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 18,
-        Herramienta_id: 3,
+        Classroom_id: 6,
+        Computer_id: 18,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 18,
-        Herramienta_id: 4,
+        Classroom_id: 6,
+        Computer_id: 18,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 18,
-        Herramienta_id: 5,
+        Classroom_id: 6,
+        Computer_id: 18,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 18,
-        Herramienta_id: 6,
+        Classroom_id: 6,
+        Computer_id: 18,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 18,
-        Herramienta_id: 7,
+        Classroom_id: 6,
+        Computer_id: 18,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 18,
-        Herramienta_id: 8,
+        Classroom_id: 6,
+        Computer_id: 18,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 18,
-        Herramienta_id: 9,
+        Classroom_id: 6,
+        Computer_id: 18,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 18,
-        Herramienta_id: 10,
+        Classroom_id: 6,
+        Computer_id: 18,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 19,
-        Herramienta_id: 1,
+        Classroom_id: 6,
+        Computer_id: 19,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 19,
-        Herramienta_id: 2,
+        Classroom_id: 6,
+        Computer_id: 19,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 19,
-        Herramienta_id: 3,
+        Classroom_id: 6,
+        Computer_id: 19,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 19,
-        Herramienta_id: 4,
+        Classroom_id: 6,
+        Computer_id: 19,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 19,
-        Herramienta_id: 5,
+        Classroom_id: 6,
+        Computer_id: 19,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 19,
-        Herramienta_id: 6,
+        Classroom_id: 6,
+        Computer_id: 19,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 19,
-        Herramienta_id: 7,
+        Classroom_id: 6,
+        Computer_id: 19,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 19,
-        Herramienta_id: 8,
+        Classroom_id: 6,
+        Computer_id: 19,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 19,
-        Herramienta_id: 9,
+        Classroom_id: 6,
+        Computer_id: 19,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 19,
-        Herramienta_id: 10,
+        Classroom_id: 6,
+        Computer_id: 19,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 20,
-        Herramienta_id: 1,
+        Classroom_id: 6,
+        Computer_id: 20,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 20,
-        Herramienta_id: 2,
+        Classroom_id: 6,
+        Computer_id: 20,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 20,
-        Herramienta_id: 3,
+        Classroom_id: 6,
+        Computer_id: 20,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 20,
-        Herramienta_id: 4,
+        Classroom_id: 6,
+        Computer_id: 20,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 20,
-        Herramienta_id: 5,
+        Classroom_id: 6,
+        Computer_id: 20,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 20,
-        Herramienta_id: 6,
+        Classroom_id: 6,
+        Computer_id: 20,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 20,
-        Herramienta_id: 7,
+        Classroom_id: 6,
+        Computer_id: 20,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 20,
-        Herramienta_id: 8,
+        Classroom_id: 6,
+        Computer_id: 20,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 20,
-        Herramienta_id: 9,
+        Classroom_id: 6,
+        Computer_id: 20,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 20,
-        Herramienta_id: 10,
+        Classroom_id: 6,
+        Computer_id: 20,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 21,
-        Herramienta_id: 1,
+        Classroom_id: 6,
+        Computer_id: 21,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 21,
-        Herramienta_id: 2,
+        Classroom_id: 6,
+        Computer_id: 21,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 21,
-        Herramienta_id: 3,
+        Classroom_id: 6,
+        Computer_id: 21,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 21,
-        Herramienta_id: 4,
+        Classroom_id: 6,
+        Computer_id: 21,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 21,
-        Herramienta_id: 5,
+        Classroom_id: 6,
+        Computer_id: 21,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 21,
-        Herramienta_id: 6,
+        Classroom_id: 6,
+        Computer_id: 21,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 21,
-        Herramienta_id: 7,
+        Classroom_id: 6,
+        Computer_id: 21,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 21,
-        Herramienta_id: 8,
+        Classroom_id: 6,
+        Computer_id: 21,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 21,
-        Herramienta_id: 9,
+        Classroom_id: 6,
+        Computer_id: 21,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 6,
-        Ordenador_id: 21,
-        Herramienta_id: 10,
+        Classroom_id: 6,
+        Computer_id: 21,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -1500,4131 +1500,4131 @@ module.exports = {
       /*------------------------------------------------------------------------------------ */
 
       {
-        Aula_id: 7,
-        Ordenador_id: 22,
-        Herramienta_id: 1,
+        Classroom_id: 7,
+        Computer_id: 22,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 7,
-        Ordenador_id: 22,
-        Herramienta_id: 2,
+        Classroom_id: 7,
+        Computer_id: 22,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 7,
-        Ordenador_id: 22,
-        Herramienta_id: 3,
+        Classroom_id: 7,
+        Computer_id: 22,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 7,
-        Ordenador_id: 22,
-        Herramienta_id: 4,
+        Classroom_id: 7,
+        Computer_id: 22,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 7,
-        Ordenador_id: 22,
-        Herramienta_id: 5,
+        Classroom_id: 7,
+        Computer_id: 22,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 7,
-        Ordenador_id: 22,
-        Herramienta_id: 6,
+        Classroom_id: 7,
+        Computer_id: 22,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 7,
-        Ordenador_id: 22,
-        Herramienta_id: 7,
+        Classroom_id: 7,
+        Computer_id: 22,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 7,
-        Ordenador_id: 22,
-        Herramienta_id: 8,
+        Classroom_id: 7,
+        Computer_id: 22,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 7,
-        Ordenador_id: 22,
-        Herramienta_id: 9,
+        Classroom_id: 7,
+        Computer_id: 22,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 7,
-        Ordenador_id: 22,
-        Herramienta_id: 10,
+        Classroom_id: 7,
+        Computer_id: 22,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 8,
-        Ordenador_id: 23,
-        Herramienta_id: 1,
+        Classroom_id: 8,
+        Computer_id: 23,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 8,
-        Ordenador_id: 23,
-        Herramienta_id: 2,
+        Classroom_id: 8,
+        Computer_id: 23,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 8,
-        Ordenador_id: 23,
-        Herramienta_id: 3,
+        Classroom_id: 8,
+        Computer_id: 23,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 8,
-        Ordenador_id: 23,
-        Herramienta_id: 4,
+        Classroom_id: 8,
+        Computer_id: 23,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 8,
-        Ordenador_id: 23,
-        Herramienta_id: 5,
+        Classroom_id: 8,
+        Computer_id: 23,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 8,
-        Ordenador_id: 23,
-        Herramienta_id: 6,
+        Classroom_id: 8,
+        Computer_id: 23,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 8,
-        Ordenador_id: 23,
-        Herramienta_id: 7,
+        Classroom_id: 8,
+        Computer_id: 23,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 8,
-        Ordenador_id: 23,
-        Herramienta_id: 8,
+        Classroom_id: 8,
+        Computer_id: 23,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 8,
-        Ordenador_id: 23,
-        Herramienta_id: 9,
+        Classroom_id: 8,
+        Computer_id: 23,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 8,
-        Ordenador_id: 23,
-        Herramienta_id: 10,
+        Classroom_id: 8,
+        Computer_id: 23,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 9,
-        Ordenador_id: 24,
-        Herramienta_id: 1,
+        Classroom_id: 9,
+        Computer_id: 24,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 9,
-        Ordenador_id: 24,
-        Herramienta_id: 2,
+        Classroom_id: 9,
+        Computer_id: 24,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 9,
-        Ordenador_id: 24,
-        Herramienta_id: 3,
+        Classroom_id: 9,
+        Computer_id: 24,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 9,
-        Ordenador_id: 24,
-        Herramienta_id: 4,
+        Classroom_id: 9,
+        Computer_id: 24,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 9,
-        Ordenador_id: 24,
-        Herramienta_id: 5,
+        Classroom_id: 9,
+        Computer_id: 24,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 9,
-        Ordenador_id: 24,
-        Herramienta_id: 6,
+        Classroom_id: 9,
+        Computer_id: 24,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 9,
-        Ordenador_id: 24,
-        Herramienta_id: 7,
+        Classroom_id: 9,
+        Computer_id: 24,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 9,
-        Ordenador_id: 24,
-        Herramienta_id: 8,
+        Classroom_id: 9,
+        Computer_id: 24,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 9,
-        Ordenador_id: 24,
-        Herramienta_id: 9,
+        Classroom_id: 9,
+        Computer_id: 24,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 9,
-        Ordenador_id: 24,
-        Herramienta_id: 10,
+        Classroom_id: 9,
+        Computer_id: 24,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 10,
-        Ordenador_id: 25,
-        Herramienta_id: 1,
+        Classroom_id: 10,
+        Computer_id: 25,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 10,
-        Ordenador_id: 25,
-        Herramienta_id: 2,
+        Classroom_id: 10,
+        Computer_id: 25,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 10,
-        Ordenador_id: 25,
-        Herramienta_id: 3,
+        Classroom_id: 10,
+        Computer_id: 25,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 10,
-        Ordenador_id: 25,
-        Herramienta_id: 4,
+        Classroom_id: 10,
+        Computer_id: 25,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 10,
-        Ordenador_id: 25,
-        Herramienta_id: 5,
+        Classroom_id: 10,
+        Computer_id: 25,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 10,
-        Ordenador_id: 25,
-        Herramienta_id: 6,
+        Classroom_id: 10,
+        Computer_id: 25,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 10,
-        Ordenador_id: 25,
-        Herramienta_id: 7,
+        Classroom_id: 10,
+        Computer_id: 25,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 10,
-        Ordenador_id: 25,
-        Herramienta_id: 8,
+        Classroom_id: 10,
+        Computer_id: 25,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 10,
-        Ordenador_id: 25,
-        Herramienta_id: 9,
+        Classroom_id: 10,
+        Computer_id: 25,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 10,
-        Ordenador_id: 25,
-        Herramienta_id: 10,
+        Classroom_id: 10,
+        Computer_id: 25,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 11,
-        Ordenador_id: 26,
-        Herramienta_id: 1,
+        Classroom_id: 11,
+        Computer_id: 26,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 11,
-        Ordenador_id: 26,
-        Herramienta_id: 2,
+        Classroom_id: 11,
+        Computer_id: 26,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 11,
-        Ordenador_id: 26,
-        Herramienta_id: 3,
+        Classroom_id: 11,
+        Computer_id: 26,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 11,
-        Ordenador_id: 26,
-        Herramienta_id: 4,
+        Classroom_id: 11,
+        Computer_id: 26,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 11,
-        Ordenador_id: 26,
-        Herramienta_id: 5,
+        Classroom_id: 11,
+        Computer_id: 26,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 11,
-        Ordenador_id: 26,
-        Herramienta_id: 6,
+        Classroom_id: 11,
+        Computer_id: 26,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 11,
-        Ordenador_id: 26,
-        Herramienta_id: 7,
+        Classroom_id: 11,
+        Computer_id: 26,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 11,
-        Ordenador_id: 26,
-        Herramienta_id: 8,
+        Classroom_id: 11,
+        Computer_id: 26,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 11,
-        Ordenador_id: 26,
-        Herramienta_id: 9,
+        Classroom_id: 11,
+        Computer_id: 26,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 11,
-        Ordenador_id: 26,
-        Herramienta_id: 10,
+        Classroom_id: 11,
+        Computer_id: 26,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 12,
-        Ordenador_id: 27,
-        Herramienta_id: 1,
+        Classroom_id: 12,
+        Computer_id: 27,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 12,
-        Ordenador_id: 27,
-        Herramienta_id: 2,
+        Classroom_id: 12,
+        Computer_id: 27,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 12,
-        Ordenador_id: 27,
-        Herramienta_id: 3,
+        Classroom_id: 12,
+        Computer_id: 27,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 12,
-        Ordenador_id: 27,
-        Herramienta_id: 4,
+        Classroom_id: 12,
+        Computer_id: 27,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 12,
-        Ordenador_id: 27,
-        Herramienta_id: 5,
+        Classroom_id: 12,
+        Computer_id: 27,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 12,
-        Ordenador_id: 27,
-        Herramienta_id: 6,
+        Classroom_id: 12,
+        Computer_id: 27,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 12,
-        Ordenador_id: 27,
-        Herramienta_id: 7,
+        Classroom_id: 12,
+        Computer_id: 27,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 12,
-        Ordenador_id: 27,
-        Herramienta_id: 8,
+        Classroom_id: 12,
+        Computer_id: 27,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 12,
-        Ordenador_id: 27,
-        Herramienta_id: 9,
+        Classroom_id: 12,
+        Computer_id: 27,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 12,
-        Ordenador_id: 27,
-        Herramienta_id: 10,
+        Classroom_id: 12,
+        Computer_id: 27,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 13,
-        Ordenador_id: 28,
-        Herramienta_id: 1,
+        Classroom_id: 13,
+        Computer_id: 28,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 13,
-        Ordenador_id: 28,
-        Herramienta_id: 2,
+        Classroom_id: 13,
+        Computer_id: 28,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 13,
-        Ordenador_id: 28,
-        Herramienta_id: 3,
+        Classroom_id: 13,
+        Computer_id: 28,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 13,
-        Ordenador_id: 28,
-        Herramienta_id: 4,
+        Classroom_id: 13,
+        Computer_id: 28,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 13,
-        Ordenador_id: 28,
-        Herramienta_id: 5,
+        Classroom_id: 13,
+        Computer_id: 28,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 13,
-        Ordenador_id: 28,
-        Herramienta_id: 6,
+        Classroom_id: 13,
+        Computer_id: 28,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 13,
-        Ordenador_id: 28,
-        Herramienta_id: 7,
+        Classroom_id: 13,
+        Computer_id: 28,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 13,
-        Ordenador_id: 28,
-        Herramienta_id: 8,
+        Classroom_id: 13,
+        Computer_id: 28,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 13,
-        Ordenador_id: 28,
-        Herramienta_id: 9,
+        Classroom_id: 13,
+        Computer_id: 28,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 13,
-        Ordenador_id: 28,
-        Herramienta_id: 10,
+        Classroom_id: 13,
+        Computer_id: 28,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 14,
-        Ordenador_id: 29,
-        Herramienta_id: 1,
+        Classroom_id: 14,
+        Computer_id: 29,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 14,
-        Ordenador_id: 29,
-        Herramienta_id: 2,
+        Classroom_id: 14,
+        Computer_id: 29,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 14,
-        Ordenador_id: 29,
-        Herramienta_id: 3,
+        Classroom_id: 14,
+        Computer_id: 29,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 14,
-        Ordenador_id: 29,
-        Herramienta_id: 4,
+        Classroom_id: 14,
+        Computer_id: 29,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 14,
-        Ordenador_id: 29,
-        Herramienta_id: 5,
+        Classroom_id: 14,
+        Computer_id: 29,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 14,
-        Ordenador_id: 29,
-        Herramienta_id: 6,
+        Classroom_id: 14,
+        Computer_id: 29,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 14,
-        Ordenador_id: 29,
-        Herramienta_id: 7,
+        Classroom_id: 14,
+        Computer_id: 29,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 14,
-        Ordenador_id: 29,
-        Herramienta_id: 8,
+        Classroom_id: 14,
+        Computer_id: 29,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 14,
-        Ordenador_id: 29,
-        Herramienta_id: 9,
+        Classroom_id: 14,
+        Computer_id: 29,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 14,
-        Ordenador_id: 29,
-        Herramienta_id: 10,
+        Classroom_id: 14,
+        Computer_id: 29,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 15,
-        Ordenador_id: 30,
-        Herramienta_id: 1,
+        Classroom_id: 15,
+        Computer_id: 30,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 15,
-        Ordenador_id: 30,
-        Herramienta_id: 2,
+        Classroom_id: 15,
+        Computer_id: 30,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 15,
-        Ordenador_id: 30,
-        Herramienta_id: 3,
+        Classroom_id: 15,
+        Computer_id: 30,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 15,
-        Ordenador_id: 30,
-        Herramienta_id: 4,
+        Classroom_id: 15,
+        Computer_id: 30,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 15,
-        Ordenador_id: 30,
-        Herramienta_id: 5,
+        Classroom_id: 15,
+        Computer_id: 30,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 15,
-        Ordenador_id: 30,
-        Herramienta_id: 6,
+        Classroom_id: 15,
+        Computer_id: 30,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 15,
-        Ordenador_id: 30,
-        Herramienta_id: 7,
+        Classroom_id: 15,
+        Computer_id: 30,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 15,
-        Ordenador_id: 30,
-        Herramienta_id: 8,
+        Classroom_id: 15,
+        Computer_id: 30,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 15,
-        Ordenador_id: 30,
-        Herramienta_id: 9,
+        Classroom_id: 15,
+        Computer_id: 30,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 15,
-        Ordenador_id: 30,
-        Herramienta_id: 10,
+        Classroom_id: 15,
+        Computer_id: 30,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 16,
-        Ordenador_id: 31,
-        Herramienta_id: 1,
+        Classroom_id: 16,
+        Computer_id: 31,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 16,
-        Ordenador_id: 31,
-        Herramienta_id: 2,
+        Classroom_id: 16,
+        Computer_id: 31,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 16,
-        Ordenador_id: 31,
-        Herramienta_id: 3,
+        Classroom_id: 16,
+        Computer_id: 31,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 16,
-        Ordenador_id: 31,
-        Herramienta_id: 4,
+        Classroom_id: 16,
+        Computer_id: 31,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 16,
-        Ordenador_id: 31,
-        Herramienta_id: 5,
+        Classroom_id: 16,
+        Computer_id: 31,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 16,
-        Ordenador_id: 31,
-        Herramienta_id: 6,
+        Classroom_id: 16,
+        Computer_id: 31,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 16,
-        Ordenador_id: 31,
-        Herramienta_id: 7,
+        Classroom_id: 16,
+        Computer_id: 31,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 16,
-        Ordenador_id: 31,
-        Herramienta_id: 8,
+        Classroom_id: 16,
+        Computer_id: 31,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 16,
-        Ordenador_id: 31,
-        Herramienta_id: 9,
+        Classroom_id: 16,
+        Computer_id: 31,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 16,
-        Ordenador_id: 31,
-        Herramienta_id: 10,
+        Classroom_id: 16,
+        Computer_id: 31,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 17,
-        Ordenador_id: 22,
-        Herramienta_id: 1,
+        Classroom_id: 17,
+        Computer_id: 22,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 17,
-        Ordenador_id: 22,
-        Herramienta_id: 2,
+        Classroom_id: 17,
+        Computer_id: 22,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 17,
-        Ordenador_id: 22,
-        Herramienta_id: 3,
+        Classroom_id: 17,
+        Computer_id: 22,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 17,
-        Ordenador_id: 22,
-        Herramienta_id: 4,
+        Classroom_id: 17,
+        Computer_id: 22,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 17,
-        Ordenador_id: 22,
-        Herramienta_id: 5,
+        Classroom_id: 17,
+        Computer_id: 22,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 17,
-        Ordenador_id: 22,
-        Herramienta_id: 6,
+        Classroom_id: 17,
+        Computer_id: 22,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 17,
-        Ordenador_id: 22,
-        Herramienta_id: 7,
+        Classroom_id: 17,
+        Computer_id: 22,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 17,
-        Ordenador_id: 22,
-        Herramienta_id: 8,
+        Classroom_id: 17,
+        Computer_id: 22,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 17,
-        Ordenador_id: 22,
-        Herramienta_id: 9,
+        Classroom_id: 17,
+        Computer_id: 22,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 17,
-        Ordenador_id: 22,
-        Herramienta_id: 10,
+        Classroom_id: 17,
+        Computer_id: 22,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 18,
-        Ordenador_id: 23,
-        Herramienta_id: 1,
+        Classroom_id: 18,
+        Computer_id: 23,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 18,
-        Ordenador_id: 23,
-        Herramienta_id: 2,
+        Classroom_id: 18,
+        Computer_id: 23,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 18,
-        Ordenador_id: 23,
-        Herramienta_id: 3,
+        Classroom_id: 18,
+        Computer_id: 23,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 18,
-        Ordenador_id: 23,
-        Herramienta_id: 4,
+        Classroom_id: 18,
+        Computer_id: 23,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 18,
-        Ordenador_id: 23,
-        Herramienta_id: 5,
+        Classroom_id: 18,
+        Computer_id: 23,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 18,
-        Ordenador_id: 23,
-        Herramienta_id: 6,
+        Classroom_id: 18,
+        Computer_id: 23,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 18,
-        Ordenador_id: 23,
-        Herramienta_id: 7,
+        Classroom_id: 18,
+        Computer_id: 23,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 18,
-        Ordenador_id: 23,
-        Herramienta_id: 8,
+        Classroom_id: 18,
+        Computer_id: 23,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 18,
-        Ordenador_id: 23,
-        Herramienta_id: 9,
+        Classroom_id: 18,
+        Computer_id: 23,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 18,
-        Ordenador_id: 23,
-        Herramienta_id: 10,
+        Classroom_id: 18,
+        Computer_id: 23,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 19,
-        Ordenador_id: 24,
-        Herramienta_id: 1,
+        Classroom_id: 19,
+        Computer_id: 24,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 19,
-        Ordenador_id: 24,
-        Herramienta_id: 2,
+        Classroom_id: 19,
+        Computer_id: 24,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 19,
-        Ordenador_id: 24,
-        Herramienta_id: 3,
+        Classroom_id: 19,
+        Computer_id: 24,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 19,
-        Ordenador_id: 24,
-        Herramienta_id: 4,
+        Classroom_id: 19,
+        Computer_id: 24,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 19,
-        Ordenador_id: 24,
-        Herramienta_id: 5,
+        Classroom_id: 19,
+        Computer_id: 24,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 19,
-        Ordenador_id: 24,
-        Herramienta_id: 6,
+        Classroom_id: 19,
+        Computer_id: 24,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 19,
-        Ordenador_id: 24,
-        Herramienta_id: 7,
+        Classroom_id: 19,
+        Computer_id: 24,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 19,
-        Ordenador_id: 24,
-        Herramienta_id: 8,
+        Classroom_id: 19,
+        Computer_id: 24,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 19,
-        Ordenador_id: 24,
-        Herramienta_id: 9,
+        Classroom_id: 19,
+        Computer_id: 24,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 19,
-        Ordenador_id: 24,
-        Herramienta_id: 10,
+        Classroom_id: 19,
+        Computer_id: 24,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 20,
-        Ordenador_id: 25,
-        Herramienta_id: 1,
+        Classroom_id: 20,
+        Computer_id: 25,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 20,
-        Ordenador_id: 25,
-        Herramienta_id: 2,
+        Classroom_id: 20,
+        Computer_id: 25,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 20,
-        Ordenador_id: 25,
-        Herramienta_id: 3,
+        Classroom_id: 20,
+        Computer_id: 25,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 20,
-        Ordenador_id: 25,
-        Herramienta_id: 4,
+        Classroom_id: 20,
+        Computer_id: 25,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 20,
-        Ordenador_id: 25,
-        Herramienta_id: 5,
+        Classroom_id: 20,
+        Computer_id: 25,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 20,
-        Ordenador_id: 25,
-        Herramienta_id: 6,
+        Classroom_id: 20,
+        Computer_id: 25,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 20,
-        Ordenador_id: 25,
-        Herramienta_id: 7,
+        Classroom_id: 20,
+        Computer_id: 25,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 20,
-        Ordenador_id: 25,
-        Herramienta_id: 8,
+        Classroom_id: 20,
+        Computer_id: 25,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 20,
-        Ordenador_id: 25,
-        Herramienta_id: 9,
+        Classroom_id: 20,
+        Computer_id: 25,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 20,
-        Ordenador_id: 25,
-        Herramienta_id: 10,
+        Classroom_id: 20,
+        Computer_id: 25,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 21,
-        Ordenador_id: 26,
-        Herramienta_id: 1,
+        Classroom_id: 21,
+        Computer_id: 26,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 21,
-        Ordenador_id: 26,
-        Herramienta_id: 2,
+        Classroom_id: 21,
+        Computer_id: 26,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 21,
-        Ordenador_id: 26,
-        Herramienta_id: 3,
+        Classroom_id: 21,
+        Computer_id: 26,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 21,
-        Ordenador_id: 26,
-        Herramienta_id: 4,
+        Classroom_id: 21,
+        Computer_id: 26,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 21,
-        Ordenador_id: 26,
-        Herramienta_id: 5,
+        Classroom_id: 21,
+        Computer_id: 26,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 21,
-        Ordenador_id: 26,
-        Herramienta_id: 6,
+        Classroom_id: 21,
+        Computer_id: 26,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 21,
-        Ordenador_id: 26,
-        Herramienta_id: 7,
+        Classroom_id: 21,
+        Computer_id: 26,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 21,
-        Ordenador_id: 26,
-        Herramienta_id: 8,
+        Classroom_id: 21,
+        Computer_id: 26,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 21,
-        Ordenador_id: 26,
-        Herramienta_id: 9,
+        Classroom_id: 21,
+        Computer_id: 26,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 21,
-        Ordenador_id: 26,
-        Herramienta_id: 10,
+        Classroom_id: 21,
+        Computer_id: 26,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 22,
-        Ordenador_id: 27,
-        Herramienta_id: 1,
+        Classroom_id: 22,
+        Computer_id: 27,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 22,
-        Ordenador_id: 27,
-        Herramienta_id: 2,
+        Classroom_id: 22,
+        Computer_id: 27,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 22,
-        Ordenador_id: 27,
-        Herramienta_id: 3,
+        Classroom_id: 22,
+        Computer_id: 27,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 22,
-        Ordenador_id: 27,
-        Herramienta_id: 4,
+        Classroom_id: 22,
+        Computer_id: 27,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 22,
-        Ordenador_id: 27,
-        Herramienta_id: 5,
+        Classroom_id: 22,
+        Computer_id: 27,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 22,
-        Ordenador_id: 27,
-        Herramienta_id: 6,
+        Classroom_id: 22,
+        Computer_id: 27,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 22,
-        Ordenador_id: 27,
-        Herramienta_id: 7,
+        Classroom_id: 22,
+        Computer_id: 27,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 22,
-        Ordenador_id: 27,
-        Herramienta_id: 8,
+        Classroom_id: 22,
+        Computer_id: 27,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 22,
-        Ordenador_id: 27,
-        Herramienta_id: 9,
+        Classroom_id: 22,
+        Computer_id: 27,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 22,
-        Ordenador_id: 27,
-        Herramienta_id: 10,
+        Classroom_id: 22,
+        Computer_id: 27,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 23,
-        Ordenador_id: 28,
-        Herramienta_id: 1,
+        Classroom_id: 23,
+        Computer_id: 28,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 23,
-        Ordenador_id: 28,
-        Herramienta_id: 2,
+        Classroom_id: 23,
+        Computer_id: 28,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 23,
-        Ordenador_id: 28,
-        Herramienta_id: 3,
+        Classroom_id: 23,
+        Computer_id: 28,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 23,
-        Ordenador_id: 28,
-        Herramienta_id: 4,
+        Classroom_id: 23,
+        Computer_id: 28,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 23,
-        Ordenador_id: 28,
-        Herramienta_id: 5,
+        Classroom_id: 23,
+        Computer_id: 28,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 23,
-        Ordenador_id: 28,
-        Herramienta_id: 6,
+        Classroom_id: 23,
+        Computer_id: 28,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 23,
-        Ordenador_id: 28,
-        Herramienta_id: 7,
+        Classroom_id: 23,
+        Computer_id: 28,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 23,
-        Ordenador_id: 28,
-        Herramienta_id: 8,
+        Classroom_id: 23,
+        Computer_id: 28,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 23,
-        Ordenador_id: 28,
-        Herramienta_id: 9,
+        Classroom_id: 23,
+        Computer_id: 28,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 23,
-        Ordenador_id: 28,
-        Herramienta_id: 10,
+        Classroom_id: 23,
+        Computer_id: 28,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 24,
-        Ordenador_id: 29,
-        Herramienta_id: 1,
+        Classroom_id: 24,
+        Computer_id: 29,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 24,
-        Ordenador_id: 29,
-        Herramienta_id: 2,
+        Classroom_id: 24,
+        Computer_id: 29,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 24,
-        Ordenador_id: 29,
-        Herramienta_id: 3,
+        Classroom_id: 24,
+        Computer_id: 29,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 24,
-        Ordenador_id: 29,
-        Herramienta_id: 4,
+        Classroom_id: 24,
+        Computer_id: 29,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 24,
-        Ordenador_id: 29,
-        Herramienta_id: 5,
+        Classroom_id: 24,
+        Computer_id: 29,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 24,
-        Ordenador_id: 29,
-        Herramienta_id: 6,
+        Classroom_id: 24,
+        Computer_id: 29,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 24,
-        Ordenador_id: 29,
-        Herramienta_id: 7,
+        Classroom_id: 24,
+        Computer_id: 29,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 24,
-        Ordenador_id: 29,
-        Herramienta_id: 8,
+        Classroom_id: 24,
+        Computer_id: 29,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 24,
-        Ordenador_id: 29,
-        Herramienta_id: 9,
+        Classroom_id: 24,
+        Computer_id: 29,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 24,
-        Ordenador_id: 29,
-        Herramienta_id: 10,
+        Classroom_id: 24,
+        Computer_id: 29,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 25,
-        Ordenador_id: 30,
-        Herramienta_id: 1,
+        Classroom_id: 25,
+        Computer_id: 30,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 25,
-        Ordenador_id: 30,
-        Herramienta_id: 2,
+        Classroom_id: 25,
+        Computer_id: 30,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 25,
-        Ordenador_id: 30,
-        Herramienta_id: 3,
+        Classroom_id: 25,
+        Computer_id: 30,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 25,
-        Ordenador_id: 30,
-        Herramienta_id: 4,
+        Classroom_id: 25,
+        Computer_id: 30,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 25,
-        Ordenador_id: 30,
-        Herramienta_id: 5,
+        Classroom_id: 25,
+        Computer_id: 30,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 25,
-        Ordenador_id: 30,
-        Herramienta_id: 6,
+        Classroom_id: 25,
+        Computer_id: 30,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 25,
-        Ordenador_id: 30,
-        Herramienta_id: 7,
+        Classroom_id: 25,
+        Computer_id: 30,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 25,
-        Ordenador_id: 30,
-        Herramienta_id: 8,
+        Classroom_id: 25,
+        Computer_id: 30,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 25,
-        Ordenador_id: 30,
-        Herramienta_id: 9,
+        Classroom_id: 25,
+        Computer_id: 30,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 25,
-        Ordenador_id: 30,
-        Herramienta_id: 10,
+        Classroom_id: 25,
+        Computer_id: 30,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 26,
-        Ordenador_id: 31,
-        Herramienta_id: 1,
+        Classroom_id: 26,
+        Computer_id: 31,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 26,
-        Ordenador_id: 31,
-        Herramienta_id: 2,
+        Classroom_id: 26,
+        Computer_id: 31,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 26,
-        Ordenador_id: 31,
-        Herramienta_id: 3,
+        Classroom_id: 26,
+        Computer_id: 31,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 26,
-        Ordenador_id: 31,
-        Herramienta_id: 4,
+        Classroom_id: 26,
+        Computer_id: 31,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 26,
-        Ordenador_id: 31,
-        Herramienta_id: 5,
+        Classroom_id: 26,
+        Computer_id: 31,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 26,
-        Ordenador_id: 31,
-        Herramienta_id: 6,
+        Classroom_id: 26,
+        Computer_id: 31,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 26,
-        Ordenador_id: 31,
-        Herramienta_id: 7,
+        Classroom_id: 26,
+        Computer_id: 31,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 26,
-        Ordenador_id: 31,
-        Herramienta_id: 8,
+        Classroom_id: 26,
+        Computer_id: 31,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 26,
-        Ordenador_id: 31,
-        Herramienta_id: 9,
+        Classroom_id: 26,
+        Computer_id: 31,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 26,
-        Ordenador_id: 31,
-        Herramienta_id: 10,
+        Classroom_id: 26,
+        Computer_id: 31,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 27,
-        Ordenador_id: 22,
-        Herramienta_id: 1,
+        Classroom_id: 27,
+        Computer_id: 22,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 27,
-        Ordenador_id: 22,
-        Herramienta_id: 2,
+        Classroom_id: 27,
+        Computer_id: 22,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 27,
-        Ordenador_id: 22,
-        Herramienta_id: 3,
+        Classroom_id: 27,
+        Computer_id: 22,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 27,
-        Ordenador_id: 22,
-        Herramienta_id: 4,
+        Classroom_id: 27,
+        Computer_id: 22,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 27,
-        Ordenador_id: 22,
-        Herramienta_id: 5,
+        Classroom_id: 27,
+        Computer_id: 22,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 27,
-        Ordenador_id: 22,
-        Herramienta_id: 6,
+        Classroom_id: 27,
+        Computer_id: 22,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 27,
-        Ordenador_id: 22,
-        Herramienta_id: 7,
+        Classroom_id: 27,
+        Computer_id: 22,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 27,
-        Ordenador_id: 22,
-        Herramienta_id: 8,
+        Classroom_id: 27,
+        Computer_id: 22,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 27,
-        Ordenador_id: 22,
-        Herramienta_id: 9,
+        Classroom_id: 27,
+        Computer_id: 22,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 27,
-        Ordenador_id: 22,
-        Herramienta_id: 10,
+        Classroom_id: 27,
+        Computer_id: 22,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 28,
-        Ordenador_id: 23,
-        Herramienta_id: 1,
+        Classroom_id: 28,
+        Computer_id: 23,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 28,
-        Ordenador_id: 23,
-        Herramienta_id: 2,
+        Classroom_id: 28,
+        Computer_id: 23,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 28,
-        Ordenador_id: 23,
-        Herramienta_id: 3,
+        Classroom_id: 28,
+        Computer_id: 23,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 28,
-        Ordenador_id: 23,
-        Herramienta_id: 4,
+        Classroom_id: 28,
+        Computer_id: 23,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 28,
-        Ordenador_id: 23,
-        Herramienta_id: 5,
+        Classroom_id: 28,
+        Computer_id: 23,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 28,
-        Ordenador_id: 23,
-        Herramienta_id: 6,
+        Classroom_id: 28,
+        Computer_id: 23,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 28,
-        Ordenador_id: 23,
-        Herramienta_id: 7,
+        Classroom_id: 28,
+        Computer_id: 23,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 28,
-        Ordenador_id: 23,
-        Herramienta_id: 8,
+        Classroom_id: 28,
+        Computer_id: 23,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 28,
-        Ordenador_id: 23,
-        Herramienta_id: 9,
+        Classroom_id: 28,
+        Computer_id: 23,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 28,
-        Ordenador_id: 23,
-        Herramienta_id: 10,
+        Classroom_id: 28,
+        Computer_id: 23,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 29,
-        Ordenador_id: 24,
-        Herramienta_id: 1,
+        Classroom_id: 29,
+        Computer_id: 24,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 29,
-        Ordenador_id: 24,
-        Herramienta_id: 2,
+        Classroom_id: 29,
+        Computer_id: 24,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 29,
-        Ordenador_id: 24,
-        Herramienta_id: 3,
+        Classroom_id: 29,
+        Computer_id: 24,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 29,
-        Ordenador_id: 24,
-        Herramienta_id: 4,
+        Classroom_id: 29,
+        Computer_id: 24,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 29,
-        Ordenador_id: 24,
-        Herramienta_id: 5,
+        Classroom_id: 29,
+        Computer_id: 24,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 29,
-        Ordenador_id: 24,
-        Herramienta_id: 6,
+        Classroom_id: 29,
+        Computer_id: 24,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 29,
-        Ordenador_id: 24,
-        Herramienta_id: 7,
+        Classroom_id: 29,
+        Computer_id: 24,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 29,
-        Ordenador_id: 24,
-        Herramienta_id: 8,
+        Classroom_id: 29,
+        Computer_id: 24,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 29,
-        Ordenador_id: 24,
-        Herramienta_id: 9,
+        Classroom_id: 29,
+        Computer_id: 24,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 29,
-        Ordenador_id: 24,
-        Herramienta_id: 10,
+        Classroom_id: 29,
+        Computer_id: 24,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 30,
-        Ordenador_id: 25,
-        Herramienta_id: 1,
+        Classroom_id: 30,
+        Computer_id: 25,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 30,
-        Ordenador_id: 25,
-        Herramienta_id: 2,
+        Classroom_id: 30,
+        Computer_id: 25,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 30,
-        Ordenador_id: 25,
-        Herramienta_id: 3,
+        Classroom_id: 30,
+        Computer_id: 25,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 30,
-        Ordenador_id: 25,
-        Herramienta_id: 4,
+        Classroom_id: 30,
+        Computer_id: 25,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 30,
-        Ordenador_id: 25,
-        Herramienta_id: 5,
+        Classroom_id: 30,
+        Computer_id: 25,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 30,
-        Ordenador_id: 25,
-        Herramienta_id: 6,
+        Classroom_id: 30,
+        Computer_id: 25,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 30,
-        Ordenador_id: 25,
-        Herramienta_id: 7,
+        Classroom_id: 30,
+        Computer_id: 25,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 30,
-        Ordenador_id: 25,
-        Herramienta_id: 8,
+        Classroom_id: 30,
+        Computer_id: 25,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 30,
-        Ordenador_id: 25,
-        Herramienta_id: 9,
+        Classroom_id: 30,
+        Computer_id: 25,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 30,
-        Ordenador_id: 25,
-        Herramienta_id: 10,
+        Classroom_id: 30,
+        Computer_id: 25,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 30,
-        Ordenador_id: 26,
-        Herramienta_id: 1,
+        Classroom_id: 30,
+        Computer_id: 26,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 30,
-        Ordenador_id: 26,
-        Herramienta_id: 2,
+        Classroom_id: 30,
+        Computer_id: 26,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 30,
-        Ordenador_id: 26,
-        Herramienta_id: 3,
+        Classroom_id: 30,
+        Computer_id: 26,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 30,
-        Ordenador_id: 26,
-        Herramienta_id: 4,
+        Classroom_id: 30,
+        Computer_id: 26,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 30,
-        Ordenador_id: 26,
-        Herramienta_id: 5,
+        Classroom_id: 30,
+        Computer_id: 26,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 30,
-        Ordenador_id: 26,
-        Herramienta_id: 6,
+        Classroom_id: 30,
+        Computer_id: 26,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 30,
-        Ordenador_id: 26,
-        Herramienta_id: 7,
+        Classroom_id: 30,
+        Computer_id: 26,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 30,
-        Ordenador_id: 26,
-        Herramienta_id: 8,
+        Classroom_id: 30,
+        Computer_id: 26,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 30,
-        Ordenador_id: 26,
-        Herramienta_id: 9,
+        Classroom_id: 30,
+        Computer_id: 26,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 30,
-        Ordenador_id: 26,
-        Herramienta_id: 10,
+        Classroom_id: 30,
+        Computer_id: 26,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },  {
-        Aula_id: 31,
-        Ordenador_id: 30,
-        Herramienta_id: 1,
+        Classroom_id: 31,
+        Computer_id: 30,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 31,
-        Ordenador_id: 30,
-        Herramienta_id: 2,
+        Classroom_id: 31,
+        Computer_id: 30,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 31,
-        Ordenador_id: 30,
-        Herramienta_id: 3,
+        Classroom_id: 31,
+        Computer_id: 30,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 31,
-        Ordenador_id: 30,
-        Herramienta_id: 4,
+        Classroom_id: 31,
+        Computer_id: 30,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 31,
-        Ordenador_id: 30,
-        Herramienta_id: 5,
+        Classroom_id: 31,
+        Computer_id: 30,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 31,
-        Ordenador_id: 30,
-        Herramienta_id: 6,
+        Classroom_id: 31,
+        Computer_id: 30,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 31,
-        Ordenador_id: 30,
-        Herramienta_id: 7,
+        Classroom_id: 31,
+        Computer_id: 30,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 31,
-        Ordenador_id: 30,
-        Herramienta_id: 8,
+        Classroom_id: 31,
+        Computer_id: 30,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 31,
-        Ordenador_id: 30,
-        Herramienta_id: 9,
+        Classroom_id: 31,
+        Computer_id: 30,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 31,
-        Ordenador_id: 30,
-        Herramienta_id: 10,
+        Classroom_id: 31,
+        Computer_id: 30,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 32,
-        Ordenador_id: 31,
-        Herramienta_id: 1,
+        Classroom_id: 32,
+        Computer_id: 31,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 32,
-        Ordenador_id: 31,
-        Herramienta_id: 2,
+        Classroom_id: 32,
+        Computer_id: 31,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 32,
-        Ordenador_id: 31,
-        Herramienta_id: 3,
+        Classroom_id: 32,
+        Computer_id: 31,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 32,
-        Ordenador_id: 31,
-        Herramienta_id: 4,
+        Classroom_id: 32,
+        Computer_id: 31,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 32,
-        Ordenador_id: 31,
-        Herramienta_id: 5,
+        Classroom_id: 32,
+        Computer_id: 31,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 32,
-        Ordenador_id: 31,
-        Herramienta_id: 6,
+        Classroom_id: 32,
+        Computer_id: 31,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 32,
-        Ordenador_id: 31,
-        Herramienta_id: 7,
+        Classroom_id: 32,
+        Computer_id: 31,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 32,
-        Ordenador_id: 31,
-        Herramienta_id: 8,
+        Classroom_id: 32,
+        Computer_id: 31,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 32,
-        Ordenador_id: 31,
-        Herramienta_id: 9,
+        Classroom_id: 32,
+        Computer_id: 31,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 32,
-        Ordenador_id: 31,
-        Herramienta_id: 10,
+        Classroom_id: 32,
+        Computer_id: 31,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 33,
-        Ordenador_id: 22,
-        Herramienta_id: 1,
+        Classroom_id: 33,
+        Computer_id: 22,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 33,
-        Ordenador_id: 22,
-        Herramienta_id: 2,
+        Classroom_id: 33,
+        Computer_id: 22,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 33,
-        Ordenador_id: 22,
-        Herramienta_id: 3,
+        Classroom_id: 33,
+        Computer_id: 22,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 33,
-        Ordenador_id: 22,
-        Herramienta_id: 4,
+        Classroom_id: 33,
+        Computer_id: 22,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 33,
-        Ordenador_id: 22,
-        Herramienta_id: 5,
+        Classroom_id: 33,
+        Computer_id: 22,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 33,
-        Ordenador_id: 22,
-        Herramienta_id: 6,
+        Classroom_id: 33,
+        Computer_id: 22,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 33,
-        Ordenador_id: 22,
-        Herramienta_id: 7,
+        Classroom_id: 33,
+        Computer_id: 22,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 33,
-        Ordenador_id: 22,
-        Herramienta_id: 8,
+        Classroom_id: 33,
+        Computer_id: 22,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 33,
-        Ordenador_id: 22,
-        Herramienta_id: 9,
+        Classroom_id: 33,
+        Computer_id: 22,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 33,
-        Ordenador_id: 22,
-        Herramienta_id: 10,
+        Classroom_id: 33,
+        Computer_id: 22,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 34,
-        Ordenador_id: 23,
-        Herramienta_id: 1,
+        Classroom_id: 34,
+        Computer_id: 23,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 34,
-        Ordenador_id: 23,
-        Herramienta_id: 2,
+        Classroom_id: 34,
+        Computer_id: 23,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 34,
-        Ordenador_id: 23,
-        Herramienta_id: 3,
+        Classroom_id: 34,
+        Computer_id: 23,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 34,
-        Ordenador_id: 23,
-        Herramienta_id: 4,
+        Classroom_id: 34,
+        Computer_id: 23,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 34,
-        Ordenador_id: 23,
-        Herramienta_id: 5,
+        Classroom_id: 34,
+        Computer_id: 23,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 34,
-        Ordenador_id: 23,
-        Herramienta_id: 6,
+        Classroom_id: 34,
+        Computer_id: 23,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 34,
-        Ordenador_id: 23,
-        Herramienta_id: 7,
+        Classroom_id: 34,
+        Computer_id: 23,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 34,
-        Ordenador_id: 23,
-        Herramienta_id: 8,
+        Classroom_id: 34,
+        Computer_id: 23,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 34,
-        Ordenador_id: 23,
-        Herramienta_id: 9,
+        Classroom_id: 34,
+        Computer_id: 23,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 34,
-        Ordenador_id: 23,
-        Herramienta_id: 10,
+        Classroom_id: 34,
+        Computer_id: 23,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 35,
-        Ordenador_id: 24,
-        Herramienta_id: 1,
+        Classroom_id: 35,
+        Computer_id: 24,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 35,
-        Ordenador_id: 24,
-        Herramienta_id: 2,
+        Classroom_id: 35,
+        Computer_id: 24,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 35,
-        Ordenador_id: 24,
-        Herramienta_id: 3,
+        Classroom_id: 35,
+        Computer_id: 24,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 35,
-        Ordenador_id: 24,
-        Herramienta_id: 4,
+        Classroom_id: 35,
+        Computer_id: 24,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 35,
-        Ordenador_id: 24,
-        Herramienta_id: 5,
+        Classroom_id: 35,
+        Computer_id: 24,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 35,
-        Ordenador_id: 24,
-        Herramienta_id: 6,
+        Classroom_id: 35,
+        Computer_id: 24,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 35,
-        Ordenador_id: 24,
-        Herramienta_id: 7,
+        Classroom_id: 35,
+        Computer_id: 24,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 35,
-        Ordenador_id: 24,
-        Herramienta_id: 8,
+        Classroom_id: 35,
+        Computer_id: 24,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 35,
-        Ordenador_id: 24,
-        Herramienta_id: 9,
+        Classroom_id: 35,
+        Computer_id: 24,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 35,
-        Ordenador_id: 24,
-        Herramienta_id: 10,
+        Classroom_id: 35,
+        Computer_id: 24,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 36,
-        Ordenador_id: 25,
-        Herramienta_id: 1,
+        Classroom_id: 36,
+        Computer_id: 25,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 36,
-        Ordenador_id: 25,
-        Herramienta_id: 2,
+        Classroom_id: 36,
+        Computer_id: 25,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 36,
-        Ordenador_id: 25,
-        Herramienta_id: 3,
+        Classroom_id: 36,
+        Computer_id: 25,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 36,
-        Ordenador_id: 25,
-        Herramienta_id: 4,
+        Classroom_id: 36,
+        Computer_id: 25,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 36,
-        Ordenador_id: 25,
-        Herramienta_id: 5,
+        Classroom_id: 36,
+        Computer_id: 25,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 36,
-        Ordenador_id: 25,
-        Herramienta_id: 6,
+        Classroom_id: 36,
+        Computer_id: 25,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 36,
-        Ordenador_id: 25,
-        Herramienta_id: 7,
+        Classroom_id: 36,
+        Computer_id: 25,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 36,
-        Ordenador_id: 25,
-        Herramienta_id: 8,
+        Classroom_id: 36,
+        Computer_id: 25,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 36,
-        Ordenador_id: 25,
-        Herramienta_id: 9,
+        Classroom_id: 36,
+        Computer_id: 25,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 36,
-        Ordenador_id: 25,
-        Herramienta_id: 10,
+        Classroom_id: 36,
+        Computer_id: 25,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 37,
-        Ordenador_id: 26,
-        Herramienta_id: 1,
+        Classroom_id: 37,
+        Computer_id: 26,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 37,
-        Ordenador_id: 26,
-        Herramienta_id: 2,
+        Classroom_id: 37,
+        Computer_id: 26,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 37,
-        Ordenador_id: 26,
-        Herramienta_id: 3,
+        Classroom_id: 37,
+        Computer_id: 26,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 37,
-        Ordenador_id: 26,
-        Herramienta_id: 4,
+        Classroom_id: 37,
+        Computer_id: 26,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 37,
-        Ordenador_id: 26,
-        Herramienta_id: 5,
+        Classroom_id: 37,
+        Computer_id: 26,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 37,
-        Ordenador_id: 26,
-        Herramienta_id: 6,
+        Classroom_id: 37,
+        Computer_id: 26,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 37,
-        Ordenador_id: 26,
-        Herramienta_id: 7,
+        Classroom_id: 37,
+        Computer_id: 26,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 37,
-        Ordenador_id: 26,
-        Herramienta_id: 8,
+        Classroom_id: 37,
+        Computer_id: 26,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 37,
-        Ordenador_id: 26,
-        Herramienta_id: 9,
+        Classroom_id: 37,
+        Computer_id: 26,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 37,
-        Ordenador_id: 26,
-        Herramienta_id: 10,
+        Classroom_id: 37,
+        Computer_id: 26,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 38,
-        Ordenador_id: 27,
-        Herramienta_id: 1,
+        Classroom_id: 38,
+        Computer_id: 27,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 38,
-        Ordenador_id: 27,
-        Herramienta_id: 2,
+        Classroom_id: 38,
+        Computer_id: 27,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 38,
-        Ordenador_id: 27,
-        Herramienta_id: 3,
+        Classroom_id: 38,
+        Computer_id: 27,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 38,
-        Ordenador_id: 27,
-        Herramienta_id: 4,
+        Classroom_id: 38,
+        Computer_id: 27,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 38,
-        Ordenador_id: 27,
-        Herramienta_id: 5,
+        Classroom_id: 38,
+        Computer_id: 27,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 38,
-        Ordenador_id: 27,
-        Herramienta_id: 6,
+        Classroom_id: 38,
+        Computer_id: 27,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 38,
-        Ordenador_id: 27,
-        Herramienta_id: 7,
+        Classroom_id: 38,
+        Computer_id: 27,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 38,
-        Ordenador_id: 27,
-        Herramienta_id: 8,
+        Classroom_id: 38,
+        Computer_id: 27,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 38,
-        Ordenador_id: 27,
-        Herramienta_id: 9,
+        Classroom_id: 38,
+        Computer_id: 27,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 38,
-        Ordenador_id: 27,
-        Herramienta_id: 10,
+        Classroom_id: 38,
+        Computer_id: 27,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 39,
-        Ordenador_id: 28,
-        Herramienta_id: 1,
+        Classroom_id: 39,
+        Computer_id: 28,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 39,
-        Ordenador_id: 28,
-        Herramienta_id: 2,
+        Classroom_id: 39,
+        Computer_id: 28,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 39,
-        Ordenador_id: 28,
-        Herramienta_id: 3,
+        Classroom_id: 39,
+        Computer_id: 28,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 39,
-        Ordenador_id: 28,
-        Herramienta_id: 4,
+        Classroom_id: 39,
+        Computer_id: 28,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 39,
-        Ordenador_id: 28,
-        Herramienta_id: 5,
+        Classroom_id: 39,
+        Computer_id: 28,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 39,
-        Ordenador_id: 28,
-        Herramienta_id: 6,
+        Classroom_id: 39,
+        Computer_id: 28,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 39,
-        Ordenador_id: 28,
-        Herramienta_id: 7,
+        Classroom_id: 39,
+        Computer_id: 28,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 39,
-        Ordenador_id: 28,
-        Herramienta_id: 8,
+        Classroom_id: 39,
+        Computer_id: 28,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 39,
-        Ordenador_id: 28,
-        Herramienta_id: 9,
+        Classroom_id: 39,
+        Computer_id: 28,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 39,
-        Ordenador_id: 28,
-        Herramienta_id: 10,
+        Classroom_id: 39,
+        Computer_id: 28,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 40,
-        Ordenador_id: 29,
-        Herramienta_id: 1,
+        Classroom_id: 40,
+        Computer_id: 29,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 40,
-        Ordenador_id: 29,
-        Herramienta_id: 2,
+        Classroom_id: 40,
+        Computer_id: 29,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 40,
-        Ordenador_id: 29,
-        Herramienta_id: 3,
+        Classroom_id: 40,
+        Computer_id: 29,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 40,
-        Ordenador_id: 29,
-        Herramienta_id: 4,
+        Classroom_id: 40,
+        Computer_id: 29,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 40,
-        Ordenador_id: 29,
-        Herramienta_id: 5,
+        Classroom_id: 40,
+        Computer_id: 29,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 40,
-        Ordenador_id: 29,
-        Herramienta_id: 6,
+        Classroom_id: 40,
+        Computer_id: 29,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 40,
-        Ordenador_id: 29,
-        Herramienta_id: 7,
+        Classroom_id: 40,
+        Computer_id: 29,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 40,
-        Ordenador_id: 29,
-        Herramienta_id: 8,
+        Classroom_id: 40,
+        Computer_id: 29,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 40,
-        Ordenador_id: 29,
-        Herramienta_id: 9,
+        Classroom_id: 40,
+        Computer_id: 29,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 40,
-        Ordenador_id: 29,
-        Herramienta_id: 10,
+        Classroom_id: 40,
+        Computer_id: 29,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 41,
-        Ordenador_id: 30,
-        Herramienta_id: 1,
+        Classroom_id: 41,
+        Computer_id: 30,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 41,
-        Ordenador_id: 30,
-        Herramienta_id: 2,
+        Classroom_id: 41,
+        Computer_id: 30,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 41,
-        Ordenador_id: 30,
-        Herramienta_id: 3,
+        Classroom_id: 41,
+        Computer_id: 30,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 41,
-        Ordenador_id: 30,
-        Herramienta_id: 4,
+        Classroom_id: 41,
+        Computer_id: 30,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 41,
-        Ordenador_id: 30,
-        Herramienta_id: 5,
+        Classroom_id: 41,
+        Computer_id: 30,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 41,
-        Ordenador_id: 30,
-        Herramienta_id: 6,
+        Classroom_id: 41,
+        Computer_id: 30,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 41,
-        Ordenador_id: 30,
-        Herramienta_id: 7,
+        Classroom_id: 41,
+        Computer_id: 30,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 41,
-        Ordenador_id: 30,
-        Herramienta_id: 8,
+        Classroom_id: 41,
+        Computer_id: 30,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 41,
-        Ordenador_id: 30,
-        Herramienta_id: 9,
+        Classroom_id: 41,
+        Computer_id: 30,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 41,
-        Ordenador_id: 30,
-        Herramienta_id: 10,
+        Classroom_id: 41,
+        Computer_id: 30,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 42,
-        Ordenador_id: 31,
-        Herramienta_id: 1,
+        Classroom_id: 42,
+        Computer_id: 31,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 42,
-        Ordenador_id: 31,
-        Herramienta_id: 2,
+        Classroom_id: 42,
+        Computer_id: 31,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 42,
-        Ordenador_id: 31,
-        Herramienta_id: 3,
+        Classroom_id: 42,
+        Computer_id: 31,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 42,
-        Ordenador_id: 31,
-        Herramienta_id: 4,
+        Classroom_id: 42,
+        Computer_id: 31,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 42,
-        Ordenador_id: 31,
-        Herramienta_id: 5,
+        Classroom_id: 42,
+        Computer_id: 31,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 42,
-        Ordenador_id: 31,
-        Herramienta_id: 6,
+        Classroom_id: 42,
+        Computer_id: 31,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 42,
-        Ordenador_id: 31,
-        Herramienta_id: 7,
+        Classroom_id: 42,
+        Computer_id: 31,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 42,
-        Ordenador_id: 31,
-        Herramienta_id: 8,
+        Classroom_id: 42,
+        Computer_id: 31,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 42,
-        Ordenador_id: 31,
-        Herramienta_id: 9,
+        Classroom_id: 42,
+        Computer_id: 31,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 42,
-        Ordenador_id: 31,
-        Herramienta_id: 10,
+        Classroom_id: 42,
+        Computer_id: 31,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 43,
-        Ordenador_id: 22,
-        Herramienta_id: 1,
+        Classroom_id: 43,
+        Computer_id: 22,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 43,
-        Ordenador_id: 22,
-        Herramienta_id: 2,
+        Classroom_id: 43,
+        Computer_id: 22,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 43,
-        Ordenador_id: 22,
-        Herramienta_id: 3,
+        Classroom_id: 43,
+        Computer_id: 22,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 43,
-        Ordenador_id: 22,
-        Herramienta_id: 4,
+        Classroom_id: 43,
+        Computer_id: 22,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 43,
-        Ordenador_id: 22,
-        Herramienta_id: 5,
+        Classroom_id: 43,
+        Computer_id: 22,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 43,
-        Ordenador_id: 22,
-        Herramienta_id: 6,
+        Classroom_id: 43,
+        Computer_id: 22,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 43,
-        Ordenador_id: 22,
-        Herramienta_id: 7,
+        Classroom_id: 43,
+        Computer_id: 22,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 43,
-        Ordenador_id: 22,
-        Herramienta_id: 8,
+        Classroom_id: 43,
+        Computer_id: 22,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 43,
-        Ordenador_id: 22,
-        Herramienta_id: 9,
+        Classroom_id: 43,
+        Computer_id: 22,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 43,
-        Ordenador_id: 22,
-        Herramienta_id: 10,
+        Classroom_id: 43,
+        Computer_id: 22,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 44,
-        Ordenador_id: 23,
-        Herramienta_id: 1,
+        Classroom_id: 44,
+        Computer_id: 23,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 44,
-        Ordenador_id: 23,
-        Herramienta_id: 2,
+        Classroom_id: 44,
+        Computer_id: 23,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 44,
-        Ordenador_id: 23,
-        Herramienta_id: 3,
+        Classroom_id: 44,
+        Computer_id: 23,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 44,
-        Ordenador_id: 23,
-        Herramienta_id: 4,
+        Classroom_id: 44,
+        Computer_id: 23,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 44,
-        Ordenador_id: 23,
-        Herramienta_id: 5,
+        Classroom_id: 44,
+        Computer_id: 23,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 44,
-        Ordenador_id: 23,
-        Herramienta_id: 6,
+        Classroom_id: 44,
+        Computer_id: 23,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 44,
-        Ordenador_id: 23,
-        Herramienta_id: 7,
+        Classroom_id: 44,
+        Computer_id: 23,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 44,
-        Ordenador_id: 23,
-        Herramienta_id: 8,
+        Classroom_id: 44,
+        Computer_id: 23,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 44,
-        Ordenador_id: 23,
-        Herramienta_id: 9,
+        Classroom_id: 44,
+        Computer_id: 23,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 44,
-        Ordenador_id: 23,
-        Herramienta_id: 10,
+        Classroom_id: 44,
+        Computer_id: 23,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 24,
-        Herramienta_id: 1,
+        Classroom_id: 45,
+        Computer_id: 24,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 24,
-        Herramienta_id: 2,
+        Classroom_id: 45,
+        Computer_id: 24,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 24,
-        Herramienta_id: 3,
+        Classroom_id: 45,
+        Computer_id: 24,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 24,
-        Herramienta_id: 4,
+        Classroom_id: 45,
+        Computer_id: 24,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 24,
-        Herramienta_id: 5,
+        Classroom_id: 45,
+        Computer_id: 24,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 24,
-        Herramienta_id: 6,
+        Classroom_id: 45,
+        Computer_id: 24,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 24,
-        Herramienta_id: 7,
+        Classroom_id: 45,
+        Computer_id: 24,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 24,
-        Herramienta_id: 8,
+        Classroom_id: 45,
+        Computer_id: 24,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 24,
-        Herramienta_id: 9,
+        Classroom_id: 45,
+        Computer_id: 24,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 24,
-        Herramienta_id: 10,
+        Classroom_id: 45,
+        Computer_id: 24,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 25,
-        Herramienta_id: 1,
+        Classroom_id: 45,
+        Computer_id: 25,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 25,
-        Herramienta_id: 2,
+        Classroom_id: 45,
+        Computer_id: 25,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 25,
-        Herramienta_id: 3,
+        Classroom_id: 45,
+        Computer_id: 25,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 25,
-        Herramienta_id: 4,
+        Classroom_id: 45,
+        Computer_id: 25,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 25,
-        Herramienta_id: 5,
+        Classroom_id: 45,
+        Computer_id: 25,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 25,
-        Herramienta_id: 6,
+        Classroom_id: 45,
+        Computer_id: 25,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 25,
-        Herramienta_id: 7,
+        Classroom_id: 45,
+        Computer_id: 25,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 25,
-        Herramienta_id: 8,
+        Classroom_id: 45,
+        Computer_id: 25,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 25,
-        Herramienta_id: 9,
+        Classroom_id: 45,
+        Computer_id: 25,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 25,
-        Herramienta_id: 10,
+        Classroom_id: 45,
+        Computer_id: 25,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 26,
-        Herramienta_id: 1,
+        Classroom_id: 45,
+        Computer_id: 26,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 26,
-        Herramienta_id: 2,
+        Classroom_id: 45,
+        Computer_id: 26,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 26,
-        Herramienta_id: 3,
+        Classroom_id: 45,
+        Computer_id: 26,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 26,
-        Herramienta_id: 4,
+        Classroom_id: 45,
+        Computer_id: 26,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 26,
-        Herramienta_id: 5,
+        Classroom_id: 45,
+        Computer_id: 26,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 26,
-        Herramienta_id: 6,
+        Classroom_id: 45,
+        Computer_id: 26,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 26,
-        Herramienta_id: 7,
+        Classroom_id: 45,
+        Computer_id: 26,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 26,
-        Herramienta_id: 8,
+        Classroom_id: 45,
+        Computer_id: 26,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 26,
-        Herramienta_id: 9,
+        Classroom_id: 45,
+        Computer_id: 26,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 45,
-        Ordenador_id: 26,
-        Herramienta_id: 10,
+        Classroom_id: 45,
+        Computer_id: 26,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 46,
-        Ordenador_id: 30,
-        Herramienta_id: 1,
+        Classroom_id: 46,
+        Computer_id: 30,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 46,
-        Ordenador_id: 30,
-        Herramienta_id: 2,
+        Classroom_id: 46,
+        Computer_id: 30,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 46,
-        Ordenador_id: 30,
-        Herramienta_id: 3,
+        Classroom_id: 46,
+        Computer_id: 30,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 46,
-        Ordenador_id: 30,
-        Herramienta_id: 4,
+        Classroom_id: 46,
+        Computer_id: 30,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 46,
-        Ordenador_id: 30,
-        Herramienta_id: 5,
+        Classroom_id: 46,
+        Computer_id: 30,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 46,
-        Ordenador_id: 30,
-        Herramienta_id: 6,
+        Classroom_id: 46,
+        Computer_id: 30,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 46,
-        Ordenador_id: 30,
-        Herramienta_id: 7,
+        Classroom_id: 46,
+        Computer_id: 30,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 46,
-        Ordenador_id: 30,
-        Herramienta_id: 8,
+        Classroom_id: 46,
+        Computer_id: 30,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 46,
-        Ordenador_id: 30,
-        Herramienta_id: 9,
+        Classroom_id: 46,
+        Computer_id: 30,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 46,
-        Ordenador_id: 30,
-        Herramienta_id: 10,
+        Classroom_id: 46,
+        Computer_id: 30,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 47,
-        Ordenador_id: 31,
-        Herramienta_id: 1,
+        Classroom_id: 47,
+        Computer_id: 31,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 47,
-        Ordenador_id: 31,
-        Herramienta_id: 2,
+        Classroom_id: 47,
+        Computer_id: 31,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 47,
-        Ordenador_id: 31,
-        Herramienta_id: 3,
+        Classroom_id: 47,
+        Computer_id: 31,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 47,
-        Ordenador_id: 31,
-        Herramienta_id: 4,
+        Classroom_id: 47,
+        Computer_id: 31,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 47,
-        Ordenador_id: 31,
-        Herramienta_id: 5,
+        Classroom_id: 47,
+        Computer_id: 31,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 47,
-        Ordenador_id: 31,
-        Herramienta_id: 6,
+        Classroom_id: 47,
+        Computer_id: 31,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 47,
-        Ordenador_id: 31,
-        Herramienta_id: 7,
+        Classroom_id: 47,
+        Computer_id: 31,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 47,
-        Ordenador_id: 31,
-        Herramienta_id: 8,
+        Classroom_id: 47,
+        Computer_id: 31,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 47,
-        Ordenador_id: 31,
-        Herramienta_id: 9,
+        Classroom_id: 47,
+        Computer_id: 31,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 47,
-        Ordenador_id: 31,
-        Herramienta_id: 10,
+        Classroom_id: 47,
+        Computer_id: 31,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 48,
-        Ordenador_id: 22,
-        Herramienta_id: 1,
+        Classroom_id: 48,
+        Computer_id: 22,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 48,
-        Ordenador_id: 22,
-        Herramienta_id: 2,
+        Classroom_id: 48,
+        Computer_id: 22,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 48,
-        Ordenador_id: 22,
-        Herramienta_id: 3,
+        Classroom_id: 48,
+        Computer_id: 22,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 48,
-        Ordenador_id: 22,
-        Herramienta_id: 4,
+        Classroom_id: 48,
+        Computer_id: 22,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 48,
-        Ordenador_id: 22,
-        Herramienta_id: 5,
+        Classroom_id: 48,
+        Computer_id: 22,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 48,
-        Ordenador_id: 22,
-        Herramienta_id: 6,
+        Classroom_id: 48,
+        Computer_id: 22,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 48,
-        Ordenador_id: 22,
-        Herramienta_id: 7,
+        Classroom_id: 48,
+        Computer_id: 22,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 48,
-        Ordenador_id: 22,
-        Herramienta_id: 8,
+        Classroom_id: 48,
+        Computer_id: 22,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 48,
-        Ordenador_id: 22,
-        Herramienta_id: 9,
+        Classroom_id: 48,
+        Computer_id: 22,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 48,
-        Ordenador_id: 22,
-        Herramienta_id: 10,
+        Classroom_id: 48,
+        Computer_id: 22,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 49,
-        Ordenador_id: 23,
-        Herramienta_id: 1,
+        Classroom_id: 49,
+        Computer_id: 23,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 49,
-        Ordenador_id: 23,
-        Herramienta_id: 2,
+        Classroom_id: 49,
+        Computer_id: 23,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 49,
-        Ordenador_id: 23,
-        Herramienta_id: 3,
+        Classroom_id: 49,
+        Computer_id: 23,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 49,
-        Ordenador_id: 23,
-        Herramienta_id: 4,
+        Classroom_id: 49,
+        Computer_id: 23,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 49,
-        Ordenador_id: 23,
-        Herramienta_id: 5,
+        Classroom_id: 49,
+        Computer_id: 23,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 49,
-        Ordenador_id: 23,
-        Herramienta_id: 6,
+        Classroom_id: 49,
+        Computer_id: 23,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 49,
-        Ordenador_id: 23,
-        Herramienta_id: 7,
+        Classroom_id: 49,
+        Computer_id: 23,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 49,
-        Ordenador_id: 23,
-        Herramienta_id: 8,
+        Classroom_id: 49,
+        Computer_id: 23,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 49,
-        Ordenador_id: 23,
-        Herramienta_id: 9,
+        Classroom_id: 49,
+        Computer_id: 23,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 49,
-        Ordenador_id: 23,
-        Herramienta_id: 10,
+        Classroom_id: 49,
+        Computer_id: 23,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 50,
-        Ordenador_id: 24,
-        Herramienta_id: 1,
+        Classroom_id: 50,
+        Computer_id: 24,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 50,
-        Ordenador_id: 24,
-        Herramienta_id: 2,
+        Classroom_id: 50,
+        Computer_id: 24,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 50,
-        Ordenador_id: 24,
-        Herramienta_id: 3,
+        Classroom_id: 50,
+        Computer_id: 24,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 50,
-        Ordenador_id: 24,
-        Herramienta_id: 4,
+        Classroom_id: 50,
+        Computer_id: 24,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 50,
-        Ordenador_id: 24,
-        Herramienta_id: 5,
+        Classroom_id: 50,
+        Computer_id: 24,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 50,
-        Ordenador_id: 24,
-        Herramienta_id: 6,
+        Classroom_id: 50,
+        Computer_id: 24,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 50,
-        Ordenador_id: 24,
-        Herramienta_id: 7,
+        Classroom_id: 50,
+        Computer_id: 24,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 50,
-        Ordenador_id: 24,
-        Herramienta_id: 8,
+        Classroom_id: 50,
+        Computer_id: 24,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 50,
-        Ordenador_id: 24,
-        Herramienta_id: 9,
+        Classroom_id: 50,
+        Computer_id: 24,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 50,
-        Ordenador_id: 24,
-        Herramienta_id: 10,
+        Classroom_id: 50,
+        Computer_id: 24,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 51,
-        Ordenador_id: 25,
-        Herramienta_id: 1,
+        Classroom_id: 51,
+        Computer_id: 25,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 51,
-        Ordenador_id: 25,
-        Herramienta_id: 2,
+        Classroom_id: 51,
+        Computer_id: 25,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 51,
-        Ordenador_id: 25,
-        Herramienta_id: 3,
+        Classroom_id: 51,
+        Computer_id: 25,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 51,
-        Ordenador_id: 25,
-        Herramienta_id: 4,
+        Classroom_id: 51,
+        Computer_id: 25,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 51,
-        Ordenador_id: 25,
-        Herramienta_id: 5,
+        Classroom_id: 51,
+        Computer_id: 25,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 51,
-        Ordenador_id: 25,
-        Herramienta_id: 6,
+        Classroom_id: 51,
+        Computer_id: 25,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 51,
-        Ordenador_id: 25,
-        Herramienta_id: 7,
+        Classroom_id: 51,
+        Computer_id: 25,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 51,
-        Ordenador_id: 25,
-        Herramienta_id: 8,
+        Classroom_id: 51,
+        Computer_id: 25,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 51,
-        Ordenador_id: 25,
-        Herramienta_id: 9,
+        Classroom_id: 51,
+        Computer_id: 25,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 51,
-        Ordenador_id: 25,
-        Herramienta_id: 10,
+        Classroom_id: 51,
+        Computer_id: 25,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 52,
-        Ordenador_id: 26,
-        Herramienta_id: 1,
+        Classroom_id: 52,
+        Computer_id: 26,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 52,
-        Ordenador_id: 26,
-        Herramienta_id: 2,
+        Classroom_id: 52,
+        Computer_id: 26,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 52,
-        Ordenador_id: 26,
-        Herramienta_id: 3,
+        Classroom_id: 52,
+        Computer_id: 26,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 52,
-        Ordenador_id: 26,
-        Herramienta_id: 4,
+        Classroom_id: 52,
+        Computer_id: 26,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 52,
-        Ordenador_id: 26,
-        Herramienta_id: 5,
+        Classroom_id: 52,
+        Computer_id: 26,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 52,
-        Ordenador_id: 26,
-        Herramienta_id: 6,
+        Classroom_id: 52,
+        Computer_id: 26,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 52,
-        Ordenador_id: 26,
-        Herramienta_id: 7,
+        Classroom_id: 52,
+        Computer_id: 26,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 52,
-        Ordenador_id: 26,
-        Herramienta_id: 8,
+        Classroom_id: 52,
+        Computer_id: 26,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 52,
-        Ordenador_id: 26,
-        Herramienta_id: 9,
+        Classroom_id: 52,
+        Computer_id: 26,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 52,
-        Ordenador_id: 26,
-        Herramienta_id: 10,
+        Classroom_id: 52,
+        Computer_id: 26,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 53,
-        Ordenador_id: 27,
-        Herramienta_id: 1,
+        Classroom_id: 53,
+        Computer_id: 27,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 53,
-        Ordenador_id: 27,
-        Herramienta_id: 2,
+        Classroom_id: 53,
+        Computer_id: 27,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 53,
-        Ordenador_id: 27,
-        Herramienta_id: 3,
+        Classroom_id: 53,
+        Computer_id: 27,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 53,
-        Ordenador_id: 27,
-        Herramienta_id: 4,
+        Classroom_id: 53,
+        Computer_id: 27,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 53,
-        Ordenador_id: 27,
-        Herramienta_id: 5,
+        Classroom_id: 53,
+        Computer_id: 27,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 53,
-        Ordenador_id: 27,
-        Herramienta_id: 6,
+        Classroom_id: 53,
+        Computer_id: 27,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 53,
-        Ordenador_id: 27,
-        Herramienta_id: 7,
+        Classroom_id: 53,
+        Computer_id: 27,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 53,
-        Ordenador_id: 27,
-        Herramienta_id: 8,
+        Classroom_id: 53,
+        Computer_id: 27,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 53,
-        Ordenador_id: 27,
-        Herramienta_id: 9,
+        Classroom_id: 53,
+        Computer_id: 27,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 53,
-        Ordenador_id: 27,
-        Herramienta_id: 10,
+        Classroom_id: 53,
+        Computer_id: 27,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 54,
-        Ordenador_id: 28,
-        Herramienta_id: 1,
+        Classroom_id: 54,
+        Computer_id: 28,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 54,
-        Ordenador_id: 28,
-        Herramienta_id: 2,
+        Classroom_id: 54,
+        Computer_id: 28,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 54,
-        Ordenador_id: 28,
-        Herramienta_id: 3,
+        Classroom_id: 54,
+        Computer_id: 28,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 54,
-        Ordenador_id: 28,
-        Herramienta_id: 4,
+        Classroom_id: 54,
+        Computer_id: 28,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 54,
-        Ordenador_id: 28,
-        Herramienta_id: 5,
+        Classroom_id: 54,
+        Computer_id: 28,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 54,
-        Ordenador_id: 28,
-        Herramienta_id: 6,
+        Classroom_id: 54,
+        Computer_id: 28,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 54,
-        Ordenador_id: 28,
-        Herramienta_id: 7,
+        Classroom_id: 54,
+        Computer_id: 28,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 54,
-        Ordenador_id: 28,
-        Herramienta_id: 8,
+        Classroom_id: 54,
+        Computer_id: 28,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 54,
-        Ordenador_id: 28,
-        Herramienta_id: 9,
+        Classroom_id: 54,
+        Computer_id: 28,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 54,
-        Ordenador_id: 28,
-        Herramienta_id: 10,
+        Classroom_id: 54,
+        Computer_id: 28,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 55,
-        Ordenador_id: 29,
-        Herramienta_id: 1,
+        Classroom_id: 55,
+        Computer_id: 29,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 55,
-        Ordenador_id: 29,
-        Herramienta_id: 2,
+        Classroom_id: 55,
+        Computer_id: 29,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 55,
-        Ordenador_id: 29,
-        Herramienta_id: 3,
+        Classroom_id: 55,
+        Computer_id: 29,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 55,
-        Ordenador_id: 29,
-        Herramienta_id: 4,
+        Classroom_id: 55,
+        Computer_id: 29,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 55,
-        Ordenador_id: 29,
-        Herramienta_id: 5,
+        Classroom_id: 55,
+        Computer_id: 29,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 55,
-        Ordenador_id: 29,
-        Herramienta_id: 6,
+        Classroom_id: 55,
+        Computer_id: 29,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 55,
-        Ordenador_id: 29,
-        Herramienta_id: 7,
+        Classroom_id: 55,
+        Computer_id: 29,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 55,
-        Ordenador_id: 29,
-        Herramienta_id: 8,
+        Classroom_id: 55,
+        Computer_id: 29,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 55,
-        Ordenador_id: 29,
-        Herramienta_id: 9,
+        Classroom_id: 55,
+        Computer_id: 29,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 55,
-        Ordenador_id: 29,
-        Herramienta_id: 10,
+        Classroom_id: 55,
+        Computer_id: 29,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 56,
-        Ordenador_id: 30,
-        Herramienta_id: 1,
+        Classroom_id: 56,
+        Computer_id: 30,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 56,
-        Ordenador_id: 30,
-        Herramienta_id: 2,
+        Classroom_id: 56,
+        Computer_id: 30,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 56,
-        Ordenador_id: 30,
-        Herramienta_id: 3,
+        Classroom_id: 56,
+        Computer_id: 30,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 56,
-        Ordenador_id: 30,
-        Herramienta_id: 4,
+        Classroom_id: 56,
+        Computer_id: 30,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 56,
-        Ordenador_id: 30,
-        Herramienta_id: 5,
+        Classroom_id: 56,
+        Computer_id: 30,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 56,
-        Ordenador_id: 30,
-        Herramienta_id: 6,
+        Classroom_id: 56,
+        Computer_id: 30,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 56,
-        Ordenador_id: 30,
-        Herramienta_id: 7,
+        Classroom_id: 56,
+        Computer_id: 30,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 56,
-        Ordenador_id: 30,
-        Herramienta_id: 8,
+        Classroom_id: 56,
+        Computer_id: 30,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 56,
-        Ordenador_id: 30,
-        Herramienta_id: 9,
+        Classroom_id: 56,
+        Computer_id: 30,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 56,
-        Ordenador_id: 30,
-        Herramienta_id: 10,
+        Classroom_id: 56,
+        Computer_id: 30,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 57,
-        Ordenador_id: 31,
-        Herramienta_id: 1,
+        Classroom_id: 57,
+        Computer_id: 31,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 57,
-        Ordenador_id: 31,
-        Herramienta_id: 2,
+        Classroom_id: 57,
+        Computer_id: 31,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 57,
-        Ordenador_id: 31,
-        Herramienta_id: 3,
+        Classroom_id: 57,
+        Computer_id: 31,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 57,
-        Ordenador_id: 31,
-        Herramienta_id: 4,
+        Classroom_id: 57,
+        Computer_id: 31,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 57,
-        Ordenador_id: 31,
-        Herramienta_id: 5,
+        Classroom_id: 57,
+        Computer_id: 31,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 57,
-        Ordenador_id: 31,
-        Herramienta_id: 6,
+        Classroom_id: 57,
+        Computer_id: 31,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 57,
-        Ordenador_id: 31,
-        Herramienta_id: 7,
+        Classroom_id: 57,
+        Computer_id: 31,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 57,
-        Ordenador_id: 31,
-        Herramienta_id: 8,
+        Classroom_id: 57,
+        Computer_id: 31,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 57,
-        Ordenador_id: 31,
-        Herramienta_id: 9,
+        Classroom_id: 57,
+        Computer_id: 31,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 57,
-        Ordenador_id: 31,
-        Herramienta_id: 10,
+        Classroom_id: 57,
+        Computer_id: 31,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 58,
-        Ordenador_id: 22,
-        Herramienta_id: 1,
+        Classroom_id: 58,
+        Computer_id: 22,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 58,
-        Ordenador_id: 22,
-        Herramienta_id: 2,
+        Classroom_id: 58,
+        Computer_id: 22,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 58,
-        Ordenador_id: 22,
-        Herramienta_id: 3,
+        Classroom_id: 58,
+        Computer_id: 22,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 58,
-        Ordenador_id: 22,
-        Herramienta_id: 4,
+        Classroom_id: 58,
+        Computer_id: 22,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 58,
-        Ordenador_id: 22,
-        Herramienta_id: 5,
+        Classroom_id: 58,
+        Computer_id: 22,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 58,
-        Ordenador_id: 22,
-        Herramienta_id: 6,
+        Classroom_id: 58,
+        Computer_id: 22,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 58,
-        Ordenador_id: 22,
-        Herramienta_id: 7,
+        Classroom_id: 58,
+        Computer_id: 22,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 58,
-        Ordenador_id: 22,
-        Herramienta_id: 8,
+        Classroom_id: 58,
+        Computer_id: 22,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 58,
-        Ordenador_id: 22,
-        Herramienta_id: 9,
+        Classroom_id: 58,
+        Computer_id: 22,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 58,
-        Ordenador_id: 22,
-        Herramienta_id: 10,
+        Classroom_id: 58,
+        Computer_id: 22,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 59,
-        Ordenador_id: 23,
-        Herramienta_id: 1,
+        Classroom_id: 59,
+        Computer_id: 23,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 59,
-        Ordenador_id: 23,
-        Herramienta_id: 2,
+        Classroom_id: 59,
+        Computer_id: 23,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 59,
-        Ordenador_id: 23,
-        Herramienta_id: 3,
+        Classroom_id: 59,
+        Computer_id: 23,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 59,
-        Ordenador_id: 23,
-        Herramienta_id: 4,
+        Classroom_id: 59,
+        Computer_id: 23,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 59,
-        Ordenador_id: 23,
-        Herramienta_id: 5,
+        Classroom_id: 59,
+        Computer_id: 23,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 59,
-        Ordenador_id: 23,
-        Herramienta_id: 6,
+        Classroom_id: 59,
+        Computer_id: 23,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 59,
-        Ordenador_id: 23,
-        Herramienta_id: 7,
+        Classroom_id: 59,
+        Computer_id: 23,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 59,
-        Ordenador_id: 23,
-        Herramienta_id: 8,
+        Classroom_id: 59,
+        Computer_id: 23,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 59,
-        Ordenador_id: 23,
-        Herramienta_id: 9,
+        Classroom_id: 59,
+        Computer_id: 23,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 59,
-        Ordenador_id: 23,
-        Herramienta_id: 10,
+        Classroom_id: 59,
+        Computer_id: 23,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 24,
-        Herramienta_id: 1,
+        Classroom_id: 60,
+        Computer_id: 24,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 24,
-        Herramienta_id: 2,
+        Classroom_id: 60,
+        Computer_id: 24,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 24,
-        Herramienta_id: 3,
+        Classroom_id: 60,
+        Computer_id: 24,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 24,
-        Herramienta_id: 4,
+        Classroom_id: 60,
+        Computer_id: 24,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 24,
-        Herramienta_id: 5,
+        Classroom_id: 60,
+        Computer_id: 24,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 24,
-        Herramienta_id: 6,
+        Classroom_id: 60,
+        Computer_id: 24,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 24,
-        Herramienta_id: 7,
+        Classroom_id: 60,
+        Computer_id: 24,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 24,
-        Herramienta_id: 8,
+        Classroom_id: 60,
+        Computer_id: 24,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 24,
-        Herramienta_id: 9,
+        Classroom_id: 60,
+        Computer_id: 24,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 24,
-        Herramienta_id: 10,
+        Classroom_id: 60,
+        Computer_id: 24,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 25,
-        Herramienta_id: 1,
+        Classroom_id: 60,
+        Computer_id: 25,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 25,
-        Herramienta_id: 2,
+        Classroom_id: 60,
+        Computer_id: 25,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 25,
-        Herramienta_id: 3,
+        Classroom_id: 60,
+        Computer_id: 25,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 25,
-        Herramienta_id: 4,
+        Classroom_id: 60,
+        Computer_id: 25,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 25,
-        Herramienta_id: 5,
+        Classroom_id: 60,
+        Computer_id: 25,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 25,
-        Herramienta_id: 6,
+        Classroom_id: 60,
+        Computer_id: 25,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 25,
-        Herramienta_id: 7,
+        Classroom_id: 60,
+        Computer_id: 25,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 25,
-        Herramienta_id: 8,
+        Classroom_id: 60,
+        Computer_id: 25,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 25,
-        Herramienta_id: 9,
+        Classroom_id: 60,
+        Computer_id: 25,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 25,
-        Herramienta_id: 10,
+        Classroom_id: 60,
+        Computer_id: 25,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 26,
-        Herramienta_id: 1,
+        Classroom_id: 60,
+        Computer_id: 26,
+        Tool_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 26,
-        Herramienta_id: 2,
+        Classroom_id: 60,
+        Computer_id: 26,
+        Tool_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 26,
-        Herramienta_id: 3,
+        Classroom_id: 60,
+        Computer_id: 26,
+        Tool_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 26,
-        Herramienta_id: 4,
+        Classroom_id: 60,
+        Computer_id: 26,
+        Tool_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 26,
-        Herramienta_id: 5,
+        Classroom_id: 60,
+        Computer_id: 26,
+        Tool_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 26,
-        Herramienta_id: 6,
+        Classroom_id: 60,
+        Computer_id: 26,
+        Tool_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 26,
-        Herramienta_id: 7,
+        Classroom_id: 60,
+        Computer_id: 26,
+        Tool_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 26,
-        Herramienta_id: 8,
+        Classroom_id: 60,
+        Computer_id: 26,
+        Tool_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 26,
-        Herramienta_id: 9,
+        Classroom_id: 60,
+        Computer_id: 26,
+        Tool_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Aula_id: 60,
-        Ordenador_id: 26,
-        Herramienta_id: 10,
+        Classroom_id: 60,
+        Computer_id: 26,
+        Tool_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -5637,7 +5637,7 @@ module.exports = {
      *
      * Example:
      */
-    await queryInterface.bulkDelete('tb_aula_herramienta_ordenador', null, {});
+    await queryInterface.bulkDelete('tb_inventories', null, {});
 
   }
 };

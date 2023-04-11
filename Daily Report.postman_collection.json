@@ -361,10 +361,10 @@
 			]
 		},
 		{
-			"name": "Ordenador",
+			"name": "Computer",
 			"item": [
 				{
-					"name": "Create a new ordenador",
+					"name": "Create a new computer",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -376,7 +376,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Nombre\": \"Prueba3\"\n}",
+							"raw": "{\n        \"Name\": \"Prueba3\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -396,7 +396,7 @@
 					"response": []
 				},
 				{
-					"name": "Get all ordenadores",
+					"name": "Get all computers",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -431,7 +431,7 @@
 					"response": []
 				},
 				{
-					"name": "Update an ordenador",
+					"name": "Update an computer",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -443,7 +443,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Nombre\": \"Prueba222\"\n}",
+							"raw": "{\n        \"Name\": \"Prueba222\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -470,7 +470,7 @@
 					"response": []
 				},
 				{
-					"name": "Get ordenadores by id",
+					"name": "Get computers by id",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -538,10 +538,10 @@
 			]
 		},
 		{
-			"name": "Aulas",
+			"name": "Classrooms",
 			"item": [
 				{
-					"name": "Create a new aulas",
+					"name": "Create a new classrooms",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -573,7 +573,7 @@
 					"response": []
 				},
 				{
-					"name": "Get all aulas",
+					"name": "Get all classrooms",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -614,7 +614,7 @@
 					"response": []
 				},
 				{
-					"name": "Update an aula",
+					"name": "Update an classroom",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -647,7 +647,7 @@
 					"response": []
 				},
 				{
-					"name": "Get aula by Id",
+					"name": "Get classroom by Id",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -683,17 +683,17 @@
 					"response": []
 				},
 				{
-					"name": "Delete by Id an aula",
+					"name": "Delete by Id an classroom",
 					"request": {
 						"method": "DELETE",
 						"header": [],
 						"url": {
-							"raw": "{{local}}api/aula/2?x-access-token={{x-access-token}}",
+							"raw": "{{local}}api/classroom/2?x-access-token={{x-access-token}}",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"aula",
+								"classroom",
 								"2"
 							],
 							"query": [
@@ -709,10 +709,10 @@
 			]
 		},
 		{
-			"name": "Herramientas",
+			"name": "Tools",
 			"item": [
 				{
-					"name": "Create a new herramientas",
+					"name": "Create a new tool",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -724,7 +724,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "\n   {\n       \"Tipo\": \"Hardware\",\n       \"Nombre\": \"Cable de poder\"\n   }\n   {\n       \"Tipo\": \"Hardware\",\n       \"Nombre\": \"Cable ethernet\"\n   }",
+							"raw": "\n   {\n       \"Type\": \"Hardware\",\n       \"Name\": \"Cable de poder\"\n   }\n   {\n       \"Type\": \"Hardware\",\n       \"Name\": \"Cable ethernet\"\n   }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -744,7 +744,7 @@
 					"response": []
 				},
 				{
-					"name": "Get all herramientas",
+					"name": "Get all tool",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -779,7 +779,7 @@
 					"response": []
 				},
 				{
-					"name": "Update a herramienta",
+					"name": "Update a tool",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -791,7 +791,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Tipo\": \"Hardware\",\n        \"Nombre\": \"Cable de poder\"\n}",
+							"raw": "{\n        \"Type\": \"Hardware\",\n        \"Name\": \"Cable de poder\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -812,7 +812,7 @@
 					"response": []
 				},
 				{
-					"name": "Get herramienta by Id",
+					"name": "Get tool by Id",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -848,7 +848,7 @@
 					"response": []
 				},
 				{
-					"name": "Delete by Id a herramienta",
+					"name": "Delete by Id a tool",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -1042,7 +1042,7 @@
 			"name": "Inventario",
 			"item": [
 				{
-					"name": "Create a new ordenador",
+					"name": "Create a new computer",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1054,7 +1054,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Aula_id\": 1,\n        \"Ordenador_id\": 3,\n        \"Herramienta_id\": 11\n}",
+							"raw": "{\n        \"Classroom_id\": 1,\n        \"Computer_id\": 3,\n        \"Tool_id\": 11\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1062,19 +1062,19 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/ordenador_aula",
+							"raw": "{{local}}api/inventory",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"ordenador_aula"
+								"inventory"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get all ordenadores",
+					"name": "Get all computers",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1097,19 +1097,19 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/ordenador_aula",
+							"raw": "{{local}}api/inventory",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"ordenador_aula"
+								"inventory"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Update an ordenador",
+					"name": "Update an computer",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -1121,7 +1121,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Aula_id\": 1,\n        \"Ordenador_id\": 2,\n        \"Herramienta_id\": 1\n}",
+							"raw": "{\n        \"Classroom_id\": 1,\n        \"Computer_id\": 2,\n        \"Tool_id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1129,12 +1129,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/ordenador_aula/7",
+							"raw": "{{local}}api/inventory/7",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"ordenador_aula",
+								"inventory",
 								"7"
 							]
 						}
@@ -1142,7 +1142,7 @@
 					"response": []
 				},
 				{
-					"name": "Get ordenadores-aula by id",
+					"name": "Get computers-classroom by id",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1165,12 +1165,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/ordenador_aula/2",
+							"raw": "{{local}}api/inventory/2",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"ordenador_aula",
+								"inventory",
 								"2"
 							]
 						}
@@ -1189,12 +1189,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{local}}api/ordenador_aula/12",
+							"raw": "{{local}}api/inventory/12",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"ordenador_aula",
+								"inventory",
 								"12"
 							]
 						}
@@ -1239,7 +1239,7 @@
 					"response": []
 				},
 				{
-					"name": "Get all ordenadores",
+					"name": "Get all computers",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1262,19 +1262,19 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/ordenador_aula",
+							"raw": "{{local}}api/inventory",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"ordenador_aula"
+								"inventory"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Update an ordenador",
+					"name": "Update an computer",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -1286,7 +1286,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Aula_id\": 1,\n        \"Ordenador_id\": 2,\n        \"Herramienta_id\": 1\n}",
+							"raw": "{\n        \"Classroom_id\": 1,\n        \"Computer_id\": 2,\n        \"Tool_id\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1294,12 +1294,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/ordenador_aula/7",
+							"raw": "{{local}}api/inventory/7",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"ordenador_aula",
+								"inventory",
 								"7"
 							]
 						}
@@ -1307,7 +1307,7 @@
 					"response": []
 				},
 				{
-					"name": "Get ordenadores-aula by id",
+					"name": "Get computers-classroom by id",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1330,12 +1330,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/ordenador_aula/2",
+							"raw": "{{local}}api/inventory/2",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"ordenador_aula",
+								"inventory",
 								"2"
 							]
 						}
@@ -1354,12 +1354,12 @@
 							}
 						],
 						"url": {
-							"raw": "{{local}}api/ordenador_aula/2",
+							"raw": "{{local}}api/inventory/2",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"ordenador_aula",
+								"inventory",
 								"2"
 							]
 						}

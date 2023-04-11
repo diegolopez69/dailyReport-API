@@ -80,7 +80,7 @@ exports.update = (req, res) => {
   const id = req.params.id;
 
   Classroom.update(req.body, {
-    where: { Aula_id: id },
+    where: { Classroom_id: id },
   })
     .then((num) => {
       if (num == 1) {
@@ -108,8 +108,8 @@ exports.delete = async (req, res) => {
   const id = req.params.id;
 
   const verifyClassroom = await db.sequelize.query(
-    "SELECT COUNT(*) AS number FROM tb_aula_herramienta_ordenadors WHERE `Aula_id` = ?",
-    //"SELECT * FROM tb_aula_herramienta_ordenadors WHERE `Aula_id` = ?",
+    "SELECT COUNT(*) AS number FROM tb_inventories WHERE `Classroom_id` = ?",
+    //"SELECT * FROM tb_inventories WHERE `Classroom_id` = ?",
     {
       replacements: [id],
       type: db.sequelize.QueryTypes.SELECT,
@@ -128,7 +128,7 @@ exports.delete = async (req, res) => {
     });
   } else {
     Classroom.destroy({
-      where: { Aula_id: id },
+      where: { Classroom_id: id },
     })
       .then((num) => {
         console.log("num", num);

@@ -1,5 +1,5 @@
 module.exports = app => {
-  const Computer = require("../controllers/ordenador.controller.js");
+  const Computer = require("../controllers/computer.controller.js");
   const { authJwt } = require("../middleware");
 
   var router = require("express").Router();

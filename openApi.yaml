@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  description: "Este es un contrato del backend para la herramienta de Daily Reports"
+  description: "Este es un contrato del backend para la tool de Daily Reports"
   version: "1.0.0"
   title: "Daily Reports API"
   termsOfService: "http://swagger.io/terms/"
@@ -971,10 +971,10 @@ definitions:
   GetComputerRequest:
     type: "object"
     properties:
-      Ordenador_id:
+      Computer_id:
         type: "integer"
         example: 1
-      Nombre:
+      Name:
         type: "string"
         example: esc
       createdAt:
@@ -992,7 +992,7 @@ definitions:
   PostComputerRequest:
     type: "object"
     properties:
-      Nombre:
+      Name:
         type: "string"
         example: esc
         
@@ -1002,7 +1002,7 @@ definitions:
       Status:
         type: "integer"
         example: 201
-      Nombre:
+      Name:
         type: "string"
         example: Computer was created successfully
         
@@ -1012,7 +1012,7 @@ definitions:
       Status:
         type: "integer"
         example: 200
-      Nombre:
+      Name:
         type: "string"
         example: Computer was updated successfully
 
@@ -1030,14 +1030,14 @@ definitions:
       Status:
         type: "integer"
         example: 201
-      Nombre:
+      Name:
         type: "string"
         example: Classroom was created successfully
         
   GetClassroomResponse:
     type: "object"
     properties:
-      Aula_id:
+      Classroom_id:
         type: "integer"
         example: 1
       Floor:
@@ -1065,17 +1065,17 @@ definitions:
       Status:
         type: "integer"
         example: 200
-      Nombre:
+      Name:
         type: "string"
         example: Classroom was updated successfully
         
   PostToolsRequest:
     type: "object"
     properties:
-      Tipo:
+      Type:
         type: "string"
         example: Hardware
-      Nombre:
+      Name:
         type: "string"
         example: HDMI
       
@@ -1085,14 +1085,14 @@ definitions:
       Status:
         type: "integer"
         example: 201
-      Nombre:
+      Name:
         type: "string"
         example: Tool was created successfully
         
   GetToolsRequest:
     type: "object"
     properties:
-      Herramienta_id:
+      Tool_id:
         type: "integer"
         format: "int64"
         example: 2
@@ -1100,7 +1100,7 @@ definitions:
         type: "string"
         enum:
         - "Hardware"
-      Nombre:
+      Name:
         type: "string"
         example: Cable ethernet
       createdAt:
@@ -1121,7 +1121,7 @@ definitions:
       Status:
         type: "integer"
         example: 200
-      Nombre:
+      Name:
         type: "string"
         example: Tool was updated successfully
         
@@ -1159,7 +1159,7 @@ definitions:
       Status:
         type: "integer"
         example: 201
-      Nombre:
+      Name:
         type: "string"
         example: Chromebook was created successfully
         
@@ -1209,20 +1209,20 @@ definitions:
       Status:
         type: "integer"
         example: 200
-      Nombre:
+      Name:
         type: "string"
         example: Chromebook was updated successfully
       
   PostInventoryRequest:
     type: "object"
     properties:
-      id_ordenador:
+      Computer_id:
         type: "integer"
         example: 1
-      id_aula:
+      Classroom_id:
         type: "integer"
         example: 1
-      id_herramienta:
+      Tool_id:
         type: "integer"
         example: 1
         
@@ -1232,23 +1232,23 @@ definitions:
       Status:
         type: "integer"
         example: 201
-      Nombre:
+      Name:
         type: "string"
         example: Relation was created successfully
         
   GetAllInventory:
     type: "object"
     properties:
-      Aho_id:
+      Inventory_id:
         type: "integer"
         example: 1
-      Aula_id:
+      Classroom_id:
         type: "integer"
         example: 3
-      Ordenador_id:
+      Computer_id:
         type: "integer"
         example: 5
-      Herramienta_id:
+      Tool_id:
         type: "integer"
         example: 2
       createdAt:
@@ -1260,7 +1260,7 @@ definitions:
       tb_tool: 
          items:
           $ref: "#/definitions/GetAllInventoryTool"
-      ordenador:
+      computer:
         items:
           $ref: "#/definitions/GetAllInventoryComputer"
       tb_classroom:
@@ -1270,30 +1270,30 @@ definitions:
   GetAllInventoryTool:
     type: "object"
     properties:
-      Herramienta_id:
+      Tool_id:
         type: "integer"
         example: 1
-      Tipo:
+      Type:
         type: "string"
         example: Hardware
-      Nombre:
+      Name:
         type: "string"
         example: Cable ethernet
         
   GetAllInventoryComputer:
     type: "object"
     properties:
-      Ordenador_id:
+      Computer_id:
         type: "integer"
         example: 1
-      Nombre:
+      Name:
         type: "string"
         example: 78FSDHF8DS7F
          
   GetAllInventoryClassroom:
     type: "object"
     properties:
-      Aula_id:
+      Classroom_id:
         type: "integer"
         example: 1
       Floor:
@@ -1314,23 +1314,23 @@ definitions:
       Status:
         type: "integer"
         example: 200
-      Nombre:
+      Name:
         type: "string"
         example: Relation was updated successfully
         
   GetInventoryById:
     type: "object"
     properties:
-      Aho_id:
+      Inventory_id:
         type: "integer"
         example: 1
-      Aula_id:
+      Classroom_id:
         type: "integer"
         example: 3
-      Ordenador_id:
+      Computer_id:
         type: "integer"
         example: 5
-      Herramienta_id:
+      Tool_id:
         type: "integer"
         example: 2
       createdAt:

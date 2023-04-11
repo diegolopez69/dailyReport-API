@@ -1,11 +1,11 @@
 const db = require("../models");
-const Ordenador_aula = db.tb_aula_herramienta_ordenador; //Si falla acá hay que eliminar el #1
+const Inventory = db.tb_inventories; //Si falla acá hay que eliminar el #1
 const Tool = db.tb_tools; //Si falla acá hay que eliminar el #3
 const Classroom = db.tb_classrooms;
 const Computer = db.tb_computers;
 const Op = db.Sequelize.Op;
 
-// Create and Save a new Ordenador_aula
+// Create and Save a new Inventory
 exports.create = (req, res) => {
   // Validate request
   if (!req.body) {
@@ -16,16 +16,16 @@ exports.create = (req, res) => {
     return;
   }
 
-  // Create a Ordenador_aula
-  const ordenador_aula = {
-    Aula_id: req.body.Aula_id,
-    Ordenador_id: req.body.Ordenador_id,
-    Herramienta_id: req.body.Herramienta_id,
+  // Create a Inventory
+  const inventory = {
+    Classroom_id: req.body.Classroom_id,
+    Computer_id: req.body.Computer_id,
+    Tool_id: req.body.Tool_id,
   };
 
 
-  // Save Ordenador_aula in the database
-  Ordenador_aula.create(ordenador_aula)
+  // Save Inventory in the database
+  Inventory.create(inventory)
     .then(data => {
       res.status(201).json({ 
         status: 201,
@@ -40,22 +40,22 @@ exports.create = (req, res) => {
     });
 };
 
-// Retrieve all ordenador_aulas from the database.
+// Retrieve all inventories from the database.
 exports.findAll = (req, res) => {
   const Id = req.query.Id;
   var condition = Id ? { Id: { [Op.like]: `%${Id}%` } } : null;
-  Ordenador_aula.findAll({
+  Inventory.findAll({
     where: condition,  
     include: [{
       model: Tool,
-      attributes: ['Herramienta_id', 'Tipo', 'Nombre']
+      attributes: ['Tool_id', 'Type', 'Name']
     },{
       model: Computer,
-      as: 'ordenador',
-      attributes: ['Ordenador_id', 'Nombre']
+      as: 'computer',
+      attributes: ['Computer_id', 'Name']
     },{
       model: Classroom,
-      attributes: ['Aula_id', 'Floor', 'Number']
+      attributes: ['Classroom_id', 'Floor', 'Number']
     }
   ],
   })
@@ -70,11 +70,11 @@ exports.findAll = (req, res) => {
     });
 };
 
-// Find a single Ordenador_aula with an id
+// Find a single Inventory with an id
 exports.findOne = (req, res) => {
   const id = req.params.id;
 
-  Ordenador_aula.findByPk(id)
+  Inventory.findByPk(id)
     .then(data => {
       if (data) {
         res.send(data);
@@ -93,11 +93,11 @@ exports.findOne = (req, res) => {
     });
 };
 
-// Update a Ordenador_aula by the id in the request
+// Update a Inventory by the id in the request
 exports.update = (req, res) => {
   const id = req.params.id;
-  Ordenador_aula.update(req.body, {
-    where: { Aho_id: id }
+  Inventory.update(req.body, {
+    where: { Inventory_id: id }
   })
     .then(num => {
       if (num == 1) {
@@ -120,12 +120,12 @@ exports.update = (req, res) => {
     });
 };
 
-// Delete a Ordenador_aula with the specified id in the request
+// Delete a Inventory with the specified id in the request
 exports.delete = (req, res) => {
   const id = req.params.id;
 
-  Ordenador_aula.destroy({
-    where: { Aho_id: id }
+  Inventory.destroy({
+    where: { Inventory_id: id }
   })
     .then(num => {
       if (num == 1) {

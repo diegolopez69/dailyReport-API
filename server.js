@@ -21,10 +21,7 @@ const Role = db.role;
 db.sequelize.sync();
 
 /*This is to drop the data on the db */
-// db.sequelize.sync({force: true}).then(() => { //This line drop the db
-//   console.log('Drop and Resync Db');
-// });
-
+// db.sequelize.sync({force: true}).then(() => { console.log('Drop and Resync Db'); });
 
 
 // simple route
@@ -32,10 +29,10 @@ app.get("/", (req, res) => {
   res.json({ message: "Welcome to api of Daily reports." });
 });
 
-require("./app/routes/herra.routes")(app);
-require("./app/routes/ordenador.routes")(app);
-require("./app/routes/aulas.routes")(app);
-require("./app/routes/ordenador_aulas.routes")(app);
+require("./app/routes/tool.routes")(app);
+require("./app/routes/computer.routes")(app);
+require("./app/routes/classroom.routes")(app);
+require("./app/routes/inventory.routes")(app);
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
 require('./app/routes/checkups.routes')(app);

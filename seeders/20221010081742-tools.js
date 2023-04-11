@@ -10,61 +10,61 @@ module.exports = {
      */
     await queryInterface.bulkInsert('tb_tools', [
       {
-        Tipo: "Hardware",
-        Nombre: "Cable ethernet",
+        Type: "Hardware",
+        Name: "Cable ethernet",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Tipo: "Hardware",
-        Nombre: "Cable de poder", createdAt: new Date(),
+        Type: "Hardware",
+        Name: "Cable de poder", createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Tipo: "Hardware",
-        Nombre: "Teclado",
+        Type: "Hardware",
+        Name: "Teclado",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Tipo: "Hardware",
-        Nombre: "Ratón",
+        Type: "Hardware",
+        Name: "Ratón",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Tipo: "Hardware",
-        Nombre: "HDMI",
+        Type: "Hardware",
+        Name: "HDMI",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Tipo: "Software",
-        Nombre: "Paquete Office",
+        Type: "Software",
+        Name: "Paquete Office",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Tipo: "Software",
-        Nombre: "Windows 10 activo",
+        Type: "Software",
+        Name: "Windows 10 activo",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Tipo: "Software",
-        Nombre: "Adobe Reader",
+        Type: "Software",
+        Name: "Adobe Reader",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Tipo: "Software",
-        Nombre: "Winrar",
+        Type: "Software",
+        Name: "Winrar",
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Tipo: "Software",
-        Nombre: "Google Chrome",
+        Type: "Software",
+        Name: "Google Chrome",
         createdAt: new Date(),
         updatedAt: new Date()
       }

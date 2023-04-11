@@ -1,5 +1,5 @@
 module.exports = app => {
-  const Room = require("../controllers/aula.controller.js");
+  const Room = require("../controllers/classroom.controller.js");
   const { authJwt } = require("../middleware");
 
   var router = require("express").Router();
@@ -7,7 +7,7 @@ module.exports = app => {
   // Create a new Room
   router.post("/", [authJwt.verifyToken, authJwt.isModerator], Room.create);
 
-  // Retrieve all Aulas
+  // Retrieve all Classrooms
   router.get("/", [authJwt.verifyToken, authJwt.isModerator], Room.findAll);
 
   // Retrieve a single Room with id

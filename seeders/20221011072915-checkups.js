@@ -19,7 +19,7 @@ module.exports = {
         Works: 1,
         Theoretical_amount: 10,
         Actual_amount: 10,
-        Aho_id: 1,
+        Inventory_id: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -30,7 +30,7 @@ module.exports = {
         Works: 1,
         Theoretical_amount: 10,
         Actual_amount: 10,
-        Aho_id: 2,
+        Inventory_id: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -41,7 +41,7 @@ module.exports = {
         Works: 1,
         Theoretical_amount: 10,
         Actual_amount: 10,
-        Aho_id: 3,
+        Inventory_id: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -52,7 +52,7 @@ module.exports = {
         Works: 1,
         Theoretical_amount: 10,
         Actual_amount: 10,
-        Aho_id: 4,
+        Inventory_id: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -63,7 +63,7 @@ module.exports = {
         Works: 1,
         Theoretical_amount: 10,
         Actual_amount: 10,
-        Aho_id: 5,
+        Inventory_id: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -72,7 +72,7 @@ module.exports = {
         Comments: "",
         there_is: 1,
         Works: 1,
-        Aho_id: 6,
+        Inventory_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -81,7 +81,7 @@ module.exports = {
         Comments: "",
         there_is: 1,
         Works: 1,
-        Aho_id: 7,
+        Inventory_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -90,7 +90,7 @@ module.exports = {
         Comments: "",
         there_is: 1,
         Works: 1,
-        Aho_id: 8,
+        Inventory_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -99,7 +99,7 @@ module.exports = {
         Comments: "",
         there_is: 1,
         Works: 1,
-        Aho_id: 9,
+        Inventory_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -108,7 +108,7 @@ module.exports = {
         Comments: "",
         there_is: 1,
         Works: 1,
-        Aho_id: 10,
+        Inventory_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -120,7 +120,7 @@ module.exports = {
         Works: 0,
         Theoretical_amount: 10,
         Actual_amount: 10,
-        Aho_id: 71,
+        Inventory_id: 71,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -131,7 +131,7 @@ module.exports = {
         Works: 0,
         Theoretical_amount: 10,
         Actual_amount: 9,
-        Aho_id: 72,
+        Inventory_id: 72,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -142,7 +142,7 @@ module.exports = {
         Works: 0,
         Theoretical_amount: 10,
         Actual_amount: 10,
-        Aho_id: 73,
+        Inventory_id: 73,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -153,7 +153,7 @@ module.exports = {
         Works: 0,
         Theoretical_amount: 10,
         Actual_amount: 10,
-        Aho_id: 74,
+        Inventory_id: 74,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -164,7 +164,7 @@ module.exports = {
         Works: 0,
         Theoretical_amount: 10,
         Actual_amount: 8,
-        Aho_id: 75,
+        Inventory_id: 75,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -175,7 +175,7 @@ module.exports = {
         Works: 0,
         Theoretical_amount: 0,
         Actual_amount: 0,
-        Aho_id: 76,
+        Inventory_id: 76,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -186,7 +186,7 @@ module.exports = {
         Works: 1,
         Theoretical_amount: 0,
         Actual_amount: 0,
-        Aho_id: 77,
+        Inventory_id: 77,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -197,7 +197,7 @@ module.exports = {
         Works: 1,
         Theoretical_amount: 0,
         Actual_amount: 0,
-        Aho_id: 78,
+        Inventory_id: 78,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -208,7 +208,7 @@ module.exports = {
         Works: 1,
         Theoretical_amount: 0,
         Actual_amount: 0,
-        Aho_id: 79,
+        Inventory_id: 79,
         createdAt: new Date(),
         updatedAt: new Date()
       },
@@ -219,7 +219,7 @@ module.exports = {
         Works: 1,
         Theoretical_amount: 0,
         Actual_amount: 0,
-        Aho_id: 80,
+        Inventory_id: 80,
         createdAt: new Date(),
         updatedAt: new Date()
       },

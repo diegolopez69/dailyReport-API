@@ -7,7 +7,7 @@ module.exports = app => {
   // Create a new Checkups
   router.post("/", [authJwt.verifyToken, authJwt.isModerator], Checkups.create);
 
-  // Retrieve all Aulas
+  // Retrieve all Classrooms
   router.get("/", [authJwt.verifyToken, authJwt.isModerator], Checkups.findAll);
 
   // Retrieve a single Checkups with id
