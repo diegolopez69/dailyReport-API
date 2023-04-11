@@ -7,12 +7,12 @@ module.exports = (sequelize, Sequelize) => {
       primaryKey: true,
       autoIncrement: true,
     },
-    // "Planta" field is an integer
-    Planta: {
+    // "Floor" field is an integer
+    Floor: {
       type: Sequelize.INTEGER,
     },
-    // "Numero" field is an integer
-    Numero: {
+    // "Number" field is an integer
+    Number: {
       type: Sequelize.INTEGER,
     },
   });

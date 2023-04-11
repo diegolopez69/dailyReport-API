@@ -15,8 +15,8 @@ exports.create = (req, res) => {
 
   // Create a Classroom
   const classroom = {
-    Planta: req.body.Planta,
-    Numero: req.body.Numero,
+    Floor: req.body.Floor,
+    Number: req.body.Number,
   };
 
   // Save Classroom in the database

@@ -55,7 +55,7 @@ exports.findAll = (req, res) => {
       attributes: ['Ordenador_id', 'Nombre']
     },{
       model: Classroom,
-      attributes: ['Aula_id', 'Planta', 'Numero']
+      attributes: ['Aula_id', 'Floor', 'Number']
     }
   ],
   })

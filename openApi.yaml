@@ -1019,9 +1019,9 @@ definitions:
   PostClassroomRequest:
     type: "object"
     properties:
-      Planta:
+      Floor:
         type: "integer"
-      Numero:
+      Number:
         type: "integer"
         
   PostClassroomResponse:
@@ -1040,10 +1040,10 @@ definitions:
       Aula_id:
         type: "integer"
         example: 1
-      Planta:
+      Floor:
         type: "integer"
         example: -2
-      Numero:
+      Number:
         type: "integer"
         example: 2
       createdAt:
@@ -1296,10 +1296,10 @@ definitions:
       Aula_id:
         type: "integer"
         example: 1
-      Planta:
+      Floor:
         type: "integer"
         example: 1
-      Numero:
+      Number:
         type: "integer"
         example: 1
         

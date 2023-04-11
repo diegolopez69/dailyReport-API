@@ -553,7 +553,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Planta\": 2,\n        \"Numero\": 2\n}",
+							"raw": "{\n        \"Floor\": 2,\n        \"Number\": 2\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -626,7 +626,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Planta\": 3,\n        \"Numero\": 1\n}",
+							"raw": "{\n        \"Floor\": 3,\n        \"Number\": 1\n}",
 							"options": {
 								"raw": {
 									"language": "json"

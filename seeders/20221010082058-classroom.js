@@ -10,362 +10,362 @@ module.exports = {
      */
     await queryInterface.bulkInsert('tb_classrooms', [
       {
-        Planta: -2,
-        Numero: 1,
+        Floor: -2,
+        Number: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -2,
-        Numero: 2,
+        Floor: -2,
+        Number: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -2,
-        Numero: 3,
+        Floor: -2,
+        Number: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -2,
-        Numero: 4,
+        Floor: -2,
+        Number: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -2,
-        Numero: 5,
+        Floor: -2,
+        Number: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -2,
-        Numero: 6,
+        Floor: -2,
+        Number: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -2,
-        Numero: 7,
+        Floor: -2,
+        Number: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -2,
-        Numero: 8,
+        Floor: -2,
+        Number: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -2,
-        Numero: 9,
+        Floor: -2,
+        Number: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -2,
-        Numero: 10,
+        Floor: -2,
+        Number: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -2,
-        Numero: 11,
+        Floor: -2,
+        Number: 11,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -2,
-        Numero: 12,
+        Floor: -2,
+        Number: 12,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -2,
-        Numero: 13,
+        Floor: -2,
+        Number: 13,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -2,
-        Numero: 14,
+        Floor: -2,
+        Number: 14,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -2,
-        Numero: 15,
+        Floor: -2,
+        Number: 15,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -1,
-        Numero: 1,
+        Floor: -1,
+        Number: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -1,
-        Numero: 2,
+        Floor: -1,
+        Number: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -1,
-        Numero: 3,
+        Floor: -1,
+        Number: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -1,
-        Numero: 4,
+        Floor: -1,
+        Number: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -1,
-        Numero: 5,
+        Floor: -1,
+        Number: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -1,
-        Numero: 6,
+        Floor: -1,
+        Number: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -1,
-        Numero: 7,
+        Floor: -1,
+        Number: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -1,
-        Numero: 8,
+        Floor: -1,
+        Number: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -1,
-        Numero: 9,
+        Floor: -1,
+        Number: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -1,
-        Numero: 10,
+        Floor: -1,
+        Number: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -1,
-        Numero: 11,
+        Floor: -1,
+        Number: 11,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -1,
-        Numero: 12,
+        Floor: -1,
+        Number: 12,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -1,
-        Numero: 13,
+        Floor: -1,
+        Number: 13,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -1,
-        Numero: 14,
+        Floor: -1,
+        Number: 14,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: -1,
-        Numero: 15,
+        Floor: -1,
+        Number: 15,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 0,
-        Numero: 1,
+        Floor: 0,
+        Number: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 0,
-        Numero: 2,
+        Floor: 0,
+        Number: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 0,
-        Numero: 3,
+        Floor: 0,
+        Number: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 0,
-        Numero: 4,
+        Floor: 0,
+        Number: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 0,
-        Numero: 5,
+        Floor: 0,
+        Number: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 0,
-        Numero: 6,
+        Floor: 0,
+        Number: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 0,
-        Numero: 7,
+        Floor: 0,
+        Number: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 0,
-        Numero: 8,
+        Floor: 0,
+        Number: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 0,
-        Numero: 9,
+        Floor: 0,
+        Number: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 0,
-        Numero: 10,
+        Floor: 0,
+        Number: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 0,
-        Numero: 11,
+        Floor: 0,
+        Number: 11,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 0,
-        Numero: 12,
+        Floor: 0,
+        Number: 12,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 0,
-        Numero: 13,
+        Floor: 0,
+        Number: 13,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 0,
-        Numero: 14,
+        Floor: 0,
+        Number: 14,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 0,
-        Numero: 15,
+        Floor: 0,
+        Number: 15,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 1,
-        Numero: 1,
+        Floor: 1,
+        Number: 1,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 1,
-        Numero: 2,
+        Floor: 1,
+        Number: 2,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 1,
-        Numero: 3,
+        Floor: 1,
+        Number: 3,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 1,
-        Numero: 4,
+        Floor: 1,
+        Number: 4,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 1,
-        Numero: 5,
+        Floor: 1,
+        Number: 5,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 1,
-        Numero: 6,
+        Floor: 1,
+        Number: 6,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 1,
-        Numero: 7,
+        Floor: 1,
+        Number: 7,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 1,
-        Numero: 8,
+        Floor: 1,
+        Number: 8,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 1,
-        Numero: 9,
+        Floor: 1,
+        Number: 9,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 1,
-        Numero: 10,
+        Floor: 1,
+        Number: 10,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 1,
-        Numero: 11,
+        Floor: 1,
+        Number: 11,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 1,
-        Numero: 12,
+        Floor: 1,
+        Number: 12,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 1,
-        Numero: 13,
+        Floor: 1,
+        Number: 13,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 1,
-        Numero: 14,
+        Floor: 1,
+        Number: 14,
         createdAt: new Date(),
         updatedAt: new Date()
       },
       {
-        Planta: 1,
-        Numero: 15,
+        Floor: 1,
+        Number: 15,
         createdAt: new Date(),
         updatedAt: new Date()
       },
