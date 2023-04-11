@@ -2,8 +2,7 @@
 	"info": {
 		"_postman_id": "c71956ec-f740-439d-b4b5-85bc84540140",
 		"name": "Daily Report",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "16435978"
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
 	"item": [
 		{
@@ -209,7 +208,7 @@
 						"header": [],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"esc\",    \n    \"password\": \"12345678\"\n}",
+							"raw": "{\n    \"username\": \"esc\",\n    \"password\": \"12345678\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -230,6 +229,36 @@
 					"response": []
 				},
 				{
+					"name": "Logout",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/auth/logout",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"auth",
+								"logout"
+							]
+						}
+					},
+					"response": []
+				},
+				{
 					"name": "Get all users",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -238,8 +267,8 @@
 						"method": "GET",
 						"header": [
 							{
-								"key": "",
-								"value": "",
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
 								"type": "text"
 							}
 						],
@@ -253,13 +282,47 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/auth/signup",
+							"raw": "{{local}}api/user",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"auth",
-								"signup"
+								"user"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all users with roles",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/user-roles",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"user-roles"
 							]
 						}
 					},
@@ -278,7 +341,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n    \"username\": \"die\",\n    \"email\": \"die@gmail.com\",\n    \"password\": \"123456789\",\n    \"roles\": [\"user\", \"admin\"]\n}",
+							"raw": "{\n    \"username\": \"esc\",\n    \"email\": \"esc@gmail.com\",\n    \"password\": \"123456789\",\n    \"roles\": [\"user\", \"admin\"]\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -346,13 +409,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{local}}api/user/10",
+							"raw": "{{local}}api/user/1",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"user",
-								"10"
+								"1"
 							]
 						}
 					},
@@ -396,7 +459,7 @@
 					"response": []
 				},
 				{
-					"name": "Get all computers",
+					"name": "Get all computer",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -451,26 +514,20 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/computer/2?=",
+							"raw": "{{local}}api/computer/254",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"computer",
-								"2"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": ""
-								}
+								"254"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get computers by id",
+					"name": "Get computer by id",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -493,20 +550,20 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/computer/2",
+							"raw": "{{local}}api/computer/254",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"computer",
-								"2"
+								"254"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Delete by Id",
+					"name": "Delete computer by Id",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -517,19 +574,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{local}}api/computer/1?=",
+							"raw": "{{local}}api/computer/254",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"computer",
-								"1"
-							],
-							"query": [
-								{
-									"key": "",
-									"value": ""
-								}
+								"254"
 							]
 						}
 					},
@@ -541,7 +592,7 @@
 			"name": "Classrooms",
 			"item": [
 				{
-					"name": "Create a new classrooms",
+					"name": "Create a new classroom",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -561,12 +612,12 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/room",
+							"raw": "{{local}}api/classroom",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"room"
+								"classroom"
 							]
 						}
 					},
@@ -596,25 +647,19 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/room?x-access-token={{x-access-token}}",
+							"raw": "{{local}}api/classroom",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"room"
-							],
-							"query": [
-								{
-									"key": "x-access-token",
-									"value": "{{x-access-token}}"
-								}
+								"classroom"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Update an classroom",
+					"name": "Update a classroom",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -634,13 +679,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/room/2",
+							"raw": "{{local}}api/classroom/10",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"room",
-								"2"
+								"classroom",
+								"10"
 							]
 						}
 					},
@@ -670,37 +715,37 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/room/5",
+							"raw": "{{local}}api/classroom/10",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"room",
-								"5"
+								"classroom",
+								"10"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Delete by Id an classroom",
+					"name": "Delete by Id an room",
 					"request": {
 						"method": "DELETE",
-						"header": [],
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
 						"url": {
-							"raw": "{{local}}api/classroom/2?x-access-token={{x-access-token}}",
+							"raw": "{{local}}api/classroom/62",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"classroom",
-								"2"
-							],
-							"query": [
-								{
-									"key": "x-access-token",
-									"value": "{{x-access-token}}"
-								}
+								"62"
 							]
 						}
 					},
@@ -724,7 +769,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "\n   {\n       \"Type\": \"Hardware\",\n       \"Name\": \"Cable de poder\"\n   }\n   {\n       \"Type\": \"Hardware\",\n       \"Name\": \"Cable ethernet\"\n   }",
+							"raw": "   {\n       \"Type\": \"Software\",\n       \"Name\": \"Instalador de canon\"\n   }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -744,7 +789,7 @@
 					"response": []
 				},
 				{
-					"name": "Get all tool",
+					"name": "Get all tools",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -773,39 +818,6 @@
 							],
 							"path": [
 								"tool"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Update a tool",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{x-access-token}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n        \"Type\": \"Hardware\",\n        \"Name\": \"Cable de poder\"\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{local}}api/tool/3",
-							"host": [
-								"{{local}}api"
-							],
-							"path": [
-								"tool",
-								"3"
 							]
 						}
 					},
@@ -835,20 +847,53 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/tool/3",
+							"raw": "{{local}}api/tool/4",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"tool",
-								"3"
+								"4"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Delete by Id a tool",
+					"name": "Update a tool",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n        \"Type\": \"Software\",\n        \"Name\": \"Impresora Canon\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/tool/11",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"tool",
+								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete a tool by Id",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -859,13 +904,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{local}}api/tool/2",
+							"raw": "{{local}}api/tool/11",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"tool",
-								"2"
+								"11"
 							]
 						}
 					},
@@ -889,7 +934,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Estado\": 1,\n        \"Descripcion\": \"Funciona la prueba\",\n        \"No_chromebook\": 1,\n        \"No_sn\": \"6FD9GF98GH\",\n        \"No_armario\": 1,\n        \"No_chr_funcionales\": 1,\n        \"No_chr_no_funcionales\": 1,\n        \"No_chr_totales\": 1\n}",
+							"raw": "{\n        \"Estado\": 0,\n        \"Descripcion\": \"Esta es la segunda temporada de pruebas\",\n        \"No_chromebook\": 8888,\n        \"No_sn\": \"8D3E6G42SS\",\n        \"No_armario\": 3\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -964,13 +1009,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/chromebook/4",
+							"raw": "{{local}}api/chromebook/72",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"chromebook",
-								"4"
+								"72"
 							]
 						}
 					},
@@ -1000,13 +1045,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/chromebook/2",
+							"raw": "{{local}}api/chromebook/72",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"chromebook",
-								"2"
+								"72"
 							]
 						}
 					},
@@ -1024,13 +1069,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{local}}api/tool/2",
+							"raw": "{{local}}api/chromebook/72",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"tool",
-								"2"
+								"chromebook",
+								"72"
 							]
 						}
 					},
@@ -1042,7 +1087,7 @@
 			"name": "Inventario",
 			"item": [
 				{
-					"name": "Create a new computer",
+					"name": "Create a new inventario",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -1054,7 +1099,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Classroom_id\": 1,\n        \"Computer_id\": 3,\n        \"Tool_id\": 11\n}",
+							"raw": "{\n        \"Classroom_id\": 67,\n        \"Computer_id\": 255,\n        \"Tool_id\": 12\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1074,7 +1119,7 @@
 					"response": []
 				},
 				{
-					"name": "Get all computers",
+					"name": "Get all inventario",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1109,7 +1154,7 @@
 					"response": []
 				},
 				{
-					"name": "Update an computer",
+					"name": "Update an inventario",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -1121,7 +1166,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Classroom_id\": 1,\n        \"Computer_id\": 2,\n        \"Tool_id\": 1\n}",
+							"raw": "{\n        \"Classroom_id\": 6,\n        \"Computer_id\": 25,\n        \"Tool_id\": 2\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1129,20 +1174,20 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/inventory/7",
+							"raw": "{{local}}api/inventory/801",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"inventory",
-								"7"
+								"801"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get computers-classroom by id",
+					"name": "Get inventario-aula by id",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -1165,20 +1210,20 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/inventory/2",
+							"raw": "{{local}}api/inventory/801",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"inventory",
-								"2"
+								"801"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Delete by Id",
+					"name": "Delete inventario  by Id",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -1189,13 +1234,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{local}}api/inventory/12",
+							"raw": "{{local}}api/inventory/1",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"inventory",
-								"12"
+								"1"
 							]
 						}
 					},
@@ -1204,45 +1249,10 @@
 			]
 		},
 		{
-			"name": "User rol",
+			"name": "Reports",
 			"item": [
 				{
-					"name": "Create a new user rol",
-					"request": {
-						"method": "POST",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{x-access-token}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n        \"userId\": 1,\n        \"roleId\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{local}}api/user_rol",
-							"host": [
-								"{{local}}api"
-							],
-							"path": [
-								"user_rol"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get all computers",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
+					"name": "Chromebooks",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1252,65 +1262,21 @@
 								"type": "text"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "{{local}}api/inventory",
+							"raw": "{{local}}api/report/chromebook",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"inventory"
+								"report",
+								"chromebook"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Update an computer",
-					"request": {
-						"method": "PUT",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{x-access-token}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "{\n        \"Classroom_id\": 1,\n        \"Computer_id\": 2,\n        \"Tool_id\": 1\n}",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{local}}api/inventory/7",
-							"host": [
-								"{{local}}api"
-							],
-							"path": [
-								"inventory",
-								"7"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Get computers-classroom by id",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
+					"name": "Funtional chromebooks",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1320,32 +1286,23 @@
 								"type": "text"
 							}
 						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
 						"url": {
-							"raw": "{{local}}api/inventory/2",
+							"raw": "{{local}}api/report/funtional-chromebook",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"inventory",
-								"2"
+								"report",
+								"funtional-chromebook"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Delete by Id",
+					"name": "Keyboards",
 					"request": {
-						"method": "DELETE",
+						"method": "GET",
 						"header": [
 							{
 								"key": "x-access-token",
@@ -1354,19 +1311,94 @@
 							}
 						],
 						"url": {
-							"raw": "{{local}}api/inventory/2",
+							"raw": "{{local}}api/report/keyboards",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"inventory",
-								"2"
+								"report",
+								"keyboards"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Mouses",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}api/report/mouses",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"report",
+								"mouses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Computers",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}api/report/computers",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"report",
+								"computers"
 							]
 						}
 					},
 					"response": []
 				}
 			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "docker",
+			"value": "http://172.22.18.39:3000/",
+			"type": "string"
 		}
 	]
 }
