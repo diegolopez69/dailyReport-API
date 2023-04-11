@@ -1,0 +1,402 @@
+——— Modelo del dominio ———
+
+@startuml
+skinparam componentStyle rectangle
+
+[Reportes] -- [Usuario]
+[Reportes] -- [Inventario]
+[Reportes] -- [Revisión]
+
+[Usuario] -- [Revisión]
+[Usuario] -- [Inventario]
+[Usuario] -- [Listado programas]
+
+[Aula] -- [Revisión]
+[Aula] -- [Software]
+[Aula] -- [Hardware]
+
+[Listado programas] -- [Software]
+
+[Inventario] -- [Hardware]
+@enduml
+
+
+——— Diagrama de estados de revisión de aulas ———
+
+@startuml
+hide empty description
+[*] --> Revisada
+Revisada --> No_revisada
+No_revisada --> Revisada
+No_revisada --> [*]
+@enduml
+
+
+——— Diagrama de estados de usuarios ———
+
+@startuml
+hide empty description
+[*] --> Creados
+Creados --> Autenticados
+Autenticados --> Eliminados
+Eliminados --> Creados
+Eliminados --> [*]
+@enduml
+
+
+——— Diagrama de actividades, revisión de aulas ———
+
+@startuml
+start
+:Inicia revisión del aula;
+if (Se puede revisar el aula?) then (yes)
+  :Se revisa el aula;
+  :Se envía el reporte;
+else (no)
+  :Se especifica el porque;
+endif
+stop
+@enduml
+
+
+——— Diagrama de actividades, inventario ———
+
+@startuml
+start
+:Usuario;
+if (Se desean hacer cambios?) then (yes)
+  :Se realizan los cambios necesarios;
+else (no)
+  :No se realiza nada;
+endif
+stop
+@enduml
+
+——— Diagrama de actividades, Reportes ———
+
+@startuml
+start
+:Usuario;
+if (Existen cambios en el proceso de revisión de aula?) then (yes)
+  :Se genera el informe;
+else (no)
+  :No se realiza nada;
+endif
+stop
+@enduml
+
+
+——— Diagrama de flujo  ———
+
+@startuml
+scale 600 width
+hide empty description
+state Usuario {
+  state "Creado en la base de datos" as db
+  state "Usuario autenticado" as auth
+  db --> auth
+}
+
+[*] -> Usuario
+  state "Revisión de aulas" as revi
+
+state revi {
+ state "Inicio en revisión de aulas" as inicio
+ state "Inicio de revisión por item" as InicioRevi
+ state "Se actualiza la cantidad actual de items" as actualizacion
+ state "Se actualiza la cantidad actual de items" as actualizacion2
+ state "Se mantiene cantidad actual de items" as actualizacion3
+ state desicion <<choice>>
+ state desicion2 <<choice>>
+ state desicion3 <<choice>>
+ inicio --> desicion
+ desicion --> Explicaciòn : No se puede revisar el aula
+ desicion --> InicioRevi : Se puede revisar el aula
+ InicioRevi --> desicion2 : Existe físicamente?
+ desicion2 --> actualizacion : No
+ desicion2 --> desicion3 : El item funciona?
+ desicion3 --> actualizacion2 : No
+ desicion3 --> actualizacion3 : Si
+}
+
+Usuario --> revi : Inicio de sesión es exitoso
+Usuario --> Usuario : Inicio de sesión es rechazado
+revi --> Inventario : Se detecta una incidencia
+revi --> Generar_Reporte : Todo esta bien
+Generar_Reporte --> [*]
+
+state Inventario {
+  state "Modificar el listado de programas" as soft
+  state "Modificar el inventario" as hard
+  state desicionInventario <<choice>>
+  desicionInventario --> soft : Si es software
+  desicionInventario --> hard : Si es hardware
+}
+
+Inventario --> Generar_Reporte
+
+@enduml
+
+
+
+————————————————————————————————————————————————
+							CASOS DE USO
+————————————————————————————————————————————————
+
+
+
+——— Sesión  ———
+
+@startuml
+left to right direction
+actor Administrador as admin
+actor Moderador as moder
+actor Becario as beca
+actor Usuario as user
+
+package Sesión {
+  usecase "Iniciar sesión" as iniciar
+  usecase "Cerrar sesión" as cerrar
+}
+
+beca --> user
+moder --> user
+admin --> iniciar
+admin --> cerrar
+user --> iniciar
+user --> cerrar
+@enduml
+
+
+——— Usuarios  ———
+
+@startuml
+left to right direction
+actor Administrador as admin
+
+package Usuarios {
+  usecase "Crear usuario" as crear
+  usecase "Ver todos los usuarios" as todos
+  usecase "Ver todos los usuarios con sus roles" as todosRoles
+  usecase "Actualizar un usuario" as actualizar
+  usecase "Obtener un usuario" as ver
+  usecase "Eliminar un usuario" as eliminar
+}
+
+admin --> crear
+admin --> todos
+admin --> todosRoles
+admin --> actualizar
+admin --> ver
+admin --> eliminar
+@enduml
+
+——— Aulas  ———
+
+@startuml
+left to right direction
+actor Administrador as admin
+actor Moderador as moder
+actor Becario as beca
+actor Usuario as user
+
+package Aulas {
+  usecase "Crear aula" as crear
+  usecase "Ver todos los aulas" as todos
+  usecase "Actualizar un aula" as actualizar
+  usecase "Obtener un aula" as ver
+  usecase "Eliminar un aula" as eliminar
+}
+
+moder --> user
+beca --> user
+admin --> crear
+admin --> todos
+admin --> actualizar
+admin --> ver
+admin --> eliminar
+moder --> actualizar
+user --> todos
+user --> ver
+@enduml
+
+
+
+
+——— Ordenadores  ———
+
+@startuml
+left to right direction
+actor Administrador as admin
+actor Moderador as moder
+actor Becario as beca
+actor Usuario as user
+
+package Ordenadores {
+  usecase "Crear ordenador" as crear
+  usecase "Ver todos los ordenadores" as todos
+  usecase "Actualizar un ordenador" as actualizar
+  usecase "Obtener un ordenador" as ver
+  usecase "Eliminar un ordenador" as eliminar
+}
+
+moder --> user
+beca --> user
+admin --> crear
+admin --> todos
+admin --> actualizar
+admin --> ver
+admin --> eliminar
+user --> todos
+user --> ver
+moder --> actualizar
+@enduml
+
+
+
+——— items  ———
+
+@startuml
+left to right direction
+actor Administrador as admin
+actor Moderador as moder
+actor Becario as beca
+actor Usuario as user
+
+package Item {
+  usecase "Crear item" as crear
+  usecase "Ver todos los items" as todos
+  usecase "Actualizar un item" as actualizar
+  usecase "Obtener un item" as ver
+  usecase "Eliminar un item" as eliminar
+}
+
+moder --> user
+beca --> user
+admin --> crear
+admin --> todos
+admin --> actualizar
+admin --> ver
+admin --> eliminar
+user --> todos
+user --> ver
+moder --> actualizar
+@enduml 
+
+——— Inventario  ———
+
+@startuml
+left to right direction
+actor Administrador as admin
+actor Moderador as moder
+actor Becario as beca
+actor Usuario as user
+
+package Inventario {
+  usecase "Crear relación en el inventario" as crear
+  usecase "Ver todo el inventario" as todos
+  usecase "Actualizar el inventario" as actualizar
+  usecase "Obtener datos del inventario" as ver
+  usecase "Eliminar datos del inventario" as eliminar
+}
+
+moder --> user
+beca --> user
+admin --> crear
+admin --> todos
+admin --> actualizar
+admin --> ver
+admin --> eliminar
+user --> todos
+user --> ver
+@enduml
+
+
+——— Revisión de aula  ———
+
+@startuml
+left to right direction
+actor Administrador as admin
+actor Moderador as moder
+actor Becario as beca
+actor Usuario as user
+
+package Revisión_de_aulas {
+  usecase "Crear una revisión" as crear
+  usecase "Obtener el historial de revisiones" as todos
+  usecase "Actualizar una revisión" as actualizar
+  usecase "Obtener una revisión" as ver
+  usecase "Eliminar una revisión" as eliminar
+}
+admin --> user
+moder --> user
+beca --> user
+user --> crear
+user --> todos
+user --> actualizar
+user --> ver
+user --> eliminar
+
+@enduml
+
+——— Gráficas  ———
+
+@startuml
+left to right direction
+actor Administrador as admin
+actor Moderador as moder
+actor Becario as beca
+actor Usuario as user
+
+package Revisión_de_aulas {
+  usecase "Obtener gráfica de teclados" as tecla
+  usecase "Obtener gráfica de ratones" as rato
+  usecase "Obtener gráfica de ordenadores" as orde
+}
+admin --> user
+moder --> user
+beca --> user
+user --> orde
+user --> rato
+user --> tecla
+
+@enduml
+
+
+
+————————————————————————————————————————————————
+							DIAGRAMA DE CONTEXTO
+————————————————————————————————————————————————
+
+@startuml
+hide empty description
+[*] --> General : Login
+General --> [*] : Logout
+General --> Menú_usuarios : Solicita el listado de usuarios
+Menú_usuarios --> Menú_usuarios : CRUD Usuarios
+Menú_usuarios --> General
+
+General --> Menú_aulas : Solicita el listado de aulas
+Menú_aulas --> Menú_aulas : CRUD aulas
+Menú_aulas --> General
+
+General --> Menú_ordenadores : Solicita el listado de ordenadores
+Menú_ordenadores --> Menú_ordenadores : CRUD ordenadores
+Menú_ordenadores --> General
+
+General --> Menú_items : Solicita el listado de items
+Menú_items --> Menú_items : CRUD items
+Menú_items --> General
+
+General --> Menú_inventario : Solicita el listado de inventario
+Menú_inventario --> Menú_inventario : CRUD inventario
+Menú_inventario --> General
+
+General --> Menú_revisión_Aulas : Solicita el listado de revisión_Aulas
+Menú_revisión_Aulas --> Menú_revisión_Aulas : CRUD revisión_Aulas
+Menú_revisión_Aulas --> General
+
+General --> Menú_gráficas : Solicita el listado de gráficas
+Menú_gráficas --> Menú_gráficas : CRUD gráficas
+Menú_gráficas --> General
+@enduml
