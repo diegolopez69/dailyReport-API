@@ -13,12 +13,19 @@ exports.findAll = (req, res) => {
     include: [
       {
         model: Roles,
-        attributes: ['id', 'name']
+        attributes: ['name']
       },
     ],
   })
-    .then(async (users) => {    
-      res.send(users);
+  .then((users) => {
+    const usersWithRoles = users.map((user) => ({
+      id: user.id,
+      name: user.username,
+      email: user.email,
+      password: user.password,
+      roles: user.roles.map((role) => role.name),
+    }));
+    res.send(usersWithRoles);
     })
     .catch((err) => {
       res.status(500).json({

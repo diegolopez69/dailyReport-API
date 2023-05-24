@@ -36,7 +36,6 @@ require("./app/routes/inventory.routes")(app);
 require('./app/routes/auth.routes')(app);
 require('./app/routes/user.routes')(app);
 require('./app/routes/checkups.routes')(app);
-require('./app/routes/chromebook.routes')(app);
 require('./app/routes/reports.routes')(app);
 
 

@@ -3,22 +3,7 @@ module.exports = (app) => {
   const { authJwt } = require("../middleware");
 
   var router = require("express").Router();
-
-  // Retrieve all Chromebooks through time
-  router.get(
-    "/chromebook",
-    [authJwt.verifyToken, authJwt.isModerator],
-    Reports.chromebook
-  );
-
-
-  //Retrieve all funtional chromebooks through time
-  router.get(
-    "/funtional-chromebook",
-    [authJwt.verifyToken, authJwt.isModerator],
-    Reports.funtionalChromebooks
-  );
-
+  
   //Retrieve all keybords through time
   router.get(
     "/keyboards",

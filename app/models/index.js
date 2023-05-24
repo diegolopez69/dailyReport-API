@@ -58,14 +58,10 @@ db.sequelize = sequelize;
 db.tb_computers = require("./computer.model.js")(sequelize, Sequelize);
 db.tb_classrooms = require("./classroom.model.js")(sequelize, Sequelize);
 db.tb_tools = require("./tools.model.js")(sequelize, Sequelize);
-db.tb_inventories = require("./inventory.model.js")(
-  sequelize,
-  Sequelize
-);
+db.tb_inventories = require("./inventory.model.js")(sequelize,Sequelize);
 db.user = require("./user.model.js")(sequelize, Sequelize);
 db.role = require("./role.model.js")(sequelize, Sequelize);
 db.tb_checkups = require("./checkups.model.js")(sequelize, Sequelize);
-db.tb_chromebook = require("./chromebook.model.js")(sequelize, Sequelize);
 db.tb_user_roles = require("./user_roles.model.js")(sequelize, Sequelize);
 
 // Set up a many-to-many relationship between the role and user models using the tb_user_roles model as the through model
@@ -84,8 +80,6 @@ db.user.belongsToMany(db.role, {
   otherKey: "roleId",
 });
 
-// Set up a one-to-many relationship between the tb_classrooms and tb_chromebook models
-db.tb_classrooms.hasMany(db.tb_chromebook);
 
 db.ROLES = ["user", "admin", "moderator"];
 db.tb_inventories.associate(db);

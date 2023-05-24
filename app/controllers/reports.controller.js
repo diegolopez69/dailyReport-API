@@ -1,65 +1,7 @@
 const db = require("../models");
 const Classroom = db.tb_classrooms;
-const Chromebook = db.tb_chromebook;
 const Op = db.Sequelize.Op;
 const { QueryTypes } = require("sequelize");
-
-// Retrieve all classroom with the chromebook's
-exports.chromebook = (req, res) => {
-  const Name = req.query.Name;
-  var condition = Name ? { Name: { [Op.like]: `%${Name}%` } } : null;
-  Classroom.findAll({
-    where: condition,
-    include: [
-      {
-        model: Chromebook,
-        attributes: ["Chromebook_id", "Estado", "No_sn", "No_armario"],
-      },
-    ],
-  })
-    .then((data) => {
-      res.send(data);
-    })
-    .catch((err) => {
-      res.status(500).json({
-        status: 500,
-        Err: err.message || "Some error occurred while retrieving Computers.",
-      });
-    });
-};
-
-// Retrieve all funtionals and not funcionals chromebooks
-exports.funtionalChromebooks = async (req, res) => {
-  const numberOfTotalChromebooks = await db.sequelize.query(
-    "SELECT COUNT(*) AS TotalChromebooks FROM `tb_chromebooks`",
-    { type: db.sequelize.QueryTypes.SELECT }
-  );
-
-  const numberChromebookWorking = await db.sequelize.query(
-    "SELECT COUNT(*) AS Total FROM `tb_chromebooks` WHERE Estado = 1",
-    { type: db.sequelize.QueryTypes.SELECT }
-  );
-
-  const TotalChromebooks = numberOfTotalChromebooks[0].TotalChromebooks;
-  const ChromebooksWorking = numberChromebookWorking[0].Total;
-  const NoFuntionalChromebooks = TotalChromebooks - ChromebooksWorking;
-  // console.table([TotalChromebooks, ChromebooksWorking, NoFuntionalChromebooks])
-  
-  if (ChromebooksWorking != null) {
-    res.status(200).json({
-      Funcional: ChromebooksWorking,
-      No_funtional: NoFuntionalChromebooks,
-    });
-    return ChromebooksWorking;
-  } else {
-    res.status(500).json({
-      status: 500,
-      Err:
-        err.message ||
-        "Some error occurred while retrieving funtionals and non funtionals chromebooks.",
-    });
-  }
-};
 
 // Retrieve the count of how many keyboards has through the time
 exports.keyboards = async (req, res) => {
