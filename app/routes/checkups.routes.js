@@ -7,6 +7,9 @@ module.exports = app => {
   // Create a new Checkups
   router.post("/", [authJwt.verifyToken, authJwt.isModerator], Checkups.create);
 
+  // Create a negative Checkup
+  router.post("/negative", [authJwt.verifyToken, authJwt.isModerator], Checkups.createNegative);
+
   // Retrieve all Classrooms
   router.get("/", [authJwt.verifyToken, authJwt.isModerator], Checkups.findAll);
 

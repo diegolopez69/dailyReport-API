@@ -40,6 +40,44 @@ exports.create = (req, res) => {
     });
 };
 
+//If the user cannot do the revition of the classroom
+exports.createNegative = (req, res) => {
+  // Validate request
+  if (!req.body) {
+    res.status(400).json({
+      status: 400,
+      message: 'Content can not be empty!'
+    });
+    return;
+  }
+
+  // Create a Checkup
+  const checkup = {
+    Review: req.body.Review, 
+    Comments: req.body.Comments,
+    there_is: 0,
+    Works: 0,
+    Theoretical_amount: 0,
+    Actual_amount: 0
+  };
+
+
+  // Save Checkup in the database
+  Checkup.create(checkup)
+    .then(data => {
+      res.status(201).json({
+        status: 201,
+        message: 'Checkup negative was created successfully!'
+      });
+    })
+    .catch(err => {
+      res.status(500).json({
+        status: 500,
+        Err: err.message || 'Some error occurred while creating the Checkup.'
+      });
+    });
+};
+
 // Retrieve all checkups from the database.
 exports.findAll = (req, res) => {
   const Id = req.query.Id;
