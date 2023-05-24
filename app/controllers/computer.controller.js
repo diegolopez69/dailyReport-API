@@ -1,16 +1,22 @@
 const db = require("../models");
 const Computer = db.tb_computers;
 const Op = db.Sequelize.Op;
+const Joi = require("joi");
+
+// Define validation schema using Joi
+const computerSchema = Joi.object({
+  Name: Joi.string().required(),
+});
 
 // Create and Save a new Computer
 exports.create = (req, res) => {
-  // Validate request
-  if (!req.body) {
-    res.status(400).json({
+  // Validate request using Joi schema
+  const { error } = computerSchema.validate(req.body);
+  if (error) {
+    return res.status(400).json({
       status: 400,
-      message: "Content can not be empty!",
+      message: error.details[0].message,
     });
-    return;
   }
 
   // Create a Computer
@@ -78,6 +84,16 @@ exports.findOne = (req, res) => {
 exports.update = (req, res) => {
   const id = req.params.id;
 
+  // Validate request body
+  const { error, value } = computerSchema.validate(req.body);
+  if (error) {
+    res.status(400).json({
+      status: 400,
+      message: error.details[0].message,
+    });
+    return;
+  }
+
   Computer.update(req.body, {
     where: { Computer_id: id },
   })
@@ -101,7 +117,6 @@ exports.update = (req, res) => {
       });
     });
 };
-
 
 // Delete a Computer with the specified id in the request
 exports.delete = async (req, res) => {

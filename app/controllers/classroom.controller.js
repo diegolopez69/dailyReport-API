@@ -1,22 +1,30 @@
 const db = require("../models");
 const Classroom = db.tb_classrooms;
 const Op = db.Sequelize.Op;
+const Joi = require("joi");
+
+// Define validation schema for classroom data
+const classroomSchema = Joi.object({
+  Floor: Joi.number().integer().required(),
+  Number: Joi.number().integer().required(),
+});
 
 // Create and Save a new Classroom
 exports.create = (req, res) => {
-  // Validate request
-  if (!req.body) {
+  // Validate request body
+  const { error, value } = classroomSchema.validate(req.body);
+  if (error) {
     res.status(400).json({
       status: 400,
-      message: "Content can not be empty!",
+      message: error.details[0].message,
     });
     return;
   }
 
   // Create a Classroom
   const classroom = {
-    Floor: req.body.Floor,
-    Number: req.body.Number,
+    Floor: value.Floor,
+    Number: value.Number,
   };
 
   // Save Classroom in the database
@@ -78,6 +86,16 @@ exports.findOne = (req, res) => {
 // Update a Classroom by the id in the request
 exports.update = (req, res) => {
   const id = req.params.id;
+
+  // Validate request body
+  const { error, value } = classroomSchema.validate(req.body);
+  if (error) {
+    res.status(400).json({
+      status: 400,
+      message: error.details[0].message,
+    });
+    return;
+  }
 
   Classroom.update(req.body, {
     where: { Classroom_id: id },

@@ -1,14 +1,22 @@
 const db = require("../models");
 const Tool = db.tb_tools;
 const Op = db.Sequelize.Op;
+const Joi = require("joi");
+
+// Define schema for tool data validation
+const toolSchema = Joi.object({
+  Type: Joi.string().required(),
+  Name: Joi.string().required(),
+});
 
 // Create and Save a new Tool
 exports.create = (req, res) => {
-  // Validate request
-  if (!req.body) {
+  // Validate request body
+  const { error, value } = toolSchema.validate(req.body);
+  if (error) {
     res.status(400).json({
       status: 400,
-      message: "Content can not be empty!",
+      message: error.details[0].message,
     });
     return;
   }
@@ -79,6 +87,16 @@ exports.findOne = (req, res) => {
 exports.update = (req, res) => {
   const id = req.params.id;
 
+  // Validate request body
+  const { error, value } = toolSchema.validate(req.body);
+  if (error) {
+    res.status(400).json({
+      status: 400,
+      message: error.details[0].message,
+    });
+    return;
+  }
+
   Tool.update(req.body, {
     where: { Tool_id: id },
   })
@@ -104,7 +122,6 @@ exports.update = (req, res) => {
     });
 };
 
-
 // Delete a Tool with the specified id in the request
 exports.delete = async (req, res) => {
   const id = req.params.id;
@@ -124,9 +141,11 @@ exports.delete = async (req, res) => {
     res.status(500).json({
       status: 500,
       message:
-        "Tool " + id + " cannot be deleted because it is related to other elements.",
+        "Tool " +
+        id +
+        " cannot be deleted because it is related to other elements.",
     });
-  }else{
+  } else {
     Tool.destroy({
       where: { Tool_id: id },
     })
@@ -146,7 +165,10 @@ exports.delete = async (req, res) => {
       .catch((err) => {
         res.status(500).json({
           status: 500,
-          message: "Tool "+ id +" cannot be deleted because it is related to other elements.",
+          message:
+            "Tool " +
+            id +
+            " cannot be deleted because it is related to other elements.",
         });
       });
   }
