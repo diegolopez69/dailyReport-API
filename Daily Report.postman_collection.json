@@ -229,36 +229,6 @@
 					"response": []
 				},
 				{
-					"name": "Logout",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{local}}api/auth/logout",
-							"host": [
-								"{{local}}api"
-							],
-							"path": [
-								"auth",
-								"logout"
-							]
-						}
-					},
-					"response": []
-				},
-				{
 					"name": "Get all users",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
@@ -385,13 +355,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/user/3",
+							"raw": "{{local}}api/user/1",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"user",
-								"3"
+								"1"
 							]
 						}
 					},
@@ -514,13 +484,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/computer/254",
+							"raw": "{{local}}api/computer/25",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"computer",
-								"254"
+								"25"
 							]
 						}
 					},
@@ -769,7 +739,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "   {\n       \"Type\": \"Software\",\n       \"Name\": \"Instalador de canon\"\n   }",
+							"raw": "   {\n       \"Type\": \"Software\",\n       \"Name\": 5\n   }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -919,10 +889,10 @@
 			]
 		},
 		{
-			"name": "Chromebooks",
+			"name": "Checkups",
 			"item": [
 				{
-					"name": "Create a new chromebook",
+					"name": "Create a checkup",
 					"request": {
 						"method": "POST",
 						"header": [
@@ -934,7 +904,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Estado\": 0,\n        \"Descripcion\": \"Esta es la segunda temporada de pruebas\",\n        \"No_chromebook\": 8888,\n        \"No_sn\": \"8D3E6G42SS\",\n        \"No_armario\": 3\n}",
+							"raw": "   {\n       \"Review\": 1,\n       \"Comments\": \"\",\n       \"there_is\": 1,\n       \"works\": 1,\n       \"Theoretical_amount\": 10,\n       \"Actual_amount\": 9,\n       \"Inventory_id\": 56\n   }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -942,19 +912,52 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/chromebook",
+							"raw": "{{local}}api/checkups",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"chromebook"
+								"checkups"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get all chromebook's",
+					"name": "Create a negative checkup",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "   {\n       \"Review\": 1,\n       \"Comments\": \"fghfghhhhh\",\n       \"Inventory_id\": 20\n   }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/checkups/negative",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"checkups",
+								"negative"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get all checkups",
 					"protocolProfileBehavior": {
 						"disableBodyPruning": true
 					},
@@ -977,19 +980,55 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/chromebook",
+							"raw": "{{local}}api/checkups",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"chromebook"
+								"checkups"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Update a chromebook",
+					"name": "Get checkup by Id",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{local}}api/checkups/4",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"checkups",
+								"4"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update an checkup",
 					"request": {
 						"method": "PUT",
 						"header": [
@@ -1001,7 +1040,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Estado\": 1,\n        \"Descripcion\": \"fnskdjf n\",\n        \"No_chromebook\": 70,\n        \"No_sn\": 156,\n        \"No_armario\": 2,\n        \"No_chr_funcionales\": 10,\n        \"No_chr_no_funcionales\": 0,\n        \"No_chr_totales\": 10\n}",
+							"raw": "   {\n       \"Review\": 0,\n       \"Comments\": \"\",\n       \"there_is\": 1,\n       \"works\": 1,\n       \"Theoretical_amount\": 10,\n       \"Actual_amount\": 9\n   }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1009,56 +1048,20 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/chromebook/72",
+							"raw": "{{local}}api/checkups/1",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"chromebook",
-								"72"
+								"checkups",
+								"1"
 							]
 						}
 					},
 					"response": []
 				},
 				{
-					"name": "Get chromebook by Id",
-					"protocolProfileBehavior": {
-						"disableBodyPruning": true
-					},
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{x-access-token}}",
-								"type": "text"
-							}
-						],
-						"body": {
-							"mode": "raw",
-							"raw": "",
-							"options": {
-								"raw": {
-									"language": "json"
-								}
-							}
-						},
-						"url": {
-							"raw": "{{local}}api/chromebook/72",
-							"host": [
-								"{{local}}api"
-							],
-							"path": [
-								"chromebook",
-								"72"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Delete chromebook by Id",
+					"name": "Delete an checkups by Id",
 					"request": {
 						"method": "DELETE",
 						"header": [
@@ -1069,13 +1072,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{local}}api/chromebook/72",
+							"raw": "{{local}}api/checkups/11",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
-								"chromebook",
-								"72"
+								"checkups",
+								"11"
 							]
 						}
 					},
@@ -1099,7 +1102,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Classroom_id\": 67,\n        \"Computer_id\": 255,\n        \"Tool_id\": 12\n}",
+							"raw": "{\n        \"Classroom_id\": 63,\n        \"Computer_id\": 258,\n        \"Tool_id\": 13\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1251,54 +1254,6 @@
 		{
 			"name": "Reports",
 			"item": [
-				{
-					"name": "Chromebooks",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{x-access-token}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{local}}api/report/chromebook",
-							"host": [
-								"{{local}}api"
-							],
-							"path": [
-								"report",
-								"chromebook"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Funtional chromebooks",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{x-access-token}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{local}}api/report/funtional-chromebook",
-							"host": [
-								"{{local}}api"
-							],
-							"path": [
-								"report",
-								"funtional-chromebook"
-							]
-						}
-					},
-					"response": []
-				},
 				{
 					"name": "Keyboards",
 					"request": {

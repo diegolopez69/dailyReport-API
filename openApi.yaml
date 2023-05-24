@@ -1,6 +1,6 @@
 swagger: "2.0"
 info:
-  description: "Este es un contrato del backend para la tool de Daily Reports"
+  description: "The Daily Reports Open API contract provides access to our platform's 4 main modules: Users, Classroom Reviews, Inventory, and Reports. Authorized users can use the API to create, update, and query data in each of these modules, enabling integration of Daily Reports with other applications and systems. Additionally, the use of our API ensures secure and reliable communication between Daily Reports and the external systems that integrate with our platform."
   version: "1.0.0"
   title: "Daily Reports API"
   termsOfService: "http://swagger.io/terms/"
@@ -22,10 +22,10 @@ tags:
   description: "CRUD for the Classroom table"  
 - name: "Tools"
   description: "CRUD complete for tools."
-- name: "Chromebook"
-  description: "CRUD complete for tools."
 - name: "Inventory"
   description: "CRUD complete for the inventory."
+- name: "Reports"
+  description: "CRUD complete for the reports."  
 
 
 
@@ -93,6 +93,23 @@ paths:
           description: "successful operation"
           schema:
             $ref: "#/definitions/ArrayGetAllUsers"
+        "400":
+          description: "Content con not be empty!"
+        "500":
+          description: "Some error ocurred whilw creating the user"
+          
+  /api/user-roles:
+    get:
+      tags:
+        - "Users"
+      summary: "Path to get all the users with the roles of each user of the application."
+      description: "Format to get all users of the application."
+      operationId: "getAllUsersRoles"
+      responses:
+        "200":
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/ArrayGetAllUsersRoles"
         "400":
           description: "Content con not be empty!"
         "500":
@@ -303,7 +320,7 @@ paths:
         "500":
            description: "Could not delete Computer with id= + id"          
           
-  /api/room:
+  /api/classroom:
     post: 
       tags:
        - "Classroom"
@@ -341,7 +358,7 @@ paths:
            schema:
              $ref: "#/definitions/ArrayGetClassroomResponse"
          
-  /api/room{roomId}:
+  /api/classroom{roomId}:
     put:
       tags:
       - "Classroom"
@@ -545,38 +562,42 @@ paths:
           description: "Cannot delete Tool with id=${id}. Maybe Tool was not found!"
         "500":
           description: "Could not delete Tool with id= + id"
-  
-  /api/chromebook:
-    
+
+
+
+
+
+
+
+  /api/inventory:
     post:
       tags:
-      - "Chromebook"
-      summary: "Path to create a new chromebook within the application."
-      operationId: "postChromebook"
+      - "Inventory"
+      summary: "Path to create a new inventory on the application."
+      operationId: "postInventory"
       produces:
       - "application/json"
       parameters:
       - in: "body"
         name: "body"
-        description: "Create new Chromebook."
+        description: "Format to create a new relation on the inventary."
         required: true
         schema:
-          $ref: "#/definitions/PostChromebookRequest"
+          $ref: "#/definitions/PostInventoryRequest"
       responses:
-        "201":
+        "200":
           description: "successful operation"
           schema:
-            $ref: "#/definitions/PostChromebookResponse"
+            $ref: "#/definitions/PostInventoryResponse"
         "400":
-            description: "Content can not be empty!"
+          description: "Content con not be empty!"
         "500":
-            description: "Some error occurred while creating the Chromebook."
-            
+          description: "Some error ocurred while creating the inventary"
     get:
       tags:
-      - "Chromebook"
-      summary: "Returns all chromebooks in the application"
-      operationId: "getChromebook"
+      - "Inventory"
+      summary: "Return all tools."
+      operationId: "getInventory"
       produces:
       - "application/json"
       parameters: []
@@ -584,145 +605,23 @@ paths:
         "200":
           description: "successful operation"
           schema:
-            $ref: "#/definitions/GetArrayChromebook"
-        "400":
-          description: "Cannot delete chromebook with id=${id}. Maybe chromebook was not found!"
-        "500":
-           description: "Some error occurred while retrieving chromebooks."
-  /api/chromebook{chromebookId}:
-    put:
-      tags:
-      - "Chromebook"
-      summary: "Update a Chromebook by specific ID."
-      operationId: "putChromebookById"
-      produces:
-      - "application/json"
-      parameters:
-      - name: "chromebookId"
-        in: "path"
-        description: "It is used to search for a specific Chromebook."
-        required: true
-        type: "integer"
-        maximum: 100.0
-        minimum: 1.0
-        format: "int64"
-      responses:
-        "200":
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/PutChromebookResponse"
-        "400":
-          description: "Cannot update Chromebook with id=${id}. Maybe Chromebook was not found or req.body is empty!"
-        "500":
-          description: "Error updating Chromebook with id= + id"
-    get:
-      tags:
-      - "Chromebook"
-      summary: "Search for a chromebook by specific ID."
-      operationId: "getChromebookrById"
-      produces:
-      - "application/json"
-      parameters:
-      - name: "chromebookId"
-        in: "path"
-        description: "It is used to search for a specific Chromebook."
-        required: true
-        type: "integer"
-        maximum: 100.0
-        minimum: 1.0
-        format: "int64"
-      responses:
-        "200":
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/GetAllChromebooks"
-        "404":
-          description: "Cannot find Chromebook with id=${id}."
-        "500":
-          description: "Error retrieving Chromebook with id= + id"
-    delete:
-      tags:
-      - "Chromebook"
-      summary: "Remove a Chromebook from the app."
-      operationId: "deletechromebook"
-      produces:
-      - "application/json"
-      parameters:
-      - name: "chromebookId"
-        in: "path"
-        description: "Id of the order that needs to be deleted"
-        required: true
-        type: "integer"
-        minimum: 1.0
-        format: "int64"
-      responses:
-        "200":
-          description: "successful operation"
-          schema:
-            $ref: "#/definitions/DeleteChromebookResponse"
-        "400":
-          description: "Cannot delete Chromebook with id=${id}. Maybe Chromebook was not found!"
-        "500":
-           description: "Could not delete Chromebook with id= + id"
-  
-  /api/ordenadorAula:
-      post: 
-        tags:
-         - "Inventory"
-        summary: "Create a new relation between classroom, computer and tool"
-        operationId: "postInventory"
-        produces:
-        - "application/json"
-        parameters:
-        - in: "body"
-          name: "body"
-          description: "Format for creating a new relationship"
-          required: true
-          schema:
-            $ref: "#/definitions/PostInventoryRequest"
-        responses:
-          "201":
-            description: "successful operation"
-            schema:
-              $ref: "#/definitions/PostInventoryResponse"
-          "400":
-            description: "Content can not be empty!"
-          "500":
-             description: "Some error occurred while creating the the relation."
-      get:
-        tags:
-         - "Inventory"
-        summary: "Returns all the relationship made in the application"
-        operationId: "getInventory"
-        produces:
-        - "application/json"
-        parameters:
-        - in: "body"
-          name: "body"
-          description: "Scheme to get the whole relationship"
-          required: true
-          schema:
             $ref: "#/definitions/ArrayGetAllInventory"
-        responses:
-           "200":
-              description: "successful operation"
-              schema:
-                $ref: "#/definitions/PostChromebookResponse"
-           "500":
-             description: "Some error occurred while retrieving the relations."
-  /api/ordenadorAula{OrdenadorAulaId}:
-  
+        "400": 
+          description: "Content can not be empty!"
+        "500":
+          description: "Some error occurred while retrieving inventary."
+  /api/inventory{inventoryId}:
     put:
       tags:
       - "Inventory"
-      summary: "Update a relationship by id."
-      operationId: "putOrdenadorAulaById"
+      summary: "Update tools with Id."
+      operationId: "putInventoryById"
       produces:
       - "application/json"
       parameters:
-      - name: "OrdenadorAulaId"
+      - name: "inventoryId"
         in: "path"
-        description: "Look for a specific relationship."
+        description: "It is used to search for a specific inventary."
         required: true
         type: "integer"
         maximum: 100.0
@@ -730,30 +629,30 @@ paths:
         format: "int64"
       - in: "body"
         name: "body"
-        description: "Updated schema of relations."
+        description: "Scheme to update the relation of inventary."
         required: true
         schema:
-          $ref: "#/definitions/PostInventoryRequest"   
+          $ref: "#/definitions/PutInventoryRequest"
       responses:
         "200":
-              description: "successful operation"
-              schema:
-                $ref: "#/definitions/PutInventoryResponse"
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/PutInventoryResponse"
         "400":
-          description: "Cannot update the relation with id=${id}. Maybe the relation was not found or req.body is empty!"
+          description: "Cannot update inventary with id=${id}. Maybe inventary was not found or req.body is empty!"
         "500":
-          description: "Error updating the relation with id= + id"  
+          description: "Error updating inventary with id= + id"  
     get:
       tags:
       - "Inventory"
-      summary: "Find a relationship by ID."
+      summary: "Search for a relation of inventary by specific ID."
       operationId: "getInventoryById"
       produces:
       - "application/json"
       parameters:
-      - name: "OrdenadorAulaId"
+      - name: "inventoryId"
         in: "path"
-        description: "Used to find a relationship."
+        description: "It is used to search for a specific inventary"
         required: true
         type: "integer"
         maximum: 100.0
@@ -761,24 +660,24 @@ paths:
         format: "int64"
       responses:
         "200":
-              description: "successful operation"
-              schema:
-                $ref: "#/definitions/GetInventoryById"
+          description: "successful operation"
+          schema:
+            $ref: "#/definitions/GetInventoryById"
         "404":
-          description: "Cannot find the relation with id=${id}."
+          description: "Cannot find inventary with id=${id}."
         "500":
-          description: "Error retrieving the relation with id= + id"
+          description: "Error retrieving inventary with id= + id"  
     delete:
       tags:
       - "Inventory"
-      summary: "Delete a relationship from the application."
-      operationId: "deleteOrdenadorAula"
+      summary: "Delete relations of the inventary"
+      operationId: "deleteInventory"
       produces:
       - "application/json"
       parameters:
-      - name: "OrdenadorAulaId"
+      - name: "inventoryId"
         in: "path"
-        description: "Id of the relation to be deleted"
+        description: "ID of the relation of inventary that needs to be deleted"
         required: true
         type: "integer"
         minimum: 1.0
@@ -787,17 +686,11 @@ paths:
         "200":
           description: "successful operation"
           schema:
-            $ref: "#/definitions/DeleteInventoryResponse"
+            $ref: "#/definitions/DeleteInventaryResponse"
         "400":
-          description: "Cannot delete the relation with id=${id}. Maybe the relation was not found!"
+          description: "Cannot delete inventary with id=${id}. Maybe inventary was not found!"
         "500":
-          description: "Could not delete the relation with id= + id"
-    
-    
-    
-    
-  
-  
+          description: "Could not delete inventary with id= + id"
   
   
   
@@ -853,7 +746,10 @@ definitions:
         type: "array"
         items: 
           type: "string"
-          example: ROLE_USER
+          example: ROLE_USER, ROLE_MODERATOR, ROLE_ADMIN
+      accessToken: 
+        type: "string"
+        example: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6MSwiaWF0IjoxNjgxMjg4NzQyLCJleHAijE2ODEzNzUxNDJ9.dQJ-aCaj7GjoUhMz5OFW3FzMcTUfkIthVDW4GFTBnyE
           
   GetAllUsersResponse:
     type: "object"
@@ -875,6 +771,27 @@ definitions:
       updateAt:
          type: "string"
          format: "date-time"
+         
+  GetAllUsersRolesResponse:
+    type: "object"
+    properties:
+      id:
+        type: "integer"
+        example: 1
+      username:
+          type: "string"
+          example: esc
+      email: 
+        type: "string"
+        example: esc@gmail.com
+      password: 
+        type: "string"
+        example: password
+      roles:
+        type: "array"
+        items: 
+          type: "string"
+          example: ROLE_USER, ROLE_MODERATOR, ROLE_ADMIN
           
   UpdateUsersRequest:
     type: "object"
@@ -917,6 +834,11 @@ definitions:
     type: "array"
     items:
       $ref: "#/definitions/GetAllUsersResponse"
+      
+  ArrayGetAllUsersRoles:        
+    type: "array"
+    items:
+      $ref: "#/definitions/GetAllUsersRolesResponse"
           
   DeleteComputerResponse:
     type: "object"
@@ -947,26 +869,6 @@ definitions:
       message:
           type: "string"
           example: Tool was deleted successfully
-          
-  DeleteChromebookResponse:
-    type: "object"
-    properties:
-      status:
-        type: "integer"
-        example: 200
-      message:
-          type: "string"
-          example: Chromebook was deleted successfully
-          
-  DeleteInventoryResponse:
-    type: "object"
-    properties:
-      status:
-        type: "integer"
-        example: 200
-      message:
-          type: "string"
-          example: Relation was deleted successfully
 
   GetComputerRequest:
     type: "object"
@@ -1124,94 +1026,6 @@ definitions:
       Name:
         type: "string"
         example: Tool was updated successfully
-        
-  PostChromebookRequest:
-    type: "object"
-    properties:
-      Estado:
-        type: "integer"
-        example: 1
-      Description:
-        type: "string"
-        example: No se puede revisar el aula porque tienen clases
-      No_chromebook:
-        type: "integer"
-        example: 1
-      No_sn:
-        type: "string"
-        example: 6FDS7FDS8
-      No_armario:
-        type: "integer"
-        example: 1
-      No_chr_funcionales:
-        type: "integer"
-        example: 9
-      No_chr_no_funcionales:
-        type: "integer"
-        example: 1
-      No_chr_totales:
-        type: "integer"
-        example: 10
-        
-  PostChromebookResponse:
-    type: "object"
-    properties:
-      Status:
-        type: "integer"
-        example: 201
-      Name:
-        type: "string"
-        example: Chromebook was created successfully
-        
-  GetAllChromebooks:
-    type: "object"
-    properties:
-      Estado:
-        type: "integer"
-        example: 1
-      Description:
-        type: "string"
-        example: No se puede revisar el aula porque tienen clases
-      No_chromebook:
-        type: "integer"
-        example: 1
-      No_sn:
-        type: "string"
-        example: 6FDS7FDS8
-      No_armario:
-        type: "integer"
-        example: 1
-      No_chr_funcionales:
-        type: "integer"
-        example: 9
-      No_chr_no_funcionales:
-        type: "integer"
-        example: 1
-      No_chr_totales:
-        type: "integer"
-        example: 10
-      createdAt:
-        type: "string"
-        format: "date-time"
-      updateAt:
-         type: "string"
-         format: "date-time"
-        
-        
-  GetArrayChromebook:
-    type: "array"
-    items:
-      $ref: "#/definitions/GetAllChromebooks"
-        
-  PutChromebookResponse:
-    type: "object"
-    properties:
-      Status:
-        type: "integer"
-        example: 200
-      Name:
-        type: "string"
-        example: Chromebook was updated successfully
       
   PostInventoryRequest:
     type: "object"
@@ -1339,3 +1153,13 @@ definitions:
       updateAt:
          type: "string"
          format: "date-time"
+         
+  DeleteInventaryResponse:
+    type: "object"
+    properties:
+      status:
+        type: "integer"
+        example: 200
+      message:
+          type: "string"
+          example: Relation on the inventary was deleted successfully 
