@@ -174,3 +174,31 @@ exports.delete = (req, res) => {
       });
     });
 };
+
+// Delete a Checkup with the specified id and the number of the week
+exports.deleteCheckupByWeek = (req, res) => {
+  const id = req.params.id;
+
+  Checkup.destroy({
+    where: { Checkup_id: id }
+  })
+    .then(num => {
+      if (num == 1) {
+        res.status(200).json({ 
+          status: 200,
+          message: "Checkup was deleted successfully!"
+        });
+      } else {
+        res.status(400).json({ 
+          status: 400,
+          message: `Cannot delete Checkup with id=${id}. Maybe Checkup was not found!`
+        });
+      }
+    })
+    .catch(err => {
+      res.status(500).json({ 
+        status: 500,
+        message: "Could not delete Checkup with id=" + id
+      });
+    });
+};
