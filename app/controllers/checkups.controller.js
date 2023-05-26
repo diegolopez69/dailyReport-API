@@ -20,7 +20,9 @@ exports.create = (req, res) => {
     there_is: req.body.there_is,
     Works: req.body.Works,
     Theoretical_amount: req.body.Theoretical_amount,
-    Actual_amount: req.body.Actual_amount
+    Actual_amount: req.body.Actual_amount,
+    Inventory_id: req.body.Inventory_id,
+    Classroom_id: req.body.Classroom_id
   };
 
 
@@ -58,7 +60,9 @@ exports.createNegative = (req, res) => {
     there_is: 0,
     Works: 0,
     Theoretical_amount: 0,
-    Actual_amount: 0
+    Actual_amount: 0,
+    Inventory_id: req.body.Inventory_id,
+    Classroom_id: req.body.Classroom_id
   };
 
 

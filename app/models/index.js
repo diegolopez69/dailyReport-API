@@ -80,6 +80,10 @@ db.user.belongsToMany(db.role, {
   otherKey: "roleId",
 });
 
+// "tb_checkups" belongs to the "tb_classrooms" model (1-to-1 relationship)
+db.tb_checkups.belongsTo(db.tb_classrooms, {
+  foreignKey: "Classroom_id",
+});
 
 db.ROLES = ["user", "admin", "moderator"];
 db.tb_inventories.associate(db);

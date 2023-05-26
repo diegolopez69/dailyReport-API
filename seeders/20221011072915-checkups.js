@@ -72,6 +72,8 @@ module.exports = {
         Comments: "",
         there_is: 1,
         Works: 1,
+        Theoretical_amount: 10,
+        Actual_amount: 10,
         Inventory_id: 6,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -81,6 +83,8 @@ module.exports = {
         Comments: "",
         there_is: 1,
         Works: 1,
+        Theoretical_amount: 10,
+        Actual_amount: 10,
         Inventory_id: 7,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -90,6 +94,8 @@ module.exports = {
         Comments: "",
         there_is: 1,
         Works: 1,
+        Theoretical_amount: 10,
+        Actual_amount: 10,
         Inventory_id: 8,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -99,6 +105,8 @@ module.exports = {
         Comments: "",
         there_is: 1,
         Works: 1,
+        Theoretical_amount: 10,
+        Actual_amount: 10,
         Inventory_id: 9,
         createdAt: new Date(),
         updatedAt: new Date()
@@ -108,6 +116,8 @@ module.exports = {
         Comments: "",
         there_is: 1,
         Works: 1,
+        Theoretical_amount: 10,
+        Actual_amount: 10,
         Inventory_id: 10,
         createdAt: new Date(),
         updatedAt: new Date()
