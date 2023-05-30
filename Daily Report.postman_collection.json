@@ -1262,13 +1262,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{local}}api/inventory/1",
+							"raw": "{{local}}api/inventory/4",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"inventory",
-								"1"
+								"4"
 							]
 						}
 					},
@@ -1322,6 +1322,102 @@
 							"path": [
 								"report",
 								"mouses"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Power cable",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}api/report/powerCable",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"report",
+								"powerCable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Ethernet cable",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}api/report/ethernetCable",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"report",
+								"ethernetCable"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "HDMI cable",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}api/report/hdmi",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"report",
+								"hdmi"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Projectors",
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}api/report/projectors",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"report",
+								"projectors"
 							]
 						}
 					},
