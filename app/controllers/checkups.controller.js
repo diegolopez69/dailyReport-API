@@ -180,29 +180,43 @@ exports.delete = (req, res) => {
 };
 
 // Delete a Checkup with the specified id and the number of the week
-exports.deleteCheckupByWeek = (req, res) => {
+exports.deleteCheckupByWeek = async (req, res) => {
   const id = req.params.id;
 
-  Checkup.destroy({
-    where: { Checkup_id: id }
-  })
-    .then(num => {
-      if (num == 1) {
-        res.status(200).json({ 
-          status: 200,
-          message: "Checkup was deleted successfully!"
-        });
-      } else {
-        res.status(400).json({ 
-          status: 400,
-          message: `Cannot delete Checkup with id=${id}. Maybe Checkup was not found!`
-        });
-      }
+  const DeleteCheckupByWeek = await db.sequelize.query(
+    "SELECT * FROM tb_checkups WHERE Review = 0 AND WEEK(createdAt) = WEEK(CURRENT_DATE()) AND `Classroom_id` = ?;",
+    {
+      replacements: [id],
+      type: db.sequelize.QueryTypes.SELECT,
+    }
+  );
+
+  console.log('DeleteCheckupByWeek', DeleteCheckupByWeek)
+
+
+    Checkup.destroy({
+      where: { Checkup_id: id },
     })
-    .catch(err => {
-      res.status(500).json({ 
-        status: 500,
-        message: "Could not delete Checkup with id=" + id
+      .then((num) => {
+        if (num == 1) {
+          res.status(200).json({
+            status: 200,
+            message: "Checkup was deleted successfully!",
+          });
+        } else {
+          res.status(400).json({
+            status: 400,
+            message: `Cannot delete Checkup with id=${id}. Maybe Checkup was not found!`,
+          });
+        }
+      })
+      .catch((err) => {
+        res.status(500).json({
+          status: 500,
+          message:
+            "Checkup " +
+            id +
+            " cannot be deleted because it is related to other elements.",
+        });
       });
-    });
 };
