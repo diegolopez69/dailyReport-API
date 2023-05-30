@@ -74,6 +74,112 @@ exports.computers = async (req, res) => {
   }
 };
 
+// Retrieve the count of how many power cable has
+exports.powerCable = async (req, res) => {
+  const getPowerCable = await db.sequelize.query(
+    "SELECT COUNT(*) AS TotalPowerCable FROM tb_inventories WHERE Tool_id = 2;",
+    { type: db.sequelize.QueryTypes.SELECT }
+  );
+
+  NumberOfPowerCable = getPowerCable[0].TotalPowerCable;
+  console.log("getPowerCable", NumberOfPowerCable);
+
+  if (NumberOfPowerCable != null) {
+    res.status(200).json({
+      Total_of_power_cables: NumberOfPowerCable,
+    });
+  } else {
+    res.status(500).json({
+      status: 500,
+      Err:
+        err.message ||
+        "Some error occurred while retrieving the total of power cables.",
+    });
+  }
+};
+
+
+// Retrieve the count of how many ethernet cable has
+exports.ethernetCable = async (req, res) => {
+  const getEthernetCable = await db.sequelize.query(
+    "SELECT COUNT(*) AS TotalEthernetCable FROM tb_inventories WHERE Tool_id = 1;",
+    { type: db.sequelize.QueryTypes.SELECT }
+  );
+
+  NumberOfEthernetCable = getEthernetCable[0].TotalEthernetCable;
+  console.log("getEthernetCable", NumberOfEthernetCable);
+
+  if (NumberOfEthernetCable != null) {
+    res.status(200).json({
+      Total_of_ethernet_cables: NumberOfEthernetCable,
+    });
+  } else {
+    res.status(500).json({
+      status: 500,
+      Err:
+        err.message ||
+        "Some error occurred while retrieving the total of power cables.",
+    });
+  }
+};
+
+// Retrieve the count of how many hdmi cable has
+exports.hdmi = async (req, res) => {
+  const getHdmi = await db.sequelize.query(
+    "SELECT COUNT(*) AS TotalHdmi FROM tb_inventories WHERE Tool_id = 5;",
+    { type: db.sequelize.QueryTypes.SELECT }
+  );
+
+  NumberOfHdmi = getHdmi[0].TotalHdmi;
+  console.log("getHdmi", NumberOfHdmi);
+
+  if (NumberOfHdmi != null) {
+    res.status(200).json({
+      Total_of_hdmi: NumberOfHdmi,
+    });
+  } else {
+    res.status(500).json({
+      status: 500,
+      Err:
+        err.message ||
+        "Some error occurred while retrieving the total of power cables.",
+    });
+  }
+};
+
+// Retrieve the count of how many projectors has
+exports.projectors = async (req, res) => {
+  const getProjector = await db.sequelize.query(
+    "SELECT COUNT(*) AS TotalProjector FROM tb_inventories WHERE Tool_id = 11;",
+    { type: db.sequelize.QueryTypes.SELECT }
+  );
+
+  NumberOfProjector = getProjector[0].TotalProjector;
+  console.log("getProjector", NumberOfProjector);
+
+  if (NumberOfProjector != null) {
+    res.status(200).json({
+      Total_of_projector: NumberOfProjector,
+    });
+  } else {
+    res.status(500).json({
+      status: 500,
+      Err:
+        err.message ||
+        "Some error occurred while retrieving the total of power cables.",
+    });
+  }
+};
+
+
+
+
+
+
+
+
+
+
 //Acá debe de utilizarse un cron Job
 // Retrieve the count of how many computers has through the time
 // exports.computers = async (req, res) => {

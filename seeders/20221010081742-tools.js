@@ -67,6 +67,12 @@ module.exports = {
         Name: "Google Chrome",
         createdAt: new Date(),
         updatedAt: new Date()
+      },
+      {
+        Type: "Hardware",
+        Name: "Proyector",
+        createdAt: new Date(),
+        updatedAt: new Date()
       }
     ], {});
   },
