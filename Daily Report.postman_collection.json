@@ -936,7 +936,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "   {\n       \"Review\": 1,\n       \"Comments\": \"fghfghhhhh\",\n       \"Inventory_id\": 20\n   }",
+							"raw": "   {\n       \"Review\": 1,\n       \"Comments\": \"Esto es de wanna be\",\n       \"there_is\": 0,\n       \"works\": 0,\n       \"Theoretical_amount\": 0,\n       \"Actual_amount\": 0,\n       \"Classroom_id\": 3,\n       \"Inventory_id\": 56\n   }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1079,6 +1079,31 @@
 							"path": [
 								"checkups",
 								"11"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete an checkups by and week",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "x-access-token",
+								"value": "{{x-access-token}}",
+								"type": "text"
+							}
+						],
+						"url": {
+							"raw": "{{local}}api/checkups/delete/5",
+							"host": [
+								"{{local}}api"
+							],
+							"path": [
+								"checkups",
+								"delete",
+								"5"
 							]
 						}
 					},
