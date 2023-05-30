@@ -85,6 +85,7 @@ db.tb_checkups.belongsTo(db.tb_classrooms, {
   foreignKey: "Classroom_id",
 });
 
+db.ROLES = ["user", "admin", "moderator"];
 db.tb_inventories.associate(db);
 db.tb_checkups.associate(db);
 
