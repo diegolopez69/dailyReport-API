@@ -195,20 +195,19 @@ exports.deleteCheckupByWeek = async (req, res) => {
   console.log('DeleteCheckupByWeek', DeleteCheckupByWeek)
 
 
-    // Classroom.destroy({
-    //   where: { Classroom_id: id },
-    // })
+    Checkup.destroy({
+      where: { Checkup_id: id },
+    })
       .then((num) => {
-        console.log("num", num);
         if (num == 1) {
           res.status(200).json({
             status: 200,
-            message: "Classroom was deleted successfully!",
+            message: "Checkup was deleted successfully!",
           });
         } else {
           res.status(400).json({
             status: 400,
-            message: `Cannot delete Classroom with id=${id}. Maybe Classroom was not found!`,
+            message: `Cannot delete Checkup with id=${id}. Maybe Checkup was not found!`,
           });
         }
       })
@@ -216,7 +215,7 @@ exports.deleteCheckupByWeek = async (req, res) => {
         res.status(500).json({
           status: 500,
           message:
-            "Classroom " +
+            "Checkup " +
             id +
             " cannot be deleted because it is related to other elements.",
         });

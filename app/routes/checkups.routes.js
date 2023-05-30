@@ -22,8 +22,8 @@ module.exports = app => {
   // Delete a Checkups with id
   router.delete("/:id", [authJwt.verifyToken, authJwt.isModerator], Checkups.delete);
 
-  // Delete a Checkups with id and number of the week
-  router.delete("/delete/:id", [authJwt.verifyToken, authJwt.isModerator], Checkups.deleteCheckupByWeek);
+    // Delete a Checkups with id and number of the week
+    router.delete("/delete/:id", [authJwt.verifyToken, authJwt.isModerator], Checkups.deleteCheckupByWeek);
 
   app.use('/api/checkups', router);
 };
