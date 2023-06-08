@@ -67,16 +67,6 @@ exports.findAll = (req, res) => {
     });
 };
 
-// Logout of the application.
-exports.logout = (req, res) => {
-  
-  res.cookie('jwt', '', {maxAge: 1});
-  res.status(200).json({
-    status: 200,
-    message: "Test"
-  });
-}
-
 
 // Do the login on the application
 exports.signin = (req, res) => {

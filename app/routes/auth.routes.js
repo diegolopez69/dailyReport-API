@@ -27,9 +27,6 @@ module.exports = function (app) {
   // Login on the application
   app.post("/api/auth/signin", Auth.signin);
 
-  // Logout on the application
-  app.get("/api/auth/logout", Auth.logout);
-
   // Retrieve all users
   app.get("/api/user", [authJwt.verifyToken, authJwt.isAdmin], Auth.findAll);
 
