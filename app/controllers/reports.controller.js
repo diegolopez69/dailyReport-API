@@ -10,7 +10,6 @@ exports.keyboards = async (req, res) => {
   );
 
   NumberOfKeyboards = getKeyboards[0].TotalKeyboards;
-  console.log("Total_of_keyboards", NumberOfKeyboards);
 
   if (NumberOfKeyboards != null) {
     res.status(200).json({
@@ -34,7 +33,6 @@ exports.mouses = async (req, res) => {
   );
 
   NumberOfMouses = getMouses[0].TotalMouses;
-  console.log("getMouses", NumberOfMouses);
 
   if (NumberOfMouses != null) {
     res.status(200).json({
@@ -58,7 +56,6 @@ exports.computers = async (req, res) => {
   );
 
   NumberOfComputers = getComputers[0].TotalComputers;
-  console.log("getComputers", NumberOfComputers);
 
   if (NumberOfComputers != null) {
     res.status(200).json({
@@ -82,7 +79,6 @@ exports.powerCable = async (req, res) => {
   );
 
   NumberOfPowerCable = getPowerCable[0].TotalPowerCable;
-  console.log("getPowerCable", NumberOfPowerCable);
 
   if (NumberOfPowerCable != null) {
     res.status(200).json({
@@ -107,7 +103,6 @@ exports.ethernetCable = async (req, res) => {
   );
 
   NumberOfEthernetCable = getEthernetCable[0].TotalEthernetCable;
-  console.log("getEthernetCable", NumberOfEthernetCable);
 
   if (NumberOfEthernetCable != null) {
     res.status(200).json({
@@ -131,7 +126,6 @@ exports.hdmi = async (req, res) => {
   );
 
   NumberOfHdmi = getHdmi[0].TotalHdmi;
-  console.log("getHdmi", NumberOfHdmi);
 
   if (NumberOfHdmi != null) {
     res.status(200).json({
@@ -155,7 +149,6 @@ exports.projectors = async (req, res) => {
   );
 
   NumberOfProjector = getProjector[0].TotalProjector;
-  console.log("getProjector", NumberOfProjector);
 
   if (NumberOfProjector != null) {
     res.status(200).json({

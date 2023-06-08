@@ -149,7 +149,6 @@ exports.delete = async (req, res) => {
       where: { Classroom_id: id },
     })
       .then((num) => {
-        console.log("num", num);
         if (num == 1) {
           res.status(200).json({
             status: 200,

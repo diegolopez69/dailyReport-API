@@ -59,7 +59,7 @@ exports.findAll = (req, res) => {
       res.send(data);
     })
     .catch(err => {
-      console.log("------------------------------------------------------", err);
+    
       res.status(500).json({
         status: 500,
         Err: err.message || 'Some error occurred while retrieving Users.'
@@ -69,7 +69,7 @@ exports.findAll = (req, res) => {
 
 // Logout of the application.
 exports.logout = (req, res) => {
-  console.log("Im here 1")
+  
   res.cookie('jwt', '', {maxAge: 1});
   res.status(200).json({
     status: 200,
