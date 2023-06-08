@@ -114,7 +114,6 @@ exports.update = (req, res) => {
       }
     })
     .catch((err) => {
-      console.log();
       res.status(500).json({
         status: 500,
         message: "Error updating Tool with id=" + id,
