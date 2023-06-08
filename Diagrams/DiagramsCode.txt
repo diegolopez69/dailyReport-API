@@ -1,3 +1,5 @@
+Códigos de los diagramas TFG
+
 ——— Modelo del dominio ———
 
 @startuml
@@ -400,3 +402,286 @@ General --> Menú_gráficas : Solicita el listado de gráficas
 Menú_gráficas --> Menú_gráficas : CRUD gráficas
 Menú_gráficas --> General
 @enduml
+
+
+
+
+————————————————————————————————————————————————
+							ANÁLISIS DE CASOS DE USO
+————————————————————————————————————————————————
+
+——— Sesión  ———
+@startuml
+(Login View) as (view)
+(Login Controller) as (controller)
+(Login Model) as (model)
+(:Open Dashbord) as (dash)
+(user) as (data)
+
+note "Login(user, password)" as N1
+note "Login(user, password)" as N2
+note "Search by" as N3
+
+User --> N1
+N1 --> (view)
+(view) --> N2
+(view) .. (dash)
+data --> view
+N2 --> (controller)
+(controller) --> N3
+N3 --> model
+model --> data
+
+@enduml
+
+
+——— Inventario  ———
+
+@startuml
+(Inventory View) as (view)
+(Inventory Controller) as (controller)
+(Inventory Model) as (model)
+(:Open Dashbord) as (dash)
+(Inventory) as (data)
+
+note "Http request" as N1
+note "CRUD method" as N2
+note "SQL query" as N3
+note "Modify" as N4
+
+User --> N1
+N1 --> (view)
+(view) --> N2
+(view) .. (dash)
+N2 --> (controller)
+(controller) --> N3
+N3 --> model
+model --> N4
+N4 --> data
+view <|.. data
+@enduml
+
+
+——— Ordenadores  ———
+
+@startuml
+(Computer View) as (view)
+(Computer Controller) as (controller)
+(Computer Model) as (model)
+(:Open Dashbord) as (dash)
+(Computer) as (data)
+
+note "Http request" as N1
+note "CRUD method" as N2
+note "SQL query" as N3
+note "Modify" as N4
+
+User --> N1
+N1 --> (view)
+(view) --> N2
+(view) .. (dash)
+N2 --> (controller)
+(controller) --> N3
+N3 --> model
+model --> N4
+N4 --> data
+view <|.. data
+@enduml
+
+——— Aulas  ———
+@startuml
+(Classroom View) as (view)
+(Classroom Controller) as (controller)
+(Classroom Model) as (model)
+(:Open Dashbord) as (dash)
+(Classroom) as (data)
+
+note "Http request" as N1
+note "CRUD method" as N2
+note "SQL query" as N3
+note "Modify" as N4
+
+User --> N1
+N1 --> (view)
+(view) --> N2
+(view) .. (dash)
+N2 --> (controller)
+(controller) --> N3
+N3 --> model
+model --> N4
+N4 --> data
+view <|.. data
+@enduml
+
+——— Herramientas  ———
+@startuml
+(Items View) as (view)
+(Tool Controller) as (controller)
+(Tool Model) as (model)
+(:Open Dashbord) as (dash)
+(Tool data) as (data)
+
+note "Http request" as N1
+note "CRUD method" as N2
+note "SQL query" as N3
+note "Modify" as N4
+
+User --> N1
+N1 --> (view)
+(view) --> N2
+(view) .. (dash)
+N2 --> (controller)
+(controller) --> N3
+N3 --> model
+model --> N4
+N4 --> data
+view <|.. data
+@enduml
+
+——— Reportes  ———
+
+@startuml
+(Revision View) as (view)
+(Report Controller) as (controller)
+(Report Model) as (model)
+(:Open Dashbord) as (dash)
+(Report data) as (data)
+
+note "Http request" as N1
+note "CRUD method" as N2
+note "SQL query" as N3
+note "Modify" as N4
+
+User --> N1
+N1 --> (view)
+(view) --> N2
+(view) .. (dash)
+N2 --> (controller)
+(controller) --> N3
+N3 --> model
+model --> N4
+N4 --> data
+view <|.. data
+@enduml
+——— Revisiones  ———
+
+@startuml
+(Revision View) as (view)
+(Checkups Controller) as (controller)
+(Checkups Model) as (model)
+(:Open Dashbord) as (dash)
+(Checkups data) as (data)
+
+note "Http request" as N1
+note "CRUD method" as N2
+note "SQL query" as N3
+note "Modify" as N4
+
+User --> N1
+N1 --> (view)
+(view) --> N2
+(view) .. (dash)
+N2 --> (controller)
+(controller) --> N3
+N3 --> model
+model --> N4
+N4 --> data
+view <|.. data
+@enduml
+——— Usuarios  ———
+
+
+
+————————————————————————————————————————————————
+							ANÁLISIS DE CLASES
+————————————————————————————————————————————————
+
+
+——— Inventario  ———
+@startuml
+class InventoryView {
+ Create
+ Find one
+ Find all
+ Update
+ Delete
+}
+
+InventoryView --> ToolController
+InventoryView --> ComputerController
+InventoryView --> ClassroomController
+InventoryView --> InventoryController
+InventoryView --> InventoryRoute
+InventoryView --> ToolModel
+InventoryView --> ComputerModel
+InventoryView --> ClassroomModel
+InventoryView --> InventoryModel
+@enduml
+
+——— Herramienta  ———
+@startuml
+class ToolView {
+ Create
+ Find one
+ Find all
+ Update
+ Delete
+}
+
+ToolView --> ToolController
+ToolView --> ToolModel
+ToolView --> ToolRoute
+@enduml
+
+
+————————————————————————————————————————————————
+							CAPA DE DATOS
+————————————————————————————————————————————————
+@startuml
+class Users {
+username
+email
+password
+}
+
+class Role {
+name
+}
+
+class Checkups {
+Review
+Comments
+There_is
+Works
+Theorical_amount
+Actual_amount
+}
+
+class Inventory {
+Classroom_id
+Tool_id
+Computer_id
+}
+
+class Computer {
+name
+}
+
+class Classroom {
+Flour
+Number
+}
+
+class Tool {
+Type
+Name
+}
+
+Users-->Role
+Users-->Checkups
+Checkups-->Inventory
+Inventory-->Computer
+Inventory-->Classroom
+Inventory-->Tool
+@enduml
+
