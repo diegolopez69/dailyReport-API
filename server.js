@@ -20,7 +20,7 @@ const db = require("./app/models");
 const Role = db.role;
 db.sequelize.sync();
 
-/*This is to drop the data on the db */
+/*This is to drop the data on the db */ 
 // db.sequelize.sync({force: true}).then(() => { console.log('Drop and Resync Db'); });
 
 
