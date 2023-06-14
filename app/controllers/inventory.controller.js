@@ -10,6 +10,7 @@ const inventorySchema = Joi.object({
   Classroom_id: Joi.number().integer().required(),
   Computer_id: Joi.number().integer().required(),
   Tool_id: Joi.number().integer().required(),
+  Amount: Joi.number().integer().required(),
 });
 
 // Create and Save a new Inventory
@@ -29,8 +30,10 @@ exports.create = (req, res) => {
     Classroom_id: req.body.Classroom_id,
     Computer_id: req.body.Computer_id,
     Tool_id: req.body.Tool_id,
+    Amount: req.body.Amount,
   };
 
+  console.log("inventory", inventory)
   // Save Inventory in the database
   Inventory.create(inventory)
     .then((data) => {
@@ -122,9 +125,11 @@ exports.update = (req, res) => {
   }
 
   Inventory.update(req.body, {
+    
     where: { Inventory_id: id },
   })
     .then((num) => {
+      console.log("req.body", req.body)
       if (num == 1) {
         res.status(200).json({
           status: 200,
