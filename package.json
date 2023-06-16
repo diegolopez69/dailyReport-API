@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "dev": "nodemon --watch src ./server.js"
+    "dev": "nodemon --watch src ./server.js",
+    "seed": "npx sequelize-cli db:seed:all"
   },
   "keywords": [
     "nodejs",
