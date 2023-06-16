@@ -64,6 +64,3 @@ db.sequelize.sync({ alter: true })
 
 /*This is to drop the data on the db */
 // db.sequelize.sync({force: true}).then(() => { console.log('Drop and Resync Db'); });
-
-
-
