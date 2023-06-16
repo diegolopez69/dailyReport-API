@@ -1,25 +1,24 @@
 {
-    "development": {
-      "username": "report_root",
-      "password": "Uneatlantico22",
-      "database": "db_daily_report",
-      "host": "127.0.0.1",
-      "dialect": "mysql",
-      "logging": false
-    },
-    "test": {
-      "username": "root",
-      "password": null,
-      "database": "database_test",
-      "host": "127.0.0.1",
-      "dialect": "mysql"
-    },
-    "production": {
-      "username": "root",
-      "password": null,
-      "database": "database_production",
-      "host": "127.0.0.1",
-      "dialect": "mysql"
-    }
+  "development": {
+    "username": "report_root",
+    "password": "Uneatlantico22",
+    "database": "db_daily_report",
+    "host": "mysql_server",
+    "dialect": "mysql",
+    "logging": false
+  },
+  "test": {
+    "username": "root",
+    "password": null,
+    "database": "database_test",
+    "host": "mysql_server",
+    "dialect": "mysql"
+  },
+  "production": {
+    "username": "root",
+    "password": null,
+    "database": "database_production",
+    "host": "mysql_server",
+    "dialect": "mysql"
   }
-  
+}

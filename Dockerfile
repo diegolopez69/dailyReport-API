@@ -2,6 +2,8 @@ FROM node:14
 
 WORKDIR /app
 
+RUN npm i sequelize-cli
+
 COPY package.json .
 
 RUN npm install
@@ -9,7 +11,5 @@ RUN npm install
 COPY . .
 
 EXPOSE 3000
-
-VOLUME [ "/node_modules" ]
 
 CMD ["npm", "run", "dev"]

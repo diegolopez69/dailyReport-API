@@ -6,6 +6,8 @@ const Joi = require("joi");
 // Define validation schema using Joi
 const computerSchema = Joi.object({
   Name: Joi.string().required(),
+  Serie: Joi.string().required(),
+  
 });
 
 // Create and Save a new Computer
@@ -22,6 +24,7 @@ exports.create = (req, res) => {
   // Create a Computer
   const computer = {
     Name: req.body.Name,
+    Serie: req.body.Serie,
   };
 
   // Save Computer in the database

@@ -11,6 +11,10 @@ module.exports = (sequelize, Sequelize) => {
     Name: {
       type: Sequelize.STRING,
     },
+    // Define the Serie column
+    Serie: {
+      type: Sequelize.STRING,
+    },
   });
 
   return tb_computers;

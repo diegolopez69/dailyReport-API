@@ -21,6 +21,10 @@ module.exports = (sequelize, Sequelize) => {
       Tool_id: {
         type: Sequelize.INTEGER,
       },
+      // "Actual_amount" field is an integer
+      Amount: {
+        type: Sequelize.INTEGER,
+    },
     }
   );
 
