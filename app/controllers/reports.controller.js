@@ -33,11 +33,11 @@ exports.mouses = async (req, res) => {
     { type: db.sequelize.QueryTypes.SELECT }
   );
 
-  NumberOfMouses = getMouses[0].TotalMouses;
+  console.log('getMouses', getMouses)
 
-  if (NumberOfMouses != null) {
+  if (getMouses != null) {
     res.status(200).json({
-      Total_of_mouses: NumberOfMouses,
+      Total_of_mouses: getMouses,
     });
   } else {
     res.status(500).json({
