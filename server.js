@@ -21,19 +21,20 @@ app.use(express.urlencoded({ extended: true }));
 const db = require("./app/models");
 const Role = db.role;
 console.log('WE ARE CONNECTING TO DB');
+
 db.sequelize.sync({ alter: true })
   .then(() => {
     console.log('We are connected');
-    exec("npm run seed", (error, stdout, stderr) => {
-      if (error) {
-        console.log(`error: ${error.message}`);
-        return;
-      }
-      if (stderr) {
-        console.log(`stderr: ${stderr}`);
-        return;
-      }
-      console.log(`stdout: ${stdout}`);
+    // exec("npm run seed", (error, stdout, stderr) => {
+    //   if (error) {
+    //     console.log(`error: ${error.message}`);
+    //     return;
+    //   }
+    //   if (stderr) {
+    //     console.log(`stderr: ${stderr}`);
+    //     return;
+    //   }
+    //   console.log(`stdout: ${stdout}`);
 
 
       // simple route
@@ -55,12 +56,13 @@ db.sequelize.sync({ alter: true })
       app.listen(PORT, () => {
         console.log(`Server is running on port ${PORT}.`);
       });
-    });
+    // });
+    
 
-
-  }).catch(e => {
-    console.log('The following error occured while conecting: ', e);
   })
+  // }).catch(e => {
+  //   console.log('The following error occured while conecting: ', e);
+  // })
 
 /*This is to drop the data on the db */
 // db.sequelize.sync({force: true}).then(() => { console.log('Drop and Resync Db'); });

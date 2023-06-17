@@ -28,7 +28,8 @@ exports.keyboards = async (req, res) => {
 // Retrieve the count of how many mouses has through the time
 exports.mouses = async (req, res) => {
   const getMouses = await db.sequelize.query(
-    "SELECT COUNT(*) AS TotalMouses FROM tb_inventories WHERE Tool_id = 4;",
+    // "SELECT COUNT(*) AS TotalMouses FROM tb_inventories WHERE Tool_id = 4;",
+    "SELECT * FROM tb_checkups WHERE there_is = 0 AND inventory_id IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 4) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM CURRENT_DATE);",
     { type: db.sequelize.QueryTypes.SELECT }
   );
 
