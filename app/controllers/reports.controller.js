@@ -25,18 +25,39 @@ exports.keyboards = async (req, res) => {
   }
 };
 
-// Retrieve the count of how many mouses has through the time
+// Retrieve the count of how many mouses disapper has through the time
 exports.mouses = async (req, res) => {
   const getMouses = await db.sequelize.query(
-    "SELECT COUNT(*) AS TotalMouses FROM tb_inventories WHERE Tool_id = 4;",
+    "SELECT COUNT(*) AS totalMousesNow FROM tb_checkups WHERE there_is = 0 AND inventory_id IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 4) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM CURRENT_DATE);",
+    { type: db.sequelize.QueryTypes.SELECT }
+  );
+  const getMousesOneWeekBefore = await db.sequelize.query(
+    "SELECT COUNT(*) AS totalMousesOneWeekBefore FROM tb_checkups WHERE there_is = 0 AND inventory_id IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 4) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM DATE_SUB(CURRENT_DATE, INTERVAL 1 WEEK));",
+    { type: db.sequelize.QueryTypes.SELECT }
+  );
+  const getMousesTwoWeeksBefore = await db.sequelize.query(
+    "SELECT COUNT(*) AS totalMousesTwoWeeksBefore FROM tb_checkups WHERE there_is = 0 AND inventory_id IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 4) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM DATE_SUB(CURRENT_DATE, INTERVAL 2 WEEK));",
     { type: db.sequelize.QueryTypes.SELECT }
   );
 
-  NumberOfMouses = getMouses[0].TotalMouses;
 
-  if (NumberOfMouses != null) {
+  getMousesOfThisWeek = getMouses[0].totalMousesNow
+  console.log('getMousesOfThisWeek', getMousesOfThisWeek)
+  
+  getMousesWeekBefore = getMousesOneWeekBefore[0].totalMousesOneWeekBefore
+  console.log('getMousesFixed 2', getMousesWeekBefore)
+
+  getMousesTwoWeeksBeforee = getMousesTwoWeeksBefore[0].totalMousesTwoWeeksBefore
+  console.log('getMousesFixed 3', getMousesTwoWeeksBeforee)
+
+  TotalOfTheMouses = [getMousesOfThisWeek, getMousesWeekBefore, getMousesTwoWeeksBeforee]
+  console.log('-------------------------------------------------------')
+  console.log('TotalOfTheMouses', TotalOfTheMouses)
+
+
+  if (TotalOfTheMouses != null) {
     res.status(200).json({
-      Total_of_mouses: NumberOfMouses,
+      MousesThroughTime: TotalOfTheMouses,
     });
   } else {
     res.status(500).json({

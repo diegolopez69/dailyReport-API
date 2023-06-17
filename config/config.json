@@ -3,7 +3,7 @@
     "username": "report_root",
     "password": "Uneatlantico22",
     "database": "db_daily_report",
-    "host": "mysql_server",
+    "host": "127.0.0.1",
     "dialect": "mysql",
     "logging": false
   },
