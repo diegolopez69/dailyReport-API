@@ -26,34 +26,19 @@ module.exports = (app) => {
     Reports.computers
   );
 
-  //Retrieve all power cable's
-  router.get(
-    "/powerCable",
-    [authJwt.verifyToken, authJwt.isModerator],
-    Reports.powerCable
-  );
-
-  //Retrieve all ethernet cable's
-  router.get(
-    "/ethernetCable",
-    [authJwt.verifyToken, authJwt.isModerator],
-    Reports.ethernetCable
-  );
-
-  //Retrieve all hdmi
-  router.get(
-    "/hdmi",
-    [authJwt.verifyToken, authJwt.isModerator],
-    Reports.hdmi
-  );
-
   //Retrieve all projectors
   router.get(
     "/projectors",
     [authJwt.verifyToken, authJwt.isModerator],
     Reports.projectors
   );
-  
+
+  //Retrieve all classrooms
+  router.get(
+    "/classroomsChecked",
+    [authJwt.verifyToken, authJwt.isModerator],
+    Reports.classrooms
+  );
 
   app.use("/api/report", router);
 };
