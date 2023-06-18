@@ -5,15 +5,30 @@ const { QueryTypes } = require("sequelize");
 // Retrieve the count of how many keyboards has through the time
 exports.keyboards = async (req, res) => {
   const getKeyboards = await db.sequelize.query(
-    "SELECT COUNT(*) AS TotalKeyboards FROM tb_inventories WHERE Tool_id = 3;",
+    "SELECT COUNT(*) AS totalKeyboardsNow FROM tb_checkups  WHERE there_is = 0 AND inventory_id  IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 3) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM CURRENT_DATE);",
+    { type: db.sequelize.QueryTypes.SELECT }
+  );
+  const getKeyboardsOneWeekBefore = await db.sequelize.query(
+    "SELECT COUNT(*) AS totalKeyboardsOneWeekBefore FROM tb_checkups  WHERE there_is = 0 AND inventory_id  IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 3) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM DATE_SUB(CURRENT_DATE, INTERVAL 1 WEEK));",
+    { type: db.sequelize.QueryTypes.SELECT }
+  );
+  const getKeyboardsTwoWeekBefore = await db.sequelize.query(
+    "SELECT COUNT(*) AS totalKeyboardsTwoWeekBefore FROM tb_checkups  WHERE there_is = 0 AND inventory_id  IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 3) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM DATE_SUB(CURRENT_DATE, INTERVAL 2 WEEK));",
     { type: db.sequelize.QueryTypes.SELECT }
   );
 
-  NumberOfKeyboards = getKeyboards[0].TotalKeyboards;
+  console.log("getKeyboards", getKeyboards[0].totalKeyboardsNow)
+  console.log("getKeyboardsOneWeekBefore", getKeyboardsOneWeekBefore[0].totalKeyboardsOneWeekBefore)
+  console.log("getKeyboardsOneWeekBefore", getKeyboardsTwoWeekBefore[0].totalKeyboardsTwoWeekBefore)
 
-  if (NumberOfKeyboards != null) {
+  TotalOfKeabords = [getKeyboards[0].totalKeyboardsNow, getKeyboardsOneWeekBefore[0].totalKeyboardsOneWeekBefore, getKeyboardsTwoWeekBefore[0].totalKeyboardsTwoWeekBefore]
+  console.log('-------------------------------------------------------')
+  console.log('TotalOfKeabords', TotalOfKeabords)
+  
+
+  if (getKeyboards != null) {
     res.status(200).json({
-      Total_of_keyboards: NumberOfKeyboards,
+      Total_of_keyboards: getKeyboards,
     });
   } else {
     res.status(500).json({
@@ -24,6 +39,10 @@ exports.keyboards = async (req, res) => {
     });
   }
 };
+
+
+
+
 
 // Retrieve the count of how many mouses disapper has through the time
 exports.mouses = async (req, res) => {
