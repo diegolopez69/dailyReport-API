@@ -25,10 +25,9 @@ exports.keyboards = async (req, res) => {
   console.log('-------------------------------------------------------')
   console.log('TotalOfKeabords', TotalOfKeabords)
   
-
-  if (getKeyboards != null) {
+  if (TotalOfKeabords != null) {
     res.status(200).json({
-      Total_of_keyboards: getKeyboards,
+      Total_of_keyboards: TotalOfKeabords,
     });
   } else {
     res.status(500).json({
