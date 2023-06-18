@@ -409,7 +409,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Name\": \"Prueba3\"\n}",
+							"raw": "{\n        \"Name\": \"Prueba\",\n        \"Serie\": \"PruebaSerie\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -476,7 +476,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Name\": \"Prueba222\"\n}",
+							"raw": "{\n        \"Name\": \"Prueba222\",\n        \"Serie\": \"PruebaSerie222222\"\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -484,13 +484,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/computer/25",
+							"raw": "{{local}}api/computer/254",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"computer",
-								"25"
+								"254"
 							]
 						}
 					},
@@ -739,7 +739,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "   {\n       \"Type\": \"Software\",\n       \"Name\": 5\n   }",
+							"raw": "   {\n       \"Type\": \"Software\",\n       \"Name\": \"Teclado fachero\"\n   }",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1127,7 +1127,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Classroom_id\": 63,\n        \"Computer_id\": 258,\n        \"Tool_id\": 13\n}",
+							"raw": "{\n        \"Classroom_id\": 60,\n        \"Computer_id\": 254,\n        \"Tool_id\": 12,\n        \"Amount\": 10\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1194,7 +1194,7 @@
 						],
 						"body": {
 							"mode": "raw",
-							"raw": "{\n        \"Classroom_id\": 6,\n        \"Computer_id\": 25,\n        \"Tool_id\": 2\n}",
+							"raw": "{\n        \"Classroom_id\": 60,\n        \"Computer_id\": 254,\n        \"Tool_id\": 12,\n        \"Amount\": 8\n}",
 							"options": {
 								"raw": {
 									"language": "json"
@@ -1202,13 +1202,13 @@
 							}
 						},
 						"url": {
-							"raw": "{{local}}api/inventory/801",
+							"raw": "{{local}}api/inventory/805",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"inventory",
-								"801"
+								"805"
 							]
 						}
 					},
@@ -1328,7 +1328,7 @@
 					"response": []
 				},
 				{
-					"name": "Power cable",
+					"name": "Classroom Checked",
 					"request": {
 						"method": "GET",
 						"header": [
@@ -1339,61 +1339,13 @@
 							}
 						],
 						"url": {
-							"raw": "{{local}}api/report/powerCable",
+							"raw": "{{local}}api/report/classroomsChecked",
 							"host": [
 								"{{local}}api"
 							],
 							"path": [
 								"report",
-								"powerCable"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "Ethernet cable",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{x-access-token}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{local}}api/report/ethernetCable",
-							"host": [
-								"{{local}}api"
-							],
-							"path": [
-								"report",
-								"ethernetCable"
-							]
-						}
-					},
-					"response": []
-				},
-				{
-					"name": "HDMI cable",
-					"request": {
-						"method": "GET",
-						"header": [
-							{
-								"key": "x-access-token",
-								"value": "{{x-access-token}}",
-								"type": "text"
-							}
-						],
-						"url": {
-							"raw": "{{local}}api/report/hdmi",
-							"host": [
-								"{{local}}api"
-							],
-							"path": [
-								"report",
-								"hdmi"
+								"classroomsChecked"
 							]
 						}
 					},
