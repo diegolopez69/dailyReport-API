@@ -90,7 +90,7 @@ exports.computers = async (req, res) => {
 // Retrieve the count of how many projectors has
 exports.projectors = async (req, res) => {
   const getProjector = await db.sequelize.query(
-    "SELECT months.Month, COALESCE(checkups.TotalProjectors, 0) AS TotalProjectors FROM ( SELECT 1 AS Month UNION ALL SELECT 2 AS Month UNION ALL SELECT 3 AS Month UNION ALL SELECT 4 AS Month UNION ALL SELECT 5 AS Month UNION ALL SELECT 6 AS Month UNION ALL SELECT 7 AS Month UNION ALL SELECT 8 AS Month UNION ALL SELECT 9 AS Month UNION ALL SELECT 10 AS Month UNION ALL SELECT 11 AS Month UNION ALL SELECT 12 AS Month ) AS months LEFT JOIN ( SELECT EXTRACT(MONTH FROM createdAt) AS Month, COUNT(*) AS TotalProjectors FROM tb_checkups WHERE there_is = 0 AND inventory_id IN ( SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 11 ) GROUP BY EXTRACT(MONTH FROM createdAt) ) AS checkups ON months.Month = checkups.Month ORDER BY months.Month; ",
+    "SELECT months.Month, COALESCE(checkups.TotalProjectors, 0) AS TotalProjectors FROM ( SELECT 1 AS Month UNION ALL SELECT 2 AS Month UNION ALL SELECT 3 AS Month UNION ALL SELECT 4 AS Month UNION ALL SELECT 5 AS Month UNION ALL SELECT 6 AS Month UNION ALL SELECT 7 AS Month UNION ALL SELECT 8 AS Month UNION ALL SELECT 9 AS Month UNION ALL SELECT 10 AS Month UNION ALL SELECT 11 AS Month UNION ALL SELECT 12 AS Month ) AS months LEFT JOIN ( SELECT EXTRACT(MONTH FROM createdAt) AS Month, COUNT(*) AS TotalProjectors FROM tb_checkups WHERE there_is = 0 AND inventory_id IN ( SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 11 ) GROUP BY EXTRACT(MONTH FROM createdAt) ) AS checkups ON months.Month = checkups.Month ORDER BY months.Month;",
     { type: db.sequelize.QueryTypes.SELECT }
   );
   
@@ -136,7 +136,7 @@ exports.classrooms = async (req, res) => {
 
   if (totalClassroomsChecked != null) {
     res.status(200).json({
-      Classrooms: totalClassroomsChecked,
+      WeekClassroomCheckedAndNot: totalClassroomsChecked,
     });
   } else {
     res.status(500).json({
