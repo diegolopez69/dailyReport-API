@@ -11,6 +11,8 @@ exports.keyboards = async (req, res) => {
 
   console.log("getKeyboards", getKeyboards);
 
+  const KeyboardsTheoretical = [23, 25, 26, 35, 33, 22, 87, 44, 33, 12, 12, 99]
+
   if (getKeyboards != null) {
     const resultArray = new Array(12).fill(0);
     getKeyboards.forEach((item) => {
@@ -18,7 +20,8 @@ exports.keyboards = async (req, res) => {
       resultArray[month] = item.TotalKeyboards;
     });
     res.status(200).json({
-      Total_of_keyboards: resultArray,
+      Actual_quantity_keyboards: resultArray,
+      Theoretical_quantity_keyboards: KeyboardsTheoretical
     });
   } else {
     res.status(500).json({
@@ -43,9 +46,12 @@ exports.mouses = async (req, res) => {
     MousesArray[month] = item.TotalMouses;
   });
 
+  const MousesTheoretical = [23, 25, 26, 35, 33, 22, 87, 44, 33, 12, 12, 99]
+
   if (MousesArray != null) {
     res.status(200).json({
-      MousesThroughTime: MousesArray,
+      Actual_quantity_mouses: MousesArray,
+      Theoretical_quantity_mouses: MousesTheoretical
     });
   } else {
     res.status(500).json({
@@ -73,9 +79,12 @@ exports.computers = async (req, res) => {
     monthlyTotals[month] = result.TotalCheckups;
   });
 
+  const ComputerTheoretical = [23, 25, 26, 35, 33, 22, 87, 44, 33, 12, 12, 99]
+
   if (monthlyTotals != null) {
     res.status(200).json({
-      Total_of_computers: monthlyTotals,
+      Actual_quantity_computers: monthlyTotals,
+      Theoretical_quantity_computers: ComputerTheoretical
     });
   } else {
     res.status(500).json({
@@ -99,9 +108,13 @@ exports.projectors = async (req, res) => {
     const month = item.Month - 1;
     ProjectorArray[month] = item.TotalProjectors;
   });
+
+  const ProjectorsTheoretical = [23, 25, 26, 35, 33, 22, 87, 44, 33, 12, 12, 99]
+  
   if (ProjectorArray != null) {
     res.status(200).json({
-      Total_of_projector: ProjectorArray,
+      Actual_quantity_projectors: ProjectorArray,
+      Theoretical_quantity_projectors: ProjectorsTheoretical
     });
   } else {
     res.status(500).json({
