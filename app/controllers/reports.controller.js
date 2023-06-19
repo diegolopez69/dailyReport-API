@@ -5,29 +5,22 @@ const { QueryTypes } = require("sequelize");
 // Retrieve the count of how many keyboards has through the time
 exports.keyboards = async (req, res) => {
   const getKeyboards = await db.sequelize.query(
-    "SELECT COUNT(*) AS totalKeyboardsNow FROM tb_checkups  WHERE there_is = 0 AND inventory_id  IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 3) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM CURRENT_DATE);",
-    { type: db.sequelize.QueryTypes.SELECT }
-  );
-  const getKeyboardsOneWeekBefore = await db.sequelize.query(
-    "SELECT COUNT(*) AS totalKeyboardsOneWeekBefore FROM tb_checkups  WHERE there_is = 0 AND inventory_id  IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 3) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM DATE_SUB(CURRENT_DATE, INTERVAL 1 WEEK));",
-    { type: db.sequelize.QueryTypes.SELECT }
-  );
-  const getKeyboardsTwoWeekBefore = await db.sequelize.query(
-    "SELECT COUNT(*) AS totalKeyboardsTwoWeekBefore FROM tb_checkups  WHERE there_is = 0 AND inventory_id  IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 3) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM DATE_SUB(CURRENT_DATE, INTERVAL 2 WEEK));",
+    "SELECT months.Month, COALESCE(checkups.TotalKeyboards, 0) AS TotalKeyboards FROM (SELECT 1 AS Month UNION ALL SELECT 2 AS Month UNION ALL SELECT 3 AS Month UNION ALL SELECT 4 AS Month UNION ALL SELECT 5 AS Month UNION ALL SELECT 6 AS Month UNION ALL SELECT 7 AS Month UNION ALL SELECT 8 AS Month UNION ALL SELECT 9 AS Month UNION ALL SELECT 10 AS Month UNION ALL SELECT 11 AS Month UNION ALL SELECT 12 AS Month ) AS months LEFT JOIN ( SELECT EXTRACT(MONTH FROM createdAt) AS Month, COUNT(*) AS TotalKeyboards FROM tb_checkups WHERE there_is = 0 AND inventory_id IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 3) AND EXTRACT(YEAR FROM createdAt) = EXTRACT(YEAR FROM CURRENT_DATE) GROUP BY EXTRACT(MONTH FROM createdAt)) AS checkups ON months.Month = checkups.Month ORDER BY months.Month;",
     { type: db.sequelize.QueryTypes.SELECT }
   );
 
-  console.log("getKeyboards", getKeyboards[0].totalKeyboardsNow)
-  console.log("getKeyboardsOneWeekBefore", getKeyboardsOneWeekBefore[0].totalKeyboardsOneWeekBefore)
-  console.log("getKeyboardsOneWeekBefore", getKeyboardsTwoWeekBefore[0].totalKeyboardsTwoWeekBefore)
+  // Create an array to store the results for each month
+  const KeyboardArray = Array(12).fill(0);
 
-  TotalOfKeabords = [getKeyboards[0].totalKeyboardsNow, getKeyboardsOneWeekBefore[0].totalKeyboardsOneWeekBefore, getKeyboardsTwoWeekBefore[0].totalKeyboardsTwoWeekBefore]
-  console.log('-------------------------------------------------------')
-  console.log('TotalOfKeabords', TotalOfKeabords)
-  
-  if (TotalOfKeabords != null) {
+  // Iterate over the query results and populate the KeyboardArray array
+  getKeyboards.forEach((result) => {
+    const month = result.Month - 1; // Adjust month to zero-based index
+    KeyboardArray[month] = result.TotalKeyboards;
+  });
+
+  if (KeyboardArray != null) {
     res.status(200).json({
-      Total_of_keyboards: TotalOfKeabords,
+      MousesThroughTime: KeyboardArray,
     });
   } else {
     res.status(500).json({
@@ -42,36 +35,19 @@ exports.keyboards = async (req, res) => {
 // Retrieve the count of how many mouses disapper has through the time
 exports.mouses = async (req, res) => {
   const getMouses = await db.sequelize.query(
-    "SELECT COUNT(*) AS totalMousesNow FROM tb_checkups WHERE there_is = 0 AND inventory_id IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 4) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM CURRENT_DATE);",
-    { type: db.sequelize.QueryTypes.SELECT }
-  );
-  const getMousesOneWeekBefore = await db.sequelize.query(
-    "SELECT COUNT(*) AS totalMousesOneWeekBefore FROM tb_checkups WHERE there_is = 0 AND inventory_id IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 4) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM DATE_SUB(CURRENT_DATE, INTERVAL 1 WEEK));",
-    { type: db.sequelize.QueryTypes.SELECT }
-  );
-  const getMousesTwoWeeksBefore = await db.sequelize.query(
-    "SELECT COUNT(*) AS totalMousesTwoWeeksBefore FROM tb_checkups WHERE there_is = 0 AND inventory_id IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 4) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM DATE_SUB(CURRENT_DATE, INTERVAL 2 WEEK));",
+    "SELECT months.Month, COALESCE(checkups.TotalMouses, 0) AS TotalMouses FROM ( SELECT 1 AS Month UNION ALL SELECT 2 AS Month UNION ALL SELECT 3 AS Month UNION ALL SELECT 4 AS Month UNION ALL SELECT 5 AS Month UNION ALL SELECT 6 AS Month UNION ALL SELECT 7 AS Month UNION ALL SELECT 8 AS Month UNION ALL SELECT 9 AS Month UNION ALL SELECT 10 AS Month UNION ALL SELECT 11 AS Month UNION ALL SELECT 12 AS Month ) AS months LEFT JOIN ( SELECT EXTRACT(MONTH FROM createdAt) AS Month, COUNT(*) AS TotalMouses FROM tb_checkups WHERE there_is = 0 AND inventory_id IN ( SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 4 ) AND EXTRACT(YEAR FROM createdAt) = EXTRACT(YEAR FROM CURRENT_DATE) GROUP BY EXTRACT(MONTH FROM createdAt) ) AS checkups ON months.Month = checkups.Month ORDER BY months.Month;",
     { type: db.sequelize.QueryTypes.SELECT }
   );
 
+  const MousesArray = new Array(12).fill(0);
+  getMouses.forEach((item) => {
+    const month = item.Month - 1;
+    MousesArray[month] = item.TotalMouses;
+  });
 
-  getMousesOfThisWeek = getMouses[0].totalMousesNow
-  console.log('getMousesOfThisWeek', getMousesOfThisWeek)
-  
-  getMousesWeekBefore = getMousesOneWeekBefore[0].totalMousesOneWeekBefore
-  console.log('getMousesFixed 2', getMousesWeekBefore)
-
-  getMousesTwoWeeksBeforee = getMousesTwoWeeksBefore[0].totalMousesTwoWeeksBefore
-  console.log('getMousesFixed 3', getMousesTwoWeeksBeforee)
-
-  TotalOfTheMouses = [getMousesOfThisWeek, getMousesWeekBefore, getMousesTwoWeeksBeforee]
-  console.log('-------------------------------------------------------')
-  console.log('TotalOfTheMouses', TotalOfTheMouses)
-
-
-  if (TotalOfTheMouses != null) {
+  if (MousesArray != null) {
     res.status(200).json({
-      MousesThroughTime: TotalOfTheMouses,
+      MousesThroughTime: MousesArray,
     });
   } else {
     res.status(500).json({
@@ -83,20 +59,25 @@ exports.mouses = async (req, res) => {
   }
 };
 
-
-
 // Retrieve the count of how many computers has through the time
 exports.computers = async (req, res) => {
   const getComputers = await db.sequelize.query(
-    "SELECT COUNT(*) AS TotalComputers FROM tb_computers",
+    "SELECT months.Month, COALESCE(checkups.TotalCheckups, 0) AS TotalCheckups FROM ( SELECT 1 AS Month UNION ALL SELECT 2 AS Month UNION ALL SELECT 3 AS Month UNION ALL SELECT 4 AS Month UNION ALL SELECT 5 AS Month UNION ALL SELECT 6 AS Month UNION ALL SELECT 7 AS Month UNION ALL SELECT 8 AS Month UNION ALL SELECT 9 AS Month UNION ALL SELECT 10 AS Month UNION ALL SELECT 11 AS Month UNION ALL SELECT 12 AS Month ) AS months LEFT JOIN ( SELECT EXTRACT(MONTH FROM createdAt) AS Month, COUNT(*) AS TotalCheckups FROM tb_checkups WHERE there_is = 0 AND Inventory_id IN (SELECT Inventory_id FROM tb_inventories WHERE Computer_id IN (SELECT Computer_id FROM tb_computers)) GROUP BY EXTRACT(MONTH FROM createdAt) ) AS checkups ON months.Month = checkups.Month ORDER BY months.Month; ",
     { type: db.sequelize.QueryTypes.SELECT }
   );
 
-  NumberOfComputers = getComputers[0].TotalComputers;
+  // Create an array to store the results for each month
+  const monthlyTotals = Array(12).fill(0);
 
-  if (NumberOfComputers != null) {
+  // Iterate over the query results and populate the monthlyTotals array
+  getComputers.forEach((result) => {
+    const month = result.Month - 1; // Adjust month to zero-based index
+    monthlyTotals[month] = result.TotalCheckups;
+  });
+
+  if (monthlyTotals != null) {
     res.status(200).json({
-      Total_of_computers: NumberOfComputers,
+      Total_of_computers: monthlyTotals,
     });
   } else {
     res.status(500).json({
@@ -108,29 +89,21 @@ exports.computers = async (req, res) => {
   }
 };
 
-
 // Retrieve the count of how many projectors has
 exports.projectors = async (req, res) => {
   const getProjector = await db.sequelize.query(
-    "SELECT COUNT(*) AS totalProjectorsNow FROM tb_checkups WHERE there_is = 0 AND inventory_id IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 11) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM CURRENT_DATE);",
+    "SELECT months.Month, COALESCE(checkups.TotalProjectors, 0) AS TotalProjectors FROM ( SELECT 1 AS Month UNION ALL SELECT 2 AS Month UNION ALL SELECT 3 AS Month UNION ALL SELECT 4 AS Month UNION ALL SELECT 5 AS Month UNION ALL SELECT 6 AS Month UNION ALL SELECT 7 AS Month UNION ALL SELECT 8 AS Month UNION ALL SELECT 9 AS Month UNION ALL SELECT 10 AS Month UNION ALL SELECT 11 AS Month UNION ALL SELECT 12 AS Month ) AS months LEFT JOIN ( SELECT EXTRACT(MONTH FROM createdAt) AS Month, COUNT(*) AS TotalProjectors FROM tb_checkups WHERE there_is = 0 AND inventory_id IN ( SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 11 ) GROUP BY EXTRACT(MONTH FROM createdAt) ) AS checkups ON months.Month = checkups.Month ORDER BY months.Month; ",
     { type: db.sequelize.QueryTypes.SELECT }
   );
-  const getProjectorOneWeekBefore = await db.sequelize.query(
-    "SELECT COUNT(*) AS totalProjectorsOneWeekBegfore FROM tb_checkups WHERE there_is = 0 AND inventory_id IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 11) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM DATE_SUB(CURRENT_DATE, INTERVAL 1 WEEK));",
-    { type: db.sequelize.QueryTypes.SELECT }
-  );
-  const getProjectorTwoWeekBefore = await db.sequelize.query(
-    "SELECT COUNT(*) AS totalProjectorsTwoWeekBegfore FROM tb_checkups WHERE there_is = 0 AND inventory_id IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 11) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM DATE_SUB(CURRENT_DATE, INTERVAL 2 WEEK));",
-    { type: db.sequelize.QueryTypes.SELECT }
-  );
-  
-  TotalOfProyectors = [getProjector[0].totalProjectorsNow, getProjectorOneWeekBefore[0].totalProjectorsOneWeekBegfore, getProjectorTwoWeekBefore[0].totalProjectorsTwoWeekBegfore]
 
-  console.log('TotalOfProyectors', TotalOfProyectors)
-
-  if (TotalOfProyectors != null) {
+  const ProjectorArray = new Array(12).fill(0);
+  getProjector.forEach((item) => {
+    const month = item.Month - 1;
+    ProjectorArray[month] = item.TotalProjectors;
+  });
+  if (ProjectorArray != null) {
     res.status(200).json({
-      Total_of_projector: TotalOfProyectors,
+      Total_of_projector: ProjectorArray,
     });
   } else {
     res.status(500).json({
@@ -145,24 +118,23 @@ exports.projectors = async (req, res) => {
 // Gets the classrooms that have already been checked and the classrooms that have not.
 exports.classrooms = async (req, res) => {
   const getAllClassroomsChecked = await db.sequelize.query(
-    "SELECT COUNT(*) AS ClassroomChecked FROM tb_checkups WHERE Review = 1;",
+    "SELECT COUNT(*) AS ClassroomChecked FROM tb_checkups WHERE Review = 1 AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM CURRENT_DATE);",
     { type: db.sequelize.QueryTypes.SELECT }
   );
   const getAllClassroomsNotChecked = await db.sequelize.query(
-    "SELECT COUNT(*) AS ClassroomNotChecked FROM tb_checkups WHERE Review = 0;",
+    "SELECT COUNT(*) AS ClassroomNotChecked FROM tb_checkups WHERE Review = 0 AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM CURRENT_DATE);",
 
     { type: db.sequelize.QueryTypes.SELECT }
   );
 
-  console.log('getAllClassroomsChecked', getAllClassroomsChecked)
-  console.log('getAllClassroomsNotChecked', getAllClassroomsNotChecked)
-  
-  totalClassroomsChecked = [getAllClassroomsChecked[0].ClassroomChecked, getAllClassroomsNotChecked[0].ClassroomNotChecked]
-  console.log('totalClassroomsChecked', totalClassroomsChecked)
+  totalClassroomsChecked = [
+    getAllClassroomsChecked[0].ClassroomChecked,
+    getAllClassroomsNotChecked[0].ClassroomNotChecked,
+  ];
 
   if (totalClassroomsChecked != null) {
     res.status(200).json({
-      Classrooms: totalClassroomsChecked
+      Classrooms: totalClassroomsChecked,
     });
   } else {
     res.status(500).json({

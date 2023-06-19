@@ -32,6 +32,7 @@ module.exports = (app) => {
     [authJwt.verifyToken, authJwt.isModerator],
     Reports.classrooms
   );
+  
   //Retrieve all projectors
   router.get(
     "/projectors",
@@ -39,6 +40,5 @@ module.exports = (app) => {
     Reports.projectors
   );
   
-
   app.use("/api/report", router);
 };
