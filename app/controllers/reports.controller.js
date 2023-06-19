@@ -60,15 +60,22 @@ exports.mouses = async (req, res) => {
 // Retrieve the count of how many computers has through the time
 exports.computers = async (req, res) => {
   const getComputers = await db.sequelize.query(
-    "SELECT * FROM tb_checkups WHERE there_is = 0 AND Inventory_id IN (SELECT Inventory_id FROM tb_inventories WHERE Computer_id IN (SELECT Computer_id FROM tb_computers));",
+    "SELECT months.Month, COALESCE(checkups.TotalCheckups, 0) AS TotalCheckups FROM ( SELECT 1 AS Month UNION ALL SELECT 2 AS Month UNION ALL SELECT 3 AS Month UNION ALL SELECT 4 AS Month UNION ALL SELECT 5 AS Month UNION ALL SELECT 6 AS Month UNION ALL SELECT 7 AS Month UNION ALL SELECT 8 AS Month UNION ALL SELECT 9 AS Month UNION ALL SELECT 10 AS Month UNION ALL SELECT 11 AS Month UNION ALL SELECT 12 AS Month ) AS months LEFT JOIN ( SELECT EXTRACT(MONTH FROM createdAt) AS Month, COUNT(*) AS TotalCheckups FROM tb_checkups WHERE there_is = 0 AND Inventory_id IN (SELECT Inventory_id FROM tb_inventories WHERE Computer_id IN (SELECT Computer_id FROM tb_computers)) GROUP BY EXTRACT(MONTH FROM createdAt) ) AS checkups ON months.Month = checkups.Month ORDER BY months.Month; ",
     { type: db.sequelize.QueryTypes.SELECT }
   );
 
-  console.log("getComputers", getComputers);
+  // Create an array to store the results for each month
+  const monthlyTotals = Array(12).fill(0);
 
-  if (getComputers != null) {
+  // Iterate over the query results and populate the monthlyTotals array
+  getComputers.forEach((result) => {
+    const month = result.Month - 1; // Adjust month to zero-based index
+    monthlyTotals[month] = result.TotalCheckups;
+  });
+
+  if (monthlyTotals != null) {
     res.status(200).json({
-      Total_of_computers: getComputers,
+      Total_of_computers: monthlyTotals,
     });
   } else {
     res.status(500).json({
@@ -83,29 +90,18 @@ exports.computers = async (req, res) => {
 // Retrieve the count of how many projectors has
 exports.projectors = async (req, res) => {
   const getProjector = await db.sequelize.query(
-    "SELECT COUNT(*) AS totalProjectorsNow FROM tb_checkups WHERE there_is = 0 AND inventory_id IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 11) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM CURRENT_DATE);",
+    "SELECT months.Month, COALESCE(checkups.TotalProjectors, 0) AS TotalProjectors FROM ( SELECT 1 AS Month UNION ALL SELECT 2 AS Month UNION ALL SELECT 3 AS Month UNION ALL SELECT 4 AS Month UNION ALL SELECT 5 AS Month UNION ALL SELECT 6 AS Month UNION ALL SELECT 7 AS Month UNION ALL SELECT 8 AS Month UNION ALL SELECT 9 AS Month UNION ALL SELECT 10 AS Month UNION ALL SELECT 11 AS Month UNION ALL SELECT 12 AS Month ) AS months LEFT JOIN ( SELECT EXTRACT(MONTH FROM createdAt) AS Month, COUNT(*) AS TotalProjectors FROM tb_checkups WHERE there_is = 0 AND inventory_id IN ( SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 11 ) GROUP BY EXTRACT(MONTH FROM createdAt) ) AS checkups ON months.Month = checkups.Month ORDER BY months.Month; ",
     { type: db.sequelize.QueryTypes.SELECT }
   );
-  const getProjectorOneWeekBefore = await db.sequelize.query(
-    "SELECT COUNT(*) AS totalProjectorsOneWeekBegfore FROM tb_checkups WHERE there_is = 0 AND inventory_id IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 11) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM DATE_SUB(CURRENT_DATE, INTERVAL 1 WEEK));",
-    { type: db.sequelize.QueryTypes.SELECT }
-  );
-  const getProjectorTwoWeekBefore = await db.sequelize.query(
-    "SELECT COUNT(*) AS totalProjectorsTwoWeekBegfore FROM tb_checkups WHERE there_is = 0 AND inventory_id IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 11) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM DATE_SUB(CURRENT_DATE, INTERVAL 2 WEEK));",
-    { type: db.sequelize.QueryTypes.SELECT }
-  );
-
-  TotalOfProyectors = [
-    getProjector[0].totalProjectorsNow,
-    getProjectorOneWeekBefore[0].totalProjectorsOneWeekBegfore,
-    getProjectorTwoWeekBefore[0].totalProjectorsTwoWeekBegfore,
-  ];
-
-  console.log("TotalOfProyectors", TotalOfProyectors);
-
-  if (TotalOfProyectors != null) {
+  
+  const ProjectorArray = new Array(12).fill(0);
+  getProjector.forEach((item) => {
+    const month = item.Month - 1;
+    ProjectorArray[month] = item.TotalProjectors;
+  });
+  if (ProjectorArray != null) {
     res.status(200).json({
-      Total_of_projector: TotalOfProyectors,
+      Total_of_projector: ProjectorArray,
     });
   } else {
     res.status(500).json({
