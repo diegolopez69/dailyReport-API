@@ -5,30 +5,21 @@ const { QueryTypes } = require("sequelize");
 // Retrieve the count of how many keyboards has through the time
 exports.keyboards = async (req, res) => {
   const getKeyboards = await db.sequelize.query(
-    "SELECT COUNT(*) AS totalKeyboardsNow FROM tb_checkups  WHERE there_is = 0 AND inventory_id  IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 3) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM CURRENT_DATE);",
-    { type: db.sequelize.QueryTypes.SELECT }
-  );
-  const getKeyboardsOneWeekBefore = await db.sequelize.query(
-    "SELECT COUNT(*) AS totalKeyboardsOneWeekBefore FROM tb_checkups  WHERE there_is = 0 AND inventory_id  IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 3) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM DATE_SUB(CURRENT_DATE, INTERVAL 1 WEEK));",
-    { type: db.sequelize.QueryTypes.SELECT }
-  );
-  const getKeyboardsTwoWeekBefore = await db.sequelize.query(
-    "SELECT COUNT(*) AS totalKeyboardsTwoWeekBefore FROM tb_checkups  WHERE there_is = 0 AND inventory_id  IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 3) AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM DATE_SUB(CURRENT_DATE, INTERVAL 2 WEEK));",
+    "SELECT months.Month, COALESCE(checkups.TotalKeyboards, 0) AS TotalKeyboards FROM (SELECT 1 AS Month UNION ALL SELECT 2 AS Month UNION ALL SELECT 3 AS Month UNION ALL SELECT 4 AS Month UNION ALL SELECT 5 AS Month UNION ALL SELECT 6 AS Month UNION ALL SELECT 7 AS Month UNION ALL SELECT 8 AS Month UNION ALL SELECT 9 AS Month UNION ALL SELECT 10 AS Month UNION ALL SELECT 11 AS Month UNION ALL SELECT 12 AS Month ) AS months LEFT JOIN ( SELECT EXTRACT(MONTH FROM createdAt) AS Month, COUNT(*) AS TotalKeyboards FROM tb_checkups WHERE there_is = 0 AND inventory_id IN (SELECT Inventory_id FROM tb_inventories WHERE Tool_id = 3) AND EXTRACT(YEAR FROM createdAt) = EXTRACT(YEAR FROM CURRENT_DATE) GROUP BY EXTRACT(MONTH FROM createdAt)) AS checkups ON months.Month = checkups.Month ORDER BY months.Month;",
     { type: db.sequelize.QueryTypes.SELECT }
   );
 
-  console.log("getKeyboards", getKeyboards[0].totalKeyboardsNow)
-  console.log("getKeyboardsOneWeekBefore", getKeyboardsOneWeekBefore[0].totalKeyboardsOneWeekBefore)
-  console.log("getKeyboardsOneWeekBefore", getKeyboardsTwoWeekBefore[0].totalKeyboardsTwoWeekBefore)
+  console.log("getKeyboards", getKeyboards)
 
-  TotalOfKeabords = [getKeyboards[0].totalKeyboardsNow, getKeyboardsOneWeekBefore[0].totalKeyboardsOneWeekBefore, getKeyboardsTwoWeekBefore[0].totalKeyboardsTwoWeekBefore]
-  console.log('-------------------------------------------------------')
-  console.log('TotalOfKeabords', TotalOfKeabords)
-  
+  if (getKeyboards != null) {
+    const resultArray = new Array(12).fill(0);
+    getKeyboards.forEach((item) => {
+      const month = item.Month - 1;
+      resultArray[month] = item.TotalKeyboards;
+    });
 
-  if (TotalOfKeabords != null) {
     res.status(200).json({
-      Total_of_keyboards: TotalOfKeabords,
+      Total_of_keyboards: resultArray,
     });
   } else {
     res.status(500).json({
@@ -89,15 +80,15 @@ exports.mouses = async (req, res) => {
 // Retrieve the count of how many computers has through the time
 exports.computers = async (req, res) => {
   const getComputers = await db.sequelize.query(
-    "SELECT COUNT(*) AS TotalComputers FROM tb_computers",
+    "SELECT * FROM tb_checkups WHERE there_is = 0 AND Inventory_id IN (SELECT Inventory_id FROM tb_inventories WHERE Computer_id IN (SELECT Computer_id FROM tb_computers));",
     { type: db.sequelize.QueryTypes.SELECT }
   );
 
-  NumberOfComputers = getComputers[0].TotalComputers;
+  console.log('getComputers', getComputers)
 
-  if (NumberOfComputers != null) {
+  if (getComputers != null) {
     res.status(200).json({
-      Total_of_computers: NumberOfComputers,
+      Total_of_computers: getComputers,
     });
   } else {
     res.status(500).json({
