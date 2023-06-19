@@ -26,9 +26,9 @@ exports.keyboards = async (req, res) => {
   console.log('TotalOfKeabords', TotalOfKeabords)
   
 
-  if (getKeyboards != null) {
+  if (TotalOfKeabords != null) {
     res.status(200).json({
-      Total_of_keyboards: getKeyboards,
+      Total_of_keyboards: TotalOfKeabords,
     });
   } else {
     res.status(500).json({
@@ -146,11 +146,11 @@ exports.projectors = async (req, res) => {
 // Gets the classrooms that have already been checked and the classrooms that have not.
 exports.classrooms = async (req, res) => {
   const getAllClassroomsChecked = await db.sequelize.query(
-    "SELECT COUNT(*) AS ClassroomChecked FROM tb_checkups WHERE Review = 1;",
+    "SELECT COUNT(*) AS ClassroomChecked FROM tb_checkups WHERE Review = 1 AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM CURRENT_DATE);",
     { type: db.sequelize.QueryTypes.SELECT }
   );
   const getAllClassroomsNotChecked = await db.sequelize.query(
-    "SELECT COUNT(*) AS ClassroomNotChecked FROM tb_checkups WHERE Review = 0;",
+    "SELECT COUNT(*) AS ClassroomNotChecked FROM tb_checkups WHERE Review = 0 AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM CURRENT_DATE);",
 
     { type: db.sequelize.QueryTypes.SELECT }
   );
