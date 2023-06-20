@@ -114,7 +114,7 @@ exports.projectors = async (req, res) => {
   if (ProjectorArray != null) {
     res.status(200).json({
       Actual_quantity_projectors: ProjectorArray,
-      Theoretical_quantity_projectors: ProjectorsTheoretical
+      Theoretical_quantity_projectors: ComputerTheoretical
     });
   } else {
     res.status(500).json({
@@ -129,7 +129,7 @@ exports.projectors = async (req, res) => {
 // Gets the classrooms that have already been checked and the classrooms that have not.
 exports.classrooms = async (req, res) => {
   const getAllClassroomsChecked = await db.sequelize.query(
-    "SELECT COUNT(*) AS ClassroomChecked FROM tb_checkups WHERE Review = 1 AND EXTRACT(WEEK FROM createdAt) = EXTRACT(WEEK FROM CURRENT_DATE);",
+    "SELECT COUNT(DISTINCT ci.Classroom_id) AS ClassroomChecked FROM tb_checkups c JOIN tb_inventories ci ON c.Classroom_id = ci.Classroom_id WHERE c.Review = 1 AND EXTRACT(WEEK FROM c.createdAt) = EXTRACT(WEEK FROM CURRENT_DATE);",
     { type: db.sequelize.QueryTypes.SELECT }
   );
   const getAllClassroomsNotChecked = await db.sequelize.query(
