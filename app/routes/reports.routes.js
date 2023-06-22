@@ -7,14 +7,14 @@ module.exports = (app) => {
   //Retrieve all keybords
   router.get(
     "/keyboards",
-    [authJwt.verifyToken, authJwt.isModerator],
+    [authJwt.verifyToken],
     Reports.keyboards
   );
 
   //Retrieve all mouses
   router.get(
     "/mouses",
-    [authJwt.verifyToken, authJwt.isModerator],
+    [authJwt.verifyToken],
     Reports.mouses
   );
 
@@ -22,21 +22,21 @@ module.exports = (app) => {
   //Retrieve all computers
   router.get(
     "/computers",
-    [authJwt.verifyToken, authJwt.isModerator],
+    [authJwt.verifyToken],
     Reports.computers
   );
 
   //Retrieve all projectors
   router.get(
     "/projectors",
-    [authJwt.verifyToken, authJwt.isModerator],
+    [authJwt.verifyToken],
     Reports.projectors
   );
 
   //Retrieve all classrooms
   router.get(
     "/classroomsChecked",
-    [authJwt.verifyToken, authJwt.isModerator],
+    [authJwt.verifyToken],
     Reports.classrooms
   );
 

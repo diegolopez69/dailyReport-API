@@ -5,29 +5,29 @@ module.exports = (app) => {
   var router = require("express").Router();
 
   // Create a new Checkups
-  router.post("/", [authJwt.verifyToken, authJwt.isModerator], Checkups.create);
+  router.post("/", [authJwt.verifyToken], Checkups.create);
 
   // Create a negative Checkup
   router.post(
     "/negative",
-    [authJwt.verifyToken, authJwt.isModerator],
+    [authJwt.verifyToken],
     Checkups.createNegative
   );
 
   // Retrieve all Classrooms
-  router.get("/", [authJwt.verifyToken, authJwt.isModerator], Checkups.findAll);
+  router.get("/", [authJwt.verifyToken], Checkups.findAll);
 
   // Retrieve a single Checkups with id
   router.get(
     "/:id",
-    [authJwt.verifyToken, authJwt.isModerator],
+    [authJwt.verifyToken],
     Checkups.findOne
   );
 
   // Update a Checkups with id
   router.put(
     "/:id",
-    [authJwt.verifyToken, authJwt.isModerator],
+    [authJwt.verifyToken, authJwt.isAdmin],
     Checkups.update
   );
 
