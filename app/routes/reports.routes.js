@@ -7,38 +7,30 @@ module.exports = (app) => {
   //Retrieve all keybords
   router.get(
     "/keyboards",
-    [authJwt.verifyToken, authJwt.isModerator],
+    [authJwt.verifyToken],
     Reports.keyboards
   );
 
   //Retrieve all mouses
   router.get(
     "/mouses",
-    [authJwt.verifyToken, authJwt.isModerator],
+    [authJwt.verifyToken],
     Reports.mouses
   );
 
-
-  //Retrieve all computers
-  router.get(
-    "/computers",
-    [authJwt.verifyToken, authJwt.isModerator],
-    Reports.computers
-  );
-
-  //Retrieve all ClassroomsCheecked
-  router.get(
-    "/classroomsChecked",
-    [authJwt.verifyToken, authJwt.isModerator],
-    Reports.classrooms
-  );
-  
   //Retrieve all projectors
   router.get(
     "/projectors",
-    [authJwt.verifyToken, authJwt.isModerator],
+    [authJwt.verifyToken],
     Reports.projectors
   );
-  
+
+  //Retrieve all classrooms
+  router.get(
+    "/classroomsChecked",
+    [authJwt.verifyToken],
+    Reports.classrooms
+  );
+
   app.use("/api/report", router);
 };
