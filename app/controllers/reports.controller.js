@@ -148,41 +148,6 @@ exports.projectors = async (req, res) => {
   }
 };
 
-//TODO- Comprobar con Billy en que queda esto
-// Retrieve the count of how many computers has through the time
-exports.computers = async (req, res) => {
-  try {
-    const getAmountOfComputersIfPhysicallyExist = await db.sequelize.query(
-      "SELECT months.Month, COALESCE(checkups.TotalCheckups, 0) AS TotalCheckups FROM ( SELECT 1 AS Month UNION ALL SELECT 2 AS Month UNION ALL SELECT 3 AS Month UNION ALL SELECT 4 AS Month UNION ALL SELECT 5 AS Month UNION ALL SELECT 6 AS Month UNION ALL SELECT 7 AS Month UNION ALL SELECT 8 AS Month UNION ALL SELECT 9 AS Month UNION ALL SELECT 10 AS Month UNION ALL SELECT 11 AS Month UNION ALL SELECT 12 AS Month ) AS months LEFT JOIN ( SELECT EXTRACT(MONTH FROM createdAt) AS Month, COUNT(*) AS TotalCheckups FROM tb_checkups WHERE there_is = 0 AND Inventory_id IN (SELECT Inventory_id FROM tb_inventories WHERE Computer_id IN (SELECT Computer_id FROM tb_computers)) GROUP BY EXTRACT(MONTH FROM createdAt) ) AS checkups ON months.Month = checkups.Month ORDER BY months.Month;",
-      { type: db.sequelize.QueryTypes.SELECT }
-    );
-  
-    const ComputerTheoretical = [23, 25, 26, 35, 33, 22, 87, 44, 33, 12, 12, 99]
-  
-    console.log('getAmountOfComputersIfPhysicallyExist', getAmountOfComputersIfPhysicallyExist)
-
-    if (getAmountOfComputersIfPhysicallyExist) {
-      res.status(200).json({
-        Actual_quantity_computers: getAmountOfComputersIfPhysicallyExist,
-        Theoretical_quantity_computers: ComputerTheoretical
-      });
-    } else {
-      res.status(500).json({
-        status: 500,
-        Err:
-          err.message ||
-          "Some error occurred while retrieving the total of computers .",
-      });
-    } 
-  } catch (error) {
-    // Handle any unexpected errors
-    res.status(500).json({
-      success: false,
-      message: "Error retrieving computers totals",
-      error: error.message
-    });
-  }
-};
 
 // Gets the classrooms that have already been checked and the classrooms that have not.
 exports.classrooms = async (req, res) => {
