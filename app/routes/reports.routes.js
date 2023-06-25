@@ -18,14 +18,6 @@ module.exports = (app) => {
     Reports.mouses
   );
 
-
-  //Retrieve all computers
-  router.get(
-    "/computers",
-    [authJwt.verifyToken],
-    Reports.computers
-  );
-
   //Retrieve all projectors
   router.get(
     "/projectors",
