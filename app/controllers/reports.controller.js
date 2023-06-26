@@ -5,44 +5,23 @@ const { QueryTypes } = require("sequelize");
 // Function to retrieve the actual amount of keyboards that physically exist by months
 async function getActualAmountByMonth(columnName, toolId) {
   const query = `
-    SELECT months.month, COALESCE(checkups.${columnName}, 0) AS ${columnName}
-    FROM (
-      SELECT 1 AS month UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL
-      SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL
-      SELECT 9 UNION ALL SELECT 10 UNION ALL SELECT 11 UNION ALL SELECT 12
-    ) AS months
-    LEFT JOIN (
-      SELECT EXTRACT(MONTH FROM createdAt) AS month, COUNT(*) AS ${columnName}
-      FROM tb_checkups
-      WHERE there_is = 0 AND inventory_id IN (
-        SELECT Inventory_id FROM tb_inventories WHERE Tool_id = ${toolId}
-      ) AND EXTRACT(YEAR FROM createdAt) = EXTRACT(YEAR FROM CURRENT_DATE)
-      GROUP BY EXTRACT(MONTH FROM createdAt)
-    ) AS checkups ON months.month = checkups.month
-    ORDER BY months.month;
+  SELECT months.month, COALESCE(inventories.${columnName}, 0) AS ${columnName}
+  FROM (
+    SELECT 1 AS month UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL
+    SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL
+    SELECT 9 UNION ALL SELECT 10 UNION ALL SELECT 11 UNION ALL SELECT 12
+  ) AS months
+  LEFT JOIN (
+    SELECT EXTRACT(MONTH FROM createdAt) AS month, COUNT(*) AS ${columnName}
+    FROM tb_inventories
+    WHERE Tool_id = ${toolId}
+      AND EXTRACT(MONTH FROM createdAt) = EXTRACT(MONTH FROM CURRENT_DATE)
+      AND EXTRACT(YEAR FROM createdAt) = EXTRACT(YEAR FROM CURRENT_DATE)
+    GROUP BY EXTRACT(MONTH FROM createdAt)
+  ) AS inventories ON months.month = inventories.month
+  ORDER BY months.month;
   `;
 
-  const result = await db.sequelize.query(query, { type: db.sequelize.QueryTypes.SELECT });
-  return result;
-}
-
-
-// Function to retrieve the theoretical amount by months
-async function getTheoreticalAmountByMonth(columnName, toolId) {
-  const query = `
-    SELECT months.month, COALESCE(t.${columnName}, 0) AS ${columnName}
-    FROM (
-      SELECT 1 AS month UNION SELECT 2 UNION SELECT 3 UNION SELECT 4 UNION SELECT 5 UNION SELECT 6 UNION
-      SELECT 7 UNION SELECT 8 UNION SELECT 9 UNION SELECT 10 UNION SELECT 11 UNION SELECT 12
-    ) AS months
-    LEFT JOIN (
-      SELECT MONTH(createdAt) AS month, COUNT(*) AS ${columnName}
-      FROM tb_inventories
-      WHERE Tool_id = ${toolId} AND YEAR(createdAt) = YEAR(CURRENT_DATE())
-      GROUP BY MONTH(createdAt)
-    ) AS t ON months.month = t.month
-    ORDER BY months.month;
-  `;
   const result = await db.sequelize.query(query, { type: db.sequelize.QueryTypes.SELECT });
   return result;
 }
@@ -53,15 +32,11 @@ exports.keyboards = async (req, res) => {
     // Retrive the actual count of keyboards that physically exist
     const getAmountOfKeyboardsIfPhysicallyExist = await getActualAmountByMonth('total_keyboards', 3);
 
-    // Retrieve the theoretical quantity of keyboards
-    const theoreticalAmountOfKeyboards = await getTheoreticalAmountByMonth('quantity_keyboards', 3);
-
     // Check if both queries were successful
-    if (getAmountOfKeyboardsIfPhysicallyExist && theoreticalAmountOfKeyboards) {
+    if (getAmountOfKeyboardsIfPhysicallyExist) {
       // Return the results with success message
       res.status(200).json({
         actual_number_of_keyboards: getAmountOfKeyboardsIfPhysicallyExist,
-        theoretical_quantity_keyboards: theoreticalAmountOfKeyboards
       });
     } else {
       // Return an error if there was a problem with the queries
@@ -87,14 +62,10 @@ exports.mouses = async (req, res) => {
   // Query to get the actual count of mouses that physically exist
   const getAmountOfMousesIfPhysicallyExist = await getActualAmountByMonth('total_mouses', 4);
 
-  // Query to get the theoretical quantity of mouses for each month
-  const getTheoreticalAmountOfMouses = await getTheoreticalAmountByMonth('quantity_mouses', 4);
-
   // Check if the queries were successful and return the results
-  if (getAmountOfMousesIfPhysicallyExist && getTheoreticalAmountOfMouses) {
+  if (getAmountOfMousesIfPhysicallyExist) {
     res.status(200).json({
       actual_number_of_mouses: getAmountOfMousesIfPhysicallyExist,
-      theoretical_quantity_mouses: getTheoreticalAmountOfMouses
     });
   } else {
     // Return an error if there was an issue retrieving the data
@@ -118,16 +89,12 @@ exports.projectors = async (req, res) => {
   try {
     // Retrive the actual count of projectors that physically exist
     const getAmountOfProjectorsIfPhysicallyExist = await getActualAmountByMonth('total_projectors', 11);
-  
-    // Retrieve the theoretical quantity of projectors
-    const getTheoreticalAmountOfKeyboards = await getTheoreticalAmountByMonth('quantity_projectors', 11);
     
     // Check if both queries were successful
-    if (getAmountOfProjectorsIfPhysicallyExist && getTheoreticalAmountOfKeyboards) {
+    if (getAmountOfProjectorsIfPhysicallyExist) {
       // Return the results with success message
       res.status(200).json({
         Actual_quantity_projectors: getAmountOfProjectorsIfPhysicallyExist,
-        Theoretical_quantity_projectors: getTheoreticalAmountOfKeyboards
       });
     } else {
       // Return an error if there was a problem with the queries
@@ -161,14 +128,10 @@ exports.classrooms = async (req, res) => {
     { type: db.sequelize.QueryTypes.SELECT }
   );
 
-  console.log("getAllClassroomsChecked", getAllClassroomsChecked);
-  console.log("getAllClassroomsNotChecked", getAllClassroomsNotChecked);
-
   totalClassroomsChecked = [
     getAllClassroomsChecked[0].ClassroomChecked,
     getAllClassroomsNotChecked[0].ClassroomNotChecked,
   ];
-  console.log("totalClassroomsChecked", totalClassroomsChecked);
 
   if (totalClassroomsChecked != null) {
     res.status(200).json({
