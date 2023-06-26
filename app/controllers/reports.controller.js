@@ -5,21 +5,21 @@ const { QueryTypes } = require("sequelize");
 // Function to retrieve the actual amount of keyboards that physically exist by months
 async function getActualAmountByMonth(columnName, toolId) {
   const query = `
-    SELECT months.month, COALESCE(checkups.${columnName}, 0) AS ${columnName}
-    FROM (
-      SELECT 1 AS month UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL
-      SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL
-      SELECT 9 UNION ALL SELECT 10 UNION ALL SELECT 11 UNION ALL SELECT 12
-    ) AS months
-    LEFT JOIN (
-      SELECT EXTRACT(MONTH FROM createdAt) AS month, COUNT(*) AS ${columnName}
-      FROM tb_checkups
-      WHERE there_is = 0 AND inventory_id IN (
-        SELECT Inventory_id FROM tb_inventories WHERE Tool_id = ${toolId}
-      ) AND EXTRACT(YEAR FROM createdAt) = EXTRACT(YEAR FROM CURRENT_DATE)
-      GROUP BY EXTRACT(MONTH FROM createdAt)
-    ) AS checkups ON months.month = checkups.month
-    ORDER BY months.month;
+  SELECT months.month, COALESCE(inventories.${columnName}, 0) AS ${columnName}
+  FROM (
+    SELECT 1 AS month UNION ALL SELECT 2 UNION ALL SELECT 3 UNION ALL SELECT 4 UNION ALL
+    SELECT 5 UNION ALL SELECT 6 UNION ALL SELECT 7 UNION ALL SELECT 8 UNION ALL
+    SELECT 9 UNION ALL SELECT 10 UNION ALL SELECT 11 UNION ALL SELECT 12
+  ) AS months
+  LEFT JOIN (
+    SELECT EXTRACT(MONTH FROM createdAt) AS month, COUNT(*) AS ${columnName}
+    FROM tb_inventories
+    WHERE Tool_id = ${toolId}
+      AND EXTRACT(MONTH FROM createdAt) = EXTRACT(MONTH FROM CURRENT_DATE)
+      AND EXTRACT(YEAR FROM createdAt) = EXTRACT(YEAR FROM CURRENT_DATE)
+    GROUP BY EXTRACT(MONTH FROM createdAt)
+  ) AS inventories ON months.month = inventories.month
+  ORDER BY months.month;
   `;
 
   const result = await db.sequelize.query(query, { type: db.sequelize.QueryTypes.SELECT });
