@@ -7,7 +7,6 @@ const Joi = require("joi");
 const computerSchema = Joi.object({
   Name: Joi.string().required(),
   Serie: Joi.string().required(),
-  
 });
 
 // Create and Save a new Computer
@@ -125,47 +124,72 @@ exports.update = (req, res) => {
 exports.delete = async (req, res) => {
   const id = req.params.id;
 
-  const verifyComputer = await db.sequelize.query(
-    "SELECT COUNT(*) AS number FROM tb_inventories WHERE `Computer_id` = ?",
-    //"SELECT * FROM tb_inventories WHERE `Computer_id` = ?",
-    {
-      replacements: [id],
-      type: db.sequelize.QueryTypes.SELECT,
-    }
-  );
+  try {
+    const verifyComputer = await db.sequelize.query(
+      "SELECT COUNT(*) AS number FROM tb_inventories WHERE `Computer_id` = ?",
+      //"SELECT * FROM tb_inventories WHERE `Computer_id` = ?",
+      {
+        replacements: [id],
+        type: db.sequelize.QueryTypes.SELECT,
+      }
+    );
 
-  const NumberOfVerifyComputers = verifyComputer[0].number;
+    const NumberOfVerifyComputers = verifyComputer[0].number;
 
-  if (NumberOfVerifyComputers >= 1) {
-    res.status(500).json({
-      status: 500,
-      message:
-        "Computer " +
-        id +
-        " cannot be deleted because it is related to other elements.",
-    });
-  } else {
-    Computer.destroy({
-      where: { Computer_id: id },
-    })
-      .then((num) => {
-        if (num == 1) {
+    if (NumberOfVerifyComputers >= 1) {
+      // If there are related records, start a transaction to delete them from both tables
+      await db.sequelize.transaction(async (transaction) => {
+        // Delete the related records from the tb_inventories table
+        await db.tb_inventories.destroy({
+          where: { Computer_id: id },
+          transaction,
+        });
+
+        // Delete the Computer record from the tb_computers table
+        const numDeleted = await db.tb_computers.destroy({
+          where: { Computer_id: id },
+          transaction,
+        });
+
+        if (numDeleted === 1) {
+          // If the Computer was successfully deleted, send a success response
           res.status(200).json({
             status: 200,
             message: "Computer was deleted successfully!",
           });
         } else {
+          // If the Computer was not found, send an error response
           res.status(400).json({
             status: 400,
             message: `Cannot delete Computer with id=${id}. Maybe Computer was not found!`,
           });
         }
-      })
-      .catch((err) => {
-        res.status(500).json({
-          status: 500,
-          message: "Could not delete Computer with id=" + id,
-        });
       });
+    } else {
+      // If there are no related records, delete the Computer from the tb_computers table
+      const numDeleted = await db.tb_computers.destroy({
+        where: { Computer_id: id },
+      });
+
+      if (numDeleted === 1) {
+        // If the Computer was successfully deleted, send a success response
+        res.status(200).json({
+          status: 200,
+          message: "Computer was deleted successfully!",
+        });
+      } else {
+        // If the Computer was not found, send an error response
+        res.status(400).json({
+          status: 400,
+          message: `Cannot delete Computer with id=${id}. Maybe Computer was not found!`,
+        });
+      }
+    }
+  } catch (err) {
+    // If an error occurs during the deletion process, send an error response
+    res.status(500).json({
+      status: 500,
+      message: "An error occurred while deleting the computer with id=" + id,
+    });
   }
 };

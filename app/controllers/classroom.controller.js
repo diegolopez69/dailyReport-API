@@ -125,50 +125,77 @@ exports.update = (req, res) => {
 exports.delete = async (req, res) => {
   const id = req.params.id;
 
-  const verifyClassroom = await db.sequelize.query(
-    "SELECT COUNT(*) AS number FROM tb_inventories WHERE `Classroom_id` = ?",
-    //"SELECT * FROM tb_inventories WHERE `Classroom_id` = ?",
-    {
-      replacements: [id],
-      type: db.sequelize.QueryTypes.SELECT,
-    }
-  );
+  try{
+    const verifyClassroom = await db.sequelize.query(
+      "SELECT COUNT(*) AS number FROM tb_inventories WHERE `Classroom_id` = ?",
+      //"SELECT * FROM tb_inventories WHERE `Classroom_id` = ?",
+      {
+        replacements: [id],
+        type: db.sequelize.QueryTypes.SELECT,
+      }
+    );
+  
+    const NumberOfVerifyClassroom = verifyClassroom[0].number;
+      
+    if (NumberOfVerifyClassroom >= 1) {
+      // If there are related records, start a transaction to delete them from both tables
+      await db.sequelize.transaction(async (transaction) => {
+        // Delete the related records from the tb_inventories table
+        await db.tb_inventories.destroy(
+          {
+            where: { Classroom_id: id },
+            transaction,
+          }
+        );
 
-  const NumberOfVerifyClassroom = verifyClassroom[0].number;
+        // Delete the Classroom record from the tb_classrooms table
+        const numDeleted = await db.tb_classrooms.destroy(
+          {
+            where: { Classroom_id: id },
+            transaction,
+          }
+        );
 
-  if (NumberOfVerifyClassroom >= 1) {
-    res.status(500).json({
-      status: 500,
-      message:
-        "Classroom " +
-        id +
-        " cannot be deleted because it is related to other elements.",
-    });
-  } else {
-    Classroom.destroy({
-      where: { Classroom_id: id },
-    })
-      .then((num) => {
-        if (num == 1) {
+        if (numDeleted === 1) {
+          // If the Classroom was successfully deleted, send a success response
           res.status(200).json({
             status: 200,
             message: "Classroom was deleted successfully!",
           });
         } else {
+          // If the Classroom was not found, send an error response
           res.status(400).json({
             status: 400,
             message: `Cannot delete Classroom with id=${id}. Maybe Classroom was not found!`,
           });
         }
-      })
-      .catch((err) => {
-        res.status(500).json({
-          status: 500,
-          message:
-            "Classroom " +
-            id +
-            " cannot be deleted because it is related to other elements.",
-        });
       });
+    } else {
+      // If there are no related records, delete the Classroom from the tb_classrooms table
+      const numDeleted = await db.tb_classrooms.destroy({
+        where: { Classroom_id: id },
+      });
+
+      if (numDeleted === 1) {
+        // If the Classroom was successfully deleted, send a success response
+        res.status(200).json({
+          status: 200,
+          message: "Classroom was deleted successfully!",
+        });
+      } else {
+        // If the Classroom was not found, send an error response
+        res.status(400).json({
+          status: 400,
+          message: `Cannot delete Classroom with id=${id}. Maybe Classroom was not found!`,
+        });
+      }
+    }
+  } catch (err) {
+    // If an error occurs during the deletion process, send an error response
+    res.status(500).json({
+      status: 500,
+      message:
+        "An error occurred while deleting the Classroom with id=" + id,
+    });
   }
 };
