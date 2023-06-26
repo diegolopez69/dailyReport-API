@@ -161,14 +161,10 @@ exports.classrooms = async (req, res) => {
     { type: db.sequelize.QueryTypes.SELECT }
   );
 
-  console.log("getAllClassroomsChecked", getAllClassroomsChecked);
-  console.log("getAllClassroomsNotChecked", getAllClassroomsNotChecked);
-
   totalClassroomsChecked = [
     getAllClassroomsChecked[0].ClassroomChecked,
     getAllClassroomsNotChecked[0].ClassroomNotChecked,
   ];
-  console.log("totalClassroomsChecked", totalClassroomsChecked);
 
   if (totalClassroomsChecked != null) {
     res.status(200).json({
