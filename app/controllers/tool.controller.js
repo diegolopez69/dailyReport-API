@@ -125,50 +125,77 @@ exports.update = (req, res) => {
 exports.delete = async (req, res) => {
   const id = req.params.id;
 
-  const verifyTools = await db.sequelize.query(
-    "SELECT COUNT(*) AS number FROM tb_inventories WHERE `Tool_id` = ?",
-    //"SELECT * FROM tb_inventories WHERE `Tool_id` = ?",
-    {
-      replacements: [id],
-      type: db.sequelize.QueryTypes.SELECT,
-    }
-  );
+  try {
+    // Check if there are any related records in the tb_inventories table
+    const verifyTools = await db.sequelize.query(
+      "SELECT COUNT(*) AS number FROM tb_inventories WHERE `Tool_id` = ?",
+      {
+        replacements: [id],
+        type: db.sequelize.QueryTypes.SELECT,
+      }
+    );
 
-  const NumberOfVerifyTools = verifyTools[0].number;
+    const NumberOfVerifyTools = verifyTools[0].number;
 
-  if (NumberOfVerifyTools >= 1) {
-    res.status(500).json({
-      status: 500,
-      message:
-        "Tool " +
-        id +
-        " cannot be deleted because it is related to other elements.",
-    });
-  } else {
-    Tool.destroy({
-      where: { Tool_id: id },
-    })
-      .then((num) => {
-        if (num == 1) {
+    if (NumberOfVerifyTools >= 1) {
+      // If there are related records, start a transaction to delete them from both tables
+      await db.sequelize.transaction(async (transaction) => {
+        // Delete the related records from the tb_inventories table
+        await db.tb_inventories.destroy(
+          {
+            where: { Tool_id: id },
+            transaction,
+          }
+        );
+
+        // Delete the Tool record from the tb_tools table
+        const numDeleted = await db.tb_tools.destroy(
+          {
+            where: { Tool_id: id },
+            transaction,
+          }
+        );
+
+        if (numDeleted === 1) {
+          // If the Tool was successfully deleted, send a success response
           res.status(200).json({
             status: 200,
             message: "Tool was deleted successfully!",
           });
         } else {
+          // If the Tool was not found, send an error response
           res.status(400).json({
             status: 400,
             message: `Cannot delete Tool with id=${id}. Maybe Tool was not found!`,
           });
         }
-      })
-      .catch((err) => {
-        res.status(500).json({
-          status: 500,
-          message:
-            "Tool " +
-            id +
-            " cannot be deleted because it is related to other elements.",
-        });
       });
+    } else {
+      // If there are no related records, delete the Tool from the tb_tools table
+      const numDeleted = await db.tb_tools.destroy({
+        where: { Tool_id: id },
+      });
+
+      if (numDeleted === 1) {
+        // If the Tool was successfully deleted, send a success response
+        res.status(200).json({
+          status: 200,
+          message: "Tool was deleted successfully!",
+        });
+      } else {
+        // If the Tool was not found, send an error response
+        res.status(400).json({
+          status: 400,
+          message: `Cannot delete Tool with id=${id}. Maybe Tool was not found!`,
+        });
+      }
+    }
+  } catch (err) {
+    // If an error occurs during the deletion process, send an error response
+    res.status(500).json({
+      status: 500,
+      message:
+        "An error occurred while deleting the Tool with id=" + id,
+    });
   }
 };
